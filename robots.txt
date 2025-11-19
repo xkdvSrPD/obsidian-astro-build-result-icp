@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /_astro/
+Disallow: /fonts/
+
+Sitemap: https://www.vio.vin/sitemap-index.xml

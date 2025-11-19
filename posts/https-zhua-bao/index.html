@@ -1,0 +1,496 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"><!-- L'Internationale,
+  Sera le genre humain. --><title>HTTPS抓包 - 薇尔薇</title><meta name="author" content="violet"><meta name="description" content="Only the paranoid survive"><meta name="keywords" content="violet,vio.vin,薇尔薇,blog,博客"><meta name="generator" content="Astro v5.15.8"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://www.vio.vin/posts/https-zhua-bao/"><meta property="og:site_name" content="薇尔薇"><meta property="og:title" content="HTTPS抓包 - 薇尔薇"><meta property="og:description" content="Only the paranoid survive"><meta property="og:image" content="https://www.vio.vin/og/posts-https-zhua-bao.png"><meta property="og:image:alt" content="HTTPS抓包 - 薇尔薇"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="zh-CN"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://www.vio.vin/posts/https-zhua-bao/"><meta name="twitter:title" content="HTTPS抓包 - 薇尔薇"><meta name="twitter:description" content="Only the paranoid survive"><meta name="twitter:image" content="https://www.vio.vin/og/posts-https-zhua-bao.png"><meta name="twitter:image:alt" content="HTTPS抓包 - 薇尔薇"><link rel="canonical" href="https://www.vio.vin/posts/https-zhua-bao/"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="薇尔薇" href="https://www.vio.vin/rss.xml"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-STPJCGJ78E"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-STPJCGJ78E');</script><script>(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "sp1uxmzagn");</script><!-- 防止路由切换时的白屏闪烁 --><script type="module" src="/_astro/ThemeLoader.astro_astro_type_script_index_0_lang.CtrTzxWs.js"></script><script type="module" src="/_astro/AccentColorInjector.astro_astro_type_script_index_0_lang.D1_yrDQ7.js"></script><script type="module">const o="0.0.1";console.log(`%c Gyoza ${o} %c https://gyoza.lxchapu.com `,"color: #fff; margin: 1em 0; padding: 5px 0; background: #ef8f99;","margin: 1em 0; padding: 5px 0; background: #efefef;");</script><!-- Scroll Controller - Handles anchor navigation and page scroll behavior --><script type="module">let r=80;function m(){const t=document.documentElement,n=getComputedStyle(t).getPropertyValue("--header-height"),e=parseFloat(n);return Number.isFinite(e)?e:64}function o(){const t=document.querySelector("[data-site-header]"),n=t instanceof HTMLElement?t.getBoundingClientRect().height:m();r=n+16;const e=document.documentElement;e.style.setProperty("--header-height",`${n}px`),e.style.setProperty("--header-offset",`${r}px`)}function c(t){if(!t)return null;const n=t.startsWith("#")?t.slice(1):t;if(!n)return null;let e=n;try{e=decodeURIComponent(n)}catch{}return document.getElementById(e)??(e!==n?document.getElementById(n):null)}function f(t){const e=t.getBoundingClientRect().top+window.scrollY-r;return Math.max(e,0)}function s(t,n=!0){const e=f(t);window.scrollTo({top:e,behavior:n?"smooth":"auto"})}function u(t=!1){window.scrollTo({top:0,behavior:t?"smooth":"auto"})}function l(t,n=!0){const e=c(t);return e?(s(e,n),!0):!1}function h(t){const n=t.target?.closest("a");if(!n)return;const e=n.getAttribute("href");if(!e||!e.startsWith("#"))return;const i=c(e);if(!i)return;t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation();const d=window.scrollY;window.scrollTo(0,d),requestAnimationFrame(()=>{s(i,!0),setTimeout(()=>{window.history.replaceState(null,"",e)},50)})}function g(){const{hash:t}=window.location;t&&(u(!1),requestAnimationFrame(()=>{setTimeout(()=>{l(t,!0)},100)}))}function p(){const{hash:t}=window.location;u(!1),t&&requestAnimationFrame(()=>{setTimeout(()=>{l(t,!0)},100)})}function a(){o(),g(),window.addEventListener("resize",o,{passive:!0}),document.addEventListener("click",h,{capture:!0}),document.addEventListener("swup:content:replace",()=>{o(),p()})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",a,{once:!0}):a();</script><!-- Code Copy Handler - Manages code block copy functionality --><script type="module">function i(e,o){navigator.clipboard.writeText(e).then(()=>{s(o)}).catch(()=>{r("复制失败！")})}function s(e){e.classList.add("copy-code-btn--copied");const o="rgb(var(--color-accent) / 0.25)";e.animate([{transform:"scale(1) translateY(-1px)",boxShadow:`0 4px 12px ${o}`},{transform:"scale(1.08) translateY(-2px)",boxShadow:"0 8px 24px rgb(var(--color-accent) / 0.4)"},{transform:"scale(1) translateY(-1px)",boxShadow:`0 4px 16px ${o}`}],{duration:400,easing:"cubic-bezier(0.34, 1.56, 0.64, 1)"}),setTimeout(()=>{e.classList.remove("copy-code-btn--copied")},1800)}function r(e){const o=new CustomEvent("code-copy-fail",{detail:{message:e}});window.dispatchEvent(o)}function d(e){return e instanceof HTMLElement?e.classList.contains("copy-code-btn")?e:e.closest(".copy-code-btn"):null}function l(e){const o=d(e.target);if(!o)return;e.preventDefault();const t=o.closest(".code-block")?.querySelector("pre code");if(!t)return;const a=t.textContent||"";i(a,o)}function n(){document.addEventListener("click",l)}function p(){document.addEventListener("swup:content:replace",n)}n();p();</script><!-- 禁止图片被拖拽 --><script type="module">const n=t=>{t.preventDefault()};function r(t=document){t.querySelectorAll("img").forEach(e=>{e.dataset.dragDisabled!=="true"&&(e.setAttribute("draggable","false"),e.addEventListener("dragstart",n),e.dataset.dragDisabled="true")})}function a(){r()}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",a,{once:!0}):a();document.addEventListener("swup:content:replace",()=>{a()});</script><!-- Image Loader - Handles image loading states and animations --><script type="module">function o(e){e.dataset.imageLoading==="true"&&(e.dataset.imageLoaded="true",e.removeAttribute("data-image-loading"))}function u(e){e.dataset.imageLoading==="true"&&(e.removeAttribute("data-image-loading"),e.dataset.imageError="true",e.style.opacity="1")}function i(e=document){e.querySelectorAll('img[data-image-loading="true"]').forEach(t=>{if(t.complete&&t.naturalHeight!==0){o(t);return}const a=()=>{o(t),r()},n=()=>{u(t),r()},r=()=>{t.removeEventListener("load",a),t.removeEventListener("error",n)};t.addEventListener("load",a,{once:!0}),t.addEventListener("error",n,{once:!0})})}function d(){i()}function c(){document.addEventListener("swup:content:replace",()=>{requestAnimationFrame(()=>{i()})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",d,{once:!0}):d();c();</script><link rel="stylesheet" href="/_astro/_page_.CxX9sImm.css">
+<link rel="stylesheet" href="/_astro/_spec_.CkjcT_YF.css">
+<link rel="stylesheet" href="/_astro/_spec_.DMOvxL-E.css">
+<link rel="stylesheet" href="/_astro/ToastContainer.VYesxZYF.css"><script type="module" src="/_astro/page.DjLJkQsq.js"></script></head> <body class="relative min-h-screen"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="EtoiK" component-url="/_astro/AnimatedBackground.B1Cyhcd7.js" component-export="AnimatedBackground" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;AnimatedBackground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <div class="relative z-10 flex min-h-screen flex-col">  <astro-island uid="Zoomuh" component-url="/_astro/Provider.DdhxFCBp.js" component-export="Provider" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;pathName&quot;:[0,&quot;/posts/https-zhua-bao/&quot;],&quot;title&quot;:[0,&quot;HTTPS抓包&quot;],&quot;description&quot;:[0,&quot;网络 / TLS&quot;],&quot;slug&quot;:[0,&quot;/posts/https-zhua-bao&quot;]}" ssr client="only" opts="{&quot;name&quot;:&quot;Provider&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="20kLSM" component-url="/_astro/Header.DTEApcqW.js" component-export="Header" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <main class="glass-surface relative z-1 pt-16 min-h-main"> <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><astro-island uid="1Gf5mu" prefix="r11" component-url="/_astro/head-gradient.Cr6IrkI9.js" component-export="HeadGradient" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;HeadGradient&quot;,&quot;value&quot;:true}" await-children><div class="absolute -z-1 top-0 inset-x-0 h-[350px] bg-gradient-to-r from-accent/5 to-accent/15" style="mask-image:linear-gradient(black, transparent);opacity:0"></div><!--astro:end--></astro-island>  <div class="w-full max-w-full lg:max-w-[1100px] mx-auto px-4 md:px-8 py-16"> <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px] gap-8"> <!-- Main content with swup transition --> <div class="swup-transition-fade" data-pagefind-body> <header class="space-y-4"> <h1 class="text-4xl font-bold text-center"> HTTPS抓包 </h1> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-calendar"></i> <astro-island uid="UdVO2" prefix="r16" component-url="/_astro/RelativeDate.DL3as8Vw.js" component-export="RelativeDate" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;date&quot;:[3,&quot;2025-04-14T09:30:57.000Z&quot;]}" ssr client="idle" opts="{&quot;name&quot;:&quot;RelativeDate&quot;,&quot;value&quot;:true}" await-children><span>25 年 4 月 14 日 星期一</span><!--astro:end--></astro-island> <span class="text-xs">(已编辑)</span> </div> <div> <i class="iconfont icon-file-list"></i> <span>2686 字</span> </div> <div> <i class="iconfont icon-timer"></i> <span>14 分钟</span> </div> </div> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-folder"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/categories/网络"> 网络 </a> </div> <div> <i class="iconfont icon-hashtag"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/tags/tls"> TLS </a>  </div> </div> <div> <astro-island uid="Z27xjKu" prefix="r6" component-url="/_astro/Outdate.BEsL3lOb.js" component-export="Outdate" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;lastMod&quot;:[3,&quot;2025-04-14T09:30:57.000Z&quot;]}" ssr client="idle" opts="{&quot;name&quot;:&quot;Outdate&quot;,&quot;value&quot;:true}"></astro-island> </div> </header> <div class="mt-8"> <article id="markdown-wrapper" class="markdown">  <figure><img src="/image/pasted-image-20250414140633.webp" alt="Pasted image 20250414140633.png" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>171	1.223269	192.168.3.104	47.108.167.197	TCP	66	38415 → 443 [SYN] Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM</span></span>
+<span class="line"><span>172	1.238616	47.108.167.197	192.168.3.104	TCP	66	443 → 38415 [SYN, ACK] Seq=0 Ack=1 Win=64240 Len=0 MSS=1412 SACK_PERM WS=128</span></span>
+<span class="line"><span>173	1.238701	192.168.3.104	47.108.167.197	TCP	54	38415 → 443 [ACK] Seq=1 Ack=1 Win=262400 Len=0</span></span>
+<span class="line"><span>174	1.238879	192.168.3.104	47.108.167.197	TCP	1466	38415 → 443 [ACK] Seq=1 Ack=1 Win=262400 Len=1412 [TCP PDU reassembled in 175]</span></span>
+<span class="line"><span>175	1.238879	192.168.3.104	47.108.167.197	TLSv1.3	486	Client Hello (SNI=vio.vin)</span></span>
+<span class="line"><span>179	1.253799	47.108.167.197	192.168.3.104	TCP	60	443 → 38415 [ACK] Seq=1 Ack=1845 Win=62464 Len=0</span></span>
+<span class="line"><span>180	1.254261	47.108.167.197	192.168.3.104	TLSv1.3	308	Server Hello, Change Cipher Spec, Application Data, Application Data</span></span>
+<span class="line"><span>181	1.254855	192.168.3.104	47.108.167.197	TLSv1.3	134	Change Cipher Spec, Application Data</span></span>
+<span class="line"><span>182	1.255030	192.168.3.104	47.108.167.197	TLSv1.3	146	Application Data</span></span>
+<span class="line"><span>183	1.255217	192.168.3.104	47.108.167.197	TLSv1.3	1161	Application Data</span></span>
+<span class="line"><span>186	1.269661	47.108.167.197	192.168.3.104	TCP	60	443 → 38415 [ACK] Seq=255 Ack=3124 Win=61312 Len=0</span></span>
+<span class="line"><span>187	1.269661	47.108.167.197	192.168.3.104	TLSv1.3	133	Application Data</span></span>
+<span class="line"><span>188	1.269661	47.108.167.197	192.168.3.104	TLSv1.3	125	Application Data</span></span>
+<span class="line"><span>189	1.269738	192.168.3.104	47.108.167.197	TCP	54	38415 → 443 [ACK] Seq=3124 Ack=405 Win=262144 Len=0</span></span>
+<span class="line"><span>190	1.269992	192.168.3.104	47.108.167.197	TLSv1.3	85	Application Data</span></span>
+<span class="line"><span>206	1.306572	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [ACK] Seq=405 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 208]</span></span>
+<span class="line"><span>207	1.306572	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [PSH, ACK] Seq=1817 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 208]</span></span>
+<span class="line"><span>208	1.306572	47.108.167.197	192.168.3.104	TLSv1.3	1236	Application Data</span></span>
+<span class="line"><span>209	1.306626	192.168.3.104	47.108.167.197	TCP	54	38415 → 443 [ACK] Seq=3155 Ack=4411 Win=262400 Len=0</span></span>
+<span class="line"><span>216	1.308416	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [ACK] Seq=4411 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 221]</span></span>
+<span class="line"><span>217	1.308416	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [PSH, ACK] Seq=5823 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 221]</span></span>
+<span class="line"><span>218	1.308416	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [ACK] Seq=7235 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 221]</span></span>
+<span class="line"><span>219	1.308416	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [PSH, ACK] Seq=8647 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 221]</span></span>
+<span class="line"><span>220	1.308416	47.108.167.197	192.168.3.104	TCP	1466	443 → 38415 [ACK] Seq=10059 Ack=3155 Win=61312 Len=1412 [TCP PDU reassembled in 221]</span></span>
+<span class="line"><span>221	1.308416	47.108.167.197	192.168.3.104	TLSv1.3	1303	Application Data</span></span>
+<span class="line"><span>222	1.308416	47.108.167.197	192.168.3.104	TLSv1.3	85	Application Data</span></span>
+<span class="line"><span>223	1.308477	192.168.3.104	47.108.167.197	TCP	54	38415 → 443 [ACK] Seq=3155 Ack=12751 Win=262400 Len=0</span></span></code></pre></div>
+<p>171-173：TCP三次握手阶段[[TCP握手.excalidraw]]
+175-181：TLS握手[[TLS1.2握手.excalidraw]][[TLS1.3握手.excalidraw]]
+<img src="/image/pasted-image-20250414162024.webp" alt="Pasted image 20250414162024.png" loading="lazy" data-image-loading="true" class="markdown-image">
+<img src="/image/pasted-image-20250414162035.webp" alt="Pasted image 20250414162035.png" loading="lazy" data-image-loading="true" class="markdown-image"></p>
+<figure><img src="/image/pasted-image-20250414162750.webp" alt="Pasted image 20250414162750.png" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="数据包信息" class="heading">数据包信息<a href="#数据包信息" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h3 id="数据包基本信息-frame" class="heading">数据包基本信息 Frame<a href="#数据包基本信息-frame" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Frame 175: 486 bytes on wire (3888 bits), 486 bytes captured (3888 bits) on interface \Device\NPF_{B521975A-A6F6-4E2D-AF1F-49734647DB88}, id 0</span></span>
+<span class="line"><span>    Section number: 1</span></span>
+<span class="line"><span>    Interface id: 0 (\Device\NPF_{B521975A-A6F6-4E2D-AF1F-49734647DB88})</span></span>
+<span class="line"><span>        Interface name: \Device\NPF_{B521975A-A6F6-4E2D-AF1F-49734647DB88}</span></span>
+<span class="line"><span>        Interface description: vEthernet (Hyper-V)</span></span>
+<span class="line"><span>    Encapsulation type: Ethernet (1)</span></span>
+<span class="line"><span>    Arrival Time: Apr 14, 2025 10:17:29.637600000 中国标准时间</span></span>
+<span class="line"><span>    UTC Arrival Time: Apr 14, 2025 02:17:29.637600000 UTC</span></span>
+<span class="line"><span>    Epoch Arrival Time: 1744597049.637600000</span></span>
+<span class="line"><span>    [Time shift for this packet: 0.000000000 seconds]</span></span>
+<span class="line"><span>    [Time delta from previous captured frame: 0.000000000 seconds]</span></span>
+<span class="line"><span>    [Time delta from previous displayed frame: 0.000000000 seconds]</span></span>
+<span class="line"><span>    [Time since reference or first frame: 1.238879000 seconds]</span></span>
+<span class="line"><span>    Frame Number: 175</span></span>
+<span class="line"><span>    Frame Length: 486 bytes (3888 bits)</span></span>
+<span class="line"><span>    Capture Length: 486 bytes (3888 bits)</span></span>
+<span class="line"><span>    [Frame is marked: False]</span></span>
+<span class="line"><span>    [Frame is ignored: False]</span></span>
+<span class="line"><span>    [Protocols in frame: eth:ethertype:ip:tcp:tls]</span></span>
+<span class="line"><span>    [Coloring Rule Name: TCP]</span></span>
+<span class="line"><span>    [Coloring Rule String: tcp]</span></span></code></pre></div>
+<p>wireshark获取到的数据包基本信息</p>
+<h3 id="数据链路层-ethernet-ii" class="heading">数据链路层 Ethernet II<a href="#数据链路层-ethernet-ii" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Ethernet II, Src: ASUSTekCOMPU_7b:35:8d (04:d4:c4:7b:35:8d), Dst: HuaweiDevice_26:97:02 (30:66:d0:26:97:02)</span></span>
+<span class="line"><span>    Destination: HuaweiDevice_26:97:02 (30:66:d0:26:97:02)</span></span>
+<span class="line"><span>        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)</span></span>
+<span class="line"><span>        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)</span></span>
+<span class="line"><span>    Source: ASUSTekCOMPU_7b:35:8d (04:d4:c4:7b:35:8d)</span></span>
+<span class="line"><span>        .... ..0. .... .... .... .... = LG bit: Globally unique address (factory default)</span></span>
+<span class="line"><span>        .... ...0 .... .... .... .... = IG bit: Individual address (unicast)</span></span>
+<span class="line"><span>    Type: IPv4 (0x0800)</span></span>
+<span class="line"><span>    [Stream index: 0]</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<p>定义以以太网帧的源MAC地址<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>和目标MAC地址</p>
+<h3 id="网络层-internet" class="heading">网络层 Internet<a href="#网络层-internet" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Internet Protocol Version 4, Src: 192.168.3.104, Dst: 47.108.167.197</span></span>
+<span class="line"><span>    0100 .... = Version: 4</span></span>
+<span class="line"><span>    .... 0101 = Header Length: 20 bytes (5)</span></span>
+<span class="line"><span>    Differentiated Services Field: 0x00 (DSCP: CS0, ECN: Not-ECT)</span></span>
+<span class="line"><span>        0000 00.. = Differentiated Services Codepoint: Default (0)</span></span>
+<span class="line"><span>        .... ..00 = Explicit Congestion Notification: Not ECN-Capable Transport (0)</span></span>
+<span class="line"><span>    Total Length: 472</span></span>
+<span class="line"><span>    Identification: 0x6d0f (27919)</span></span>
+<span class="line"><span>    10. .... = Flags: 0x2, Don't fragment</span></span>
+<span class="line"><span>        0... .... = Reserved bit: Not set</span></span>
+<span class="line"><span>        .1.. .... = Don't fragment: Set</span></span>
+<span class="line"><span>        ..0. .... = More fragments: Not set</span></span>
+<span class="line"><span>    ...0 0000 0000 0000 = Fragment Offset: 0</span></span>
+<span class="line"><span>    Time to Live: 128</span></span>
+<span class="line"><span>    Protocol: TCP (6)</span></span>
+<span class="line"><span>    Header Checksum: 0x0000 [validation disabled]</span></span>
+<span class="line"><span>    [Header checksum status: Unverified]</span></span>
+<span class="line"><span>    Source Address: 192.168.3.104</span></span>
+<span class="line"><span>    Destination Address: 47.108.167.197</span></span>
+<span class="line"><span>    [Stream index: 2]</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<p>目标IP和源IP</p>
+<ul>
+<li><code>Internet Protocol Version 4</code>：使用IPV4</li>
+<li><code>Time to Live: 128</code>：数据包在路由器中最大条数，每经过1跳-1</li>
+<li><code>Protocol: TCP (6)</code>：协议类型为TCP</li>
+</ul>
+<h3 id="传输层-transmission" class="heading">传输层 Transmission<a href="#传输层-transmission" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Transmission Control Protocol, Src Port: 38415, Dst Port: 443, Seq: 1413, Ack: 1, Len: 432</span></span>
+<span class="line"><span>    Source Port: 38415</span></span>
+<span class="line"><span>    Destination Port: 443</span></span>
+<span class="line"><span>    [Stream index: 11]</span></span>
+<span class="line"><span>    [Stream Packet Number: 5]</span></span>
+<span class="line"><span>    [Conversation completeness: Incomplete, DATA (15)]</span></span>
+<span class="line"><span>        ..0. .... = RST: Absent</span></span>
+<span class="line"><span>        ...0 .... = FIN: Absent</span></span>
+<span class="line"><span>        .... 1... = Data: Present</span></span>
+<span class="line"><span>        .... .1.. = ACK: Present</span></span>
+<span class="line"><span>        .... ..1. = SYN-ACK: Present</span></span>
+<span class="line"><span>        .... ...1 = SYN: Present</span></span>
+<span class="line"><span>        [Completeness Flags: ··DASS]</span></span>
+<span class="line"><span>    [TCP Segment Len: 432]</span></span>
+<span class="line"><span>    Sequence Number: 1413    (relative sequence number)</span></span>
+<span class="line"><span>    Sequence Number (raw): 318538494</span></span>
+<span class="line"><span>    [Next Sequence Number: 1845    (relative sequence number)]</span></span>
+<span class="line"><span>    Acknowledgment Number: 1    (relative ack number)</span></span>
+<span class="line"><span>    Acknowledgment number (raw): 1465246415</span></span>
+<span class="line"><span>    0101 .... = Header Length: 20 bytes (5)</span></span>
+<span class="line"><span>    Flags: 0x018 (PSH, ACK)</span></span>
+<span class="line"><span>        0. .... .... = Reserved: Not set</span></span>
+<span class="line"><span>        ...0 .... .... = Accurate ECN: Not set</span></span>
+<span class="line"><span>        .... 0... .... = Congestion Window Reduced: Not set</span></span>
+<span class="line"><span>        .... .0.. .... = ECN-Echo: Not set</span></span>
+<span class="line"><span>        .... ..0. .... = Urgent: Not set</span></span>
+<span class="line"><span>        .... ...1 .... = Acknowledgment: Set</span></span>
+<span class="line"><span>        .... .... 1... = Push: Set</span></span>
+<span class="line"><span>        .... .... .0.. = Reset: Not set</span></span>
+<span class="line"><span>        .... .... ..0. = Syn: Not set</span></span>
+<span class="line"><span>        .... .... ...0 = Fin: Not set</span></span>
+<span class="line"><span>        [TCP Flags: ·······AP···]</span></span>
+<span class="line"><span>    Window: 1025</span></span>
+<span class="line"><span>    [Calculated window size: 262400]</span></span>
+<span class="line"><span>    [Window size scaling factor: 256]</span></span>
+<span class="line"><span>    Checksum: 0x9d0c [unverified]</span></span>
+<span class="line"><span>    [Checksum Status: Unverified]</span></span>
+<span class="line"><span>    Urgent Pointer: 0</span></span>
+<span class="line"><span>    [Timestamps]</span></span>
+<span class="line"><span>        [Time since first frame in this TCP stream: 0.015610000 seconds]</span></span>
+<span class="line"><span>        [Time since previous frame in this TCP stream: 0.000000000 seconds]</span></span>
+<span class="line"><span>    [SEQ/ACK analysis]</span></span>
+<span class="line"><span>        [iRTT: 0.015432000 seconds]</span></span>
+<span class="line"><span>        [Bytes in flight: 1844]</span></span>
+<span class="line"><span>        [Bytes sent since last PSH flag: 1844]</span></span>
+<span class="line"><span>    TCP payload (432 bytes)</span></span>
+<span class="line"><span>    TCP segment data (432 bytes)</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<ul>
+<li><code>Source Port: 38415</code>：本机端口</li>
+<li><code>Destination Port: 443</code>：目标服务器端口</li>
+<li><code>Header Length: 20 bytes (5)</code>：TCP Header长度</li>
+</ul>
+<h2 id="client-hello-175" class="heading">Client Hello 175<a href="#client-hello-175" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<figure><img src="/image/pasted-image-20250414141249.webp" alt="Pasted image 20250414141249.png" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Transport Layer Security</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Handshake Protocol: Client Hello</span></span>
+<span class="line"><span>        Content Type: Handshake (22)</span></span>
+<span class="line"><span>        Version: TLS 1.0 (0x0301)</span></span>
+<span class="line"><span>        Length: 1839</span></span>
+<span class="line"><span>        Handshake Protocol: Client Hello</span></span>
+<span class="line"><span>            Handshake Type: Client Hello (1)</span></span>
+<span class="line"><span>            Length: 1835</span></span>
+<span class="line"><span>            Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>                [Expert Info (Chat/Deprecated): This legacy_version field MUST be ignored. The supported_versions extension is present and MUST be used instead.]</span></span>
+<span class="line"><span>                    [This legacy_version field MUST be ignored. The supported_versions extension is present and MUST be used instead.]</span></span>
+<span class="line"><span>                    [Severity level: Chat]</span></span>
+<span class="line"><span>                    [Group: Deprecated]</span></span>
+<span class="line"><span>            Random: 375d1d1404d2f6cd5b666b9cdeb353745514e1e2305ee9bc2cb11ea117d292df</span></span>
+<span class="line"><span>            Session ID Length: 32</span></span>
+<span class="line"><span>            Session ID: 8bac9f0438ad26c4e016f3c08ef942ba65d9381730874644835171a73d39c193</span></span>
+<span class="line"><span>            Cipher Suites Length: 32</span></span>
+<span class="line"><span>            Cipher Suites (16 suites)</span></span>
+<span class="line"><span>                Cipher Suite: Reserved (GREASE) (0x7a7a)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_AES_128_GCM_SHA256 (0x1301)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_AES_256_GCM_SHA384 (0x1302)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_CHACHA20_POLY1305_SHA256 (0x1303)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca9)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca8)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_RSA_WITH_AES_128_GCM_SHA256 (0x009c)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009d)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)</span></span>
+<span class="line"><span>                Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)</span></span>
+<span class="line"><span>            Compression Methods Length: 1</span></span>
+<span class="line"><span>            Compression Methods (1 method)</span></span>
+<span class="line"><span>                Compression Method: null (0)</span></span>
+<span class="line"><span>            Extensions Length: 1730</span></span>
+<span class="line"><span>            Extension: Reserved (GREASE) (len=0)</span></span>
+<span class="line"><span>                Type: Reserved (GREASE) (56026)</span></span>
+<span class="line"><span>                Length: 0</span></span>
+<span class="line"><span>                Data: &#x3C;MISSING></span></span>
+<span class="line"><span>            Extension: encrypted_client_hello (len=218)</span></span>
+<span class="line"><span>                Type: encrypted_client_hello (65037)</span></span>
+<span class="line"><span>                Length: 218</span></span>
+<span class="line"><span>                Client Hello type: Outer Client Hello (0)</span></span>
+<span class="line"><span>                Cipher Suite: HKDF-SHA256/AES-128-GCM</span></span>
+<span class="line"><span>                    KDF Id: HKDF-SHA256 (1)</span></span>
+<span class="line"><span>                    AEAD Id: AES-128-GCM (1)</span></span>
+<span class="line"><span>                Config Id: 120</span></span>
+<span class="line"><span>                Enc length: 32</span></span>
+<span class="line"><span>                Enc: b7c2b561b6efe0885bd0f5f0bb93d0ca37c029b9bea829690d1e7245346ffe18</span></span>
+<span class="line"><span>                Payload length: 176</span></span>
+<span class="line"><span>                Payload […]: cc96616ca1010141bbb9b6b6625f2a647fe7355f3a75131be4ca9b6da0fec88bbf2fc45851424ca4feb3f285989911a1d4fb42ddeeaa86c04a7ef34f667b14dff32218a7fe2417b283f07d6c7fb251cba51e1eaf9513109f27ff759ee1a8c776f06ebc8e0d0d1f489a64d876141243ff</span></span>
+<span class="line"><span>            Extension: key_share (len=1263) Unknown (4588), x25519</span></span>
+<span class="line"><span>                Type: key_share (51)</span></span>
+<span class="line"><span>                Length: 1263</span></span>
+<span class="line"><span>                Key Share extension</span></span>
+<span class="line"><span>                    Client Key Share Length: 1261</span></span>
+<span class="line"><span>                    Key Share Entry: Group: Reserved (GREASE), Key Exchange length: 1</span></span>
+<span class="line"><span>                        Group: Reserved (GREASE) (27242)</span></span>
+<span class="line"><span>                        Key Exchange Length: 1</span></span>
+<span class="line"><span>                        Key Exchange: 00</span></span>
+<span class="line"><span>                    Key Share Entry: Group: Unknown (4588), Key Exchange length: 1216</span></span>
+<span class="line"><span>                        Group: Unknown (4588)</span></span>
+<span class="line"><span>                        Key Exchange Length: 1216</span></span>
+<span class="line"><span>                        Key Exchange […]: 3f4b9425874aa82365d54bb38a01a8c77b503c2267c5ec6af695cd42946a17a10c8133ab80a8c1b849c4b9180dd1fa2d48022d911873f9629319c41f8613bb3ad4155de6a156a97d9d78236420aecdfbb7f4c54121a913d136bd7af86d9287bb2a8b98a6b8cff2196ac6c20e9b5</span></span>
+<span class="line"><span>                    Key Share Entry: Group: x25519, Key Exchange length: 32</span></span>
+<span class="line"><span>                        Group: x25519 (29)</span></span>
+<span class="line"><span>                        Key Exchange Length: 32</span></span>
+<span class="line"><span>                        Key Exchange: 101faf67a97be3c219d9eeeae6cc042b5059a23b6703b7ff99c2b0ce00b4481a</span></span>
+<span class="line"><span>            Extension: Unknown type 17613 (len=5)</span></span>
+<span class="line"><span>                Type: Unknown (17613)</span></span>
+<span class="line"><span>                Length: 5</span></span>
+<span class="line"><span>                Data: 0003026832</span></span>
+<span class="line"><span>            Extension: signed_certificate_timestamp (len=0)</span></span>
+<span class="line"><span>                Type: signed_certificate_timestamp (18)</span></span>
+<span class="line"><span>                Length: 0</span></span>
+<span class="line"><span>            Extension: renegotiation_info (len=1)</span></span>
+<span class="line"><span>                Type: renegotiation_info (65281)</span></span>
+<span class="line"><span>                Length: 1</span></span>
+<span class="line"><span>                Renegotiation Info extension</span></span>
+<span class="line"><span>                    Renegotiation info extension length: 0</span></span>
+<span class="line"><span>            Extension: compress_certificate (len=3)</span></span>
+<span class="line"><span>                Type: compress_certificate (27)</span></span>
+<span class="line"><span>                Length: 3</span></span>
+<span class="line"><span>                Algorithms Length: 2</span></span>
+<span class="line"><span>                Algorithm: brotli (2)</span></span>
+<span class="line"><span>            Extension: server_name (len=12) name=vio.vin</span></span>
+<span class="line"><span>                Type: server_name (0)</span></span>
+<span class="line"><span>                Length: 12</span></span>
+<span class="line"><span>                Server Name Indication extension</span></span>
+<span class="line"><span>                    Server Name list length: 10</span></span>
+<span class="line"><span>                    Server Name Type: host_name (0)</span></span>
+<span class="line"><span>                    Server Name length: 7</span></span>
+<span class="line"><span>                    Server Name: vio.vin</span></span>
+<span class="line"><span>            Extension: application_layer_protocol_negotiation (len=14)</span></span>
+<span class="line"><span>                Type: application_layer_protocol_negotiation (16)</span></span>
+<span class="line"><span>                Length: 14</span></span>
+<span class="line"><span>                ALPN Extension Length: 12</span></span>
+<span class="line"><span>                ALPN Protocol</span></span>
+<span class="line"><span>                    ALPN string length: 2</span></span>
+<span class="line"><span>                    ALPN Next Protocol: h2</span></span>
+<span class="line"><span>                    ALPN string length: 8</span></span>
+<span class="line"><span>                    ALPN Next Protocol: http/1.1</span></span>
+<span class="line"><span>            Extension: psk_key_exchange_modes (len=2)</span></span>
+<span class="line"><span>                Type: psk_key_exchange_modes (45)</span></span>
+<span class="line"><span>                Length: 2</span></span>
+<span class="line"><span>                PSK Key Exchange Modes Length: 1</span></span>
+<span class="line"><span>                PSK Key Exchange Mode: PSK with (EC)DHE key establishment (psk_dhe_ke) (1)</span></span>
+<span class="line"><span>            Extension: supported_versions (len=7) TLS 1.3, TLS 1.2</span></span>
+<span class="line"><span>                Type: supported_versions (43)</span></span>
+<span class="line"><span>                Length: 7</span></span>
+<span class="line"><span>                Supported Versions length: 6</span></span>
+<span class="line"><span>                Supported Version: Reserved (GREASE) (0x5a5a)</span></span>
+<span class="line"><span>                Supported Version: TLS 1.3 (0x0304)</span></span>
+<span class="line"><span>                Supported Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>            Extension: extended_master_secret (len=0)</span></span>
+<span class="line"><span>                Type: extended_master_secret (23)</span></span>
+<span class="line"><span>                Length: 0</span></span>
+<span class="line"><span>            Extension: session_ticket (len=0)</span></span>
+<span class="line"><span>                Type: session_ticket (35)</span></span>
+<span class="line"><span>                Length: 0</span></span>
+<span class="line"><span>                Session Ticket: &#x3C;MISSING></span></span>
+<span class="line"><span>            Extension: status_request (len=5)</span></span>
+<span class="line"><span>                Type: status_request (5)</span></span>
+<span class="line"><span>                Length: 5</span></span>
+<span class="line"><span>                Certificate Status Type: OCSP (1)</span></span>
+<span class="line"><span>                Responder ID list Length: 0</span></span>
+<span class="line"><span>                Request Extensions Length: 0</span></span>
+<span class="line"><span>            Extension: signature_algorithms (len=18)</span></span>
+<span class="line"><span>                Type: signature_algorithms (13)</span></span>
+<span class="line"><span>                Length: 18</span></span>
+<span class="line"><span>                Signature Hash Algorithms Length: 16</span></span>
+<span class="line"><span>                Signature Hash Algorithms (8 algorithms)</span></span>
+<span class="line"><span>                    Signature Algorithm: ecdsa_secp256r1_sha256 (0x0403)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: SHA256 (4)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: ECDSA (3)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pss_rsae_sha256 (0x0804)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: Unknown (8)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: Unknown (4)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pkcs1_sha256 (0x0401)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: SHA256 (4)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: RSA (1)</span></span>
+<span class="line"><span>                    Signature Algorithm: ecdsa_secp384r1_sha384 (0x0503)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: SHA384 (5)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: ECDSA (3)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pss_rsae_sha384 (0x0805)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: Unknown (8)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: Unknown (5)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pkcs1_sha384 (0x0501)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: SHA384 (5)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: RSA (1)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pss_rsae_sha512 (0x0806)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: Unknown (8)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: Unknown (6)</span></span>
+<span class="line"><span>                    Signature Algorithm: rsa_pkcs1_sha512 (0x0601)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Hash: SHA512 (6)</span></span>
+<span class="line"><span>                        Signature Hash Algorithm Signature: RSA (1)</span></span>
+<span class="line"><span>            Extension: ec_point_formats (len=2)</span></span>
+<span class="line"><span>                Type: ec_point_formats (11)</span></span>
+<span class="line"><span>                Length: 2</span></span>
+<span class="line"><span>                EC point formats Length: 1</span></span>
+<span class="line"><span>                Elliptic curves point formats (1)</span></span>
+<span class="line"><span>                    EC point format: uncompressed (0)</span></span>
+<span class="line"><span>            Extension: supported_groups (len=12)</span></span>
+<span class="line"><span>                Type: supported_groups (10)</span></span>
+<span class="line"><span>                Length: 12</span></span>
+<span class="line"><span>                Supported Groups List Length: 10</span></span>
+<span class="line"><span>                Supported Groups (5 groups)</span></span>
+<span class="line"><span>                    Supported Group: Reserved (GREASE) (0x6a6a)</span></span>
+<span class="line"><span>                    Supported Group: Unknown (0x11ec)</span></span>
+<span class="line"><span>                    Supported Group: x25519 (0x001d)</span></span>
+<span class="line"><span>                    Supported Group: secp256r1 (0x0017)</span></span>
+<span class="line"><span>                    Supported Group: secp384r1 (0x0018)</span></span>
+<span class="line"><span>            Extension: Reserved (GREASE) (len=1)</span></span>
+<span class="line"><span>                Type: Reserved (GREASE) (6682)</span></span>
+<span class="line"><span>                Length: 1</span></span>
+<span class="line"><span>                Data: 00</span></span>
+<span class="line"><span>            Extension: pre_shared_key (len=91)</span></span>
+<span class="line"><span>                Type: pre_shared_key (41)</span></span>
+<span class="line"><span>                Length: 91</span></span>
+<span class="line"><span>                Pre-Shared Key extension</span></span>
+<span class="line"><span>                    Identities Length: 38</span></span>
+<span class="line"><span>                    PSK Identity (length: 32)</span></span>
+<span class="line"><span>                        Identity Length: 32</span></span>
+<span class="line"><span>                        Identity: c0adb61665bea1c4754c25096d25e1a88f7b68f5b04398fe0d3d587b00a0917b</span></span>
+<span class="line"><span>                        Obfuscated Ticket Age: 1596269139</span></span>
+<span class="line"><span>                    PSK Binders length: 49</span></span>
+<span class="line"><span>                    PSK Binders</span></span>
+<span class="line"><span>            [JA4: t13d1517h2_8daaf6152771_b6f405a00624]</span></span>
+<span class="line"><span>            [JA4_r: t13d1517h2_002f,0035,009c,009d,1301,1302,1303,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0012,0017,001b,0023,0029,002b,002d,0033,44cd,fe0d,ff01_0403,0804,0401,0503,0805,0501,0806,0601]</span></span>
+<span class="line"><span>            [JA3 Fullstring: 771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,65037-51-17613-18-65281-27-0-16-45-43-23-35-5-13-11-10-41,4588-29-23-24,0]</span></span>
+<span class="line"><span>            [JA3: 62fc926ac0287a7bf4ffdba12e312d3c]</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<ul>
+<li><code>Content Type: Handshake (22)</code>：表示这是一个握手消息</li>
+<li><code>Handshake Protocol: Client Hello</code>：表示这是一个客户端发送的 <code>Client Hello</code> 消息</li>
+<li><code>Version: TLS 1.2 (0x0303)</code>：表示客户端支持的最高 TLS 版本</li>
+<li><code>Random</code>：客户端生成的随机数，用户后续密钥生成</li>
+<li><code>Session ID</code>：会话ID</li>
+<li><code>Cipher Suites (16 suites)</code>：客户端支持的加密套件，按优先级排序</li>
+<li><code>Compression Methods</code>：客户端支持的压缩算法</li>
+<li><code>key_share</code>：客户端生成的公钥</li>
+<li><code>server_name</code>：SNI</li>
+<li><code>application_layer_protocol_negotiation</code>：客户端支持的应用层协议，h2，http/1.1</li>
+<li><code>supported_versions (len=7) TLS 1.3, TLS 1.2</code>：客户端支持的 TLS 版本</li>
+<li><code>signature_algorithms</code>：客户端支持的签名算法</li>
+<li><code>pre_shared_key</code>：预共享密钥（PSK）信息，用于会话恢复</li>
+<li><code>JA4</code>：识别客户端的 TLS 实现</li>
+</ul>
+<hr>
+<hr>
+<h2 id="client-hello-ack-179" class="heading">Client Hello ACK 179<a href="#client-hello-ack-179" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>179	1.253799	47.108.167.197	192.168.3.104	TCP	60	443 → 38415 [ACK] Seq=1 Ack=1845 Win=62464 Len=0</span></span></code></pre></div>
+<p>服务器收到客户端发送的Client Hello后发送的ACK</p>
+<h2 id="server-hello-180" class="heading">Server Hello 180<a href="#server-hello-180" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>180	1.254261	47.108.167.197	192.168.3.104	TLSv1.3	308	Server Hello, Change Cipher Spec, Application Data, Application Data</span></span></code></pre></div>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Transport Layer Security</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Handshake Protocol: Server Hello</span></span>
+<span class="line"><span>        Content Type: Handshake (22)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 128</span></span>
+<span class="line"><span>        Handshake Protocol: Server Hello</span></span>
+<span class="line"><span>            Handshake Type: Server Hello (2)</span></span>
+<span class="line"><span>            Length: 124</span></span>
+<span class="line"><span>            Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>                [Expert Info (Chat/Deprecated): This legacy_version field MUST be ignored. The supported_versions extension is present and MUST be used instead.]</span></span>
+<span class="line"><span>                    [This legacy_version field MUST be ignored. The supported_versions extension is present and MUST be used instead.]</span></span>
+<span class="line"><span>                    [Severity level: Chat]</span></span>
+<span class="line"><span>                    [Group: Deprecated]</span></span>
+<span class="line"><span>            Random: 76c64f13513065db08331d4dc30343c390d39da9c014a07ab909725f0183d230</span></span>
+<span class="line"><span>            Session ID Length: 32</span></span>
+<span class="line"><span>            Session ID: 8bac9f0438ad26c4e016f3c08ef942ba65d9381730874644835171a73d39c193</span></span>
+<span class="line"><span>            Cipher Suite: TLS_AES_256_GCM_SHA384 (0x1302)</span></span>
+<span class="line"><span>            Compression Method: null (0)</span></span>
+<span class="line"><span>            Extensions Length: 52</span></span>
+<span class="line"><span>            Extension: supported_versions (len=2) TLS 1.3</span></span>
+<span class="line"><span>                Type: supported_versions (43)</span></span>
+<span class="line"><span>                Length: 2</span></span>
+<span class="line"><span>                Supported Version: TLS 1.3 (0x0304)</span></span>
+<span class="line"><span>            Extension: key_share (len=36) x25519</span></span>
+<span class="line"><span>                Type: key_share (51)</span></span>
+<span class="line"><span>                Length: 36</span></span>
+<span class="line"><span>                Key Share extension</span></span>
+<span class="line"><span>                    Key Share Entry: Group: x25519, Key Exchange length: 32</span></span>
+<span class="line"><span>                        Group: x25519 (29)</span></span>
+<span class="line"><span>                        Key Exchange Length: 32</span></span>
+<span class="line"><span>                        Key Exchange: ba81c663bf5ee63ca7e41871521f1824a3c6b1e8954ee78dac3e9935f686eb2b</span></span>
+<span class="line"><span>            Extension: pre_shared_key (len=2)</span></span>
+<span class="line"><span>                Type: pre_shared_key (41)</span></span>
+<span class="line"><span>                Length: 2</span></span>
+<span class="line"><span>                Pre-Shared Key extension</span></span>
+<span class="line"><span>                    Selected Identity: 0</span></span>
+<span class="line"><span>            [JA3S Fullstring: 771,4866,43-51-41]</span></span>
+<span class="line"><span>            [JA3S: 2253c82f03b621c5144709b393fde2c9]</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec</span></span>
+<span class="line"><span>        Content Type: Change Cipher Spec (20)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 1</span></span>
+<span class="line"><span>        Change Cipher Spec Message</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Application Data Protocol: Hypertext Transfer Protocol</span></span>
+<span class="line"><span>        Opaque Type: Application Data (23)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 36</span></span>
+<span class="line"><span>        Encrypted Application Data: f3656c44f284ac0921dd2456aae5afcc1d66cfba0fbee710a3cae53184d07bbd0c361cc6</span></span>
+<span class="line"><span>        [Application Data Protocol: Hypertext Transfer Protocol]</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Application Data Protocol: Hypertext Transfer Protocol</span></span>
+<span class="line"><span>        Opaque Type: Application Data (23)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 69</span></span>
+<span class="line"><span>        Encrypted Application Data: 101e5d5c276c7f466f820a8f789ad4ceb2638db452a23854b2f02852681414dff44098e0f7af586ae4dd4d35bc4a8ad97c2e1b64ce6be27fed2ec01c4585bedea884a37892</span></span>
+<span class="line"><span>        [Application Data Protocol: Hypertext Transfer Protocol]</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<ul>
+<li><code>TLSv1.3 Record Layer: Handshake Protocol: Server Hello</code>：TLS层基本信息，Server Hello表示握手消息</li>
+<li><code>Handshake Protocol: Server Hello</code>：握手消息的具体类型和长度</li>
+<li><code>Version: TLS 1.2 (0x0303)</code>：服务器支持的最高 TLS 版本（该字段应被忽略，实际使用的是 <code>supported_versions</code> 扩展中的版本信息）</li>
+<li><code>Random</code>：服务端生成的随机数</li>
+<li><code>Session ID</code>：会话ID</li>
+<li><code>Cipher Suite: TLS_AES_256_GCM_SHA384 (0x1302)</code>：服务器选择的加密套件</li>
+<li><code>Compression Method</code>：服务器支持的压缩算法</li>
+<li><code>supported_versions</code>：服务器支持的协议版本</li>
+<li><code>key_share</code>：服务器生成的公钥</li>
+<li><code>pre_shared_key</code>：支持会话恢复，则选择预共享密钥</li>
+<li><code>TLSv1.3 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec</code>：表示服务器已切换到加密通信模式</li>
+<li><code>TLSv1.3 Record Layer: Application Data Protocol: Hypertext Transfer Protocol</code>：加密的应用层数据，HTTP数据</li>
+</ul>
+<h2 id="client-finished-181" class="heading">Client Finished 181<a href="#client-finished-181" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>181	1.254855	192.168.3.104	47.108.167.197	TLSv1.3	134	Change Cipher Spec, Application Data</span></span></code></pre></div>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>Transport Layer Security</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec</span></span>
+<span class="line"><span>        Content Type: Change Cipher Spec (20)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 1</span></span>
+<span class="line"><span>        Change Cipher Spec Message</span></span>
+<span class="line"><span>    TLSv1.3 Record Layer: Application Data Protocol: Hypertext Transfer Protocol</span></span>
+<span class="line"><span>        Opaque Type: Application Data (23)</span></span>
+<span class="line"><span>        Version: TLS 1.2 (0x0303)</span></span>
+<span class="line"><span>        Length: 69</span></span>
+<span class="line"><span>        Encrypted Application Data: 61ee5f08513e506269de00aae940042238e8ce98b7810addc0e4e3a63490d823ba67d7b3a337aa2111dbe38f989b8cc2bcae0770894839be59ea2420e8f4a7c55abf7a57f0</span></span>
+<span class="line"><span>        [Application Data Protocol: Hypertext Transfer Protocol]</span></span>
+<span class="line"><span></span></span></code></pre></div>
+<ul>
+<li><code>TLSv1.3 Record Layer: Change Cipher Spec Protocol: Change Cipher Spec</code>：客户端使用协商好的加密参数对数据加密通讯</li>
+<li><code>TLSv1.3 Record Layer: Application Data Protocol: Hypertext Transfer Protocol</code>：加密的应用层数据</li>
+</ul>
+<section data-footnotes="" class="footnotes"><h2 class="heading" id="footnote-label">参考<a href="#footnote-label" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<ol>
+<li id="user-content-fn-1">
+<p>MAC 地址是一个 48 位的值，分为两部分：</p>
+<ul>
+<li>前 24 位（OUI，Organizationally Unique Identifier）：由 IEEE 分配给设备制造商。</li>
+<li>后 24 位：由制造商分配给具体设备。</li>
+</ul>
+<a href="#user-content-fnref-1" data-footnote-backref="" aria-label="返回正文" class="data-footnote-backref">↩</a>
+</li>
+</ol>
+</section>  </article> </div> <section class="mt-12 space-y-6" data-pagefind-ignore> <script>(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value=="object"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event("astro:visible"));})();</script><astro-island uid="2rvDWj" prefix="r7" component-url="/_astro/PostCopyright.CxuB6RMM.js" component-export="PostCopyright" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;title&quot;:[0,&quot;HTTPS抓包&quot;],&quot;slug&quot;:[0,&quot;/posts/https-zhua-bao&quot;],&quot;lastMod&quot;:[3,&quot;2025-08-30T10:31:08.000Z&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;PostCopyright&quot;,&quot;value&quot;:true}" await-children><section class="text-xs leading-loose text-secondary"><p>文章标题：<!-- -->HTTPS抓包</p><p>文章作者：<!-- -->violet</p><p><span>文章链接：<!-- -->https://www.vio.vin/posts/https-zhua-bao</span><span role="button" class="cursor-pointer select-none">[复制]</span></p><p>最后修改时间：</p><hr class="my-3 border-primary"/><div><p>商业转载请联系站长获得授权，非商业转载请注明本文出处及文章链接，您可以自由地在任何媒体以任何形式复制和分发作品，也可以修改和创作，但是分发衍生作品时必须采用相同的许可协议。<br/>本文采用<a class="hover:underline hover:text-accent underline-offset-2" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>进行许可。</p></div></section><!--astro:end--></astro-island> <div class="grid grid-cols-2"> <div> <a class="flex items-baseline gap-2 hover:text-accent" href="/posts/esni-he-ech"> <i class="iconfont icon-arrow-left"></i> <span>ESNI和ECH</span> </a> </div> <div> <a class="flex items-baseline justify-end gap-2 hover:text-accent" href="/posts/2024-nian-zhong-zong-jie"> <span>2024年终总结</span> <i class="iconfont icon-arrow-right"></i> </a> </div> </div> <div> <astro-island uid="Z11zv83" prefix="r17" component-url="/_astro/Giscus.DTVgQQXN.js" component-export="Giscus" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;repo&quot;:[0,&quot;xkdvSrPD/astro-gyoza&quot;],&quot;repoId&quot;:[0,&quot;R_kgDOPW4tbw&quot;],&quot;category&quot;:[0,&quot;Announcements&quot;],&quot;categoryId&quot;:[0,&quot;DIC_kwDOPW4tb84Ctvvm&quot;],&quot;mapping&quot;:[0,&quot;title&quot;],&quot;strict&quot;:[0,&quot;0&quot;],&quot;reactionsEnabled&quot;:[0,&quot;1&quot;],&quot;emitMetadata&quot;:[0,&quot;0&quot;],&quot;inputPosition&quot;:[0,&quot;top&quot;],&quot;theme&quot;:[0,&quot;preferred_color_scheme&quot;],&quot;lang&quot;:[0,&quot;zh-CN&quot;],&quot;loading&quot;:[0,&quot;lazy&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Giscus&quot;,&quot;value&quot;:true}" await-children><div class="giscus-container"></div><!--astro:end--></astro-island> <script>(function(){const giscusConfig = {"repo":"xkdvSrPD/astro-gyoza","repoId":"R_kgDOPW4tbw","category":"Announcements","categoryId":"DIC_kwDOPW4tb84Ctvvm","mapping":"title","strict":"0","reactionsEnabled":"1","emitMetadata":"0","inputPosition":"top","theme":"preferred_color_scheme","lang":"zh-CN","loading":"lazy"};
+
+    console.log('Comments Debug:', {
+      hasGiscusRepo: !!giscusConfig.repo,
+      giscusConfig: giscusConfig,
+      currentHostname: window.location.hostname,
+      shouldShowComments: !window.location.hostname.includes('vio.vin')
+    });
+  })();</script> </div> </section> </div> <!-- Sticky sidebar - outside swup transition --> <div class="hidden lg:block" data-pagefind-ignore> <aside class="sticky top-20"> <section> <div class="mb-8 font-bold uppercase tracking-widest text-accent">目录</div>  <astro-island uid="Z1Tgmcy" prefix="r8" component-url="/_astro/PostToc.Lp4VXeJp.js" component-export="PostToc" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;headings&quot;:[1,[[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;数据包信息&quot;],&quot;text&quot;:[0,&quot;数据包信息&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;数据包基本信息-frame&quot;],&quot;text&quot;:[0,&quot;数据包基本信息 Frame&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;数据链路层-ethernet-ii&quot;],&quot;text&quot;:[0,&quot;数据链路层 Ethernet II&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;网络层-internet&quot;],&quot;text&quot;:[0,&quot;网络层 Internet&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;传输层-transmission&quot;],&quot;text&quot;:[0,&quot;传输层 Transmission&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;client-hello-175&quot;],&quot;text&quot;:[0,&quot;Client Hello 175&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;client-hello-ack-179&quot;],&quot;text&quot;:[0,&quot;Client Hello ACK 179&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;server-hello-180&quot;],&quot;text&quot;:[0,&quot;Server Hello 180&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;client-finished-181&quot;],&quot;text&quot;:[0,&quot;Client Finished 181&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;footnote-label&quot;],&quot;text&quot;:[0,&quot;参考&quot;]}]]]}" ssr client="idle" opts="{&quot;name&quot;:&quot;PostToc&quot;,&quot;value&quot;:true}" await-children><nav aria-label="Table of contents"><ul class="relative overflow-y-auto space-y-2 group text-sm" style="max-height:min(380px, calc(100vh - 250px));scrollbar-width:none"><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#数据包信息">数据包信息</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#数据包基本信息-frame">数据包基本信息 Frame</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#数据链路层-ethernet-ii">数据链路层 Ethernet II</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#网络层-internet">网络层 Internet</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#传输层-transmission">传输层 Transmission</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#client-hello-175">Client Hello 175</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#client-hello-ack-179">Client Hello ACK 179</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#server-hello-180">Server Hello 180</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#client-finished-181">Client Finished 181</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#footnote-label">参考</a></li></ul></nav><!--astro:end--></astro-island> <hr class="my-2 border-primary max-w-[100px]"> <astro-island uid="1XMHP1" prefix="r9" component-url="/_astro/ReadingProgress.D0jYsPZk.js" component-export="ReadingProgress" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;ReadingProgress&quot;,&quot;value&quot;:true}" await-children><div><span class="text-sm">进度 <!-- -->0<!-- -->%</span></div><!--astro:end--></astro-island>  </section> <astro-island uid="1TWCj" prefix="r10" component-url="/_astro/ActionAside.C9KOa2BD.js" component-export="ActionAside" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;ActionAside&quot;,&quot;value&quot;:true}" await-children><div class="absolute left-0 bottom-0 flex flex-col gap-4" style="transform:translateY(calc(100% + 24px))"><button type="button" aria-label="Share this post" class="size-6 text-xl leading-none hover:text-accent"><i class="iconfont icon-share"></i></button></div><!--astro:end--></astro-island> </aside> </div> </div> </div>  </main> <footer class="relative z-1 py-8 px-4 md:px-8 border-t border-primary text-secondary text-sm"> <div class="text-center space-y-2"> <div>
+Powered by
+<a class="hover:text-accent" href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
+& Designed by
+<a class="hover:text-accent" href="https://github.com/lxchapu/astro-gyoza" target="_blank" rel="noopener noreferrer">Gyoza</a> </div> <div class="space-x-1"> <span>&copy;2025 <a class="hover:text-accent" href="/">violet</a>.</span> <a class="hover:text-accent" href="/rss.xml" data-no-swup="true"> <i class="iconfont icon-rss"></i> <span>RSS</span> </a> <a class="hover:text-accent" href="/sitemap-index.xml" data-no-swup="true"> <i class="iconfont icon-map"></i> <span>站点地图</span> </a> </div> <div id="beian-info" style="display: none;"> <a class="hover:text-accent" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">陕ICP备2021015553号-2</a> </div> <div> <astro-island uid="2lyoQd" component-url="/_astro/RunningDays.YidrJ615.js" component-export="RunningDays" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;RunningDays&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <span class="select-none opacity-50">|</span> <span>共嘚嘚了 25.4k 字</span> </div> </div> <div class="mt-4 flex justify-center"> <astro-island uid="2rkdGA" component-url="/_astro/ThemeSwitch.D9aK7PLZ.js" component-export="ThemeSwitch" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeSwitch&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> </div> </footer> <script type="module">if(typeof window<"u"&&window.location.hostname.includes("vio.vin")){const n=document.getElementById("beian-info");n&&(n.style.display="block")}</script>  <astro-island uid="Z249zDI" component-url="/_astro/BackToTopFAB.DBYaFT-g.js" component-export="BackToTopFAB" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;BackToTopFAB&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1PI9bJ" component-url="/_astro/ToastContainer.DCGXZcow.js" component-export="ToastContainer" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ToastContainer&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="vaeF1" component-url="/_astro/ToastHandler.B8x3yHOW.js" component-export="ToastHandler" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ToastHandler&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1bh22V" component-url="/_astro/modal.Cc91WjgY.js" component-export="ModalStack" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ModalStack&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> </div> </body></html>

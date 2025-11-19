@@ -1,0 +1,1130 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"><!-- L'Internationale,
+  Sera le genre humain. --><title>Headscale+Derp异地组网 - 薇尔薇</title><meta name="author" content="violet"><meta name="description" content="Only the paranoid survive"><meta name="keywords" content="violet,vio.vin,薇尔薇,blog,博客"><meta name="generator" content="Astro v5.15.8"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta property="og:site_name" content="薇尔薇"><meta property="og:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:description" content="Only the paranoid survive"><meta property="og:image" content="https://www.vio.vin/og/posts-headscale-derp-yi-di-zu-wang.png"><meta property="og:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="zh-CN"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta name="twitter:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta name="twitter:description" content="Only the paranoid survive"><meta name="twitter:image" content="https://www.vio.vin/og/posts-headscale-derp-yi-di-zu-wang.png"><meta name="twitter:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><link rel="canonical" href="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang/"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="薇尔薇" href="https://www.vio.vin/rss.xml"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-STPJCGJ78E"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-STPJCGJ78E');</script><script>(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "sp1uxmzagn");</script><!-- 防止路由切换时的白屏闪烁 --><script type="module" src="/_astro/ThemeLoader.astro_astro_type_script_index_0_lang.CtrTzxWs.js"></script><script type="module" src="/_astro/AccentColorInjector.astro_astro_type_script_index_0_lang.D1_yrDQ7.js"></script><script type="module">const o="0.0.1";console.log(`%c Gyoza ${o} %c https://gyoza.lxchapu.com `,"color: #fff; margin: 1em 0; padding: 5px 0; background: #ef8f99;","margin: 1em 0; padding: 5px 0; background: #efefef;");</script><!-- Scroll Controller - Handles anchor navigation and page scroll behavior --><script type="module">let r=80;function m(){const t=document.documentElement,n=getComputedStyle(t).getPropertyValue("--header-height"),e=parseFloat(n);return Number.isFinite(e)?e:64}function o(){const t=document.querySelector("[data-site-header]"),n=t instanceof HTMLElement?t.getBoundingClientRect().height:m();r=n+16;const e=document.documentElement;e.style.setProperty("--header-height",`${n}px`),e.style.setProperty("--header-offset",`${r}px`)}function c(t){if(!t)return null;const n=t.startsWith("#")?t.slice(1):t;if(!n)return null;let e=n;try{e=decodeURIComponent(n)}catch{}return document.getElementById(e)??(e!==n?document.getElementById(n):null)}function f(t){const e=t.getBoundingClientRect().top+window.scrollY-r;return Math.max(e,0)}function s(t,n=!0){const e=f(t);window.scrollTo({top:e,behavior:n?"smooth":"auto"})}function u(t=!1){window.scrollTo({top:0,behavior:t?"smooth":"auto"})}function l(t,n=!0){const e=c(t);return e?(s(e,n),!0):!1}function h(t){const n=t.target?.closest("a");if(!n)return;const e=n.getAttribute("href");if(!e||!e.startsWith("#"))return;const i=c(e);if(!i)return;t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation();const d=window.scrollY;window.scrollTo(0,d),requestAnimationFrame(()=>{s(i,!0),setTimeout(()=>{window.history.replaceState(null,"",e)},50)})}function g(){const{hash:t}=window.location;t&&(u(!1),requestAnimationFrame(()=>{setTimeout(()=>{l(t,!0)},100)}))}function p(){const{hash:t}=window.location;u(!1),t&&requestAnimationFrame(()=>{setTimeout(()=>{l(t,!0)},100)})}function a(){o(),g(),window.addEventListener("resize",o,{passive:!0}),document.addEventListener("click",h,{capture:!0}),document.addEventListener("swup:content:replace",()=>{o(),p()})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",a,{once:!0}):a();</script><!-- Code Copy Handler - Manages code block copy functionality --><script type="module">function i(e,o){navigator.clipboard.writeText(e).then(()=>{s(o)}).catch(()=>{r("复制失败！")})}function s(e){e.classList.add("copy-code-btn--copied");const o="rgb(var(--color-accent) / 0.25)";e.animate([{transform:"scale(1) translateY(-1px)",boxShadow:`0 4px 12px ${o}`},{transform:"scale(1.08) translateY(-2px)",boxShadow:"0 8px 24px rgb(var(--color-accent) / 0.4)"},{transform:"scale(1) translateY(-1px)",boxShadow:`0 4px 16px ${o}`}],{duration:400,easing:"cubic-bezier(0.34, 1.56, 0.64, 1)"}),setTimeout(()=>{e.classList.remove("copy-code-btn--copied")},1800)}function r(e){const o=new CustomEvent("code-copy-fail",{detail:{message:e}});window.dispatchEvent(o)}function d(e){return e instanceof HTMLElement?e.classList.contains("copy-code-btn")?e:e.closest(".copy-code-btn"):null}function l(e){const o=d(e.target);if(!o)return;e.preventDefault();const t=o.closest(".code-block")?.querySelector("pre code");if(!t)return;const a=t.textContent||"";i(a,o)}function n(){document.addEventListener("click",l)}function p(){document.addEventListener("swup:content:replace",n)}n();p();</script><!-- 禁止图片被拖拽 --><script type="module">const n=t=>{t.preventDefault()};function r(t=document){t.querySelectorAll("img").forEach(e=>{e.dataset.dragDisabled!=="true"&&(e.setAttribute("draggable","false"),e.addEventListener("dragstart",n),e.dataset.dragDisabled="true")})}function a(){r()}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",a,{once:!0}):a();document.addEventListener("swup:content:replace",()=>{a()});</script><!-- Image Loader - Handles image loading states and animations --><script type="module">function o(e){e.dataset.imageLoading==="true"&&(e.dataset.imageLoaded="true",e.removeAttribute("data-image-loading"))}function u(e){e.dataset.imageLoading==="true"&&(e.removeAttribute("data-image-loading"),e.dataset.imageError="true",e.style.opacity="1")}function i(e=document){e.querySelectorAll('img[data-image-loading="true"]').forEach(t=>{if(t.complete&&t.naturalHeight!==0){o(t);return}const a=()=>{o(t),r()},n=()=>{u(t),r()},r=()=>{t.removeEventListener("load",a),t.removeEventListener("error",n)};t.addEventListener("load",a,{once:!0}),t.addEventListener("error",n,{once:!0})})}function d(){i()}function c(){document.addEventListener("swup:content:replace",()=>{requestAnimationFrame(()=>{i()})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",d,{once:!0}):d();c();</script><link rel="stylesheet" href="/_astro/_page_.CxX9sImm.css">
+<link rel="stylesheet" href="/_astro/_spec_.CkjcT_YF.css">
+<link rel="stylesheet" href="/_astro/_spec_.DMOvxL-E.css">
+<link rel="stylesheet" href="/_astro/ToastContainer.VYesxZYF.css"><script type="module" src="/_astro/page.DjLJkQsq.js"></script></head> <body class="relative min-h-screen"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="EtoiK" component-url="/_astro/AnimatedBackground.B1Cyhcd7.js" component-export="AnimatedBackground" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;AnimatedBackground&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <div class="relative z-10 flex min-h-screen flex-col">  <astro-island uid="Z1E1YkA" component-url="/_astro/Provider.DdhxFCBp.js" component-export="Provider" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;pathName&quot;:[0,&quot;/posts/headscale-derp-yi-di-zu-wang/&quot;],&quot;title&quot;:[0,&quot;Headscale+Derp异地组网&quot;],&quot;description&quot;:[0,&quot;网络 / VPN&quot;],&quot;slug&quot;:[0,&quot;/posts/headscale-derp-yi-di-zu-wang&quot;]}" ssr client="only" opts="{&quot;name&quot;:&quot;Provider&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="20kLSM" component-url="/_astro/Header.DTEApcqW.js" component-export="Header" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <main class="glass-surface relative z-1 pt-16 min-h-main"> <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script><astro-island uid="1Gf5mu" prefix="r11" component-url="/_astro/head-gradient.Cr6IrkI9.js" component-export="HeadGradient" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;HeadGradient&quot;,&quot;value&quot;:true}" await-children><div class="absolute -z-1 top-0 inset-x-0 h-[350px] bg-gradient-to-r from-accent/5 to-accent/15" style="mask-image:linear-gradient(black, transparent);opacity:0"></div><!--astro:end--></astro-island>  <div class="w-full max-w-full lg:max-w-[1100px] mx-auto px-4 md:px-8 py-16"> <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px] gap-8"> <!-- Main content with swup transition --> <div class="swup-transition-fade" data-pagefind-body> <header class="space-y-4"> <h1 class="text-4xl font-bold text-center"> Headscale+Derp异地组网 </h1> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-calendar"></i> <astro-island uid="Z12lgJ6" prefix="r16" component-url="/_astro/RelativeDate.DL3as8Vw.js" component-export="RelativeDate" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;date&quot;:[3,&quot;2025-03-23T22:13:57.000Z&quot;]}" ssr client="idle" opts="{&quot;name&quot;:&quot;RelativeDate&quot;,&quot;value&quot;:true}" await-children><span>25 年 3 月 24 日 星期一</span><!--astro:end--></astro-island> <span class="text-xs">(已编辑)</span> </div> <div> <i class="iconfont icon-file-list"></i> <span>7049 字</span> </div> <div> <i class="iconfont icon-timer"></i> <span>36 分钟</span> </div> </div> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-folder"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/categories/网络"> 网络 </a> </div> <div> <i class="iconfont icon-hashtag"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/tags/vpn"> VPN </a>  </div> </div> <div> <astro-island uid="veRjB" prefix="r6" component-url="/_astro/Outdate.BEsL3lOb.js" component-export="Outdate" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;lastMod&quot;:[3,&quot;2025-03-23T22:13:57.000Z&quot;]}" ssr client="idle" opts="{&quot;name&quot;:&quot;Outdate&quot;,&quot;value&quot;:true}"></astro-island> </div> </header> <div class="mt-8"> <article id="markdown-wrapper" class="markdown">  <p>Tailscale是一种虚拟组网工具，基于WireGuard。能够把安装了Tailscale服务的机器，都连接到同一个局域网。局域网中的每台设备会自动分配IP，设备可以通过IP实现相互访问，除了延迟，与物理本地局域网相同。</p>
+<p>Tailscale会优先使用中继服务器，保证最快可连接，之后尝试P2P连接，即两台设备之间数据不经过中继服务器直接连接。P2P连接成功之后，两台设备直接的延迟取决于两地距离，带宽取决于两地网络带宽上线，不再收中继服务器带宽约束。P2P连接中断时，自动fallback回中继服务器连接，优先保证可访问，其次优化连接速度。</p>
+<p>Tailscale本身是一款商业软件，free版本支持3个用户和100个设备组网，但是中继服务器不在国内，在P2P连接失败后，网络延迟较大。可以通过自建中继节点接入官方控制器解决，其次，官方控制器在设备首次接入网络时，都需要使用相同的Google、微软账号登录，比较麻烦，因此选择使用Tailscale的开源替代版本Headscale。</p>
+<p>安全方面，Tailscale网络之间的流量使用WireGuard协议传输，中继节点无法解密流量，外部设备需要进行授权才能加入网络，因此安全性较高。</p>
+<p>组网成功并且两台设备之间可以通过P2P直连，延迟可以在个位数毫秒内。</p>
+<h2 id="网络拓扑" class="heading">网络拓扑<a href="#网络拓扑" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>组网后网络拓扑如下，网络中每台设备会分配一个tailscale网络IP</p>
+<h2 id="搭建需求" class="heading">搭建需求<a href="#搭建需求" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<ul>
+<li>至少需要两台服务器，一台部署控制器，多台部署中继节点</li>
+<li>至少需要两个域名，一台指向控制器，另一台指向各个中继节点</li>
+<li>域名强制使用HTTPS，如果不使用Caddy等工具，需要手动上传、更新SSL证书，如果证书到期服务将无法使用</li>
+<li>控制器需要使用80、443端口，中继节点可自定义端口，但不使用443端口时，可能会与Clash冲突导致无法连接到中继节点</li>
+</ul>
+<h2 id="使用软件" class="heading">使用软件<a href="#使用软件" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><a href="https://github.com/juanfont/headscale" rel="noopener noreferrer" target="_blank">GitHub – juanfont/headscale: An open source, self-hosted implementation of the Tailscale control server</a><i class="iconfont icon-external-link"></i></p>
+<p><a href="https://github.com/GoodiesHQ/headscale-admin" rel="noopener noreferrer" target="_blank">GitHub – GoodiesHQ/headscale-admin: Admin Web Interface for juanfont/headscale</a><i class="iconfont icon-external-link"></i></p>
+<p><a href="https://github.com/fredliang44/derper-docker" rel="noopener noreferrer" target="_blank">GitHub – fredliang44/derper-docker: tailscale‘s selfhosted derp-server docker image</a><i class="iconfont icon-external-link"></i></p>
+<h2 id="安装前" class="heading">安装前<a href="#安装前" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>创建Docker网络</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker network create headscale-network</span></span></code></pre></div>
+<h2 id="服务端-1-控制器headscale" class="heading">服务端-1-控制器Headscale<a href="#服务端-1-控制器headscale" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>安装位置<code>/root/headscale</code></p>
+<p>创建配置文件夹、数据文件夹、docker-compose文件</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="bash" title="复制 bash 代码" type="button"><span class="copy-code-btn__text">BASH</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> container-config</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  container-data</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">touch</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> docker-compose.yml</span></span></code></pre></div>
+<div class="code-block"><button class="copy-code-btn" data-lang="yaml" title="复制 yaml 代码" type="button"><span class="copy-code-btn__text">YAML</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'3'</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">services</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  headscale</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    container_name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    image</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale/headscale:latest</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    restart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">unless-stopped</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    volumes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">./container-config:/etc/headscale</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">./container-data:/var/lib/headscale</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    entrypoint</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale serve</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    networks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      headscale-network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">networks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  headscale-network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    external</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span></code></pre></div>
+<p>在<code>container-config</code>下创建配置文件<code>config.yaml</code></p>
+<p>先使用官方提供的配置文件模板，后续会对该文件进行修改</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>---</span></span>
+<span class="line"><span># headscale will look for a configuration file named `config.yaml` (or `config.json`) in the following order:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># - `/etc/headscale`</span></span>
+<span class="line"><span># - `~/.headscale`</span></span>
+<span class="line"><span># - current working directory</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># The url clients will connect to.</span></span>
+<span class="line"><span># Typically this will be a domain like:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># https://myheadscale.example.com:443</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>server_url: http://127.0.0.1:8080</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen to / bind to on the server</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span># listen_addr: 0.0.0.0:8080</span></span>
+<span class="line"><span>listen_addr: 127.0.0.1:8080</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen to /metrics, you may want</span></span>
+<span class="line"><span># to keep this endpoint private to your internal</span></span>
+<span class="line"><span># network</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>metrics_listen_addr: 127.0.0.1:9090</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen for gRPC.</span></span>
+<span class="line"><span># gRPC is used for controlling a headscale server</span></span>
+<span class="line"><span># remotely with the CLI</span></span>
+<span class="line"><span># Note: Remote access _only_ works if you have</span></span>
+<span class="line"><span># valid certificates.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span># grpc_listen_addr: 0.0.0.0:50443</span></span>
+<span class="line"><span>grpc_listen_addr: 127.0.0.1:50443</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Allow the gRPC admin interface to run in INSECURE</span></span>
+<span class="line"><span># mode. This is not recommended as the traffic will</span></span>
+<span class="line"><span># be unencrypted. Only enable if you know what you</span></span>
+<span class="line"><span># are doing.</span></span>
+<span class="line"><span>grpc_allow_insecure: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># The Noise section includes specific configuration for the</span></span>
+<span class="line"><span># TS2021 Noise protocol</span></span>
+<span class="line"><span>noise:</span></span>
+<span class="line"><span>  # The Noise private key is used to encrypt the</span></span>
+<span class="line"><span>  # traffic between headscale and Tailscale clients when</span></span>
+<span class="line"><span>  # using the new Noise-based protocol.</span></span>
+<span class="line"><span>  private_key_path: /var/lib/headscale/noise_private.key</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># List of IP prefixes to allocate tailaddresses from.</span></span>
+<span class="line"><span># Each prefix consists of either an IPv4 or IPv6 address,</span></span>
+<span class="line"><span># and the associated prefix length, delimited by a slash.</span></span>
+<span class="line"><span># It must be within IP ranges supported by the Tailscale</span></span>
+<span class="line"><span># client - i.e., subnets of 100.64.0.0/10 and fd7a:115c:a1e0::/48.</span></span>
+<span class="line"><span># See below:</span></span>
+<span class="line"><span># IPv6: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#LL81C52-L81C71</span></span>
+<span class="line"><span># IPv4: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#L33</span></span>
+<span class="line"><span># Any other range is NOT supported, and it will cause unexpected issues.</span></span>
+<span class="line"><span>prefixes:</span></span>
+<span class="line"><span>  v4: 100.64.0.0/10</span></span>
+<span class="line"><span>  v6: fd7a:115c:a1e0::/48</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Strategy used for allocation of IPs to nodes, available options:</span></span>
+<span class="line"><span>  # - sequential (default): assigns the next free IP from the previous given IP.</span></span>
+<span class="line"><span>  # - random: assigns the next free IP from a pseudo-random IP generator (crypto/rand).</span></span>
+<span class="line"><span>  allocation: sequential</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># DERP is a relay system that Tailscale uses when a direct</span></span>
+<span class="line"><span># connection cannot be established.</span></span>
+<span class="line"><span># https://tailscale.com/blog/how-tailscale-works/#encrypted-tcp-relays-derp</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale needs a list of DERP servers that can be presented</span></span>
+<span class="line"><span># to the clients.</span></span>
+<span class="line"><span>derp:</span></span>
+<span class="line"><span>  server:</span></span>
+<span class="line"><span>    # If enabled, runs the embedded DERP server and merges it into the rest of the DERP config</span></span>
+<span class="line"><span>    # The Headscale server_url defined above MUST be using https, DERP requires TLS to be in place</span></span>
+<span class="line"><span>    enabled: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Region ID to use for the embedded DERP server.</span></span>
+<span class="line"><span>    # The local DERP prevails if the region ID collides with other region ID coming from</span></span>
+<span class="line"><span>    # the regular DERP config.</span></span>
+<span class="line"><span>    region_id: 999</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Region code and name are displayed in the Tailscale UI to identify a DERP region</span></span>
+<span class="line"><span>    region_code: "headscale"</span></span>
+<span class="line"><span>    region_name: "Headscale Embedded DERP"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Listens over UDP at the configured address for STUN connections - to help with NAT traversal.</span></span>
+<span class="line"><span>    # When the embedded DERP server is enabled stun_listen_addr MUST be defined.</span></span>
+<span class="line"><span>    #</span></span>
+<span class="line"><span>    # For more details on how this works, check this great article: https://tailscale.com/blog/how-tailscale-works/</span></span>
+<span class="line"><span>    stun_listen_addr: "0.0.0.0:3478"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Private key used to encrypt the traffic between headscale DERP</span></span>
+<span class="line"><span>    # and Tailscale clients.</span></span>
+<span class="line"><span>    # The private key file will be autogenerated if it's missing.</span></span>
+<span class="line"><span>    #</span></span>
+<span class="line"><span>    private_key_path: /var/lib/headscale/derp_server_private.key</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # This flag can be used, so the DERP map entry for the embedded DERP server is not written automatically,</span></span>
+<span class="line"><span>    # it enables the creation of your very own DERP map entry using a locally available file with the parameter DERP.paths</span></span>
+<span class="line"><span>    # If you enable the DERP server and set this to false, it is required to add the DERP server to the DERP map using DERP.paths</span></span>
+<span class="line"><span>    automatically_add_embedded_derp_region: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # For better connection stability (especially when using an Exit-Node and DNS is not working),</span></span>
+<span class="line"><span>    # it is possible to optionally add the public IPv4 and IPv6 address to the Derp-Map using:</span></span>
+<span class="line"><span>    ipv4: 1.2.3.4</span></span>
+<span class="line"><span>    ipv6: 2001:db8::1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # List of externally available DERP maps encoded in JSON</span></span>
+<span class="line"><span>  urls:</span></span>
+<span class="line"><span>    - https://controlplane.tailscale.com/derpmap/default</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Locally available DERP map files encoded in YAML</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # This option is mostly interesting for people hosting</span></span>
+<span class="line"><span>  # their own DERP servers:</span></span>
+<span class="line"><span>  # https://tailscale.com/kb/1118/custom-derp-servers/</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # paths:</span></span>
+<span class="line"><span>  #   - /etc/headscale/derp-example.yaml</span></span>
+<span class="line"><span>  paths: []</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # If enabled, a worker will be set up to periodically</span></span>
+<span class="line"><span>  # refresh the given sources and update the derpmap</span></span>
+<span class="line"><span>  # will be set up.</span></span>
+<span class="line"><span>  auto_update_enabled: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # How often should we check for DERP updates?</span></span>
+<span class="line"><span>  update_frequency: 24h</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Disables the automatic check for headscale updates on startup</span></span>
+<span class="line"><span>disable_check_updates: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Time before an inactive ephemeral node is deleted?</span></span>
+<span class="line"><span>ephemeral_node_inactivity_timeout: 30m</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>database:</span></span>
+<span class="line"><span>  # Database type. Available options: sqlite, postgres</span></span>
+<span class="line"><span>  # Please note that using Postgres is highly discouraged as it is only supported for legacy reasons.</span></span>
+<span class="line"><span>  # All new development, testing and optimisations are done with SQLite in mind.</span></span>
+<span class="line"><span>  type: sqlite</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Enable debug mode. This setting requires the log.level to be set to "debug" or "trace".</span></span>
+<span class="line"><span>  debug: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # GORM configuration settings.</span></span>
+<span class="line"><span>  gorm:</span></span>
+<span class="line"><span>    # Enable prepared statements.</span></span>
+<span class="line"><span>    prepare_stmt: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Enable parameterized queries.</span></span>
+<span class="line"><span>    parameterized_queries: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Skip logging "record not found" errors.</span></span>
+<span class="line"><span>    skip_err_record_not_found: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Threshold for slow queries in milliseconds.</span></span>
+<span class="line"><span>    slow_threshold: 1000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # SQLite config</span></span>
+<span class="line"><span>  sqlite:</span></span>
+<span class="line"><span>    path: /var/lib/headscale/db.sqlite</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Enable WAL mode for SQLite. This is recommended for production environments.</span></span>
+<span class="line"><span>    # https://www.sqlite.org/wal.html</span></span>
+<span class="line"><span>    write_ahead_log: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Maximum number of WAL file frames before the WAL file is automatically checkpointed.</span></span>
+<span class="line"><span>    # https://www.sqlite.org/c3ref/wal_autocheckpoint.html</span></span>
+<span class="line"><span>    # Set to 0 to disable automatic checkpointing.</span></span>
+<span class="line"><span>    wal_autocheckpoint: 1000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # # Postgres config</span></span>
+<span class="line"><span>  # Please note that using Postgres is highly discouraged as it is only supported for legacy reasons.</span></span>
+<span class="line"><span>  # See database.type for more information.</span></span>
+<span class="line"><span>  # postgres:</span></span>
+<span class="line"><span>  #   # If using a Unix socket to connect to Postgres, set the socket path in the 'host' field and leave 'port' blank.</span></span>
+<span class="line"><span>  #   host: localhost</span></span>
+<span class="line"><span>  #   port: 5432</span></span>
+<span class="line"><span>  #   name: headscale</span></span>
+<span class="line"><span>  #   user: foo</span></span>
+<span class="line"><span>  #   pass: bar</span></span>
+<span class="line"><span>  #   max_open_conns: 10</span></span>
+<span class="line"><span>  #   max_idle_conns: 10</span></span>
+<span class="line"><span>  #   conn_max_idle_time_secs: 3600</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  #   # If other 'sslmode' is required instead of 'require(true)' and 'disabled(false)', set the 'sslmode' you need</span></span>
+<span class="line"><span>  #   # in the 'ssl' field. Refers to https://www.postgresql.org/docs/current/libpq-ssl.html Table 34.1.</span></span>
+<span class="line"><span>  #   ssl: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### TLS configuration</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>## Let's encrypt / ACME</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports automatically requesting and setting up</span></span>
+<span class="line"><span># TLS for a domain with Let's Encrypt.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># URL to ACME directory</span></span>
+<span class="line"><span>acme_url: https://acme-v02.api.letsencrypt.org/directory</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Email to register with ACME provider</span></span>
+<span class="line"><span>acme_email: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Domain name to request a TLS certificate for:</span></span>
+<span class="line"><span>tls_letsencrypt_hostname: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Path to store certificates and metadata needed by</span></span>
+<span class="line"><span># letsencrypt</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span>tls_letsencrypt_cache_dir: /var/lib/headscale/cache</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Type of ACME challenge to use, currently supported types:</span></span>
+<span class="line"><span># HTTP-01 or TLS-ALPN-01</span></span>
+<span class="line"><span># See: docs/ref/tls.md for more information</span></span>
+<span class="line"><span>tls_letsencrypt_challenge_type: HTTP-01</span></span>
+<span class="line"><span># When HTTP-01 challenge is chosen, letsencrypt must set up a</span></span>
+<span class="line"><span># verification endpoint, and it will be listening on:</span></span>
+<span class="line"><span># :http = port 80</span></span>
+<span class="line"><span>tls_letsencrypt_listen: ":http"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Use already defined certificates:</span></span>
+<span class="line"><span>tls_cert_path: ""</span></span>
+<span class="line"><span>tls_key_path: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>log:</span></span>
+<span class="line"><span>  # Output formatting for logs: text or json</span></span>
+<span class="line"><span>  format: text</span></span>
+<span class="line"><span>  level: info</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Policy</span></span>
+<span class="line"><span># headscale supports Tailscale's ACL policies.</span></span>
+<span class="line"><span># Please have a look to their KB to better</span></span>
+<span class="line"><span># understand the concepts: https://tailscale.com/kb/1018/acls/</span></span>
+<span class="line"><span>policy:</span></span>
+<span class="line"><span>  # The mode can be "file" or "database" that defines</span></span>
+<span class="line"><span>  # where the ACL policies are stored and read from.</span></span>
+<span class="line"><span>  mode: file</span></span>
+<span class="line"><span>  # If the mode is set to "file", the path to a</span></span>
+<span class="line"><span>  # HuJSON file containing ACL policies.</span></span>
+<span class="line"><span>  path: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## DNS</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports Tailscale's DNS configuration and MagicDNS.</span></span>
+<span class="line"><span># Please have a look to their KB to better understand the concepts:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># - https://tailscale.com/kb/1054/dns/</span></span>
+<span class="line"><span># - https://tailscale.com/kb/1081/magicdns/</span></span>
+<span class="line"><span># - https://tailscale.com/blog/2021-09-private-dns-with-magicdns/</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># Please note that for the DNS configuration to have any effect,</span></span>
+<span class="line"><span># clients must have the `--accept-dns=true` option enabled. This is the</span></span>
+<span class="line"><span># default for the Tailscale client. This option is enabled by default</span></span>
+<span class="line"><span># in the Tailscale client.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># Setting _any_ of the configuration and `--accept-dns=true` on the</span></span>
+<span class="line"><span># clients will integrate with the DNS manager on the client or</span></span>
+<span class="line"><span># overwrite /etc/resolv.conf.</span></span>
+<span class="line"><span># https://tailscale.com/kb/1235/resolv-conf</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># If you want stop Headscale from managing the DNS configuration</span></span>
+<span class="line"><span># all the fields under `dns` should be set to empty values.</span></span>
+<span class="line"><span>dns:</span></span>
+<span class="line"><span>  # Whether to use [MagicDNS](https://tailscale.com/kb/1081/magicdns/).</span></span>
+<span class="line"><span>  magic_dns: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Defines the base domain to create the hostnames for MagicDNS.</span></span>
+<span class="line"><span>  # This domain _must_ be different from the server_url domain.</span></span>
+<span class="line"><span>  # `base_domain` must be a FQDN, without the trailing dot.</span></span>
+<span class="line"><span>  # The FQDN of the hosts will be</span></span>
+<span class="line"><span>  # `hostname.base_domain` (e.g., _myhost.example.com_).</span></span>
+<span class="line"><span>  base_domain: example.com</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # List of DNS servers to expose to clients.</span></span>
+<span class="line"><span>  nameservers:</span></span>
+<span class="line"><span>    global:</span></span>
+<span class="line"><span>      - 1.1.1.1</span></span>
+<span class="line"><span>      - 1.0.0.1</span></span>
+<span class="line"><span>      - 2606:4700:4700::1111</span></span>
+<span class="line"><span>      - 2606:4700:4700::1001</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      # NextDNS (see https://tailscale.com/kb/1218/nextdns/).</span></span>
+<span class="line"><span>      # "abc123" is example NextDNS ID, replace with yours.</span></span>
+<span class="line"><span>      # - https://dns.nextdns.io/abc123</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Split DNS (see https://tailscale.com/kb/1054/dns/),</span></span>
+<span class="line"><span>    # a map of domains and which DNS server to use for each.</span></span>
+<span class="line"><span>    split:</span></span>
+<span class="line"><span>      {}</span></span>
+<span class="line"><span>      # foo.bar.com:</span></span>
+<span class="line"><span>      #   - 1.1.1.1</span></span>
+<span class="line"><span>      # darp.headscale.net:</span></span>
+<span class="line"><span>      #   - 1.1.1.1</span></span>
+<span class="line"><span>      #   - 8.8.8.8</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Set custom DNS search domains. With MagicDNS enabled,</span></span>
+<span class="line"><span>  # your tailnet base_domain is always the first search domain.</span></span>
+<span class="line"><span>  search_domains: []</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Extra DNS records</span></span>
+<span class="line"><span>  # so far only A and AAAA records are supported (on the tailscale side)</span></span>
+<span class="line"><span>  # See: docs/ref/dns.md</span></span>
+<span class="line"><span>  extra_records: []</span></span>
+<span class="line"><span>  #   - name: "grafana.myvpn.example.com"</span></span>
+<span class="line"><span>  #     type: "A"</span></span>
+<span class="line"><span>  #     value: "100.64.0.3"</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  #   # you can also put it in one line</span></span>
+<span class="line"><span>  #   - { name: "prometheus.myvpn.example.com", type: "A", value: "100.64.0.3" }</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # Alternatively, extra DNS records can be loaded from a JSON file.</span></span>
+<span class="line"><span>  # Headscale processes this file on each change.</span></span>
+<span class="line"><span>  # extra_records_path: /var/lib/headscale/extra-records.json</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Unix socket used for the CLI to connect without authentication</span></span>
+<span class="line"><span># Note: for production you will want to set this to something like:</span></span>
+<span class="line"><span>unix_socket: /var/run/headscale/headscale.sock</span></span>
+<span class="line"><span>unix_socket_permission: "0770"</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports experimental OpenID connect support,</span></span>
+<span class="line"><span># it is still being tested and might have some bugs, please</span></span>
+<span class="line"><span># help us test it.</span></span>
+<span class="line"><span># OpenID Connect</span></span>
+<span class="line"><span># oidc:</span></span>
+<span class="line"><span>#   only_start_if_oidc_is_available: true</span></span>
+<span class="line"><span>#   issuer: "https://your-oidc.issuer.com/path"</span></span>
+<span class="line"><span>#   client_id: "your-oidc-client-id"</span></span>
+<span class="line"><span>#   client_secret: "your-oidc-client-secret"</span></span>
+<span class="line"><span>#   # Alternatively, set `client_secret_path` to read the secret from the file.</span></span>
+<span class="line"><span>#   # It resolves environment variables, making integration to systemd's</span></span>
+<span class="line"><span>#   # `LoadCredential` straightforward:</span></span>
+<span class="line"><span>#   client_secret_path: "${CREDENTIALS_DIRECTORY}/oidc_client_secret"</span></span>
+<span class="line"><span>#   # client_secret and client_secret_path are mutually exclusive.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # The amount of time from a node is authenticated with OpenID until it</span></span>
+<span class="line"><span>#   # expires and needs to reauthenticate.</span></span>
+<span class="line"><span>#   # Setting the value to "0" will mean no expiry.</span></span>
+<span class="line"><span>#   expiry: 180d</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Use the expiry from the token received from OpenID when the user logged</span></span>
+<span class="line"><span>#   # in, this will typically lead to frequent need to reauthenticate and should</span></span>
+<span class="line"><span>#   # only been enabled if you know what you are doing.</span></span>
+<span class="line"><span>#   # Note: enabling this will cause `oidc.expiry` to be ignored.</span></span>
+<span class="line"><span>#   use_expiry_from_token: false</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Customize the scopes used in the OIDC flow, defaults to "openid", "profile" and "email" and add custom query</span></span>
+<span class="line"><span>#   # parameters to the Authorize Endpoint request. Scopes default to "openid", "profile" and "email".</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   scope: ["openid", "profile", "email", "custom"]</span></span>
+<span class="line"><span>#   extra_params:</span></span>
+<span class="line"><span>#     domain_hint: example.com</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # List allowed principal domains and/or users. If an authenticated user's domain is not in this list, the</span></span>
+<span class="line"><span>#   # authentication request will be rejected.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   allowed_domains:</span></span>
+<span class="line"><span>#     - example.com</span></span>
+<span class="line"><span>#   # Note: Groups from keycloak have a leading '/'</span></span>
+<span class="line"><span>#   allowed_groups:</span></span>
+<span class="line"><span>#     - /headscale</span></span>
+<span class="line"><span>#   allowed_users:</span></span>
+<span class="line"><span>#     - alice@example.com</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Optional: PKCE (Proof Key for Code Exchange) configuration</span></span>
+<span class="line"><span>#   # PKCE adds an additional layer of security to the OAuth 2.0 authorization code flow</span></span>
+<span class="line"><span>#   # by preventing authorization code interception attacks</span></span>
+<span class="line"><span>#   # See https://datatracker.ietf.org/doc/html/rfc7636</span></span>
+<span class="line"><span>#   pkce:</span></span>
+<span class="line"><span>#     # Enable or disable PKCE support (default: false)</span></span>
+<span class="line"><span>#     enabled: false</span></span>
+<span class="line"><span>#     # PKCE method to use:</span></span>
+<span class="line"><span>#     # - plain: Use plain code verifier</span></span>
+<span class="line"><span>#     # - S256: Use SHA256 hashed code verifier (default, recommended)</span></span>
+<span class="line"><span>#     method: S256</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Map legacy users from pre-0.24.0 versions of headscale to the new OIDC users</span></span>
+<span class="line"><span>#   # by taking the username from the legacy user and matching it with the username</span></span>
+<span class="line"><span>#   # provided by the OIDC. This is useful when migrating from legacy users to OIDC</span></span>
+<span class="line"><span>#   # to force them using the unique identifier from the OIDC and to give them a</span></span>
+<span class="line"><span>#   # proper display name and picture if available.</span></span>
+<span class="line"><span>#   # Note that this will only work if the username from the legacy user is the same</span></span>
+<span class="line"><span>#   # and there is a possibility for account takeover should a username have changed</span></span>
+<span class="line"><span>#   # with the provider.</span></span>
+<span class="line"><span>#   # Disabling this feature will cause all new logins to be created as new users.</span></span>
+<span class="line"><span>#   # Note this option will be removed in the future and should be set to false</span></span>
+<span class="line"><span>#   # on all new installations, or when all users have logged in with OIDC once.</span></span>
+<span class="line"><span>#   map_legacy_users: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Logtail configuration</span></span>
+<span class="line"><span># Logtail is Tailscales logging and auditing infrastructure, it allows the control panel</span></span>
+<span class="line"><span># to instruct tailscale nodes to log their activity to a remote server.</span></span>
+<span class="line"><span>logtail:</span></span>
+<span class="line"><span>  # Enable logtail for this headscales clients.</span></span>
+<span class="line"><span>  # As there is currently no support for overriding the log server in headscale, this is</span></span>
+<span class="line"><span>  # disabled by default. Enabling this will make your clients send logs to Tailscale Inc.</span></span>
+<span class="line"><span>  enabled: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Enabling this option makes devices prefer a random port for WireGuard traffic over the</span></span>
+<span class="line"><span># default static port 41641. This option is intended as a workaround for some buggy</span></span>
+<span class="line"><span># firewall devices. See https://tailscale.com/kb/1181/firewalls/ for more information.</span></span>
+<span class="line"><span>randomize_client_port: false</span></span></code></pre></div>
+<p>配置文件第13行，需要改成指向服务器的域名</p>
+<p>配置文件第19行，需要改成0.0.0.0</p><div></div><p></p>
+<p>此时文件目录如下所示</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/headscale</span></span>
+<span class="line"><span>├── container-config</span></span>
+<span class="line"><span>│   └── config.yaml</span></span>
+<span class="line"><span>├── container-data</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre></div>
+<p>启动Headsale服务</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre></div>
+<h2 id="服务端-1-headsale管理面板" class="heading">服务端-1-Headsale管理面板<a href="#服务端-1-headsale管理面板" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>安装目录<code>/root/headscale-admin</code></p>
+<p>使用<code>docker-compose</code>运行</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>version: '3'</span></span>
+<span class="line"><span>services:</span></span>
+<span class="line"><span>  headscale-admin:</span></span>
+<span class="line"><span>    image: goodieshq/headscale-admin:latest</span></span>
+<span class="line"><span>    container_name: headscale-admin</span></span>
+<span class="line"><span>    ports:</span></span>
+<span class="line"><span>      - 8000:80</span></span>
+<span class="line"><span>    networks:</span></span>
+<span class="line"><span>      - headscale-network</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>networks:</span></span>
+<span class="line"><span>  headscale-network:</span></span>
+<span class="line"><span>    external: true</span></span></code></pre></div>
+<p>启动容器</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre></div>
+<p>目录结构如下</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/headscale-admin/</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre></div>
+<h2 id="服务端-1-caddy反代服务" class="heading">服务端-1-Caddy反代服务<a href="#服务端-1-caddy反代服务" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>Headscale强制要求HTTPS，此处使用Caddy是为了自动申请更新域名证书，可根据需要更换Nginx</p>
+<p>安装目录<code>/root/caddy</code></p>
+<p>创建目录、配置文件</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>mkdir container-config  container-data</span></span>
+<span class="line"><span>touch docker-compose.yml</span></span></code></pre></div>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>services:</span></span>
+<span class="line"><span>  caddy:</span></span>
+<span class="line"><span>    image: caddy:latest</span></span>
+<span class="line"><span>    container_name: caddy</span></span>
+<span class="line"><span>    restart: always</span></span>
+<span class="line"><span>    networks:</span></span>
+<span class="line"><span>      headscale-network:</span></span>
+<span class="line"><span>    stdin_open: true</span></span>
+<span class="line"><span>    tty: true</span></span>
+<span class="line"><span>    volumes:</span></span>
+<span class="line"><span>      - ./container-data:/data</span></span>
+<span class="line"><span>      - ./container-config:/config</span></span>
+<span class="line"><span>      - /etc/localtime:/etc/localtime:ro</span></span>
+<span class="line"><span>    ports:</span></span>
+<span class="line"><span>      - 80:80</span></span>
+<span class="line"><span>      - 443:443</span></span>
+<span class="line"><span>    entrypoint: /usr/bin/caddy run --adapter caddyfile --config /config/Caddyfile</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>networks:</span></span>
+<span class="line"><span>  headscale-network:</span></span>
+<span class="line"><span>    external: true</span></span></code></pre></div>
+<p>在<code>container-config</code>下创建配置文件<code>Caddyfile</code>，自行更换<code>example.com</code>为服务器使用域名</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>https://example.com {</span></span>
+<span class="line"><span>    reverse_proxy /admin/* http://headscale-admin</span></span>
+<span class="line"><span>    reverse_proxy * http://headscale:8080</span></span>
+<span class="line"><span>}</span></span></code></pre></div>
+<p>此时目录结构如下</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/caddy</span></span>
+<span class="line"><span>├── container-config</span></span>
+<span class="line"><span>│   └── Caddyfile</span></span>
+<span class="line"><span>├── container-data</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre></div>
+<p>验证是否安装成功</p>
+<p>访问以下地址<code>https://&#x3C;font style="color:rgb(55, 53, 47);">example.com/windows&#x3C;/font></code>，能正常访问说明以上步骤正确</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007887935-f3ea9f16-48a9-4dc0-a5b8-7f2e66006078.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="管理面板配置" class="heading">管理面板配置<a href="#管理面板配置" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>访问地址<code>[https://example.com/admin/](https://headscale2.vio.vin/admin/settings/)</code>进入管理面板，注意此处需要有最后的/</p>
+<p>创建默认用户</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale users create default</span></span></code></pre></div>
+<p>获取用户加入节点时的key</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale preauthkeys create --user default</span></span></code></pre></div>
+<p>生成API密钥</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale apikey create</span></span></code></pre></div>
+<p>在管理面板填入API密钥，点击保存即可认证成功</p>
+<p>注意：此处的<code>Legacy API (Headscale &#x3C; 0.23)</code>选项需要关掉，如果失败可以打开控制台日志进行排错，浏览器中打开F12即可</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007536292-c275d2be-51fc-4e82-a795-7e5a6d1abdb5.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007634484-04763d33-81b0-4c42-bd1d-65bff6adf1d2.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<ul>
+<li>Users<div></div>，不同用户之间可以隔离也可互相访问</li>
+<li>Nodes<div></div>，可以删除设备</li>
+<li>Deploy<div></div>，按照下图设置即可</li>
+</ul>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007817129-1c1cf38a-d1fb-458b-a691-8a81f967cf22.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="服务端-2-中继节点derper" class="heading">服务端-2-中继节点Derper<a href="#服务端-2-中继节点derper" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>中继节点作为客户端加入Tailscale网络</p>
+<ul>
+<li>此处是为了使用<code>DERP_VERIFY_CLIENTS=true</code>的功能更，用于中继节点授权，防止节点被公网其他用户使用</li>
+</ul>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>curl -fsSL https://tailscale.com/install.sh | sh</span></span></code></pre></div>
+<p>安装之后使用查看状态确保程序为active状态</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>systemctl status tailscaled.service</span></span></code></pre></div>
+<p>之后使用使用上一步生成的指令加入tailscale网络</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale up --login-server=https://headscale2.vio.vin --authkey=e228e7ddcc424e4a5eb4bec397ee493aa03f383fb608e804 --accept-dns=false --accept-routes</span></span></code></pre></div>
+<p>安装目录<code>/root/derp</code></p>
+<p>第15行，此处的域名应该使用节点域名，不可与Headscale域名相同</p>
+<p>第10行，映射端口需要开启udp</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>version: '3'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>services:</span></span>
+<span class="line"><span>  derper:</span></span>
+<span class="line"><span>    image: fredliang/derper</span></span>
+<span class="line"><span>    container_name: derper</span></span>
+<span class="line"><span>    restart: always</span></span>
+<span class="line"><span>    ports:</span></span>
+<span class="line"><span>      - 443:443</span></span>
+<span class="line"><span>      - 34789:3478/udp</span></span>
+<span class="line"><span>    volumes:</span></span>
+<span class="line"><span>      - ./certs:/app/certs</span></span>
+<span class="line"><span>      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock</span></span>
+<span class="line"><span>    environment:</span></span>
+<span class="line"><span>      - DERP_DOMAIN=example.com</span></span>
+<span class="line"><span>      - DERP_VERIFY_CLIENTS=true</span></span></code></pre></div>
+<p>此时目录结构如下</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/derp</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre></div>
+<p>启动容器</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre></div>
+<p>访问derp域名确认已在运行</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735008690302-aacc1389-2b3e-48dd-b437-7d35266af901.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="节点加入headscale" class="heading">节点加入Headscale<a href="#节点加入headscale" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>在<code>/root/headscale/container-config</code>下创建<code>derp.yaml</code>文件</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>regions:</span></span>
+<span class="line"><span>  902:</span></span>
+<span class="line"><span>    regionid: 902</span></span>
+<span class="line"><span>    regioncode: chd</span></span>
+<span class="line"><span>    regionname: HK Claw</span></span>
+<span class="line"><span>    nodes:</span></span>
+<span class="line"><span>      - name: 902a</span></span>
+<span class="line"><span>        regionid: 902</span></span>
+<span class="line"><span>        hostname: derp-hk.vio.vin</span></span>
+<span class="line"><span>        stunport: 34789</span></span>
+<span class="line"><span>        stunonly: false</span></span>
+<span class="line"><span>        derpport: 443</span></span></code></pre></div>
+<p>此处的902为节点id，stunport为udp端口，derpport为derp HTTPS端口，其余按照上述自行填写</p>
+<p>修改<code>/root/headscale/container-config/config.yaml</code></p>
+<p>注释掉114行，不需要tailscale官方的中继服务器</p>
+<p>修改124、125行，指定derp.yaml文件地址</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>---</span></span>
+<span class="line"><span># headscale will look for a configuration file named `config.yaml` (or `config.json`) in the following order:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># - `/etc/headscale`</span></span>
+<span class="line"><span># - `~/.headscale`</span></span>
+<span class="line"><span># - current working directory</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># The url clients will connect to.</span></span>
+<span class="line"><span># Typically this will be a domain like:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># https://myheadscale.example.com:443</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>server_url: http://127.0.0.1:8080</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen to / bind to on the server</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span># listen_addr: 0.0.0.0:8080</span></span>
+<span class="line"><span>listen_addr: 127.0.0.1:8080</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen to /metrics, you may want</span></span>
+<span class="line"><span># to keep this endpoint private to your internal</span></span>
+<span class="line"><span># network</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>metrics_listen_addr: 127.0.0.1:9090</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Address to listen for gRPC.</span></span>
+<span class="line"><span># gRPC is used for controlling a headscale server</span></span>
+<span class="line"><span># remotely with the CLI</span></span>
+<span class="line"><span># Note: Remote access _only_ works if you have</span></span>
+<span class="line"><span># valid certificates.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span># grpc_listen_addr: 0.0.0.0:50443</span></span>
+<span class="line"><span>grpc_listen_addr: 127.0.0.1:50443</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Allow the gRPC admin interface to run in INSECURE</span></span>
+<span class="line"><span># mode. This is not recommended as the traffic will</span></span>
+<span class="line"><span># be unencrypted. Only enable if you know what you</span></span>
+<span class="line"><span># are doing.</span></span>
+<span class="line"><span>grpc_allow_insecure: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># The Noise section includes specific configuration for the</span></span>
+<span class="line"><span># TS2021 Noise protocol</span></span>
+<span class="line"><span>noise:</span></span>
+<span class="line"><span>  # The Noise private key is used to encrypt the</span></span>
+<span class="line"><span>  # traffic between headscale and Tailscale clients when</span></span>
+<span class="line"><span>  # using the new Noise-based protocol.</span></span>
+<span class="line"><span>  private_key_path: /var/lib/headscale/noise_private.key</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># List of IP prefixes to allocate tailaddresses from.</span></span>
+<span class="line"><span># Each prefix consists of either an IPv4 or IPv6 address,</span></span>
+<span class="line"><span># and the associated prefix length, delimited by a slash.</span></span>
+<span class="line"><span># It must be within IP ranges supported by the Tailscale</span></span>
+<span class="line"><span># client - i.e., subnets of 100.64.0.0/10 and fd7a:115c:a1e0::/48.</span></span>
+<span class="line"><span># See below:</span></span>
+<span class="line"><span># IPv6: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#LL81C52-L81C71</span></span>
+<span class="line"><span># IPv4: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#L33</span></span>
+<span class="line"><span># Any other range is NOT supported, and it will cause unexpected issues.</span></span>
+<span class="line"><span>prefixes:</span></span>
+<span class="line"><span>  v4: 100.64.0.0/10</span></span>
+<span class="line"><span>  v6: fd7a:115c:a1e0::/48</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Strategy used for allocation of IPs to nodes, available options:</span></span>
+<span class="line"><span>  # - sequential (default): assigns the next free IP from the previous given IP.</span></span>
+<span class="line"><span>  # - random: assigns the next free IP from a pseudo-random IP generator (crypto/rand).</span></span>
+<span class="line"><span>  allocation: sequential</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># DERP is a relay system that Tailscale uses when a direct</span></span>
+<span class="line"><span># connection cannot be established.</span></span>
+<span class="line"><span># https://tailscale.com/blog/how-tailscale-works/#encrypted-tcp-relays-derp</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale needs a list of DERP servers that can be presented</span></span>
+<span class="line"><span># to the clients.</span></span>
+<span class="line"><span>derp:</span></span>
+<span class="line"><span>  server:</span></span>
+<span class="line"><span>    # If enabled, runs the embedded DERP server and merges it into the rest of the DERP config</span></span>
+<span class="line"><span>    # The Headscale server_url defined above MUST be using https, DERP requires TLS to be in place</span></span>
+<span class="line"><span>    enabled: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Region ID to use for the embedded DERP server.</span></span>
+<span class="line"><span>    # The local DERP prevails if the region ID collides with other region ID coming from</span></span>
+<span class="line"><span>    # the regular DERP config.</span></span>
+<span class="line"><span>    region_id: 999</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Region code and name are displayed in the Tailscale UI to identify a DERP region</span></span>
+<span class="line"><span>    region_code: "headscale"</span></span>
+<span class="line"><span>    region_name: "Headscale Embedded DERP"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Listens over UDP at the configured address for STUN connections - to help with NAT traversal.</span></span>
+<span class="line"><span>    # When the embedded DERP server is enabled stun_listen_addr MUST be defined.</span></span>
+<span class="line"><span>    #</span></span>
+<span class="line"><span>    # For more details on how this works, check this great article: https://tailscale.com/blog/how-tailscale-works/</span></span>
+<span class="line"><span>    stun_listen_addr: "0.0.0.0:3478"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Private key used to encrypt the traffic between headscale DERP</span></span>
+<span class="line"><span>    # and Tailscale clients.</span></span>
+<span class="line"><span>    # The private key file will be autogenerated if it's missing.</span></span>
+<span class="line"><span>    #</span></span>
+<span class="line"><span>    private_key_path: /var/lib/headscale/derp_server_private.key</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # This flag can be used, so the DERP map entry for the embedded DERP server is not written automatically,</span></span>
+<span class="line"><span>    # it enables the creation of your very own DERP map entry using a locally available file with the parameter DERP.paths</span></span>
+<span class="line"><span>    # If you enable the DERP server and set this to false, it is required to add the DERP server to the DERP map using DERP.paths</span></span>
+<span class="line"><span>    automatically_add_embedded_derp_region: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # For better connection stability (especially when using an Exit-Node and DNS is not working),</span></span>
+<span class="line"><span>    # it is possible to optionally add the public IPv4 and IPv6 address to the Derp-Map using:</span></span>
+<span class="line"><span>    ipv4: 1.2.3.4</span></span>
+<span class="line"><span>    ipv6: 2001:db8::1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # List of externally available DERP maps encoded in JSON</span></span>
+<span class="line"><span>  urls:</span></span>
+<span class="line"><span>    # - https://controlplane.tailscale.com/derpmap/default</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Locally available DERP map files encoded in YAML</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # This option is mostly interesting for people hosting</span></span>
+<span class="line"><span>  # their own DERP servers:</span></span>
+<span class="line"><span>  # https://tailscale.com/kb/1118/custom-derp-servers/</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # paths:</span></span>
+<span class="line"><span>  #   - /etc/headscale/derp-example.yaml</span></span>
+<span class="line"><span>  paths: </span></span>
+<span class="line"><span>    - /etc/headscale/derp.yaml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # If enabled, a worker will be set up to periodically</span></span>
+<span class="line"><span>  # refresh the given sources and update the derpmap</span></span>
+<span class="line"><span>  # will be set up.</span></span>
+<span class="line"><span>  auto_update_enabled: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # How often should we check for DERP updates?</span></span>
+<span class="line"><span>  update_frequency: 24h</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Disables the automatic check for headscale updates on startup</span></span>
+<span class="line"><span>disable_check_updates: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Time before an inactive ephemeral node is deleted?</span></span>
+<span class="line"><span>ephemeral_node_inactivity_timeout: 30m</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>database:</span></span>
+<span class="line"><span>  # Database type. Available options: sqlite, postgres</span></span>
+<span class="line"><span>  # Please note that using Postgres is highly discouraged as it is only supported for legacy reasons.</span></span>
+<span class="line"><span>  # All new development, testing and optimisations are done with SQLite in mind.</span></span>
+<span class="line"><span>  type: sqlite</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Enable debug mode. This setting requires the log.level to be set to "debug" or "trace".</span></span>
+<span class="line"><span>  debug: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # GORM configuration settings.</span></span>
+<span class="line"><span>  gorm:</span></span>
+<span class="line"><span>    # Enable prepared statements.</span></span>
+<span class="line"><span>    prepare_stmt: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Enable parameterized queries.</span></span>
+<span class="line"><span>    parameterized_queries: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Skip logging "record not found" errors.</span></span>
+<span class="line"><span>    skip_err_record_not_found: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Threshold for slow queries in milliseconds.</span></span>
+<span class="line"><span>    slow_threshold: 1000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # SQLite config</span></span>
+<span class="line"><span>  sqlite:</span></span>
+<span class="line"><span>    path: /var/lib/headscale/db.sqlite</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Enable WAL mode for SQLite. This is recommended for production environments.</span></span>
+<span class="line"><span>    # https://www.sqlite.org/wal.html</span></span>
+<span class="line"><span>    write_ahead_log: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Maximum number of WAL file frames before the WAL file is automatically checkpointed.</span></span>
+<span class="line"><span>    # https://www.sqlite.org/c3ref/wal_autocheckpoint.html</span></span>
+<span class="line"><span>    # Set to 0 to disable automatic checkpointing.</span></span>
+<span class="line"><span>    wal_autocheckpoint: 1000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # # Postgres config</span></span>
+<span class="line"><span>  # Please note that using Postgres is highly discouraged as it is only supported for legacy reasons.</span></span>
+<span class="line"><span>  # See database.type for more information.</span></span>
+<span class="line"><span>  # postgres:</span></span>
+<span class="line"><span>  #   # If using a Unix socket to connect to Postgres, set the socket path in the 'host' field and leave 'port' blank.</span></span>
+<span class="line"><span>  #   host: localhost</span></span>
+<span class="line"><span>  #   port: 5432</span></span>
+<span class="line"><span>  #   name: headscale</span></span>
+<span class="line"><span>  #   user: foo</span></span>
+<span class="line"><span>  #   pass: bar</span></span>
+<span class="line"><span>  #   max_open_conns: 10</span></span>
+<span class="line"><span>  #   max_idle_conns: 10</span></span>
+<span class="line"><span>  #   conn_max_idle_time_secs: 3600</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  #   # If other 'sslmode' is required instead of 'require(true)' and 'disabled(false)', set the 'sslmode' you need</span></span>
+<span class="line"><span>  #   # in the 'ssl' field. Refers to https://www.postgresql.org/docs/current/libpq-ssl.html Table 34.1.</span></span>
+<span class="line"><span>  #   ssl: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### TLS configuration</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>## Let's encrypt / ACME</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports automatically requesting and setting up</span></span>
+<span class="line"><span># TLS for a domain with Let's Encrypt.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># URL to ACME directory</span></span>
+<span class="line"><span>acme_url: https://acme-v02.api.letsencrypt.org/directory</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Email to register with ACME provider</span></span>
+<span class="line"><span>acme_email: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Domain name to request a TLS certificate for:</span></span>
+<span class="line"><span>tls_letsencrypt_hostname: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Path to store certificates and metadata needed by</span></span>
+<span class="line"><span># letsencrypt</span></span>
+<span class="line"><span># For production:</span></span>
+<span class="line"><span>tls_letsencrypt_cache_dir: /var/lib/headscale/cache</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Type of ACME challenge to use, currently supported types:</span></span>
+<span class="line"><span># HTTP-01 or TLS-ALPN-01</span></span>
+<span class="line"><span># See: docs/ref/tls.md for more information</span></span>
+<span class="line"><span>tls_letsencrypt_challenge_type: HTTP-01</span></span>
+<span class="line"><span># When HTTP-01 challenge is chosen, letsencrypt must set up a</span></span>
+<span class="line"><span># verification endpoint, and it will be listening on:</span></span>
+<span class="line"><span># :http = port 80</span></span>
+<span class="line"><span>tls_letsencrypt_listen: ":http"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Use already defined certificates:</span></span>
+<span class="line"><span>tls_cert_path: ""</span></span>
+<span class="line"><span>tls_key_path: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>log:</span></span>
+<span class="line"><span>  # Output formatting for logs: text or json</span></span>
+<span class="line"><span>  format: text</span></span>
+<span class="line"><span>  level: info</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Policy</span></span>
+<span class="line"><span># headscale supports Tailscale's ACL policies.</span></span>
+<span class="line"><span># Please have a look to their KB to better</span></span>
+<span class="line"><span># understand the concepts: https://tailscale.com/kb/1018/acls/</span></span>
+<span class="line"><span>policy:</span></span>
+<span class="line"><span>  # The mode can be "file" or "database" that defines</span></span>
+<span class="line"><span>  # where the ACL policies are stored and read from.</span></span>
+<span class="line"><span>  mode: file</span></span>
+<span class="line"><span>  # If the mode is set to "file", the path to a</span></span>
+<span class="line"><span>  # HuJSON file containing ACL policies.</span></span>
+<span class="line"><span>  path: ""</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## DNS</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports Tailscale's DNS configuration and MagicDNS.</span></span>
+<span class="line"><span># Please have a look to their KB to better understand the concepts:</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># - https://tailscale.com/kb/1054/dns/</span></span>
+<span class="line"><span># - https://tailscale.com/kb/1081/magicdns/</span></span>
+<span class="line"><span># - https://tailscale.com/blog/2021-09-private-dns-with-magicdns/</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># Please note that for the DNS configuration to have any effect,</span></span>
+<span class="line"><span># clients must have the `--accept-dns=true` option enabled. This is the</span></span>
+<span class="line"><span># default for the Tailscale client. This option is enabled by default</span></span>
+<span class="line"><span># in the Tailscale client.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># Setting _any_ of the configuration and `--accept-dns=true` on the</span></span>
+<span class="line"><span># clients will integrate with the DNS manager on the client or</span></span>
+<span class="line"><span># overwrite /etc/resolv.conf.</span></span>
+<span class="line"><span># https://tailscale.com/kb/1235/resolv-conf</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># If you want stop Headscale from managing the DNS configuration</span></span>
+<span class="line"><span># all the fields under `dns` should be set to empty values.</span></span>
+<span class="line"><span>dns:</span></span>
+<span class="line"><span>  # Whether to use [MagicDNS](https://tailscale.com/kb/1081/magicdns/).</span></span>
+<span class="line"><span>  magic_dns: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Defines the base domain to create the hostnames for MagicDNS.</span></span>
+<span class="line"><span>  # This domain _must_ be different from the server_url domain.</span></span>
+<span class="line"><span>  # `base_domain` must be a FQDN, without the trailing dot.</span></span>
+<span class="line"><span>  # The FQDN of the hosts will be</span></span>
+<span class="line"><span>  # `hostname.base_domain` (e.g., _myhost.example.com_).</span></span>
+<span class="line"><span>  base_domain: example.com</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # List of DNS servers to expose to clients.</span></span>
+<span class="line"><span>  nameservers:</span></span>
+<span class="line"><span>    global:</span></span>
+<span class="line"><span>      - 1.1.1.1</span></span>
+<span class="line"><span>      - 1.0.0.1</span></span>
+<span class="line"><span>      - 2606:4700:4700::1111</span></span>
+<span class="line"><span>      - 2606:4700:4700::1001</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>      # NextDNS (see https://tailscale.com/kb/1218/nextdns/).</span></span>
+<span class="line"><span>      # "abc123" is example NextDNS ID, replace with yours.</span></span>
+<span class="line"><span>      # - https://dns.nextdns.io/abc123</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    # Split DNS (see https://tailscale.com/kb/1054/dns/),</span></span>
+<span class="line"><span>    # a map of domains and which DNS server to use for each.</span></span>
+<span class="line"><span>    split:</span></span>
+<span class="line"><span>      {}</span></span>
+<span class="line"><span>      # foo.bar.com:</span></span>
+<span class="line"><span>      #   - 1.1.1.1</span></span>
+<span class="line"><span>      # darp.headscale.net:</span></span>
+<span class="line"><span>      #   - 1.1.1.1</span></span>
+<span class="line"><span>      #   - 8.8.8.8</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Set custom DNS search domains. With MagicDNS enabled,</span></span>
+<span class="line"><span>  # your tailnet base_domain is always the first search domain.</span></span>
+<span class="line"><span>  search_domains: []</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  # Extra DNS records</span></span>
+<span class="line"><span>  # so far only A and AAAA records are supported (on the tailscale side)</span></span>
+<span class="line"><span>  # See: docs/ref/dns.md</span></span>
+<span class="line"><span>  extra_records: []</span></span>
+<span class="line"><span>  #   - name: "grafana.myvpn.example.com"</span></span>
+<span class="line"><span>  #     type: "A"</span></span>
+<span class="line"><span>  #     value: "100.64.0.3"</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  #   # you can also put it in one line</span></span>
+<span class="line"><span>  #   - { name: "prometheus.myvpn.example.com", type: "A", value: "100.64.0.3" }</span></span>
+<span class="line"><span>  #</span></span>
+<span class="line"><span>  # Alternatively, extra DNS records can be loaded from a JSON file.</span></span>
+<span class="line"><span>  # Headscale processes this file on each change.</span></span>
+<span class="line"><span>  # extra_records_path: /var/lib/headscale/extra-records.json</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Unix socket used for the CLI to connect without authentication</span></span>
+<span class="line"><span># Note: for production you will want to set this to something like:</span></span>
+<span class="line"><span>unix_socket: /var/run/headscale/headscale.sock</span></span>
+<span class="line"><span>unix_socket_permission: "0770"</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span># headscale supports experimental OpenID connect support,</span></span>
+<span class="line"><span># it is still being tested and might have some bugs, please</span></span>
+<span class="line"><span># help us test it.</span></span>
+<span class="line"><span># OpenID Connect</span></span>
+<span class="line"><span># oidc:</span></span>
+<span class="line"><span>#   only_start_if_oidc_is_available: true</span></span>
+<span class="line"><span>#   issuer: "https://your-oidc.issuer.com/path"</span></span>
+<span class="line"><span>#   client_id: "your-oidc-client-id"</span></span>
+<span class="line"><span>#   client_secret: "your-oidc-client-secret"</span></span>
+<span class="line"><span>#   # Alternatively, set `client_secret_path` to read the secret from the file.</span></span>
+<span class="line"><span>#   # It resolves environment variables, making integration to systemd's</span></span>
+<span class="line"><span>#   # `LoadCredential` straightforward:</span></span>
+<span class="line"><span>#   client_secret_path: "${CREDENTIALS_DIRECTORY}/oidc_client_secret"</span></span>
+<span class="line"><span>#   # client_secret and client_secret_path are mutually exclusive.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # The amount of time from a node is authenticated with OpenID until it</span></span>
+<span class="line"><span>#   # expires and needs to reauthenticate.</span></span>
+<span class="line"><span>#   # Setting the value to "0" will mean no expiry.</span></span>
+<span class="line"><span>#   expiry: 180d</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Use the expiry from the token received from OpenID when the user logged</span></span>
+<span class="line"><span>#   # in, this will typically lead to frequent need to reauthenticate and should</span></span>
+<span class="line"><span>#   # only been enabled if you know what you are doing.</span></span>
+<span class="line"><span>#   # Note: enabling this will cause `oidc.expiry` to be ignored.</span></span>
+<span class="line"><span>#   use_expiry_from_token: false</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Customize the scopes used in the OIDC flow, defaults to "openid", "profile" and "email" and add custom query</span></span>
+<span class="line"><span>#   # parameters to the Authorize Endpoint request. Scopes default to "openid", "profile" and "email".</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   scope: ["openid", "profile", "email", "custom"]</span></span>
+<span class="line"><span>#   extra_params:</span></span>
+<span class="line"><span>#     domain_hint: example.com</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # List allowed principal domains and/or users. If an authenticated user's domain is not in this list, the</span></span>
+<span class="line"><span>#   # authentication request will be rejected.</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   allowed_domains:</span></span>
+<span class="line"><span>#     - example.com</span></span>
+<span class="line"><span>#   # Note: Groups from keycloak have a leading '/'</span></span>
+<span class="line"><span>#   allowed_groups:</span></span>
+<span class="line"><span>#     - /headscale</span></span>
+<span class="line"><span>#   allowed_users:</span></span>
+<span class="line"><span>#     - alice@example.com</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Optional: PKCE (Proof Key for Code Exchange) configuration</span></span>
+<span class="line"><span>#   # PKCE adds an additional layer of security to the OAuth 2.0 authorization code flow</span></span>
+<span class="line"><span>#   # by preventing authorization code interception attacks</span></span>
+<span class="line"><span>#   # See https://datatracker.ietf.org/doc/html/rfc7636</span></span>
+<span class="line"><span>#   pkce:</span></span>
+<span class="line"><span>#     # Enable or disable PKCE support (default: false)</span></span>
+<span class="line"><span>#     enabled: false</span></span>
+<span class="line"><span>#     # PKCE method to use:</span></span>
+<span class="line"><span>#     # - plain: Use plain code verifier</span></span>
+<span class="line"><span>#     # - S256: Use SHA256 hashed code verifier (default, recommended)</span></span>
+<span class="line"><span>#     method: S256</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>#   # Map legacy users from pre-0.24.0 versions of headscale to the new OIDC users</span></span>
+<span class="line"><span>#   # by taking the username from the legacy user and matching it with the username</span></span>
+<span class="line"><span>#   # provided by the OIDC. This is useful when migrating from legacy users to OIDC</span></span>
+<span class="line"><span>#   # to force them using the unique identifier from the OIDC and to give them a</span></span>
+<span class="line"><span>#   # proper display name and picture if available.</span></span>
+<span class="line"><span>#   # Note that this will only work if the username from the legacy user is the same</span></span>
+<span class="line"><span>#   # and there is a possibility for account takeover should a username have changed</span></span>
+<span class="line"><span>#   # with the provider.</span></span>
+<span class="line"><span>#   # Disabling this feature will cause all new logins to be created as new users.</span></span>
+<span class="line"><span>#   # Note this option will be removed in the future and should be set to false</span></span>
+<span class="line"><span>#   # on all new installations, or when all users have logged in with OIDC once.</span></span>
+<span class="line"><span>#   map_legacy_users: true</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Logtail configuration</span></span>
+<span class="line"><span># Logtail is Tailscales logging and auditing infrastructure, it allows the control panel</span></span>
+<span class="line"><span># to instruct tailscale nodes to log their activity to a remote server.</span></span>
+<span class="line"><span>logtail:</span></span>
+<span class="line"><span>  # Enable logtail for this headscales clients.</span></span>
+<span class="line"><span>  # As there is currently no support for overriding the log server in headscale, this is</span></span>
+<span class="line"><span>  # disabled by default. Enabling this will make your clients send logs to Tailscale Inc.</span></span>
+<span class="line"><span>  enabled: false</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># Enabling this option makes devices prefer a random port for WireGuard traffic over the</span></span>
+<span class="line"><span># default static port 41641. This option is intended as a workaround for some buggy</span></span>
+<span class="line"><span># firewall devices. See https://tailscale.com/kb/1181/firewalls/ for more information.</span></span>
+<span class="line"><span>randomize_client_port: false</span></span></code></pre></div>
+<h2 id="用户使用" class="heading">用户使用<a href="#用户使用" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>下载tailscale软件并自行安装</p>
+<p><a href="https://tailscale.com/download" rel="noopener noreferrer" target="_blank">Download | Tailscale</a><i class="iconfont icon-external-link"></i></p>
+<p>打开CMD窗口，输入headscale管理面板中生成的命令，当显示Tailscale Connected时说明已经连接成功</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022084428-e6e6ff41-ca12-47f4-8b58-01903456df69.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p>点击Network devices可查看当前网络中的其他设备，点击可复制设备IP地址</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022209980-49be7fc4-eaef-4e57-8d51-66b6d4597c83.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735094999084-e678b954-e6aa-47ed-bfd9-888fcb25e36d.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="高级功能" class="heading">高级功能<a href="#高级功能" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h3 id="subnet-routers" class="heading">Subnet Routers<a href="#subnet-routers" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>文档</p>
+<p><a href="https://tailscale.com/kb/1019/subnets" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<p>按照上述示例配置后，每个设备需要在客户端单独运行tailscale才能加入tailscale网络，加入网络之后才能互相访问，如果需要加入网络的设备较多，此方法不够简单。</p>
+<p>是否有什么办法可以将一个ip段或者一个局域网的设备全部拉入tailscale网络中呢，通过Subnet Routers可以实现。不适用Subnet Routers时，只能实现点对点互联，只有使用Subnet Routers才能实现真正的VPN功能。</p>
+<p>假设网络拓扑为公司局域网ip段为192.168.31.0/24，将该局域网中任意一个设备的启动命令修改为</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale up --accept-routes=true --accept-dns=false --advertise-routes=192.168.31.0/24 --advertise-exit-node</span></span></code></pre></div>
+<p>该设备加入tailscale之后，会以该设备网为中继节点，访问局域网内其他设备，此处需要对防火墙出入站规则进行相应配置，tailscale启动后会创建一个tailscale0虚拟网卡，需要对此网卡关闭防火墙，允许出入站。</p>
+<p>注意：</p>
+<ol>
+<li>此处非常不建议使用192.168的网络前缀，容易与客户端网络发生冲突，建议改为10.XX.XX.0网段。</li>
+<li>开启Subnet Routers功能的节点设备需要开启IP转发功能，具体参考以下文档。</li>
+</ol>
+<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<h3 id="exit-node" class="heading">Exit node<a href="#exit-node" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>在上述启动命令中有一个参数<code>--advertise-exit-node</code>，该参数意味将该设备作为整个网络的出口节点，网络中所有设备访问互联网时，不会直接进行访问，所有流量会被转发到该设备，由该设备代理网络流量实现访问，该功能类似与传统意义的VPN，该功能并不是默认的，客户端需要手动设置才能使用Exit node功能。</p>
+<p><a href="https://tailscale.com/kb/1103/exit-nodes" rel="noopener noreferrer" target="_blank">Exit nodes (route all traffic) · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736415379107-e83b575f-0189-4387-8123-986b54e294e7.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h3 id="access-control" class="heading">Access Control<a href="#access-control" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>默认情况下，同一个局域网内的设备互相可以访问，如果需要对该局域网下的设备进行分组隔离，可以使用tags功能，给加入网络的所有设备打上tag之后，可以通过acl设置设备之间的单向-双向访问，除tag之外，也支持对设备进行分组控制。首先需要修改配置文件，定义tag，此处以json配置文件为示例，自建Headscale需要以yaml为配置文件。</p>
+<p><strong>创建Tags</strong></p>
+<p>此处的<code>"tag:home-pc"</code>，代表一个tag，后的中括号制定了谁可以使用这个tag，此处简单设置为管理员可以使用tag。</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>{</span></span>
+<span class="line"><span>  "tagOwners": {</span></span>
+<span class="line"><span>        "tag:home-pc":     ["autogroup:admin"],</span></span>
+<span class="line"><span>        "tag:home-server": ["autogroup:admin"],</span></span>
+<span class="line"><span>        "tag:work-pc":     ["autogroup:admin"],</span></span>
+<span class="line"><span>        "tag:game-server": ["autogroup:admin"],</span></span>
+<span class="line"><span>        "tag:game-player": ["autogroup:admin"],</span></span>
+<span class="line"><span>        "tag:relay-node":  ["autogroup:admin"],</span></span>
+<span class="line"><span>    },</span></span>
+<span class="line"><span>}</span></span></code></pre></div>
+<p><strong>访问控制</strong></p>
+<p>默认设置为<code>{"action": "accept", "src": ["*"], "dst": ["*:*"]}</code>所有设备之间可相互访问，如需自行控制需要删除这一行。</p>
+<ul>
+<li>acls中包含多个访问规则</li>
+<li>action个reject代表接收或拒绝连接。</li>
+<li>src表示连接源，后可配置tag或group，格式为，示例<code>["tag:game-player"]</code></li>
+<li>dst表示连接目的地，格式为:&#x3C;端口号>，示例<code>["tag:game-server:*", "tag:game-server:8080", "tag:game-server:8000:9000"],</code>
+<ul>
+<li>tag:game-server:*所有端口均可访问</li>
+<li>tag:game-server<div></div></li>
+<li>tag:game-server:8000<div></div></li>
+</ul>
+</li>
+</ul>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>"acls": [</span></span>
+<span class="line"><span>        // Allow all connections.</span></span>
+<span class="line"><span>        // Comment this section out if you want to define specific restrictions.</span></span>
+<span class="line"><span>        // {"action": "accept", "src": ["*"], "dst": ["*:*"]},</span></span>
+<span class="line"><span>        {</span></span>
+<span class="line"><span>            "action": "accept",</span></span>
+<span class="line"><span>            "src":    ["tag:game-player"],</span></span>
+<span class="line"><span>            "dst":    ["tag:game-server:*"],</span></span>
+<span class="line"><span>        },</span></span>
+<span class="line"><span>        {</span></span>
+<span class="line"><span>            "action": "accept",</span></span>
+<span class="line"><span>            "src":    ["tag:game-server"],</span></span>
+<span class="line"><span>            "dst":    ["tag:game-player:*"],</span></span>
+<span class="line"><span>        },</span></span>
+<span class="line"><span>        {</span></span>
+<span class="line"><span>            "action": "accept",</span></span>
+<span class="line"><span>            "src":    ["tag:work-pc"],</span></span>
+<span class="line"><span>            "dst":    ["*:*"],</span></span>
+<span class="line"><span>        },</span></span>
+<span class="line"><span>        {</span></span>
+<span class="line"><span>            "action": "accept",</span></span>
+<span class="line"><span>            "src":    ["tag:home-pc"],</span></span>
+<span class="line"><span>            "dst":    ["*:*"],</span></span>
+<span class="line"><span>        },</span></span>
+<span class="line"><span>    ],</span></span></code></pre></div>
+<p>更多配置可以查看官方文档以其其他文档。</p>
+<p><a href="https://tailscale.com/kb/1068/tags" rel="noopener noreferrer" target="_blank">Group devices with tags · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<p><a href="https://icloudnative.io/posts/tailscale-acls/" rel="noopener noreferrer" target="_blank">Tailscale/Headscale ACL 使用教程</a><i class="iconfont icon-external-link"></i></p>
+<h3 id="ipv6" class="heading">IPV6<a href="#ipv6" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>启用IPV6可以提高直连几率，减少中继服务器流量负载，IPV6访问需要中继节点和客户端同时支持IPV6，且必须是240开头的公网IP地址。</p>
+<h2 id="其他" class="heading">其他<a href="#其他" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h3 id="无人值守模式" class="heading">无人值守模式<a href="#无人值守模式" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>开启次配置，tailscale将在设备开机时自动允许</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929408507-9cdb28d8-b0ea-4ca4-8a6f-e7e3ec905508.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h3 id="不加入subnet" class="heading">不加入Subnet<a href="#不加入subnet" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p>如果遇到IP地址冲突，客户端可以暂时关闭subnet routers，关闭如下配置即可</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929521436-0e803676-0867-4fdd-b68f-3e756f928e6c.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<h2 id="排错" class="heading">排错<a href="#排错" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p>在客户端使用指令<code>tailscale netcheck</code>可以查看中继服务器状态</p>
+<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale netcheck</span></span></code></pre></div>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022258390-5ba2fe31-2e61-4d21-9b4f-5c42cba22ed6.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p>使用<code>tailscale status</code>可查看当前客户端是否连接到tailscale网络，同时可查看网络中其他设备IP</p>
+<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022317358-240dfd6a-fb0a-49f1-b29c-791ddb650cbf.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p>如果遇到Subnet Router无法访问，需要按照此文档开启ip转发</p>
+<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<h2 id="参考文档" class="heading">参考文档<a href="#参考文档" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<ul>
+<li><a href="https://blog.laisky.com/p/tailscale-nat/?lang=zh#gsc.tab=0" rel="noopener noreferrer" target="_blank">Introduction to TailScale NAT Technology and Personal Networking Solutions</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://icloudnative.io/posts/custom-derp-servers/" rel="noopener noreferrer" target="_blank">Tailscale 基础教程：部署私有 DERP 中继服务器</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://icloudnative.io/posts/how-to-set-up-or-migrate-headscale/" rel="noopener noreferrer" target="_blank">Tailscale 基础教程：Headscale 的部署方法和使用教程</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://blog.openyq.top/posts/64921/#%E6%9C%8D%E5%8A%A1%E7%AB%AF" rel="noopener noreferrer" target="_blank">自建 Tailscale 服务并实现多设备组网互联</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://blog.laisky.com/p/tailscale/#gsc.tab=0" rel="noopener noreferrer" target="_blank">Recent experiences with tailscale</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://www.haha.ai/article/headscale" rel="noopener noreferrer" target="_blank">https://www.haha.ai/article/headscale</a><i class="iconfont icon-external-link"></i></li>
+<li><a href="https://icloudnative.io/posts/tailscale-acls/" rel="noopener noreferrer" target="_blank">Tailscale/Headscale ACL 使用教程</a><i class="iconfont icon-external-link"></i></li>
+</ul>  </article> </div> <section class="mt-12 space-y-6" data-pagefind-ignore> <script>(()=>{var a=(s,i,o)=>{let r=async()=>{await(await s())()},t=typeof i.value=="object"?i.value:void 0,c={rootMargin:t==null?void 0:t.rootMargin},n=new IntersectionObserver(e=>{for(let l of e)if(l.isIntersecting){n.disconnect(),r();break}},c);for(let e of o.children)n.observe(e)};(self.Astro||(self.Astro={})).visible=a;window.dispatchEvent(new Event("astro:visible"));})();</script><astro-island uid="Z1UokH0" prefix="r7" component-url="/_astro/PostCopyright.CxuB6RMM.js" component-export="PostCopyright" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;title&quot;:[0,&quot;Headscale+Derp异地组网&quot;],&quot;slug&quot;:[0,&quot;/posts/headscale-derp-yi-di-zu-wang&quot;],&quot;lastMod&quot;:[3,&quot;2025-08-03T00:41:17.000Z&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;PostCopyright&quot;,&quot;value&quot;:true}" await-children><section class="text-xs leading-loose text-secondary"><p>文章标题：<!-- -->Headscale+Derp异地组网</p><p>文章作者：<!-- -->violet</p><p><span>文章链接：<!-- -->https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang</span><span role="button" class="cursor-pointer select-none">[复制]</span></p><p>最后修改时间：</p><hr class="my-3 border-primary"/><div><p>商业转载请联系站长获得授权，非商业转载请注明本文出处及文章链接，您可以自由地在任何媒体以任何形式复制和分发作品，也可以修改和创作，但是分发衍生作品时必须采用相同的许可协议。<br/>本文采用<a class="hover:underline hover:text-accent underline-offset-2" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>进行许可。</p></div></section><!--astro:end--></astro-island> <div class="grid grid-cols-2"> <div> <a class="flex items-baseline gap-2 hover:text-accent" href="/posts/2024-nian-zhong-zong-jie"> <i class="iconfont icon-arrow-left"></i> <span>2024年终总结</span> </a> </div> <div> <a class="flex items-baseline justify-end gap-2 hover:text-accent" href="/posts/ubunut-24-zi-jian-xing-fu-gong-chang-fu-wu-qi"> <span>Ubunut 24 自建幸福工厂服务器</span> <i class="iconfont icon-arrow-right"></i> </a> </div> </div> <div> <astro-island uid="Z11zv83" prefix="r17" component-url="/_astro/Giscus.DTVgQQXN.js" component-export="Giscus" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;repo&quot;:[0,&quot;xkdvSrPD/astro-gyoza&quot;],&quot;repoId&quot;:[0,&quot;R_kgDOPW4tbw&quot;],&quot;category&quot;:[0,&quot;Announcements&quot;],&quot;categoryId&quot;:[0,&quot;DIC_kwDOPW4tb84Ctvvm&quot;],&quot;mapping&quot;:[0,&quot;title&quot;],&quot;strict&quot;:[0,&quot;0&quot;],&quot;reactionsEnabled&quot;:[0,&quot;1&quot;],&quot;emitMetadata&quot;:[0,&quot;0&quot;],&quot;inputPosition&quot;:[0,&quot;top&quot;],&quot;theme&quot;:[0,&quot;preferred_color_scheme&quot;],&quot;lang&quot;:[0,&quot;zh-CN&quot;],&quot;loading&quot;:[0,&quot;lazy&quot;]}" ssr client="visible" opts="{&quot;name&quot;:&quot;Giscus&quot;,&quot;value&quot;:true}" await-children><div class="giscus-container"></div><!--astro:end--></astro-island> <script>(function(){const giscusConfig = {"repo":"xkdvSrPD/astro-gyoza","repoId":"R_kgDOPW4tbw","category":"Announcements","categoryId":"DIC_kwDOPW4tb84Ctvvm","mapping":"title","strict":"0","reactionsEnabled":"1","emitMetadata":"0","inputPosition":"top","theme":"preferred_color_scheme","lang":"zh-CN","loading":"lazy"};
+
+    console.log('Comments Debug:', {
+      hasGiscusRepo: !!giscusConfig.repo,
+      giscusConfig: giscusConfig,
+      currentHostname: window.location.hostname,
+      shouldShowComments: !window.location.hostname.includes('vio.vin')
+    });
+  })();</script> </div> </section> </div> <!-- Sticky sidebar - outside swup transition --> <div class="hidden lg:block" data-pagefind-ignore> <aside class="sticky top-20"> <section> <div class="mb-8 font-bold uppercase tracking-widest text-accent">目录</div>  <astro-island uid="Z1qMcgA" prefix="r8" component-url="/_astro/PostToc.Lp4VXeJp.js" component-export="PostToc" renderer-url="/_astro/client.DfL0IJtW.js" props="{&quot;headings&quot;:[1,[[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;网络拓扑&quot;],&quot;text&quot;:[0,&quot;网络拓扑&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;搭建需求&quot;],&quot;text&quot;:[0,&quot;搭建需求&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;使用软件&quot;],&quot;text&quot;:[0,&quot;使用软件&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;安装前&quot;],&quot;text&quot;:[0,&quot;安装前&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;服务端-1-控制器headscale&quot;],&quot;text&quot;:[0,&quot;服务端-1-控制器Headscale&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;服务端-1-headsale管理面板&quot;],&quot;text&quot;:[0,&quot;服务端-1-Headsale管理面板&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;服务端-1-caddy反代服务&quot;],&quot;text&quot;:[0,&quot;服务端-1-Caddy反代服务&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;管理面板配置&quot;],&quot;text&quot;:[0,&quot;管理面板配置&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;服务端-2-中继节点derper&quot;],&quot;text&quot;:[0,&quot;服务端-2-中继节点Derper&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;节点加入headscale&quot;],&quot;text&quot;:[0,&quot;节点加入Headscale&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;用户使用&quot;],&quot;text&quot;:[0,&quot;用户使用&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;高级功能&quot;],&quot;text&quot;:[0,&quot;高级功能&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;subnet-routers&quot;],&quot;text&quot;:[0,&quot;Subnet Routers&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;exit-node&quot;],&quot;text&quot;:[0,&quot;Exit node&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;access-control&quot;],&quot;text&quot;:[0,&quot;Access Control&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;ipv6&quot;],&quot;text&quot;:[0,&quot;IPV6&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;其他&quot;],&quot;text&quot;:[0,&quot;其他&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;无人值守模式&quot;],&quot;text&quot;:[0,&quot;无人值守模式&quot;]}],[0,{&quot;depth&quot;:[0,3],&quot;slug&quot;:[0,&quot;不加入subnet&quot;],&quot;text&quot;:[0,&quot;不加入Subnet&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;排错&quot;],&quot;text&quot;:[0,&quot;排错&quot;]}],[0,{&quot;depth&quot;:[0,2],&quot;slug&quot;:[0,&quot;参考文档&quot;],&quot;text&quot;:[0,&quot;参考文档&quot;]}]]]}" ssr client="idle" opts="{&quot;name&quot;:&quot;PostToc&quot;,&quot;value&quot;:true}" await-children><nav aria-label="Table of contents"><ul class="relative overflow-y-auto space-y-2 group text-sm" style="max-height:min(380px, calc(100vh - 250px));scrollbar-width:none"><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#网络拓扑">网络拓扑</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#搭建需求">搭建需求</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#使用软件">使用软件</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#安装前">安装前</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-控制器headscale">服务端-1-控制器Headscale</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-headsale管理面板">服务端-1-Headsale管理面板</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-caddy反代服务">服务端-1-Caddy反代服务</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#管理面板配置">管理面板配置</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-2-中继节点derper">服务端-2-中继节点Derper</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#节点加入headscale">节点加入Headscale</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#用户使用">用户使用</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#高级功能">高级功能</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#subnet-routers">Subnet Routers</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#exit-node">Exit node</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#access-control">Access Control</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#ipv6">IPV6</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#其他">其他</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#无人值守模式">无人值守模式</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:16px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#不加入subnet">不加入Subnet</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#排错">排错</a></li><li class="relative"><span class="absolute left-0 top-2 h-1 rounded-full transition-colors bg-zinc-300 dark:bg-zinc-700" style="width:20px" aria-hidden="true"></span><a class="inline-block pl-8 transition-opacity duration-300 opacity-0 group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100" href="#参考文档">参考文档</a></li></ul></nav><!--astro:end--></astro-island> <hr class="my-2 border-primary max-w-[100px]"> <astro-island uid="1XMHP1" prefix="r9" component-url="/_astro/ReadingProgress.D0jYsPZk.js" component-export="ReadingProgress" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;ReadingProgress&quot;,&quot;value&quot;:true}" await-children><div><span class="text-sm">进度 <!-- -->0<!-- -->%</span></div><!--astro:end--></astro-island>  </section> <astro-island uid="1TWCj" prefix="r10" component-url="/_astro/ActionAside.C9KOa2BD.js" component-export="ActionAside" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="idle" opts="{&quot;name&quot;:&quot;ActionAside&quot;,&quot;value&quot;:true}" await-children><div class="absolute left-0 bottom-0 flex flex-col gap-4" style="transform:translateY(calc(100% + 24px))"><button type="button" aria-label="Share this post" class="size-6 text-xl leading-none hover:text-accent"><i class="iconfont icon-share"></i></button></div><!--astro:end--></astro-island> </aside> </div> </div> </div>  </main> <footer class="relative z-1 py-8 px-4 md:px-8 border-t border-primary text-secondary text-sm"> <div class="text-center space-y-2"> <div>
+Powered by
+<a class="hover:text-accent" href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
+& Designed by
+<a class="hover:text-accent" href="https://github.com/lxchapu/astro-gyoza" target="_blank" rel="noopener noreferrer">Gyoza</a> </div> <div class="space-x-1"> <span>&copy;2025 <a class="hover:text-accent" href="/">violet</a>.</span> <a class="hover:text-accent" href="/rss.xml" data-no-swup="true"> <i class="iconfont icon-rss"></i> <span>RSS</span> </a> <a class="hover:text-accent" href="/sitemap-index.xml" data-no-swup="true"> <i class="iconfont icon-map"></i> <span>站点地图</span> </a> </div> <div id="beian-info" style="display: none;"> <a class="hover:text-accent" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">陕ICP备2021015553号-2</a> </div> <div> <astro-island uid="2lyoQd" component-url="/_astro/RunningDays.YidrJ615.js" component-export="RunningDays" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;RunningDays&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <span class="select-none opacity-50">|</span> <span>共嘚嘚了 25.4k 字</span> </div> </div> <div class="mt-4 flex justify-center"> <astro-island uid="2rkdGA" component-url="/_astro/ThemeSwitch.D9aK7PLZ.js" component-export="ThemeSwitch" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ThemeSwitch&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> </div> </footer> <script type="module">if(typeof window<"u"&&window.location.hostname.includes("vio.vin")){const n=document.getElementById("beian-info");n&&(n.style.display="block")}</script>  <astro-island uid="Z249zDI" component-url="/_astro/BackToTopFAB.DBYaFT-g.js" component-export="BackToTopFAB" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;BackToTopFAB&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1PI9bJ" component-url="/_astro/ToastContainer.DCGXZcow.js" component-export="ToastContainer" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ToastContainer&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="vaeF1" component-url="/_astro/ToastHandler.B8x3yHOW.js" component-export="ToastHandler" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ToastHandler&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> <astro-island uid="Z1bh22V" component-url="/_astro/modal.Cc91WjgY.js" component-export="ModalStack" renderer-url="/_astro/client.DfL0IJtW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;ModalStack&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island> </div> </body></html>
