@@ -1,1 +1,0 @@
-const n={url:"https://www.vio.vin",title:"薇尔薇",favicon:"/favicon.ico"},i={name:"violet"},o=[{name:"首页",link:"/",icon:"icon-pantone"},{name:"归档",link:"/archives",icon:"icon-archive"},{name:"关于",link:"/about",icon:"icon-ghost"},{name:"友链",link:"/friends",icon:"icon-hearts"}],a={startTime:"2025-08-02T00:00:00Z"};export{i as a,a as f,o as m,n as s};
