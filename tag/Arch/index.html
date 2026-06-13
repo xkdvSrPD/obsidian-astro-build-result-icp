@@ -8,9 +8,18 @@
         document.documentElement.dataset.theme = theme
         document.documentElement.dataset.width = width
       })()
-    </script><link rel="stylesheet" href="/_astro/_spec_.BO9_y9qA.css"></head> <body> <div id="cgit" class="site-frame"> <header class="site-header" data-pagefind-ignore> <table id="header"> <tbody> <tr> <td class="logo" rowspan="2"> <a class="site-avatar" href="/" aria-label="薇尔薇"> <img src="/apple-touch-icon.png" alt="violet" width="96" height="96" loading="eager"> </a> </td> <td class="main"> <a href="/">薇尔薇</a> </td> <td class="form" rowspan="2"> <div class="site-tools" aria-label="站点工具"> <form class="site-search" role="search"> <label class="sr-only" for="site-search-input">Search</label> <input id="site-search-input" type="search" name="q" placeholder="search" autocomplete="off"> <div id="site-search-results" class="search-results" hidden></div> </form> <div class="tool-row" aria-label="主题切换"> <span>theme:</span> <button type="button" data-theme-choice="white">white</button> <button type="button" data-theme-choice="black">black</button> <button type="button" data-theme-choice="purple">purple</button> <button type="button" data-theme-choice="blue">blue</button> </div> <div class="tool-row" aria-label="页面宽度"> <span>width:</span> <button type="button" data-width-choice="100">100</button> <button type="button" data-width-choice="80">80</button> <button type="button" data-width-choice="60">60</button> <button type="button" data-width-choice="40">40</button> </div> </div> </td> </tr> <tr> <td class="sub">We&#39;re not exactly in a position to be trusted with secrets, are we?</td> </tr> </tbody> </table> <table class="tabs"> <tbody> <tr> <td> <nav aria-label="主导航"> <a href="/">about</a> <a href="/archives" class="active" aria-current="page">summary</a> <a href="/friends">ref</a> </nav> </td> </tr> </tbody> </table> </header> <main class="content" data-pagefind-body>  <h1>Tag: Arch</h1> <p class="page-note">共 1 篇文章</p> <div class="post-table"> <table class="list list-table"> <thead> <tr class="logheader"> <th>Title</th> <th>Tags</th> <th class="list-category">Category</th> <th class="list-date">Date</th> </tr> </thead> <tbody> <tr> <td class="list-title"> <a href="/posts/wo-de-arch-linux-pei-zhi">我的Arch Linux配置</a> </td> <td class="list-category"> <a href="/tag/Arch">Arch</a>  </td> <td class="list-category"> <a href="/category/Linux">Linux</a> </td> <td class="list-date"> <time datetime="2025-11-05T23:05:55.000Z"> 25 年 11 月 06 日 星期四 </time> </td> </tr> </tbody> </table> </div>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> </footer> </div> <script>
+    </script><link rel="stylesheet" href="/_astro/_spec_.BO9_y9qA.css"></head> <body> <div id="cgit" class="site-frame"> <header class="site-header" data-pagefind-ignore> <table id="header"> <tbody> <tr> <td class="logo" rowspan="2"> <a class="site-avatar" href="/" aria-label="薇尔薇"> <img src="/apple-touch-icon.png" alt="violet" width="96" height="96" loading="eager"> </a> </td> <td class="main"> <a href="/">薇尔薇</a> </td> <td class="form" rowspan="2"> <div class="site-tools" aria-label="站点工具"> <form class="site-search" role="search"> <label class="sr-only" for="site-search-input">Search</label> <input id="site-search-input" type="search" name="q" placeholder="search" autocomplete="off"> <div id="site-search-results" class="search-results" hidden></div> </form> <div class="tool-row" aria-label="主题切换"> <span>theme:</span> <button type="button" data-theme-choice="white">white</button> <button type="button" data-theme-choice="black">black</button> <button type="button" data-theme-choice="purple">purple</button> <button type="button" data-theme-choice="blue">blue</button> </div> <div class="tool-row" aria-label="页面宽度"> <span>width:</span> <button type="button" data-width-choice="100">100</button> <button type="button" data-width-choice="80">80</button> <button type="button" data-width-choice="60">60</button> <button type="button" data-width-choice="40">40</button> </div> </div> </td> </tr> <tr> <td class="sub">We&#39;re not exactly in a position to be trusted with secrets, are we?</td> </tr> </tbody> </table> <table class="tabs"> <tbody> <tr> <td> <nav aria-label="主导航"> <a href="/">about</a> <a href="/archives" class="active" aria-current="page">summary</a> <a href="/friends">ref</a> </nav> </td> </tr> </tbody> </table> </header> <main class="content" data-pagefind-body>  <h1>Tag: Arch</h1> <p class="page-note">共 1 篇文章</p> <div class="post-table"> <table class="list list-table"> <thead> <tr class="logheader"> <th>Title</th> <th>Tags</th> <th class="list-category">Category</th> <th class="list-date">Date</th> </tr> </thead> <tbody> <tr> <td class="list-title"> <a href="/posts/wo-de-arch-linux-pei-zhi">我的Arch Linux配置</a> </td> <td class="list-category"> <a href="/tag/Arch">Arch</a>  </td> <td class="list-category"> <a href="/category/Linux">Linux</a> </td> <td class="list-date"> <time datetime="2025-11-05T23:05:55.000Z"> 25 年 11 月 06 日 星期四 </time> </td> </tr> </tbody> </table> </div>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> <p id="beian" style="display:none"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"></a> </p> </footer> </div> <script>
       ;(() => {
         const root = document.documentElement
+        const d = (h, k) => {
+          let r = ''
+          for (let i = 0; i < h.length; i += 4)
+            r += String.fromCharCode(
+              parseInt(h.substring(i, i + 4), 16) ^ k.charCodeAt((i / 4) % k.length),
+            )
+          return r
+        }
+        const dm = d('00110010000000540017000e0017', 'gyoza')
         const setPressed = (selector, attr, value) => {
           document.querySelectorAll(selector).forEach((button) => {
             button.setAttribute(
@@ -177,7 +186,7 @@
           if (rootEl.dataset.giscusMounted === 'true') {
             return
           }
-          if (window.location.hostname.includes('vio.vin')) {
+          if (window.location.hostname.includes(dm)) {
             return
           }
 
@@ -218,7 +227,7 @@
         function registerGiscus() {
           const roots = Array.from(document.querySelectorAll('[data-giscus-root]'))
           roots.forEach((rootEl) => {
-            if (window.location.hostname.includes('vio.vin')) {
+            if (window.location.hostname.includes(dm)) {
               rootEl.innerHTML = ''
               return
             }
@@ -228,5 +237,19 @@
 
         registerGiscus()
         document.addEventListener('app-theme-change', syncGiscusTheme)
+
+        // --- beian ---
+        if (window.location.hostname.includes(dm)) {
+          const r = d(
+            '96320030002c002a596600550049005d004b00510056004c005a004f005253900054005d',
+            'gyoza',
+          )
+          const el = document.getElementById('beian')
+          if (el) {
+            el.style.display = ''
+            const a = el.querySelector('a')
+            if (a) a.textContent = r
+          }
+        }
       })()
     </script> </body> </html>

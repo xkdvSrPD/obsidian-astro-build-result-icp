@@ -44,9 +44,18 @@
 <p>替换=后面的 <code>15.6-1.pgdg22.04+1</code> 为上一步输出的版本号</p>
 <h2 id="查询安装的版本">查询安装的版本</h2>
 <pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:var(--astro-code-token-function)">dpkg</span><span style="color:var(--astro-code-token-string)"> -l</span><span style="color:var(--astro-code-token-keyword)"> |</span><span style="color:var(--astro-code-token-function)"> egrep</span><span style="color:var(--astro-code-token-string-expression)"> 'postgresql-(15|client-15|contrib-15)|postgresql-(client-)?common'</span><span style="color:var(--astro-code-token-keyword)"> |</span><span style="color:var(--astro-code-token-function)"> awk</span><span style="color:var(--astro-code-token-string-expression)"> '{print $2, $3}'</span></span></code></pre>
-<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:var(--astro-code-token-function)">psql</span><span style="color:var(--astro-code-token-string)"> --version</span></span></code></pre> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> </footer> </div> <script>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:var(--astro-code-token-function)">psql</span><span style="color:var(--astro-code-token-string)"> --version</span></span></code></pre> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> <p id="beian" style="display:none"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"></a> </p> </footer> </div> <script>
       ;(() => {
         const root = document.documentElement
+        const d = (h, k) => {
+          let r = ''
+          for (let i = 0; i < h.length; i += 4)
+            r += String.fromCharCode(
+              parseInt(h.substring(i, i + 4), 16) ^ k.charCodeAt((i / 4) % k.length),
+            )
+          return r
+        }
+        const dm = d('00110010000000540017000e0017', 'gyoza')
         const setPressed = (selector, attr, value) => {
           document.querySelectorAll(selector).forEach((button) => {
             button.setAttribute(
@@ -213,7 +222,7 @@
           if (rootEl.dataset.giscusMounted === 'true') {
             return
           }
-          if (window.location.hostname.includes('vio.vin')) {
+          if (window.location.hostname.includes(dm)) {
             return
           }
 
@@ -254,7 +263,7 @@
         function registerGiscus() {
           const roots = Array.from(document.querySelectorAll('[data-giscus-root]'))
           roots.forEach((rootEl) => {
-            if (window.location.hostname.includes('vio.vin')) {
+            if (window.location.hostname.includes(dm)) {
               rootEl.innerHTML = ''
               return
             }
@@ -264,5 +273,19 @@
 
         registerGiscus()
         document.addEventListener('app-theme-change', syncGiscusTheme)
+
+        // --- beian ---
+        if (window.location.hostname.includes(dm)) {
+          const r = d(
+            '96320030002c002a596600550049005d004b00510056004c005a004f005253900054005d',
+            'gyoza',
+          )
+          const el = document.getElementById('beian')
+          if (el) {
+            el.style.display = ''
+            const a = el.querySelector('a')
+            if (a) a.textContent = r
+          }
+        }
       })()
     </script> </body> </html>

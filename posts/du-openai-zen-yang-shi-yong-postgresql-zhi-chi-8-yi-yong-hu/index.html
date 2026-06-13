@@ -51,9 +51,18 @@ PgBouncer
 数据库</p>
 <h3 id="表结构变更">表结构变更</h3>
 <p>表结构变更可能触发表重写
-仅允许轻量级变更，例如新增或删除列</p> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> </footer> </div> <script>
+仅允许轻量级变更，例如新增或删除列</p> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> <p id="beian" style="display:none"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"></a> </p> </footer> </div> <script>
       ;(() => {
         const root = document.documentElement
+        const d = (h, k) => {
+          let r = ''
+          for (let i = 0; i < h.length; i += 4)
+            r += String.fromCharCode(
+              parseInt(h.substring(i, i + 4), 16) ^ k.charCodeAt((i / 4) % k.length),
+            )
+          return r
+        }
+        const dm = d('00110010000000540017000e0017', 'gyoza')
         const setPressed = (selector, attr, value) => {
           document.querySelectorAll(selector).forEach((button) => {
             button.setAttribute(
@@ -220,7 +229,7 @@ PgBouncer
           if (rootEl.dataset.giscusMounted === 'true') {
             return
           }
-          if (window.location.hostname.includes('vio.vin')) {
+          if (window.location.hostname.includes(dm)) {
             return
           }
 
@@ -261,7 +270,7 @@ PgBouncer
         function registerGiscus() {
           const roots = Array.from(document.querySelectorAll('[data-giscus-root]'))
           roots.forEach((rootEl) => {
-            if (window.location.hostname.includes('vio.vin')) {
+            if (window.location.hostname.includes(dm)) {
               rootEl.innerHTML = ''
               return
             }
@@ -271,5 +280,19 @@ PgBouncer
 
         registerGiscus()
         document.addEventListener('app-theme-change', syncGiscusTheme)
+
+        // --- beian ---
+        if (window.location.hostname.includes(dm)) {
+          const r = d(
+            '96320030002c002a596600550049005d004b00510056004c005a004f005253900054005d',
+            'gyoza',
+          )
+          const el = document.getElementById('beian')
+          if (el) {
+            el.style.display = ''
+            const a = el.querySelector('a')
+            if (a) a.textContent = r
+          }
+        }
       })()
     </script> </body> </html>

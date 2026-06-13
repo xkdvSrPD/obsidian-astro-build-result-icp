@@ -38,9 +38,18 @@
 <p>Tailscale异地组网建好了，买了好几台服务器，阿里200M的，腾讯200M的，Claw香港的服务器，试图把中继延迟将达最低，发现这些200M的机器网络都不是很稳定，后面重新购买了阿里200M服务器，换了个47的IP网络好像变好了，暂用吧延迟15ms，Claw香港做Exit Node，偶尔用用，防失联</p>
 <p>对网络有了更深刻的理解，学到很多网络知识</p>
 <h2 id="总结">总结</h2>
-<p>好想有自己的房子，想把网络设计的很好，想装很多智能家具，装买NAS，但是没有钱，没有钱…明年希望能多存点钱吧</p> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> </footer> </div> <script>
+<p>好想有自己的房子，想把网络设计的很好，想装很多智能家具，装买NAS，但是没有钱，没有钱…明年希望能多存点钱吧</p> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> <p id="beian" style="display:none"> <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener"></a> </p> </footer> </div> <script>
       ;(() => {
         const root = document.documentElement
+        const d = (h, k) => {
+          let r = ''
+          for (let i = 0; i < h.length; i += 4)
+            r += String.fromCharCode(
+              parseInt(h.substring(i, i + 4), 16) ^ k.charCodeAt((i / 4) % k.length),
+            )
+          return r
+        }
+        const dm = d('00110010000000540017000e0017', 'gyoza')
         const setPressed = (selector, attr, value) => {
           document.querySelectorAll(selector).forEach((button) => {
             button.setAttribute(
@@ -207,7 +216,7 @@
           if (rootEl.dataset.giscusMounted === 'true') {
             return
           }
-          if (window.location.hostname.includes('vio.vin')) {
+          if (window.location.hostname.includes(dm)) {
             return
           }
 
@@ -248,7 +257,7 @@
         function registerGiscus() {
           const roots = Array.from(document.querySelectorAll('[data-giscus-root]'))
           roots.forEach((rootEl) => {
-            if (window.location.hostname.includes('vio.vin')) {
+            if (window.location.hostname.includes(dm)) {
               rootEl.innerHTML = ''
               return
             }
@@ -258,5 +267,19 @@
 
         registerGiscus()
         document.addEventListener('app-theme-change', syncGiscusTheme)
+
+        // --- beian ---
+        if (window.location.hostname.includes(dm)) {
+          const r = d(
+            '96320030002c002a596600550049005d004b00510056004c005a004f005253900054005d',
+            'gyoza',
+          )
+          const el = document.getElementById('beian')
+          if (el) {
+            el.style.display = ''
+            const a = el.querySelector('a')
+            if (a) a.textContent = r
+          }
+        }
       })()
     </script> </body> </html>
