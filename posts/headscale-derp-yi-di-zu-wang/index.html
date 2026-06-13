@@ -1,76 +1,57 @@
-<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" href="/favicon.ico"><!-- L'Internationale,
-  Sera le genre humain. --><title>Headscale+Derp异地组网 - 薇尔薇</title><meta name="author" content="violet"><meta name="description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta name="keywords" content="violet,vio.vin,薇尔薇,blog,博客"><meta name="generator" content="Astro v5.15.8"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta property="og:site_name" content="薇尔薇"><meta property="og:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta property="og:image" content="https://vio.vin/og/posts-headscale-derp-yi-di-zu-wang-5daaea67cd.png"><meta property="og:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="zh-CN"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta name="twitter:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta name="twitter:description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta name="twitter:image" content="https://vio.vin/og/posts-headscale-derp-yi-di-zu-wang-5daaea67cd.png"><meta name="twitter:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><link rel="canonical" href="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="薇尔薇" href="https://vio.vin/rss.xml"><script async src="https://www.googletagmanager.com/gtag/js?id=G-STPJCGJ78E"></script><script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-STPJCGJ78E');
-</script><script>
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "sp1uxmzagn");
-</script><!-- 防止路由切换时的白屏闪烁 --><script type="module" src="/_astro/ThemeLoader.astro_astro_type_script_index_0_lang.CVLCtadV.js"></script><script type="module">const i=window;function n(){let t=document.getElementById("site-toast-root");return t||(t=document.createElement("div"),t.id="site-toast-root",document.body.appendChild(t)),t}function a(t){if(!t?.message)return;const s=n(),e=document.createElement("div");e.className=`site-toast site-toast--${t.type||"success"}`;const o=document.createElement("div");o.className="site-toast__message",o.textContent=t.message,e.appendChild(o),s.appendChild(e),requestAnimationFrame(()=>{e.classList.add("site-toast--visible")}),window.setTimeout(()=>{e.classList.remove("site-toast--visible"),window.setTimeout(()=>{e.remove(),s.childElementCount||s.remove()},180)},3e3)}i.__toastBridgeInitialized||(i.__toastBridgeInitialized=!0,window.addEventListener("app-toast",t=>{a(t.detail)}));</script><script type="module">const a=window,i=a.__routeEnhancerState??(a.__routeEnhancerState={initialized:!1,prefetchedUrls:new Set,preconnectOrigins:new Set}),r="a[href]",c=i.prefetchedUrls,s=i.preconnectOrigins;function u(e){return e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0}function f(e){const t=e.getAttribute("href");if(!t||t.startsWith("#")||e.target&&e.target!=="_self"||e.hasAttribute("download")||e.dataset.noSwup!==void 0)return!1;const n=new URL(e.href,window.location.href);return!(n.origin!==window.location.origin||n.pathname===window.location.pathname&&n.hash||n.pathname===window.location.pathname&&n.search===window.location.search||/\.(xml|json|txt|pdf|zip|rar|7z|docx?|xlsx?|pptx?)$/i.test(n.pathname))}function h(e){if(s.has(e.origin))return;const t=document.createElement("link");t.rel="preconnect",t.href=e.origin,document.head.appendChild(t),s.add(e.origin)}function w(e){const t=e.pathname+e.search;if(c.has(t))return;const n=document.createElement("link");n.rel="prefetch",n.href=e.toString(),n.as="document",document.head.appendChild(n),c.add(t)}function o(e){if(!f(e))return;const t=new URL(e.href,window.location.href);h(t),w(t)}function p(e){const t=e.target?.closest(r);t&&o(t)}function m(e){const t=e.target?.closest(r);t&&o(t)}function E(e){const t=e.target?.closest(r);!t||u(e)||o(t)}function d(){Array.from(document.querySelectorAll(r)).filter(f).slice(0,12).forEach(n=>o(n))}function l(){i.initialized||(i.initialized=!0,document.addEventListener("pointerenter",p,!0),document.addEventListener("focusin",m),document.addEventListener("pointerdown",E,!0),"requestIdleCallback"in window?window.requestIdleCallback(()=>d(),{timeout:1200}):setTimeout(d,600))}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",l,{once:!0}):l();</script><!-- Scroll Controller - Handles anchor navigation and page scroll behavior --><script type="module">let r=80,c=!1,i=!1;function f(){const t=document.documentElement,n=getComputedStyle(t).getPropertyValue("--header-height"),e=parseFloat(n);return Number.isFinite(e)?e:64}function o(){const t=document.querySelector("[data-site-header]"),n=t instanceof HTMLElement?t.getBoundingClientRect().height:f();r=n+16;const e=document.documentElement;e.style.setProperty("--header-height",`${n}px`),e.style.setProperty("--header-offset",`${r}px`)}function l(t){if(!t)return null;const n=t.startsWith("#")?t.slice(1):t;if(!n)return null;let e=n;try{e=decodeURIComponent(n)}catch{}return document.getElementById(e)??(e!==n?document.getElementById(n):null)}function m(t){const e=t.getBoundingClientRect().top+window.scrollY-r;return Math.max(e,0)}function d(t,n=!0){const e=m(t);window.scrollTo({top:e,behavior:n?"smooth":"auto"})}function h(t=!1){window.scrollTo({top:0,behavior:t?"smooth":"auto"})}function a(t,n=!0){const e=l(t);return e?(d(e,n),!0):!1}function g(t){const n=t.target?.closest("a");if(!n)return;const e=n.getAttribute("href");if(!e||!e.startsWith("#"))return;const s=l(e);s&&(t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),requestAnimationFrame(()=>{d(s,!0),window.history.replaceState(window.history.state,"",e)}))}function p(){const{hash:t}=window.location;if(i){i=!1,t&&requestAnimationFrame(()=>a(t,!1));return}if(!t){h(!1);return}requestAnimationFrame(()=>{a(t,!1)})}function u(){c||(c=!0,o(),window.history.scrollRestoration="manual",window.addEventListener("resize",o,{passive:!0}),window.addEventListener("popstate",()=>{i=!0}),document.addEventListener("click",g,{capture:!0}),document.addEventListener("swup:content:replace",()=>{o(),p()}),window.location.hash&&requestAnimationFrame(()=>a(window.location.hash,!1)))}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",u,{once:!0}):u();</script><!-- Code Copy Handler - Manages code block copy functionality --><script type="module">let d=!1,l;function a(e,t){navigator.clipboard.writeText(e).then(()=>{u(t)}).catch(()=>{p("复制失败！")})}function u(e){e.classList.add("copy-code-btn--copied"),setTimeout(()=>{e.classList.remove("copy-code-btn--copied")},1800)}function p(e){const t=new CustomEvent("app-toast",{detail:{message:e,type:"error"}});window.dispatchEvent(t)}function f(e){return e instanceof HTMLElement?e.classList.contains("copy-code-btn")?e:e.closest(".copy-code-btn"):null}function b(e){const t=f(e.target);if(!t)return;e.preventDefault();const o=t.closest(".code-block")?.querySelector("pre code");if(!o)return;const i=o.textContent||"";a(i,t)}function n(){document.querySelectorAll(".code-block").forEach(t=>{const c=t.querySelector("pre");if(!c)return;let o=t.querySelector(".toggle-code-btn");if(!o){o=document.createElement("button"),o.className="toggle-code-btn",o.type="button",o.setAttribute("aria-expanded","false"),o.setAttribute("aria-label","展开代码"),o.title="展开代码";const s=document.createElement("span");s.className="toggle-code-btn__arrow",s.setAttribute("aria-hidden","true"),s.textContent="⌄",o.appendChild(s),t.appendChild(o)}const i=c.scrollHeight>c.clientHeight+1,r=i||t.classList.contains("code-block--expanded");t.classList.toggle("code-block--collapsible",r),!i&&!t.classList.contains("code-block--expanded")&&t.classList.remove("code-block--expanded")})}function g(e){return e instanceof HTMLElement?e.classList.contains("toggle-code-btn")?e:e.closest(".toggle-code-btn"):null}function m(e){const t=g(e.target);if(!t)return;e.preventDefault();const c=t.closest(".code-block");if(!c)return;const o=c.classList.toggle("code-block--expanded");t.setAttribute("aria-expanded",o?"true":"false"),t.setAttribute("aria-label",o?"收起代码":"展开代码"),t.setAttribute("title",o?"收起代码":"展开代码"),n()}function w(){d||(d=!0,document.addEventListener("click",b),document.addEventListener("click",m),document.addEventListener("swup:content:replace",n),document.addEventListener("DOMContentLoaded",n),window.addEventListener("load",n),window.addEventListener("resize",()=>{window.clearTimeout(l),l=window.setTimeout(n,120)}),window.requestAnimationFrame(n),window.setTimeout(n,50),window.setTimeout(n,250))}w();</script><!-- 禁止图片被拖拽 --><script type="module">const n=t=>{t.preventDefault()};function r(t=document){t.querySelectorAll("img").forEach(e=>{e.dataset.dragDisabled!=="true"&&(e.setAttribute("draggable","false"),e.addEventListener("dragstart",n),e.dataset.dragDisabled="true")})}function a(){r()}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",a,{once:!0}):a();document.addEventListener("swup:content:replace",()=>{a()});</script><!-- Image Loader - Handles image loading states and animations --><script type="module">function o(e){e.dataset.imageLoading==="true"&&(e.dataset.imageLoaded="true",e.removeAttribute("data-image-loading"))}function u(e){e.dataset.imageLoading==="true"&&(e.removeAttribute("data-image-loading"),e.dataset.imageError="true",e.style.opacity="1")}function i(e=document){e.querySelectorAll('img[data-image-loading="true"]').forEach(t=>{if(t.complete&&t.naturalHeight!==0){o(t);return}const a=()=>{o(t),r()},n=()=>{u(t),r()},r=()=>{t.removeEventListener("load",a),t.removeEventListener("error",n)};t.addEventListener("load",a,{once:!0}),t.addEventListener("error",n,{once:!0})})}function d(){i()}function c(){document.addEventListener("swup:content:replace",()=>{requestAnimationFrame(()=>{i()})})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",d,{once:!0}):d();c();</script><script type="module" src="/_astro/WidgetBootstrap.astro_astro_type_script_index_0_lang.DdcdLKap.js"></script><link rel="stylesheet" href="/_astro/_page_.BTT84gBH.css">
-<link rel="stylesheet" href="/_astro/_spec_.DMOvxL-E.css">
-<link rel="stylesheet" href="/_astro/_spec_.Clg7Z4p1.css"><script type="module" src="/_astro/page.dDYV82_d.js"></script></head> <body class="relative min-h-screen"> <div id="site-animated-background-root" aria-hidden="true" class="pointer-events-none fixed inset-0 z-0 overflow-hidden" style="background-color: rgb(var(--color-bg-root));"> <div class="absolute inset-0 opacity-70" style="
-      background-image:
-        radial-gradient(circle at 12% 20%, rgb(var(--color-accent) / 0.12) 0%, transparent 52%),
-        radial-gradient(circle at 80% 0%, rgb(var(--color-text-secondary) / 0.08) 0%, transparent 58%),
-        radial-gradient(circle at 52% 100%, rgb(var(--color-bg-primary) / 0.5) 0%, transparent 72%);
-    "></div> <div class="absolute inset-0 opacity-60 blur-[96px]" style="
-      background-image:
-        radial-gradient(circle at 20% 30%, rgb(var(--color-accent) / 0.16) 0%, transparent 38%),
-        radial-gradient(circle at 76% 12%, rgb(var(--color-border-primary) / 0.14) 0%, transparent 44%);
-    "></div> </div> <div class="relative z-10 flex min-h-screen flex-col">  <header class="fixed inset-x-0 top-0 z-10 h-[64px] overflow-hidden" data-site-header data-header-root> <div class="absolute inset-0 -z-1 border-b border-primary bg-white/72 backdrop-blur-md transform-gpu dark:bg-zinc-800/72" data-header-backdrop></div> <div class="mx-auto grid h-full max-w-[1100px] grid-cols-[64px_auto_64px] md:px-4"> <div class="flex items-center justify-center"> <button class="size-9 rounded-full border border-primary bg-white/50 shadow-lg shadow-zinc-800/5 backdrop-blur dark:bg-zinc-800/50 md:hidden" type="button" aria-label="Open menu" data-drawer-open> <i class="iconfont icon-menu"></i> </button> <a class="hidden md:block" href="/" title="Nav to home"> <img class="size-[40px] select-none rounded-2xl object-cover" src="/favicon.ico" alt="Site owner avatar" width="40" height="40" loading="eager" decoding="async"> </a> </div> <div class="relative flex items-center justify-center"> <a class="block translate-y-0 opacity-100 transition-all duration-150 md:hidden" href="/" title="Nav to home" data-mobile-logo> <img class="size-[40px] select-none rounded-2xl object-cover" src="/favicon.ico" alt="Site owner avatar" width="40" height="40" loading="eager" decoding="async"> </a> <nav class="hidden translate-y-0 opacity-100 transition-all duration-150 md:block" data-inline-menu> <div class="group pointer-events-auto relative rounded-full duration-200"> <div class="absolute inset-0 rounded-full bg-gradient-to-b from-zinc-50/70 to-white/90 opacity-0 ring-1 ring-zinc-900/5 shadow-lg shadow-zinc-800/5 backdrop-blur-md transition-opacity dark:from-zinc-900/70 dark:to-zinc-800/90 dark:ring-zinc-100/10" data-inline-menu-bg></div> <div class="relative flex items-center px-4 text-sm"> <a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/" data-nav-link="/"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-pantone" data-nav-icon></i> <span class="leading-none">首页</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/archives" data-nav-link="/archives"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-archive" data-nav-icon></i> <span class="leading-none">归档</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/about" data-nav-link="/about"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-ghost" data-nav-icon></i> <span class="leading-none">关于</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/friends" data-nav-link="/friends"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-hearts" data-nav-icon></i> <span class="leading-none">友链</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a> </div> </div> </nav> <div class="pointer-events-none absolute inset-0 z-1 flex translate-y-3 items-center justify-between opacity-0 transition-all duration-150 md:px-5" data-header-meta-panel> <div class="min-w-0 grow"> <div class="truncate text-xs text-secondary" data-header-meta-description></div> <h2 class="truncate text-lg" data-header-meta-title></h2> </div> <div class="hidden min-w-0 text-right md:block"> <div class="truncate text-xs text-secondary" data-header-meta-slug></div> <div>薇尔薇</div> </div> </div> </div> <div class="flex items-center justify-center"> <button class="size-9 rounded-full border border-primary bg-white/50 shadow-lg shadow-zinc-800/5 backdrop-blur dark:bg-zinc-800/50" type="button" aria-label="Search" data-search-open> <i class="iconfont icon-search"></i> </button> </div> </div> <div class="pointer-events-none fixed inset-x-0 top-16 z-10 hidden -translate-y-[calc(50%+8px)] justify-center opacity-0 transition-all duration-150 md:flex" data-floating-menu> <nav class="group pointer-events-auto relative rounded-full bg-gradient-to-b from-zinc-50/70 to-white/90 ring-1 ring-zinc-900/5 shadow-lg shadow-zinc-800/5 backdrop-blur-md dark:from-zinc-900/70 dark:to-zinc-800/90 dark:ring-zinc-100/10"> <div class="flex items-center px-4 text-sm"> <a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/" data-nav-link="/"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-pantone" data-nav-icon></i> <span class="leading-none">首页</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/archives" data-nav-link="/archives"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-archive" data-nav-icon></i> <span class="leading-none">归档</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/about" data-nav-link="/about"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-ghost" data-nav-icon></i> <span class="leading-none">关于</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a><a class="relative flex h-[34px] items-center px-4 leading-none hover:text-accent" href="/friends" data-nav-link="/friends"> <div class="flex h-full items-center space-x-2"> <i class="iconfont hidden items-center leading-none icon-hearts" data-nav-icon></i> <span class="leading-none">友链</span> </div> <div class="absolute inset-x-0 bottom-0 hidden h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" data-nav-underline></div> </a> </div> </nav> </div> <div class="hidden" aria-hidden="true" data-drawer-modal> <div class="fixed inset-0 bg-gray-800/30" data-drawer-close></div> <aside class="fixed inset-y-0 left-0 flex h-full w-[260px] max-w-[80%] flex-col justify-center rounded-r-lg bg-primary p-4 shadow-2xl shadow-zinc-900/10"> <ul class="mt-8 min-h-0 overflow-x-hidden overflow-y-auto pb-8"> <li> <a class="inline-flex items-center space-x-4 rounded-lg p-2 hover:bg-secondary/70" href="/" data-drawer-link="/"> <i class="iconfont icon-pantone"></i> <span>首页</span> </a> </li><li> <a class="inline-flex items-center space-x-4 rounded-lg p-2 hover:bg-secondary/70" href="/archives" data-drawer-link="/archives"> <i class="iconfont icon-archive"></i> <span>归档</span> </a> </li><li> <a class="inline-flex items-center space-x-4 rounded-lg p-2 hover:bg-secondary/70" href="/about" data-drawer-link="/about"> <i class="iconfont icon-ghost"></i> <span>关于</span> </a> </li><li> <a class="inline-flex items-center space-x-4 rounded-lg p-2 hover:bg-secondary/70" href="/friends" data-drawer-link="/friends"> <i class="iconfont icon-hearts"></i> <span>友链</span> </a> </li> </ul> </aside> </div> <div class="hidden" aria-hidden="true" data-search-modal> <div class="fixed inset-0 z-[70] flex items-center justify-center bg-zinc-950/35 px-4 backdrop-blur-sm"> <div class="absolute inset-0" data-search-close></div> <div class="relative flex h-[80vh] max-h-[520px] w-[min(680px,100%)] flex-col rounded-2xl border border-primary bg-primary shadow-2xl shadow-zinc-900/10" role="dialog" aria-modal="true" aria-label="Search"> <div class="flex items-center gap-3 border-b border-primary px-4 py-3"> <i class="iconfont icon-search text-secondary"></i> <input class="min-w-0 grow bg-transparent outline-none" type="text" placeholder="Search..." maxlength="64" data-search-input> <button class="rounded-full px-2 py-1 text-xs text-secondary transition-colors hover:bg-secondary hover:text-primary" type="button" data-search-close>
-Esc
-</button> </div> <div class="grow overflow-y-auto px-4 py-3" data-search-results></div> <div class="flex justify-end border-t border-primary px-4 py-3 text-xs text-secondary"> <a href="https://pagefind.app/" target="_blank" rel="noopener noreferrer">
-Powered by Pagefind
-</a> </div> </div> </div> </div> </header> <script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.wI9W409k.js"></script> <main class="glass-surface relative z-1 pt-16 min-h-main"> <div data-header-meta data-title="Headscale+Derp异地组网" data-description="网络 / VPN" data-slug="/posts/headscale-derp-yi-di-zu-wang" hidden aria-hidden="true"></div> <div class="absolute -z-1 top-0 inset-x-0 h-[350px] bg-gradient-to-r from-accent/5 to-accent/15" style="mask-image: linear-gradient(black, transparent);"></div>  <div class="w-full max-w-full lg:max-w-[1100px] mx-auto px-4 md:px-8 py-16"> <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_260px] gap-8"> <!-- Main content with swup transition --> <div class="swup-transition-fade" data-pagefind-body> <header class="space-y-4"> <h1 class="text-4xl font-bold text-center"> Headscale+Derp异地组网 </h1> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-calendar"></i> <span>25 年 3 月 24 日 星期一</span> <span class="text-xs">(已编辑)</span> </div> <div> <i class="iconfont icon-file-list"></i> <span>7049 字</span> </div> <div> <i class="iconfont icon-timer"></i> <span>36 分钟</span> </div> </div> <div class="flex flex-wrap gap-2 text-sm text-secondary justify-center"> <div> <i class="iconfont icon-folder"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/categories/网络"> 网络 </a> </div> <div> <i class="iconfont icon-hashtag"></i> <a class="hover:text-accent hover:underline underline-offset-2 decoration-dashed" href="/tags/vpn"> VPN </a>  </div> </div> <div> <div class="hidden rounded-lg border border-amber-300 bg-amber-300/10 p-4 text-sm" data-outdate data-last-mod="2025-03-23T22:13:57.000Z"> <span>
-This article was published on 25 年 3 月 24 日 星期一. Some details may be outdated.
-</span> </div> </div> </header> <div class="mt-8"> <article id="markdown-wrapper" class="markdown">  <p>Tailscale是一种虚拟组网工具，基于WireGuard。能够把安装了Tailscale服务的机器，都连接到同一个局域网。局域网中的每台设备会自动分配IP，设备可以通过IP实现相互访问，除了延迟，与物理本地局域网相同。</p>
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Headscale+Derp异地组网 - 薇尔薇</title><meta name="description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta property="og:type" content="website"><meta property="og:url" content="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta property="og:site_name" content="薇尔薇"><meta property="og:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta property="og:image" content="https://vio.vin/og/posts-headscale-derp-yi-di-zu-wang-eb09832019.png"><meta property="og:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="zh-CN"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:url" content="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><meta name="twitter:title" content="Headscale+Derp异地组网 - 薇尔薇"><meta name="twitter:description" content="We're not exactly in a position to be trusted with secrets, are we?"><meta name="twitter:image" content="https://vio.vin/og/posts-headscale-derp-yi-di-zu-wang-eb09832019.png"><meta name="twitter:image:alt" content="Headscale+Derp异地组网 - 薇尔薇"><link rel="canonical" href="https://vio.vin/posts/headscale-derp-yi-di-zu-wang/"><link rel="alternate" type="application/rss+xml" title="薇尔薇" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><script>
+      ;(() => {
+        const storedTheme = localStorage.getItem('site-theme')
+        const theme =
+          storedTheme ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'white')
+        const width = localStorage.getItem('site-width') || '60'
+        document.documentElement.dataset.theme = theme
+        document.documentElement.dataset.width = width
+      })()
+    </script><link rel="stylesheet" href="/_astro/_spec_.BO9_y9qA.css"></head> <body> <div id="cgit" class="site-frame"> <header class="site-header" data-pagefind-ignore> <table id="header"> <tbody> <tr> <td class="logo" rowspan="2"> <a class="site-avatar" href="/" aria-label="薇尔薇"> <img src="/apple-touch-icon.png" alt="violet" width="96" height="96" loading="eager"> </a> </td> <td class="main"> <a href="/">薇尔薇</a> </td> <td class="form" rowspan="2"> <div class="site-tools" aria-label="站点工具"> <form class="site-search" role="search"> <label class="sr-only" for="site-search-input">Search</label> <input id="site-search-input" type="search" name="q" placeholder="search" autocomplete="off"> <div id="site-search-results" class="search-results" hidden></div> </form> <div class="tool-row" aria-label="主题切换"> <span>theme:</span> <button type="button" data-theme-choice="white">white</button> <button type="button" data-theme-choice="black">black</button> <button type="button" data-theme-choice="purple">purple</button> <button type="button" data-theme-choice="blue">blue</button> </div> <div class="tool-row" aria-label="页面宽度"> <span>width:</span> <button type="button" data-width-choice="100">100</button> <button type="button" data-width-choice="80">80</button> <button type="button" data-width-choice="60">60</button> <button type="button" data-width-choice="40">40</button> </div> </div> </td> </tr> <tr> <td class="sub">We&#39;re not exactly in a position to be trusted with secrets, are we?</td> </tr> </tbody> </table> <table class="tabs"> <tbody> <tr> <td> <nav aria-label="主导航"> <a href="/">about</a> <a href="/archives">summary</a> <a href="/friends">ref</a> </nav> </td> </tr> </tbody> </table> </header> <main class="content" data-pagefind-body>  <article class="content-body"> <header class="article-header"> <h1 class="article-title">Headscale+Derp异地组网</h1> <table class="commit-info"> <tbody> <tr> <th>created</th> <td> <time datetime="2025-03-23T22:13:57.000Z"> 2025 年 03 月 24 日 06:13 </time> </td> </tr> <tr> <th>updated</th> <td> <time datetime="2025-08-03T00:41:17.000Z"> 2025 年 08 月 03 日 08:41 </time> </td> </tr> <tr> <th>category</th> <td> <a href="/category/%E7%BD%91%E7%BB%9C">网络</a> </td> </tr> <tr> <th>tags</th> <td> <a href="/tag/VPN">VPN</a>  </td> </tr> </tbody> </table> </header> <div> <p>Tailscale是一种虚拟组网工具，基于WireGuard。能够把安装了Tailscale服务的机器，都连接到同一个局域网。局域网中的每台设备会自动分配IP，设备可以通过IP实现相互访问，除了延迟，与物理本地局域网相同。</p>
 <p>Tailscale会优先使用中继服务器，保证最快可连接，之后尝试P2P连接，即两台设备之间数据不经过中继服务器直接连接。P2P连接成功之后，两台设备直接的延迟取决于两地距离，带宽取决于两地网络带宽上线，不再收中继服务器带宽约束。P2P连接中断时，自动fallback回中继服务器连接，优先保证可访问，其次优化连接速度。</p>
 <p>Tailscale本身是一款商业软件，free版本支持3个用户和100个设备组网，但是中继服务器不在国内，在P2P连接失败后，网络延迟较大。可以通过自建中继节点接入官方控制器解决，其次，官方控制器在设备首次接入网络时，都需要使用相同的Google、微软账号登录，比较麻烦，因此选择使用Tailscale的开源替代版本Headscale。</p>
 <p>安全方面，Tailscale网络之间的流量使用WireGuard协议传输，中继节点无法解密流量，外部设备需要进行授权才能加入网络，因此安全性较高。</p>
 <p>组网成功并且两台设备之间可以通过P2P直连，延迟可以在个位数毫秒内。</p>
-<h2 id="网络拓扑" class="heading">网络拓扑<a href="#网络拓扑" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h2 id="网络拓扑">网络拓扑</h2>
 <p>组网后网络拓扑如下，网络中每台设备会分配一个tailscale网络IP</p>
-<h2 id="搭建需求" class="heading">搭建需求<a href="#搭建需求" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h2 id="搭建需求">搭建需求</h2>
 <ul>
 <li>至少需要两台服务器，一台部署控制器，多台部署中继节点</li>
 <li>至少需要两个域名，一台指向控制器，另一台指向各个中继节点</li>
 <li>域名强制使用HTTPS，如果不使用Caddy等工具，需要手动上传、更新SSL证书，如果证书到期服务将无法使用</li>
 <li>控制器需要使用80、443端口，中继节点可自定义端口，但不使用443端口时，可能会与Clash冲突导致无法连接到中继节点</li>
 </ul>
-<h2 id="使用软件" class="heading">使用软件<a href="#使用软件" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
-<p><a href="https://github.com/juanfont/headscale" rel="noopener noreferrer" target="_blank">GitHub – juanfont/headscale: An open source, self-hosted implementation of the Tailscale control server</a><i class="iconfont icon-external-link"></i></p>
-<p><a href="https://github.com/GoodiesHQ/headscale-admin" rel="noopener noreferrer" target="_blank">GitHub – GoodiesHQ/headscale-admin: Admin Web Interface for juanfont/headscale</a><i class="iconfont icon-external-link"></i></p>
-<p><a href="https://github.com/fredliang44/derper-docker" rel="noopener noreferrer" target="_blank">GitHub – fredliang44/derper-docker: tailscale‘s selfhosted derp-server docker image</a><i class="iconfont icon-external-link"></i></p>
-<h2 id="安装前" class="heading">安装前<a href="#安装前" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<h2 id="使用软件">使用软件</h2>
+<p><a href="https://github.com/juanfont/headscale">GitHub – juanfont/headscale: An open source, self-hosted implementation of the Tailscale control server</a></p>
+<p><a href="https://github.com/GoodiesHQ/headscale-admin">GitHub – GoodiesHQ/headscale-admin: Admin Web Interface for juanfont/headscale</a></p>
+<p><a href="https://github.com/fredliang44/derper-docker">GitHub – fredliang44/derper-docker: tailscale‘s selfhosted derp-server docker image</a></p>
+<h2 id="安装前">安装前</h2>
 <p>创建Docker网络</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker network create headscale-network</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<h2 id="服务端-1-控制器headscale" class="heading">服务端-1-控制器Headscale<a href="#服务端-1-控制器headscale" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker network create headscale-network</span></span></code></pre>
+<h2 id="服务端-1-控制器headscale">服务端-1-控制器Headscale</h2>
 <p>安装位置<code>/root/headscale</code></p>
 <p>创建配置文件夹、数据文件夹、docker-compose文件</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="bash" title="复制 bash 代码" type="button"><span class="copy-code-btn__text">BASH</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">mkdir</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> container-config</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  container-data</span></span>
-<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">touch</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<div class="code-block"><button class="copy-code-btn" data-lang="yaml" title="复制 yaml 代码" type="button"><span class="copy-code-btn__text">YAML</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">version</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'3'</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">services</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  headscale</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    container_name</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    image</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale/headscale:latest</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    restart</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">unless-stopped</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    volumes</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">./container-config:/etc/headscale</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">./container-data:/var/lib/headscale</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    entrypoint</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">headscale serve</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    networks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">      headscale-network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">networks</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">  headscale-network</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:</span></span>
-<span class="line"><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">    external</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:var(--astro-code-token-function)">mkdir</span><span style="color:var(--astro-code-token-string)"> container-config</span><span style="color:var(--astro-code-token-string)">  container-data</span></span>
+<span class="line"><span style="color:var(--astro-code-token-function)">touch</span><span style="color:var(--astro-code-token-string)"> docker-compose.yml</span></span></code></pre>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:var(--astro-code-token-keyword)">version</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-string-expression)"> '3'</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">services</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">  headscale</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    container_name</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-string-expression)"> headscale</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    image</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-string-expression)"> headscale/headscale:latest</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    restart</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-string-expression)"> unless-stopped</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    volumes</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-foreground)">      - </span><span style="color:var(--astro-code-token-string-expression)">./container-config:/etc/headscale</span></span>
+<span class="line"><span style="color:var(--astro-code-foreground)">      - </span><span style="color:var(--astro-code-token-string-expression)">./container-data:/var/lib/headscale</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    entrypoint</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-string-expression)"> headscale serve</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    networks</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">      headscale-network</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">networks</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">  headscale-network</span><span style="color:var(--astro-code-token-keyword)">:</span></span>
+<span class="line"><span style="color:var(--astro-code-token-keyword)">    external</span><span style="color:var(--astro-code-token-keyword)">:</span><span style="color:var(--astro-code-token-constant)"> true</span></span></code></pre>
 <p>在<code>container-config</code>下创建配置文件<code>config.yaml</code></p>
 <p>先使用官方提供的配置文件模板，后续会对该文件进行修改</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>---</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
 <span class="line"><span># headscale will look for a configuration file named `config.yaml` (or `config.json`) in the following order:</span></span>
 <span class="line"><span>#</span></span>
 <span class="line"><span># - `/etc/headscale`</span></span>
@@ -473,21 +454,21 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span># Enabling this option makes devices prefer a random port for WireGuard traffic over the</span></span>
 <span class="line"><span># default static port 41641. This option is intended as a workaround for some buggy</span></span>
 <span class="line"><span># firewall devices. See https://tailscale.com/kb/1181/firewalls/ for more information.</span></span>
-<span class="line"><span>randomize_client_port: false</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>randomize_client_port: false</span></span></code></pre>
 <p>配置文件第13行，需要改成指向服务器的域名</p>
-<p>配置文件第19行，需要改成0.0.0.0</p><div></div><p></p>
+<p>配置文件第19行，需要改成0.0.0.0:8080否则外部网络无法连接</p>
 <p>此时文件目录如下所示</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/headscale</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/root/headscale</span></span>
 <span class="line"><span>├── container-config</span></span>
 <span class="line"><span>│   └── config.yaml</span></span>
 <span class="line"><span>├── container-data</span></span>
-<span class="line"><span>└── docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre>
 <p>启动Headsale服务</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<h2 id="服务端-1-headsale管理面板" class="heading">服务端-1-Headsale管理面板<a href="#服务端-1-headsale管理面板" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker compose up -d</span></span></code></pre>
+<h2 id="服务端-1-headsale管理面板">服务端-1-Headsale管理面板</h2>
 <p>安装目录<code>/root/headscale-admin</code></p>
 <p>使用<code>docker-compose</code>运行</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>version: '3'</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>version: '3'</span></span>
 <span class="line"><span>services:</span></span>
 <span class="line"><span>  headscale-admin:</span></span>
 <span class="line"><span>    image: goodieshq/headscale-admin:latest</span></span>
@@ -499,19 +480,19 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span></span></span>
 <span class="line"><span>networks:</span></span>
 <span class="line"><span>  headscale-network:</span></span>
-<span class="line"><span>    external: true</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>    external: true</span></span></code></pre>
 <p>启动容器</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker compose up -d</span></span></code></pre>
 <p>目录结构如下</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/headscale-admin/</span></span>
-<span class="line"><span>└── docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<h2 id="服务端-1-caddy反代服务" class="heading">服务端-1-Caddy反代服务<a href="#服务端-1-caddy反代服务" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/root/headscale-admin/</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre>
+<h2 id="服务端-1-caddy反代服务">服务端-1-Caddy反代服务</h2>
 <p>Headscale强制要求HTTPS，此处使用Caddy是为了自动申请更新域名证书，可根据需要更换Nginx</p>
 <p>安装目录<code>/root/caddy</code></p>
 <p>创建目录、配置文件</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>mkdir container-config  container-data</span></span>
-<span class="line"><span>touch docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>services:</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>mkdir container-config  container-data</span></span>
+<span class="line"><span>touch docker-compose.yml</span></span></code></pre>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>services:</span></span>
 <span class="line"><span>  caddy:</span></span>
 <span class="line"><span>    image: caddy:latest</span></span>
 <span class="line"><span>    container_name: caddy</span></span>
@@ -531,53 +512,53 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span></span></span>
 <span class="line"><span>networks:</span></span>
 <span class="line"><span>  headscale-network:</span></span>
-<span class="line"><span>    external: true</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>    external: true</span></span></code></pre>
 <p>在<code>container-config</code>下创建配置文件<code>Caddyfile</code>，自行更换<code>example.com</code>为服务器使用域名</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>https://example.com {</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://example.com {</span></span>
 <span class="line"><span>    reverse_proxy /admin/* http://headscale-admin</span></span>
 <span class="line"><span>    reverse_proxy * http://headscale:8080</span></span>
-<span class="line"><span>}</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>}</span></span></code></pre>
 <p>此时目录结构如下</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/caddy</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/root/caddy</span></span>
 <span class="line"><span>├── container-config</span></span>
 <span class="line"><span>│   └── Caddyfile</span></span>
 <span class="line"><span>├── container-data</span></span>
-<span class="line"><span>└── docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre>
 <p>验证是否安装成功</p>
 <p>访问以下地址<code>https://&#x3C;font style="color:rgb(55, 53, 47);">example.com/windows&#x3C;/font></code>，能正常访问说明以上步骤正确</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007887935-f3ea9f16-48a9-4dc0-a5b8-7f2e66006078.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h2 id="管理面板配置" class="heading">管理面板配置<a href="#管理面板配置" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007887935-f3ea9f16-48a9-4dc0-a5b8-7f2e66006078.png" alt=""></p>
+<h2 id="管理面板配置">管理面板配置</h2>
 <p>访问地址<code>[https://example.com/admin/](https://headscale2.vio.vin/admin/settings/)</code>进入管理面板，注意此处需要有最后的/</p>
 <p>创建默认用户</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale users create default</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker exec headscale headscale users create default</span></span></code></pre>
 <p>获取用户加入节点时的key</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale preauthkeys create --user default</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker exec headscale headscale preauthkeys create --user default</span></span></code></pre>
 <p>生成API密钥</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker exec headscale headscale apikey create</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker exec headscale headscale apikey create</span></span></code></pre>
 <p>在管理面板填入API密钥，点击保存即可认证成功</p>
 <p>注意：此处的<code>Legacy API (Headscale &#x3C; 0.23)</code>选项需要关掉，如果失败可以打开控制台日志进行排错，浏览器中打开F12即可</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007536292-c275d2be-51fc-4e82-a795-7e5a6d1abdb5.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007634484-04763d33-81b0-4c42-bd1d-65bff6adf1d2.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007536292-c275d2be-51fc-4e82-a795-7e5a6d1abdb5.png" alt=""></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007634484-04763d33-81b0-4c42-bd1d-65bff6adf1d2.png" alt=""></p>
 <ul>
-<li>Users<div></div>，不同用户之间可以隔离也可互相访问</li>
-<li>Nodes<div></div>，可以删除设备</li>
-<li>Deploy<div></div>，按照下图设置即可</li>
+<li>Users:用于创建不同用户，不同用户之间可以隔离也可互相访问</li>
+<li>Nodes:管理已加入Tailscale网络的设备，可以删除设备</li>
+<li>Deploy:用于生成客户端加入Tailscale网络的指令，按照下图设置即可</li>
 </ul>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007817129-1c1cf38a-d1fb-458b-a691-8a81f967cf22.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h2 id="服务端-2-中继节点derper" class="heading">服务端-2-中继节点Derper<a href="#服务端-2-中继节点derper" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735007817129-1c1cf38a-d1fb-458b-a691-8a81f967cf22.png" alt=""></p>
+<h2 id="服务端-2-中继节点derper">服务端-2-中继节点Derper</h2>
 <p>中继节点作为客户端加入Tailscale网络</p>
 <ul>
 <li>此处是为了使用<code>DERP_VERIFY_CLIENTS=true</code>的功能更，用于中继节点授权，防止节点被公网其他用户使用</li>
 </ul>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>curl -fsSL https://tailscale.com/install.sh | sh</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>curl -fsSL https://tailscale.com/install.sh | sh</span></span></code></pre>
 <p>安装之后使用查看状态确保程序为active状态</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>systemctl status tailscaled.service</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>systemctl status tailscaled.service</span></span></code></pre>
 <p>之后使用使用上一步生成的指令加入tailscale网络</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale up --login-server=https://headscale2.vio.vin --authkey=e228e7ddcc424e4a5eb4bec397ee493aa03f383fb608e804 --accept-dns=false --accept-routes</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>tailscale up --login-server=https://headscale2.vio.vin --authkey=e228e7ddcc424e4a5eb4bec397ee493aa03f383fb608e804 --accept-dns=false --accept-routes</span></span></code></pre>
 <p>安装目录<code>/root/derp</code></p>
 <p>第15行，此处的域名应该使用节点域名，不可与Headscale域名相同</p>
 <p>第10行，映射端口需要开启udp</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>version: '3'</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>version: '3'</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>services:</span></span>
 <span class="line"><span>  derper:</span></span>
@@ -592,17 +573,17 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span>      - /var/run/tailscale/tailscaled.sock:/var/run/tailscale/tailscaled.sock</span></span>
 <span class="line"><span>    environment:</span></span>
 <span class="line"><span>      - DERP_DOMAIN=example.com</span></span>
-<span class="line"><span>      - DERP_VERIFY_CLIENTS=true</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>      - DERP_VERIFY_CLIENTS=true</span></span></code></pre>
 <p>此时目录结构如下</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>/root/derp</span></span>
-<span class="line"><span>└── docker-compose.yml</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/root/derp</span></span>
+<span class="line"><span>└── docker-compose.yml</span></span></code></pre>
 <p>启动容器</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>docker compose up -d</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker compose up -d</span></span></code></pre>
 <p>访问derp域名确认已在运行</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735008690302-aacc1389-2b3e-48dd-b437-7d35266af901.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h2 id="节点加入headscale" class="heading">节点加入Headscale<a href="#节点加入headscale" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735008690302-aacc1389-2b3e-48dd-b437-7d35266af901.png" alt=""></p>
+<h2 id="节点加入headscale">节点加入Headscale</h2>
 <p>在<code>/root/headscale/container-config</code>下创建<code>derp.yaml</code>文件</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>regions:</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>regions:</span></span>
 <span class="line"><span>  902:</span></span>
 <span class="line"><span>    regionid: 902</span></span>
 <span class="line"><span>    regioncode: chd</span></span>
@@ -613,12 +594,12 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span>        hostname: derp-hk.vio.vin</span></span>
 <span class="line"><span>        stunport: 34789</span></span>
 <span class="line"><span>        stunonly: false</span></span>
-<span class="line"><span>        derpport: 443</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>        derpport: 443</span></span></code></pre>
 <p>此处的902为节点id，stunport为udp端口，derpport为derp HTTPS端口，其余按照上述自行填写</p>
 <p>修改<code>/root/headscale/container-config/config.yaml</code></p>
 <p>注释掉114行，不需要tailscale官方的中继服务器</p>
 <p>修改124、125行，指定derp.yaml文件地址</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>---</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
 <span class="line"><span># headscale will look for a configuration file named `config.yaml` (or `config.json`) in the following order:</span></span>
 <span class="line"><span>#</span></span>
 <span class="line"><span># - `/etc/headscale`</span></span>
@@ -1022,39 +1003,39 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span># Enabling this option makes devices prefer a random port for WireGuard traffic over the</span></span>
 <span class="line"><span># default static port 41641. This option is intended as a workaround for some buggy</span></span>
 <span class="line"><span># firewall devices. See https://tailscale.com/kb/1181/firewalls/ for more information.</span></span>
-<span class="line"><span>randomize_client_port: false</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<h2 id="用户使用" class="heading">用户使用<a href="#用户使用" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<span class="line"><span>randomize_client_port: false</span></span></code></pre>
+<h2 id="用户使用">用户使用</h2>
 <p>下载tailscale软件并自行安装</p>
-<p><a href="https://tailscale.com/download" rel="noopener noreferrer" target="_blank">Download | Tailscale</a><i class="iconfont icon-external-link"></i></p>
+<p><a href="https://tailscale.com/download">Download | Tailscale</a></p>
 <p>打开CMD窗口，输入headscale管理面板中生成的命令，当显示Tailscale Connected时说明已经连接成功</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022084428-e6e6ff41-ca12-47f4-8b58-01903456df69.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022084428-e6e6ff41-ca12-47f4-8b58-01903456df69.png" alt=""></p>
 <p>点击Network devices可查看当前网络中的其他设备，点击可复制设备IP地址</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022209980-49be7fc4-eaef-4e57-8d51-66b6d4597c83.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735094999084-e678b954-e6aa-47ed-bfd9-888fcb25e36d.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h2 id="高级功能" class="heading">高级功能<a href="#高级功能" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
-<h3 id="subnet-routers" class="heading">Subnet Routers<a href="#subnet-routers" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022209980-49be7fc4-eaef-4e57-8d51-66b6d4597c83.png" alt=""></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735094999084-e678b954-e6aa-47ed-bfd9-888fcb25e36d.png" alt=""></p>
+<h2 id="高级功能">高级功能</h2>
+<h3 id="subnet-routers">Subnet Routers</h3>
 <p>文档</p>
-<p><a href="https://tailscale.com/kb/1019/subnets" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
+<p><a href="https://tailscale.com/kb/1019/subnets">Subnet routers · Tailscale Docs</a></p>
 <p>按照上述示例配置后，每个设备需要在客户端单独运行tailscale才能加入tailscale网络，加入网络之后才能互相访问，如果需要加入网络的设备较多，此方法不够简单。</p>
 <p>是否有什么办法可以将一个ip段或者一个局域网的设备全部拉入tailscale网络中呢，通过Subnet Routers可以实现。不适用Subnet Routers时，只能实现点对点互联，只有使用Subnet Routers才能实现真正的VPN功能。</p>
 <p>假设网络拓扑为公司局域网ip段为192.168.31.0/24，将该局域网中任意一个设备的启动命令修改为</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale up --accept-routes=true --accept-dns=false --advertise-routes=192.168.31.0/24 --advertise-exit-node</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>tailscale up --accept-routes=true --accept-dns=false --advertise-routes=192.168.31.0/24 --advertise-exit-node</span></span></code></pre>
 <p>该设备加入tailscale之后，会以该设备网为中继节点，访问局域网内其他设备，此处需要对防火墙出入站规则进行相应配置，tailscale启动后会创建一个tailscale0虚拟网卡，需要对此网卡关闭防火墙，允许出入站。</p>
 <p>注意：</p>
 <ol>
 <li>此处非常不建议使用192.168的网络前缀，容易与客户端网络发生冲突，建议改为10.XX.XX.0网段。</li>
 <li>开启Subnet Routers功能的节点设备需要开启IP转发功能，具体参考以下文档。</li>
 </ol>
-<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
-<h3 id="exit-node" class="heading">Exit node<a href="#exit-node" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding">Subnet routers · Tailscale Docs</a></p>
+<h3 id="exit-node">Exit node</h3>
 <p>在上述启动命令中有一个参数<code>--advertise-exit-node</code>，该参数意味将该设备作为整个网络的出口节点，网络中所有设备访问互联网时，不会直接进行访问，所有流量会被转发到该设备，由该设备代理网络流量实现访问，该功能类似与传统意义的VPN，该功能并不是默认的，客户端需要手动设置才能使用Exit node功能。</p>
-<p><a href="https://tailscale.com/kb/1103/exit-nodes" rel="noopener noreferrer" target="_blank">Exit nodes (route all traffic) · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736415379107-e83b575f-0189-4387-8123-986b54e294e7.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h3 id="access-control" class="heading">Access Control<a href="#access-control" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p><a href="https://tailscale.com/kb/1103/exit-nodes">Exit nodes (route all traffic) · Tailscale Docs</a></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736415379107-e83b575f-0189-4387-8123-986b54e294e7.png" alt=""></p>
+<h3 id="access-control">Access Control</h3>
 <p>默认情况下，同一个局域网内的设备互相可以访问，如果需要对该局域网下的设备进行分组隔离，可以使用tags功能，给加入网络的所有设备打上tag之后，可以通过acl设置设备之间的单向-双向访问，除tag之外，也支持对设备进行分组控制。首先需要修改配置文件，定义tag，此处以json配置文件为示例，自建Headscale需要以yaml为配置文件。</p>
 <p><strong>创建Tags</strong></p>
 <p>此处的<code>"tag:home-pc"</code>，代表一个tag，后的中括号制定了谁可以使用这个tag，此处简单设置为管理员可以使用tag。</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>{</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
 <span class="line"><span>  "tagOwners": {</span></span>
 <span class="line"><span>        "tag:home-pc":     ["autogroup:admin"],</span></span>
 <span class="line"><span>        "tag:home-server": ["autogroup:admin"],</span></span>
@@ -1063,7 +1044,7 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span>        "tag:game-player": ["autogroup:admin"],</span></span>
 <span class="line"><span>        "tag:relay-node":  ["autogroup:admin"],</span></span>
 <span class="line"><span>    },</span></span>
-<span class="line"><span>}</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>}</span></span></code></pre>
 <p><strong>访问控制</strong></p>
 <p>默认设置为<code>{"action": "accept", "src": ["*"], "dst": ["*:*"]}</code>所有设备之间可相互访问，如需自行控制需要删除这一行。</p>
 <ul>
@@ -1073,12 +1054,12 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <li>dst表示连接目的地，格式为:&#x3C;端口号>，示例<code>["tag:game-server:*", "tag:game-server:8080", "tag:game-server:8000:9000"],</code>
 <ul>
 <li>tag:game-server:*所有端口均可访问</li>
-<li>tag:game-server<div></div></li>
-<li>tag:game-server:8000<div></div></li>
+<li>tag:game-server:8080只允许访问8080端口</li>
+<li>tag:game-server:8000:9000允许访问的端口范围为8000-9000</li>
 </ul>
 </li>
 </ul>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>"acls": [</span></span>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>"acls": [</span></span>
 <span class="line"><span>        // Allow all connections.</span></span>
 <span class="line"><span>        // Comment this section out if you want to define specific restrictions.</span></span>
 <span class="line"><span>        // {"action": "accept", "src": ["*"], "dst": ["*:*"]},</span></span>
@@ -1102,54 +1083,255 @@ This article was published on 25 年 3 月 24 日 星期一. Some details may be
 <span class="line"><span>            "src":    ["tag:home-pc"],</span></span>
 <span class="line"><span>            "dst":    ["*:*"],</span></span>
 <span class="line"><span>        },</span></span>
-<span class="line"><span>    ],</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
+<span class="line"><span>    ],</span></span></code></pre>
 <p>更多配置可以查看官方文档以其其他文档。</p>
-<p><a href="https://tailscale.com/kb/1068/tags" rel="noopener noreferrer" target="_blank">Group devices with tags · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
-<p><a href="https://icloudnative.io/posts/tailscale-acls/" rel="noopener noreferrer" target="_blank">Tailscale/Headscale ACL 使用教程</a><i class="iconfont icon-external-link"></i></p>
-<h3 id="ipv6" class="heading">IPV6<a href="#ipv6" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p><a href="https://tailscale.com/kb/1068/tags">Group devices with tags · Tailscale Docs</a></p>
+<p><a href="https://icloudnative.io/posts/tailscale-acls/">Tailscale/Headscale ACL 使用教程</a></p>
+<h3 id="ipv6">IPV6</h3>
 <p>启用IPV6可以提高直连几率，减少中继服务器流量负载，IPV6访问需要中继节点和客户端同时支持IPV6，且必须是240开头的公网IP地址。</p>
-<h2 id="其他" class="heading">其他<a href="#其他" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
-<h3 id="无人值守模式" class="heading">无人值守模式<a href="#无人值守模式" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<h2 id="其他">其他</h2>
+<h3 id="无人值守模式">无人值守模式</h3>
 <p>开启次配置，tailscale将在设备开机时自动允许</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929408507-9cdb28d8-b0ea-4ca4-8a6f-e7e3ec905508.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h3 id="不加入subnet" class="heading">不加入Subnet<a href="#不加入subnet" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h3>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929408507-9cdb28d8-b0ea-4ca4-8a6f-e7e3ec905508.png" alt=""></p>
+<h3 id="不加入subnet">不加入Subnet</h3>
 <p>如果遇到IP地址冲突，客户端可以暂时关闭subnet routers，关闭如下配置即可</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929521436-0e803676-0867-4fdd-b68f-3e756f928e6c.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
-<h2 id="排错" class="heading">排错<a href="#排错" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/34001867/1736929521436-0e803676-0867-4fdd-b68f-3e756f928e6c.png" alt=""></p>
+<h2 id="排错">排错</h2>
 <p>在客户端使用指令<code>tailscale netcheck</code>可以查看中继服务器状态</p>
-<div class="code-block"><button class="copy-code-btn" data-lang="text" title="复制 text 代码" type="button"><span class="copy-code-btn__text">TEXT</span><span class="sr-only">复制代码</span></button><pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>tailscale netcheck</span></span></code></pre><button class="toggle-code-btn" type="button" aria-expanded="false" aria-label="展开代码" title="展开代码"><span class="toggle-code-btn__arrow" aria-hidden="true">⌄</span></button></div>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022258390-5ba2fe31-2e61-4d21-9b4f-5c42cba22ed6.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<pre class="astro-code css-variables" style="background-color:var(--astro-code-background);color:var(--astro-code-foreground); overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>tailscale netcheck</span></span></code></pre>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022258390-5ba2fe31-2e61-4d21-9b4f-5c42cba22ed6.png" alt=""></p>
 <p>使用<code>tailscale status</code>可查看当前客户端是否连接到tailscale网络，同时可查看网络中其他设备IP</p>
-<figure><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022317358-240dfd6a-fb0a-49f1-b29c-791ddb650cbf.png" alt="" loading="lazy" data-image-loading="true" class="markdown-image"></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/34001867/1735022317358-240dfd6a-fb0a-49f1-b29c-791ddb650cbf.png" alt=""></p>
 <p>如果遇到Subnet Router无法访问，需要按照此文档开启ip转发</p>
-<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding" rel="noopener noreferrer" target="_blank">Subnet routers · Tailscale Docs</a><i class="iconfont icon-external-link"></i></p>
-<h2 id="参考文档" class="heading">参考文档<a href="#参考文档" class="heading-anchor" aria-label="Heading Anchor"><i class="iconfont icon-link"></i></a></h2>
+<p><a href="https://tailscale.com/kb/1019/subnets?tab=linux#enable-ip-forwarding">Subnet routers · Tailscale Docs</a></p>
+<h2 id="参考文档">参考文档</h2>
 <ul>
-<li><a href="https://blog.laisky.com/p/tailscale-nat/?lang=zh#gsc.tab=0" rel="noopener noreferrer" target="_blank">Introduction to TailScale NAT Technology and Personal Networking Solutions</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://icloudnative.io/posts/custom-derp-servers/" rel="noopener noreferrer" target="_blank">Tailscale 基础教程：部署私有 DERP 中继服务器</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://icloudnative.io/posts/how-to-set-up-or-migrate-headscale/" rel="noopener noreferrer" target="_blank">Tailscale 基础教程：Headscale 的部署方法和使用教程</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://blog.openyq.top/posts/64921/#%E6%9C%8D%E5%8A%A1%E7%AB%AF" rel="noopener noreferrer" target="_blank">自建 Tailscale 服务并实现多设备组网互联</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://blog.laisky.com/p/tailscale/#gsc.tab=0" rel="noopener noreferrer" target="_blank">Recent experiences with tailscale</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://www.haha.ai/article/headscale" rel="noopener noreferrer" target="_blank">https://www.haha.ai/article/headscale</a><i class="iconfont icon-external-link"></i></li>
-<li><a href="https://icloudnative.io/posts/tailscale-acls/" rel="noopener noreferrer" target="_blank">Tailscale/Headscale ACL 使用教程</a><i class="iconfont icon-external-link"></i></li>
-</ul>  </article> </div> <section class="mt-12 space-y-6" data-pagefind-ignore> <section class="text-xs leading-loose text-secondary"> <p>Title: Headscale+Derp异地组网</p> <p>Author: violet</p> <p> <span>Link: https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang</span>  <button type="button" class="cursor-pointer select-none hover:text-accent" data-copy-text="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang" data-copy-success="Link copied" data-copy-error="Copy failed">
-[Copy]
-</button> </p> <p>Last updated: 2025 年 08 月 03 日 08:41</p> <hr class="my-3 border-primary"> <p>
-Commercial reuse requires permission from the site owner. For non-commercial reuse, keep the
-    source and article link. Derivatives should stay under the same license.
-<br>
-This article is licensed under  <a class="underline-offset-2 hover:text-accent hover:underline" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">
-CC BY-NC-SA 4.0
-</a>
-.
-</p> </section> <div class="grid grid-cols-2"> <div> <a class="flex items-baseline gap-2 hover:text-accent" href="/posts/2024-nian-zhong-zong-jie"> <i class="iconfont icon-arrow-left"></i> <span>2024年终总结</span> </a> </div> <div> <a class="flex items-baseline justify-end gap-2 hover:text-accent" href="/posts/ubunut-24-zi-jian-xing-fu-gong-chang-fu-wu-qi"> <span>Ubunut 24 自建幸福工厂服务器</span> <i class="iconfont icon-arrow-right"></i> </a> </div> </div> <div> <div class="giscus-container" data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </div> </section> </div> <!-- Sticky sidebar - outside swup transition --> <div class="hidden lg:block" data-pagefind-ignore> <aside class="sticky top-20"> <section> <div class="mb-8 font-bold uppercase tracking-widest text-accent">目录</div>  <nav aria-label="Table of contents" data-post-toc> <ul class="group relative space-y-2 overflow-y-auto text-sm" style="max-height:min(380px, calc(100vh - 250px));scrollbar-width:none" data-post-toc-scroll> <li class="relative" data-toc-item data-heading-slug="网络拓扑"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#网络拓扑" data-toc-link> 网络拓扑 </a> </li><li class="relative" data-toc-item data-heading-slug="搭建需求"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#搭建需求" data-toc-link> 搭建需求 </a> </li><li class="relative" data-toc-item data-heading-slug="使用软件"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#使用软件" data-toc-link> 使用软件 </a> </li><li class="relative" data-toc-item data-heading-slug="安装前"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#安装前" data-toc-link> 安装前 </a> </li><li class="relative" data-toc-item data-heading-slug="服务端-1-控制器headscale"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-控制器headscale" data-toc-link> 服务端-1-控制器Headscale </a> </li><li class="relative" data-toc-item data-heading-slug="服务端-1-headsale管理面板"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-headsale管理面板" data-toc-link> 服务端-1-Headsale管理面板 </a> </li><li class="relative" data-toc-item data-heading-slug="服务端-1-caddy反代服务"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-1-caddy反代服务" data-toc-link> 服务端-1-Caddy反代服务 </a> </li><li class="relative" data-toc-item data-heading-slug="管理面板配置"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#管理面板配置" data-toc-link> 管理面板配置 </a> </li><li class="relative" data-toc-item data-heading-slug="服务端-2-中继节点derper"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#服务端-2-中继节点derper" data-toc-link> 服务端-2-中继节点Derper </a> </li><li class="relative" data-toc-item data-heading-slug="节点加入headscale"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#节点加入headscale" data-toc-link> 节点加入Headscale </a> </li><li class="relative" data-toc-item data-heading-slug="用户使用"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#用户使用" data-toc-link> 用户使用 </a> </li><li class="relative" data-toc-item data-heading-slug="高级功能"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#高级功能" data-toc-link> 高级功能 </a> </li><li class="relative" data-toc-item data-heading-slug="subnet-routers"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#subnet-routers" data-toc-link> Subnet Routers </a> </li><li class="relative" data-toc-item data-heading-slug="exit-node"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#exit-node" data-toc-link> Exit node </a> </li><li class="relative" data-toc-item data-heading-slug="access-control"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#access-control" data-toc-link> Access Control </a> </li><li class="relative" data-toc-item data-heading-slug="ipv6"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#ipv6" data-toc-link> IPV6 </a> </li><li class="relative" data-toc-item data-heading-slug="其他"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#其他" data-toc-link> 其他 </a> </li><li class="relative" data-toc-item data-heading-slug="无人值守模式"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#无人值守模式" data-toc-link> 无人值守模式 </a> </li><li class="relative" data-toc-item data-heading-slug="不加入subnet"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:16px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#不加入subnet" data-toc-link> 不加入Subnet </a> </li><li class="relative" data-toc-item data-heading-slug="排错"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#排错" data-toc-link> 排错 </a> </li><li class="relative" data-toc-item data-heading-slug="参考文档"> <span class="absolute left-0 top-2 h-1 rounded-full bg-zinc-300 transition-colors dark:bg-zinc-700" style="width:20px" aria-hidden="true" data-toc-indicator></span> <a class="inline-block pl-8 opacity-0 text-zinc-500 transition-opacity duration-300 group-hover:opacity-100 hover:text-zinc-900 dark:hover:text-zinc-100" href="#参考文档" data-toc-link> 参考文档 </a> </li> </ul> </nav> <hr class="my-2 border-primary max-w-[100px]"> <div> <span class="text-sm">
-进度 <span data-reading-progress-value>0</span>%
-</span> </div>  </section> <div class="absolute bottom-0 left-0 flex flex-col gap-4" style="transform:translateY(calc(100% + 24px))" data-share-root data-share-url="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang" data-share-title="Headscale+Derp异地组网"> <button type="button" aria-label="Share this post" class="size-6 text-xl leading-none hover:text-accent" data-share-open> <i class="iconfont icon-share"></i> </button> <div class="hidden" aria-hidden="true" data-share-modal> <div class="fixed inset-0 z-[70] flex items-center justify-center bg-zinc-950/35 px-4 backdrop-blur-sm"> <div class="absolute inset-0" data-share-close></div> <div class="relative w-[min(420px,100%)] rounded-2xl border border-primary bg-primary p-4 shadow-2xl shadow-zinc-900/10" role="dialog" aria-modal="true" aria-label="Share"> <div class="flex items-start justify-between gap-4"> <div class="min-w-0"> <h2 class="font-semibold">Share this post</h2> <p class="mt-1 text-sm text-secondary">Headscale+Derp异地组网</p> </div> <button class="rounded-full px-2 py-1 text-xs text-secondary transition-colors hover:bg-secondary hover:text-primary" type="button" data-share-close>
-Esc
-</button> </div> <div class="mt-4 grid gap-4 sm:grid-cols-[180px_minmax(0,1fr)]"> <div class="flex h-[180px] items-center justify-center rounded-2xl border border-primary bg-white p-3"> <img class="hidden size-[156px]" alt="Share QR code" width="156" height="156" decoding="async" data-share-qr-image> <span class="text-sm text-secondary" data-share-qr-loading>Loading QR code...</span> </div> <div class="flex min-w-0 flex-col gap-3"> <div class="break-all rounded-2xl border border-primary bg-secondary/50 p-3 text-sm text-secondary"> https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang </div> <button type="button" class="rounded-2xl border border-primary px-4 py-2 text-sm transition-colors hover:bg-secondary" data-copy-text="https://www.vio.vin/posts/headscale-derp-yi-di-zu-wang" data-copy-success="Link copied" data-copy-error="Copy failed">
-Copy link
-</button> </div> </div> </div> </div> </div> </div> </aside> </div> </div> </div>  </main> <footer class="relative z-1 py-8 px-4 md:px-8 border-t border-primary text-secondary text-sm"> <div class="text-center space-y-2"> <div>
-Powered by
-<a class="hover:text-accent" href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a>
-& Designed by
-<a class="hover:text-accent" href="https://github.com/lxchapu/astro-gyoza" target="_blank" rel="noopener noreferrer">Gyoza</a> </div> <div class="space-x-1"> <span>&copy;2025 - 2026 <a class="hover:text-accent" href="/">violet</a>.</span> <a class="hover:text-accent" href="/rss.xml" data-no-swup="true"> <i class="iconfont icon-rss"></i> <span>RSS</span> </a> <a class="hover:text-accent" href="/sitemap-index.xml" data-no-swup="true"> <i class="iconfont icon-map"></i> <span>站点地图</span> </a> </div> <div id="beian-info" style="display: none;"> <a class="hover:text-accent" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">陕ICP备2021015553号-2</a> </div> <div> <span data-running-days data-start-time="2025-08-02T00:00:00Z"></span> <script type="module">const a=window;if(!a.__runningDaysInitialized){a.__runningDaysInitialized=!0;const i=Array.from(document.querySelectorAll("[data-running-days]"));(()=>{i.forEach(t=>{const e=t.dataset.startTime;if(!e)return;const s=new Date(e),r=Date.now()-s.getTime(),n=Math.floor(r/864e5);t.textContent=n<0?"Site is not live yet.":`Running for ${n} day${n===1?"":"s"}`})})()}</script> <span class="select-none opacity-50">|</span> <span>共嘚嘚了 33.1k 字</span> </div> <div> <span> <code class="rounded bg-primary/10 px-1.5 py-0.5 text-xs font-mono">ccfc718</code> <span class="mx-1 select-none opacity-50">|</span> 已构建 刚刚 </span> </div> </div> <div class="mt-4 flex justify-center"> <div class="relative inline-block" data-theme-switch> <div class="absolute -z-1 top-1 size-[32px] rounded-full bg-primary shadow transition-transform" data-theme-thumb></div> <div class="flex rounded-full border border-primary p-[3px]" role="radiogroup"> <button class="flex size-[32px] items-center justify-center" type="button" aria-label="Switch to light theme" data-theme-mode="light" data-theme-button> <i class="iconfont icon-sun"></i> </button> <button class="flex size-[32px] items-center justify-center" type="button" aria-label="Switch to system theme" data-theme-mode="system" data-theme-button> <i class="iconfont icon-computer"></i> </button> <button class="flex size-[32px] items-center justify-center" type="button" aria-label="Switch to dark theme" data-theme-mode="dark" data-theme-button> <i class="iconfont icon-moon"></i> </button> </div> </div> <script type="module" src="/_astro/ThemeSwitch.astro_astro_type_script_index_0_lang.fBu5yBnQ.js"></script> </div> </footer> <script type="module">if(typeof window<"u"&&window.location.hostname.includes("vio.vin")){const n=document.getElementById("beian-info");n&&(n.style.display="block")}</script>  <div class="pointer-events-none fixed bottom-6 right-4 z-10 translate-y-2 opacity-0 transition-all duration-150" data-back-to-top-root> <button class="size-10 rounded-full border border-primary bg-white/50 shadow-lg shadow-zinc-800/5 backdrop-blur dark:bg-zinc-800/50" type="button" aria-label="Back to top" data-back-to-top-button> <i class="iconfont icon-rocket"></i> </button> </div> <script type="module">const a=window;if(!a.__backToTopInitialized){a.__backToTopInitialized=!0;const t=document.querySelector("[data-back-to-top-root]"),i=t?.querySelector("[data-back-to-top-button]");let e=0;if(t&&i){const s=()=>{const o=window.scrollY>100;t.classList.toggle("pointer-events-none",!o),t.classList.toggle("translate-y-2",!o),t.classList.toggle("opacity-0",!o),t.classList.toggle("translate-y-0",o),t.classList.toggle("opacity-100",o),e=0},n=()=>{e||(e=window.requestAnimationFrame(s))};i.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}),window.addEventListener("scroll",n,{passive:!0}),document.addEventListener("swup:content:replace",n),s()}}</script> </div> </body></html>
+<li><a href="https://blog.laisky.com/p/tailscale-nat/?lang=zh#gsc.tab=0">Introduction to TailScale NAT Technology and Personal Networking Solutions</a></li>
+<li><a href="https://icloudnative.io/posts/custom-derp-servers/">Tailscale 基础教程：部署私有 DERP 中继服务器</a></li>
+<li><a href="https://icloudnative.io/posts/how-to-set-up-or-migrate-headscale/">Tailscale 基础教程：Headscale 的部署方法和使用教程</a></li>
+<li><a href="https://blog.openyq.top/posts/64921/#%E6%9C%8D%E5%8A%A1%E7%AB%AF">自建 Tailscale 服务并实现多设备组网互联</a></li>
+<li><a href="https://blog.laisky.com/p/tailscale/#gsc.tab=0">Recent experiences with tailscale</a></li>
+<li><a href="https://www.haha.ai/article/headscale">https://www.haha.ai/article/headscale</a></li>
+<li><a href="https://icloudnative.io/posts/tailscale-acls/">Tailscale/Headscale ACL 使用教程</a></li>
+</ul> </div> <div> <section class="giscus-section"> <h2>Comments</h2> <div data-giscus-root data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-lang="zh-CN" data-loading="lazy"></div> </section> </div> </article>  </main> <footer class="footer" data-pagefind-ignore> <p>&copy; 2026 薇尔薇</p> </footer> </div> <script>
+      ;(() => {
+        const root = document.documentElement
+        const setPressed = (selector, attr, value) => {
+          document.querySelectorAll(selector).forEach((button) => {
+            button.setAttribute(
+              'aria-pressed',
+              button.getAttribute(attr) === value ? 'true' : 'false',
+            )
+          })
+        }
+        const applyTheme = (theme) => {
+          root.dataset.theme = theme
+          localStorage.setItem('site-theme', theme)
+          setPressed('[data-theme-choice]', 'data-theme-choice', theme)
+          document.dispatchEvent(new CustomEvent('app-theme-change'))
+        }
+        const applyWidth = (width) => {
+          root.dataset.width = width
+          localStorage.setItem('site-width', width)
+          setPressed('[data-width-choice]', 'data-width-choice', width)
+        }
+
+        applyTheme(root.dataset.theme || 'white')
+        applyWidth(root.dataset.width || '100')
+
+        document.querySelectorAll('[data-theme-choice]').forEach((button) => {
+          button.addEventListener('click', () =>
+            applyTheme(button.getAttribute('data-theme-choice') || 'white'),
+          )
+        })
+        document.querySelectorAll('[data-width-choice]').forEach((button) => {
+          button.addEventListener('click', () =>
+            applyWidth(button.getAttribute('data-width-choice') || '100'),
+          )
+        })
+
+        const input = document.getElementById('site-search-input')
+        const resultsBox = document.getElementById('site-search-results')
+        let pagefindPromise
+        let lastSearch = 0
+
+        const clearResults = () => {
+          if (!resultsBox) {
+            return
+          }
+          resultsBox.replaceChildren()
+          resultsBox.hidden = true
+        }
+
+        const showMessage = (message) => {
+          if (!resultsBox) {
+            return
+          }
+          const row = document.createElement('div')
+          row.className = 'search-result search-result-empty'
+          row.textContent = message
+          resultsBox.replaceChildren(row)
+          resultsBox.hidden = false
+        }
+
+        const loadPagefind = () => {
+          if (!pagefindPromise) {
+            pagefindPromise = import('/pagefind/pagefind.js').then(async (pagefind) => {
+              if (typeof pagefind.options === 'function') {
+                await pagefind.options({ excerptLength: 18 })
+              }
+              return pagefind
+            })
+          }
+          return pagefindPromise
+        }
+
+        const renderResults = async () => {
+          if (!input || !resultsBox) {
+            return
+          }
+
+          const query = input.value.trim()
+          const searchId = Date.now()
+          lastSearch = searchId
+
+          if (query.length < 2) {
+            clearResults()
+            return
+          }
+
+          try {
+            const pagefind = await loadPagefind()
+            const search = await pagefind.search(query)
+            const results = await Promise.all(
+              search.results.slice(0, 8).map((result) => result.data()),
+            )
+
+            if (lastSearch !== searchId) {
+              return
+            }
+
+            if (results.length === 0) {
+              showMessage('no matches')
+              return
+            }
+
+            const fragment = document.createDocumentFragment()
+            results.forEach((result) => {
+              const link = document.createElement('a')
+              link.className = 'search-result'
+              link.href = result.url
+
+              const title = document.createElement('span')
+              title.className = 'search-result-title'
+              title.textContent = result.meta?.title || result.url
+
+              const excerpt = document.createElement('span')
+              excerpt.className = 'search-result-excerpt'
+              excerpt.innerHTML = result.excerpt || ''
+
+              link.append(title, excerpt)
+              fragment.append(link)
+            })
+
+            resultsBox.replaceChildren(fragment)
+            resultsBox.hidden = false
+          } catch {
+            showMessage('run pnpm build to create pagefind index')
+          }
+        }
+
+        input?.addEventListener('input', renderResults)
+        input?.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            input.value = ''
+            clearResults()
+          }
+          if (event.key === 'Enter') {
+            const first = resultsBox?.querySelector('a')
+            if (first) {
+              event.preventDefault()
+              first.click()
+            }
+          }
+        })
+        document.addEventListener('click', (event) => {
+          if (!event.target || !(event.target instanceof Node)) {
+            return
+          }
+          if (!document.querySelector('.site-tools')?.contains(event.target)) {
+            clearResults()
+          }
+        })
+
+        function getGiscusTheme() {
+          return root.dataset.theme === 'black' ? 'transparent_dark' : 'light'
+        }
+
+        function syncGiscusTheme() {
+          const frame = document.querySelector('iframe.giscus-frame')
+          if (frame?.contentWindow) {
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme: getGiscusTheme() } } },
+              'https://giscus.app',
+            )
+          }
+        }
+
+        function mountGiscus(rootEl) {
+          if (rootEl.dataset.giscusMounted === 'true') {
+            return
+          }
+          if (window.location.hostname.includes('vio.vin')) {
+            return
+          }
+
+          rootEl.dataset.giscusMounted = 'true'
+          rootEl.innerHTML = ''
+
+          const script = document.createElement('script')
+          script.src = 'https://giscus.app/client.js'
+          script.async = true
+          script.crossOrigin = 'anonymous'
+
+          const attrs = [
+            'repo',
+            'repoId',
+            'category',
+            'categoryId',
+            'mapping',
+            'strict',
+            'reactionsEnabled',
+            'emitMetadata',
+            'inputPosition',
+            'lang',
+            'loading',
+          ]
+          attrs.forEach((attr) => {
+            const value = rootEl.dataset[attr]
+            if (value) {
+              script.setAttribute(
+                `data-${attr.replace(/[A-Z]/g, (m) => `-${m.toLowerCase()}`)}`,
+                value,
+              )
+            }
+          })
+          script.setAttribute('data-theme', getGiscusTheme())
+          rootEl.appendChild(script)
+        }
+
+        function registerGiscus() {
+          const roots = Array.from(document.querySelectorAll('[data-giscus-root]'))
+          roots.forEach((rootEl) => {
+            if (window.location.hostname.includes('vio.vin')) {
+              rootEl.innerHTML = ''
+              return
+            }
+            mountGiscus(rootEl)
+          })
+        }
+
+        registerGiscus()
+        document.addEventListener('app-theme-change', syncGiscusTheme)
+      })()
+    </script> </body> </html>
