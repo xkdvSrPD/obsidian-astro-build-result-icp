@@ -1,0 +1,700 @@
+<!DOCTYPE html><html lang="zh-CN" class="astro-37fxchfa" style="--highlightColor: hsl(var(--primary) / var(--un-text-opacity));"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" name="viewport"><meta content="IE=edge" http-equiv="X-UA-Compatible"><title>Anubis网站防护工具配置教程 • 薇尔薇</title><link rel="icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="manifest" href="/favicon/site.webmanifest"><style>@font-face{font-family:Satoshi-9613b77c75735b12;src:url("/_astro/fonts/b372976faae541b1.woff2") format("woff2");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Satoshi-9613b77c75735b12;src:url("/_astro/fonts/20878e2d8370077a.woff2") format("woff2");font-display:swap;font-weight:400;font-style:italic;}@font-face{font-family:Satoshi-9613b77c75735b12;src:url("/_astro/fonts/8b39278bc39e0777.woff2") format("woff2");font-display:swap;font-weight:500;font-style:normal;}@font-face{font-family:Satoshi-9613b77c75735b12;src:url("/_astro/fonts/3d991eebd114d582.woff2") format("woff2");font-display:swap;font-weight:500;font-style:italic;}@font-face{font-family:"Satoshi-9613b77c75735b12 fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:98.9231%;ascent-override:102.0995%;descent-override:24.2613%;line-gap-override:10.1089%;}@font-face{font-family:"Satoshi-9613b77c75735b12 fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:italic;size-adjust:98.9231%;ascent-override:102.0995%;descent-override:24.2613%;line-gap-override:10.1089%;}@font-face{font-family:"Satoshi-9613b77c75735b12 fallback: Arial";src:local("Arial");font-display:swap;font-weight:500;font-style:normal;size-adjust:98.9231%;ascent-override:102.0995%;descent-override:24.2613%;line-gap-override:10.1089%;}@font-face{font-family:"Satoshi-9613b77c75735b12 fallback: Arial";src:local("Arial");font-display:swap;font-weight:500;font-style:italic;size-adjust:98.9231%;ascent-override:102.0995%;descent-override:24.2613%;line-gap-override:10.1089%;}:root{--font-satoshi:Satoshi-9613b77c75735b12,"Satoshi-9613b77c75735b12 fallback: Arial",sans-serif;}</style><link rel="canonical" href="https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng"><meta content="Anubis网站防护工具配置教程 • 薇尔薇" name="title"><meta content="Anubis是一个网站防护工具，其工作原理类似常见的Cloudflare验证，会在用户进入网站之前对客户端进行检查。客户端需要完成一定难度的Hash计算，服务器验证计算结果后放行，Hash计算代表了客户端可能需要执行几千几万次的计算，而服务器验证只需执行一次，对服务器开销小。 当有网络爬虫、CC攻击" name="description"><meta content="violet" name="author"><meta name="color-scheme" content="light dark"><meta content="article" property="og:type"><meta content="Anubis网站防护工具配置教程" property="og:title"><meta content="Anubis是一个网站防护工具，其工作原理类似常见的Cloudflare验证，会在用户进入网站之前对客户端进行检查。客户端需要完成一定难度的Hash计算，服务器验证计算结果后放行，Hash计算代表了客户端可能需要执行几千几万次的计算，而服务器验证只需执行一次，对服务器开销小。 当有网络爬虫、CC攻击" property="og:description"><meta content="https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng" property="og:url"><meta content="薇尔薇" property="og:site_name"><meta content="zh_CN" property="og:locale"><meta content="https://vio.vin/images/social-card.png" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta content="violet" property="article:author"><meta content="2025-10-19T05:47:16.000Z" property="article:published_time"><meta content="summary_large_image" property="twitter:card"><meta content="https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng" property="twitter:url"><meta content="Anubis网站防护工具配置教程" property="twitter:title"><meta content="Anubis是一个网站防护工具，其工作原理类似常见的Cloudflare验证，会在用户进入网站之前对客户端进行检查。客户端需要完成一定难度的Hash计算，服务器验证计算结果后放行，Hash计算代表了客户端可能需要执行几千几万次的计算，而服务器验证只需执行一次，对服务器开销小。 当有网络爬虫、CC攻击" property="twitter:description"><meta content="https://vio.vin/images/social-card.png" property="twitter:image"><link href="/sitemap-index.xml" rel="sitemap"><link rel="alternate" type="application/rss+xml" title="薇尔薇" href="https://vio.vin/rss.xml"><meta content="Astro v6.4.8" name="generator"><script type="module">console.log("%c Astro Theme Pure %c https://github.com/cworld1/astro-theme-pure/","color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;","color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;");</script><script>
+  function simpleSetTheme() {
+    let theme = localStorage.getItem('theme')
+    // If undefined or 'system', get from system
+    if (!theme || theme === 'system') {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    }
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark' ? '#0B0B10' : '#FCFCFD')
+  }
+  simpleSetTheme()
+  document.addEventListener('astro:page-load', () => simpleSetTheme())
+</script><script type="module" src="/_astro/ThemeProvider.astro_astro_type_script_index_0_lang.suZL6u-L.js"></script><link rel="stylesheet" href="/_astro/BaseLayout.D5hla7j0.css"><link rel="stylesheet" href="/_astro/_..DbX94k4-.css"><link rel="stylesheet" href="/_astro/PFSearch.CL9Inmui.css"><style>@media(min-width:769px){#sidebar-shade:where(.astro-scuu7fyy){display:none!important}}@media(max-width:769px){aside:where(.astro-scuu7fyy).show{display:block!important;opacity:1}@keyframes fade-in-side{0%{transform:translate(50%);opacity:0}to{transform:translate(0);opacity:1}}@keyframes fade-in{0%{opacity:0}to{opacity:1}}aside:where(.astro-scuu7fyy){animation:.3s fade-in-side!important;animation-fill-mode:forwards;right:0;top:0!important;height:100vh!important;min-width:40vw!important;max-width:75vw!important;border-top-right-radius:0!important;border-bottom-right-radius:0!important;padding-top:1.5rem!important;padding-bottom:1.5rem!important}#sidebar-shade:where(.astro-scuu7fyy){animation:.3s fade-in}}@media(max-width:640px){aside:where(.astro-scuu7fyy){min-width:55vw!important}}
+:where([data-astro-image]){height:auto}:where([data-astro-image=full-width]){width:100%}:where([data-astro-image=constrained]){max-width:100%}[data-astro-image-fit=fill]{object-fit:fill}[data-astro-image-fit=contain]{object-fit:contain}[data-astro-image-fit=cover]{object-fit:cover}[data-astro-image-fit=scale-down]{object-fit:scale-down}[data-astro-image-pos=top]{object-position:top}[data-astro-image-pos=bottom]{object-position:bottom}[data-astro-image-pos=left]{object-position:left}[data-astro-image-pos=right]{object-position:right}[data-astro-image-pos=center]{object-position:center}[data-astro-image-pos=top-bottom]{object-position:top bottom}[data-astro-image-pos=top-left]{object-position:top left}[data-astro-image-pos=top-right]{object-position:top right}[data-astro-image-pos=top-center]{object-position:top center}[data-astro-image-pos=bottom-top]{object-position:bottom top}[data-astro-image-pos=bottom-left]{object-position:bottom left}[data-astro-image-pos=bottom-right]{object-position:bottom right}[data-astro-image-pos=bottom-center]{object-position:bottom center}[data-astro-image-pos=left-top]{object-position:left top}[data-astro-image-pos=left-bottom]{object-position:left bottom}[data-astro-image-pos=left-right]{object-position:left right}[data-astro-image-pos=left-center]{object-position:left center}[data-astro-image-pos=right-top]{object-position:right top}[data-astro-image-pos=right-bottom]{object-position:right bottom}[data-astro-image-pos=right-left]{object-position:right left}[data-astro-image-pos=right-center]{object-position:right center}[data-astro-image-pos=center-top]{object-position:center top}[data-astro-image-pos=center-bottom]{object-position:center bottom}[data-astro-image-pos=center-left]{object-position:center left}[data-astro-image-pos=center-right]{object-position:center right}
+</style><script type="module" src="/_astro/page.CA9bGhyy.js"></script></head> <body class="flex justify-center bg-background text-foreground astro-37fxchfa" class="astro-scuu7fyy" style="--highlightColor: hsl(var(--primary) / var(--un-text-opacity));"> <div id="highlight-gradient" class="pointer-events-none absolute start-0 top-0 z-0 h-screen w-full opacity-25 astro-37fxchfa" style="background-image:linear-gradient(hsl(var(--primary) / var(--un-text-opacity)),transparent); --highlightColor: hsl(var(--primary) / var(--un-text-opacity));"></div> <div id="main-container" class="w-full max-w-[70rem] min-h-[100dvh] flex flex-col justify-between astro-37fxchfa" style="--highlightColor: hsl(var(--primary) / var(--un-text-opacity));"> <header-component class="group sticky top-4 z-50 max-md:z-30 mb-12 flex items-center justify-between rounded-xl border border-transparent max-sm:py-1 sm:rounded-2xl astro-zgz2aqyx"> <a class="z-30 text-xl font-medium group-[.not-top]:ms-2 sm:group-[.not-top]:ms-3 astro-zgz2aqyx" style="transition:margin-inline 0.3s" href="/" aria-label="Brand">薇尔薇</a> <div class="flex items-center gap-x-2 astro-zgz2aqyx">  <div id="headerExpandContent" class="end-0 start-0 top-12 grid border border-transparent group-[.not-top]:rounded-xl group-[.expanded]:opacity-100 dark:group-[.expanded.not-top]:bg-muted max-sm:absolute max-sm:opacity-0 max-sm:group-[.not-top]:border-border max-sm:group-[.expanded.not-top]:bg-background max-sm:group-[.not-top]:px-4 max-sm:group-[.not-top]:py-2 sm:grid-rows-1 astro-zgz2aqyx"> <div class="flex flex-col items-center justify-center overflow-hidden sm:flex-row astro-zgz2aqyx"> <a href="/blog" class="w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3 astro-zgz2aqyx" aria-label="Nav menu item" data-astro-prefetch> 博客 </a><a href="/links" class="w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3 astro-zgz2aqyx" aria-label="Nav menu item" data-astro-prefetch> 友链 </a><a href="/about" class="w-full flex-none grow py-2 text-right font-medium transition-none hover:text-primary sm:w-fit sm:px-3 astro-zgz2aqyx" aria-label="Nav menu item" data-astro-prefetch> 关于 </a> <div class="flex w-full grow flex-row justify-end gap-x-3 sm:w-fit sm:gap-x-5 astro-zgz2aqyx"> <a class="px-1 py-2 transition-none sm:px-2 astro-zgz2aqyx" href="/search" title="Search"> <span class="sr-only astro-zgz2aqyx">Search</span> <svg aria-hidden="true" class="size-5 astro-zgz2aqyx astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M5 10a5 5 0 1 1 10 0a5 5 0 0 1-10 0m5-7a7 7 0 1 0 4.192 12.606l5.1 5.101a1 1 0 0 0 1.415-1.414l-5.1-5.1A7 7 0 0 0 10 3"/></g></svg> </a> </div> </div> </div>  <div class="z-30 flex gap-x-4 group-[.not-top]:gap-x-2 astro-zgz2aqyx" style="transition:gap 0.3s"> <button id="toggleDarkMode" class="group/dark box-content size-5 rounded-md border p-1.5 transition-colors hover:bg-border sm:group-[.not-top]:rounded-xl astro-zgz2aqyx"> <span class="sr-only astro-zgz2aqyx">Dark Theme</span> <svg aria-hidden="true" class="system size-5 group-hover/dark:text-primary astro-zgz2aqyx astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" fill-rule="nonzero" d="M19 3a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-4v1h1a1 1 0 1 1 0 2H8a1 1 0 1 1 0-2h1v-1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm-6 15h-2v1h2zm6-13H5v11h14z"/></g></svg> <svg aria-hidden="true" class="light hidden size-5 group-hover/dark:text-primary astro-zgz2aqyx astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 19a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1m6.364-2.05l.707.707a1 1 0 0 1-1.414 1.414l-.707-.707a1 1 0 0 1 1.414-1.414m-12.728 0a1 1 0 0 1 1.497 1.32l-.083.094l-.707.707a1 1 0 0 1-1.497-1.32l.083-.094zM12 6a6 6 0 1 1 0 12a6 6 0 0 1 0-12m0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8m-8 3a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 1 1 0 2h-1a1 1 0 1 1 0-2zM4.929 4.929a1 1 0 0 1 1.32-.083l.094.083l.707.707a1 1 0 0 1-1.32 1.497l-.094-.083l-.707-.707a1 1 0 0 1 0-1.414m14.142 0a1 1 0 0 1 0 1.414l-.707.707a1 1 0 1 1-1.414-1.414l.707-.707a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1"/></g></svg> <svg aria-hidden="true" class="dark hidden size-5 group-hover/dark:text-primary astro-zgz2aqyx astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12.477 4.546a1.01 1.01 0 0 1 1.097-1.409A9 9 0 0 1 12 21c-4.434 0-8.118-3.206-8.863-7.426a1.01 1.01 0 0 1 1.409-1.097a6 6 0 0 0 7.931-7.931m2.404 1.072a8 8 0 0 1-9.263 9.263A7.002 7.002 0 0 0 19 12.001a7 7 0 0 0-4.12-6.383ZM5.565 7.716l.064.14a3.26 3.26 0 0 0 1.237 1.363l.1.059a.068.068 0 0 1 0 .118l-.1.058a3.26 3.26 0 0 0-1.237 1.364l-.064.14a.071.071 0 0 1-.13 0l-.064-.14a3.26 3.26 0 0 0-1.237-1.364l-.1-.058a.068.068 0 0 1 0-.118l.1-.059A3.26 3.26 0 0 0 5.37 7.855l.064-.14a.071.071 0 0 1 .13 0Zm2.832-4.859c.04-.09.166-.09.206 0l.102.222a5.2 5.2 0 0 0 1.97 2.172l.157.092a.108.108 0 0 1 0 .189l-.158.092a5.2 5.2 0 0 0-2.07 2.394a.113.113 0 0 1-.207 0l-.102-.222a5.2 5.2 0 0 0-1.97-2.172l-.158-.092a.108.108 0 0 1 0-.189l.158-.092a5.2 5.2 0 0 0 1.97-2.172z"/></g></svg> </button> <button id="toggleMenu" class="rounded-md border p-1.5 transition-colors hover:bg-border sm:hidden sm:group-[.not-top]:rounded-xl astro-zgz2aqyx"> <span class="sr-only astro-zgz2aqyx">Menu</span> <svg aria-hidden="true" class="size-5 astro-zgz2aqyx astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M20 18a1 1 0 0 1 .117 1.993L20 20H4a1 1 0 0 1-.117-1.993L4 18zm0-7a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2zm0-7a1 1 0 1 1 0 2H4a1 1 0 0 1 0-2z"/></g></svg> </button> </div> </div> </header-component>  <script>
+  const toggleDarkModeElement = document.getElementById('toggleDarkMode')
+  if (toggleDarkModeElement) {
+    toggleDarkModeElement.dataset.theme = localStorage.getItem('theme') || 'system'
+  }
+</script> <script type="module" src="/_astro/Header.astro_astro_type_script_index_0_lang.CwScYy8Q.js"></script> <div class="flex-1 w-full astro-37fxchfa" style="--highlightColor: hsl(var(--primary) / var(--un-text-opacity));">  <a class="group inline-flex items-center gap-x-1 rounded-lg bg-muted border px-2 py-1 text-sm text-muted-foreground transition-all hover:bg-card no-underline astro-scuu7fyy" href="/blog" data-astro-prefetch="true">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-muted-foreground group-hover:stroke-primary"> <line x1="19" y1="12" x2="5" y2="12" class="translate-x-3 scale-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-0 group-hover:scale-x-100"></line> <polyline points="12 19 5 12 12 5" class="translate-x-1 transition-all duration-300 ease-in-out group-hover:translate-x-0"></polyline> </svg>   <p class="my-0">Back</p>     </a> <main class="mt-6 items-start gap-x-10 md:flex astro-scuu7fyy">  <aside class="animate top-20 min-w-48 basis-60 overflow-y-scroll max-md:hidden z-40 fixed md:sticky md:order-2 lg:shrink-0 max-md:border max-md:px-4 max-md:py-3 max-md:bg-muted max-md:rounded-xl astro-scuu7fyy" style="height:calc(100vh - 7rem);" id="sidebar"> <toc-heading class=" astro-mmcgqrmu" slot="sidebar"> <h2 class="font-medium astro-mmcgqrmu">TABLE OF CONTENTS</h2> <ul class="mt-4 astro-mmcgqrmu"> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: Anubis" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted" href="#anubis">Anubis</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 工作原理" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted" href="#工作原理">工作原理</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: Hash计算" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#hash计算">Hash计算</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 整体流程" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#整体流程">整体流程</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 与NGINX搭配" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#与nginx搭配">与NGINX搭配</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 安装/配置" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted" href="#安装配置">安装/配置</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 安装Anubis" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#安装anubis">安装Anubis</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 下载并安装" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#下载并安装">下载并安装</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: systemd运行" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#systemd运行">systemd运行</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 配置NGINX" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#配置nginx">配置NGINX</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: Bot策略" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted" href="#bot策略">Bot策略</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 可配置匹配规则" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#可配置匹配规则">可配置匹配规则</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配请求头" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配请求头">匹配请求头</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配User-Agent" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配user-agent">匹配User-Agent</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 指定表达式" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#指定表达式">指定表达式</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配客户端IP" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配客户端ip">匹配客户端IP</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配GEOIP" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配geoip">匹配GEOIP</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配ASN" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配asn">匹配ASN</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 匹配后动作" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#匹配后动作">匹配后动作</a> </div> <ul> <li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: CHALLENGE" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#challenge">CHALLENGE</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: WEIGH" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#weigh">WEIGH</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 其他" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#其他">其他</a> </div>  </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 测试页面" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted ps-7" href="#测试页面">测试页面</a> </div>  </li> </ul> </li><li> <div class="relative"> <span class="absolute top-[5%] w-[2px] rounded transition-colors duration-300 [&.highlight-bg]:bg-primary [&.is-read]:bg-border"></span> <a aria-label="Scroll to section: 参考文献" class="toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&amp;.highlight]:font-medium [&amp;.highlight]:text-primary [&amp;.highlight-bg-translucent]:bg-muted" href="#参考文献">参考文献</a> </div>  </li> </ul> </toc-heading> <script type="module">class l extends HTMLElement{constructor(){super(),this.headings=[],this.tocLinks=[],this.headingProgress={},this.updatePositionAndStyle=()=>{const t=window.innerHeight,r=window.scrollY-(document.querySelector("#content")?.offsetTop||0),o=(document.querySelector("#content")?.offsetHeight||0)+127;this.headings.forEach((e,n)=>{const h=this.headings[n+1]?.offsetTop||o,s=[e.offsetTop-r,h-r-e.offsetHeight],i=(t-s[0])/(s[1]-s[0]);this.headingProgress[e.id]={inView:s[0]<t&&s[1]>0,progress:Math.max(0,Math.min(1,i))}}),this.tocLinks.forEach(({element:e,progressBar:n,slug:h},s)=>{const{inView:i,progress:g}=this.headingProgress[h];this.headingProgress[h]&&(e.classList.toggle("highlight",i),e.classList.toggle("highlight-bg-translucent",i),e.classList.toggle("rounded-t-2xl",i&&(s===0||!this.headingProgress[this.tocLinks[s-1]?.slug].inView)),e.classList.toggle("rounded-b-2xl",i&&(s===this.tocLinks.length-1||!this.headingProgress[this.tocLinks[s+1]?.slug].inView)),n.classList.toggle("is-read",!i&&g===1),n.classList.toggle("highlight-bg",i),n.style.setProperty("height",`${g*90}%`))})},this.headings=Array.from(document.querySelectorAll("article h1, article h2, article h3, article h4, article h5, article h6")),this.tocLinks=Array.from(this.querySelectorAll('a[href^="#"]')).map(t=>({element:t,progressBar:t.previousElementSibling,slug:(t.getAttribute("href")||"").substring(1)}))}connectedCallback(){this.tocLinks.forEach(t=>{t.element.addEventListener("click",r=>{r.preventDefault();const o=this.headings.find(e=>e.id===t.slug);o?(history.pushState(null,o.textContent||"",t.element.getAttribute("href")),o.scrollIntoView({behavior:"smooth"})):console.warn(`No heading found for slug: ${t.slug}`)})}),setInterval(this.updatePositionAndStyle,100),window.addEventListener("scroll",this.updatePositionAndStyle)}}customElements.define("toc-heading",l);</script> </aside> <div id="sidebar-shade" class="fixed top-0 start-0 w-full h-full astro-scuu7fyy" style="display:none;background-color:#00000091;z-index:31"></div> <article data-pagefind-body class="min-w-0 grow astro-scuu7fyy">  <div id="content-header" class="animate astro-scuu7fyy"> <div class="article-info max-lg:mx-auto astro-qr7qsrsa"> <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs leading-6 text-muted-foreground astro-qr7qsrsa">  <div class="flex items-center gap-1 astro-qr7qsrsa"> <svg aria-hidden="true" class="size-5 astro-qr7qsrsa astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M16 3a1 1 0 0 1 1 1v1h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2V4a1 1 0 0 1 2 0v1h6V4a1 1 0 0 1 1-1M8 7H5v2h14V7h-3zm-3 4v8h14v-8zm2 2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3-2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H12a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2zm3-2a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2H16a1 1 0 0 1-1-1m1 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2z"/></g></svg> <span class="text-muted-foreground font-mono font-sans astro-qr7qsrsa"> <time datetime="2025-08-21T11:50:03.000Z"> 2025年8月21日 </time> </span> <div class="flex items-center gap-1 astro-qr7qsrsa"> <span class="astro-qr7qsrsa"> / </span> <span class="astro-qr7qsrsa">
+Update
+<span class="text-muted-foreground font-mono font-sans astro-qr7qsrsa"> <time datetime="2025-10-19T05:47:16.000Z"> 2025年10月19日 </time> </span> </span> </div> </div>  <div class="flex items-center gap-1 astro-qr7qsrsa"> <svg aria-hidden="true" class="size-5 astro-qr7qsrsa astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 2a1 1 0 0 1 .993.883L13 7v4.586l2.707 2.707a1 1 0 0 1-1.32 1.497l-.094-.083l-3-3a1 1 0 0 1-.284-.576L11 12V7a1 1 0 0 1 1-1"/></g></svg> 9 min </div> <span class="flex items-center gap-1 astro-qr7qsrsa"> <svg aria-hidden="true" class="size-5 astro-qr7qsrsa astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m1.482 14.94a18 18 0 0 1-2.964 0q.14.596.31 1.102c.251.755.53 1.293.79 1.622c.127.162.23.248.3.29l.051.028l.03.008l.032-.008l.051-.027a1.2 1.2 0 0 0 .3-.29c.26-.33.539-.868.79-1.623q.17-.506.31-1.102m-8.675-1.435a8.03 8.03 0 0 0 4.441 4.01a11 11 0 0 1-.318-.84a16 16 0 0 1-.52-2.033a18 18 0 0 1-3.603-1.137m14.387 0c-1.145.5-2.351.883-3.605 1.137a16 16 0 0 1-.52 2.034q-.144.437-.318.838a8.03 8.03 0 0 0 4.443-4.01Zm-5.218-4.634a15 15 0 0 1-3.952 0a26 26 0 0 0 .141 4.025a16.2 16.2 0 0 0 3.67 0A25 25 0 0 0 14 12q0-.576-.024-1.13ZM4.568 9.032a8 8 0 0 0-.52 3.856a16 16 0 0 0 4.067 1.637a28 28 0 0 1-.074-4.053a15 15 0 0 1-3.473-1.44m14.864 0a15 15 0 0 1-3.473 1.44a28 28 0 0 1-.074 4.053a16 16 0 0 0 4.066-1.637a8 8 0 0 0-.52-3.855Zm-7.416-5.02l-.011-.002l-.02.003l-.038.015a1.2 1.2 0 0 0-.33.307c-.26.33-.538.868-.79 1.622c-.27.808-.488 1.8-.633 2.919a13 13 0 0 0 3.612 0c-.145-1.12-.364-2.111-.633-2.919c-.252-.754-.53-1.293-.79-1.622a1.2 1.2 0 0 0-.3-.29l-.067-.032Zm-2.768.474a8 8 0 0 0-3.71 2.797c.843.484 1.746.876 2.695 1.163c.16-1.164.397-2.223.697-3.122q.145-.438.318-.838m5.504 0q.172.4.318.838c.3.9.537 1.958.697 3.122a13 13 0 0 0 2.695-1.163a8 8 0 0 0-3.71-2.797"/></g></svg> Chinese </span> <span class="flex items-center gap-1 astro-qr7qsrsa"> <svg aria-hidden="true" class="size-5 astro-qr7qsrsa astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M10.124 3.008a1 1 0 0 1 .868 1.116L10.508 8h3.984l.516-4.124a1 1 0 1 1 1.984.248L16.508 8H20a1 1 0 1 1 0 2h-3.742l-.5 4H19.5a1 1 0 1 1 0 2h-3.992l-.516 4.124a1 1 0 1 1-1.984-.248L13.492 16H9.508l-.516 4.124a1 1 0 1 1-1.984-.248L7.492 16H4.5a1 1 0 1 1 0-2h3.242l.5-4H5a1 1 0 0 1 0-2h3.492l.516-4.124a1 1 0 0 1 1.116-.868M13.742 14l.5-4h-3.984l-.5 4z"/></g></svg> <div class="astro-qr7qsrsa"> <a aria-label="View more blogs with the tag anubis" class="hover:underline hover:underline-offset-4 astro-qr7qsrsa" data-pagefind-filter="tag" href="/tags/anubis"> anubis </a> / </div><div class="astro-qr7qsrsa"> <a aria-label="View more blogs with the tag network" class="hover:underline hover:underline-offset-4 astro-qr7qsrsa" data-pagefind-filter="tag" href="/tags/network"> network </a>  </div> </span> </div> <h1 class="mt-4 text-2xl font-medium sm:mb-2 sm:mt-6 sm:text-3xl astro-qr7qsrsa"> Anubis网站防护工具配置教程 </h1> <div class="mt-3 italic astro-qr7qsrsa"> <blockquote class="text-sm text-muted-foreground astro-qr7qsrsa"><q class="astro-qr7qsrsa">Anubis是一个网站防护工具，其工作原理类似常见的Cloudflare验证，会在用户进入网站之前对客户端进行检查。客户端需要完成一定难度的Hash计算，服务器验证计算结果后放行，Hash计算代表了客户端可能需要执行几千几万次的计算，而服务器验证只需执行一次，对服务器开销小。 当有网络爬虫、CC攻击</q></blockquote>  </div> </div>  <div class="mt-4 w-1/2 border-t max-md:mx-auto sm:mt-6 sm:w-1/3 astro-qr7qsrsa"></div> <script type="module">const o=window.innerHeight,s=o/9,i=o*2/9,l=o*3/9,e=document.getElementById("blurImage");e&&window.addEventListener("scroll",()=>{const t=window.scrollY;t>=l?e.style.opacity="0.15":t>=i?e.style.opacity="0.3":t>=s&&(e.style.opacity="0.45")});</script> </div>  <div id="content" class="max-w-none animate mt-8 md:min-w-[45ch] overflow-x-hidden prose text-base astro-scuu7fyy">   <h2 id="anubis">Anubis<a class="anchor" href="#anubis">#</a></h2>
+<p>Anubis是一个网站防护工具，其工作原理类似常见的Cloudflare验证，会在用户进入网站之前对客户端进行检查。客户端需要完成一定难度的Hash计算，服务器验证计算结果后放行，Hash计算代表了客户端可能需要执行几千几万次的计算，而服务器验证只需执行一次，对服务器开销小。
+当有网络爬虫、CC攻击想进入源站时，需要在攻击者的客户端（比如无头浏览器中）进行一定量的Hash计算，攻击者一般会在一台物理机中运行多个配置了代理的无头浏览器，这些Hash计算会拖垮攻击者的服务器，从而迫使攻击者放弃或降低攻击频率。
+现代设备通常都具有一定的算力，这些任务对于这些客户端来说，通常只需要几毫秒或几秒钟即可完成，用户只需要等待一段时间，不需要进行任何操作，成功后会自动进入实际后端服务。</p>
+<h2 id="工作原理">工作原理<a class="anchor" href="#工作原理">#</a></h2>
+<h3 id="hash计算">Hash计算<a class="anchor" href="#hash计算">#</a></h3>
+<p>和经典的比特币挖矿一致，客户端需要使用一个确定的字符串加上任意数字，进行 <code>sha256</code> 计算，得到的 64 位hash值的前x个数为 0，x就是difficulty</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="js"><pre><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">const</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> hash</span><span style="color:#D73A49;--shiki-dark:#F97583"> =</span><span style="color:#D73A49;--shiki-dark:#F97583"> await</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> sha256</span><span style="color:#24292E;--shiki-dark:#E1E4E8">(</span><span style="color:#032F62;--shiki-dark:#9ECBFF">`${</span><span style="color:#24292E;--shiki-dark:#E1E4E8">challenge</span><span style="color:#032F62;--shiki-dark:#9ECBFF">}${</span><span style="color:#24292E;--shiki-dark:#E1E4E8">nonce</span><span style="color:#032F62;--shiki-dark:#9ECBFF">}`</span><span style="color:#24292E;--shiki-dark:#E1E4E8">);</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">js</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="const hash = await sha256(&#x60;${challenge}${nonce}&#x60;);" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h3 id="整体流程">整体流程<a class="anchor" href="#整体流程">#</a></h3>
+<p><img src="/images/pasted-image-20250821205648.webp" alt="Pasted image 20250821205648" class="zoomable"></p>
+<p><img src="/images/pasted-image-20250821205632.webp" alt="Pasted image 20250821205632" class="zoomable"> 客户端第一次访问时，会根据访问者的IP、ASN、User-Agent，服务器的工作负载，计算出一个数值 <code>weight</code>，之后通过 <code>weight</code> 匹配不同难度的Hash计算任务给客户端。客户端完成计算后，由服务器进行验证，成功之后放行到真正的后端服务，同时返回 <code>Set-Cookies</code> 以保存一段时间验证结果，当用户下次访问时，可复用上次的验证结果。</p>
+<h3 id="与nginx搭配">与NGINX搭配<a class="anchor" href="#与nginx搭配">#</a></h3>
+<p><img src="/images/pasted-image-20250821210211.webp" alt="Pasted image 20250821210211" class="zoomable"></p>
+<p>流量从 80/443 端口进入之后，先交给Anubis进行拦截，验证完成之后再交还回NGINX进行后续流程。在单个服务器内通过unix socket进行交互。</p>
+<h2 id="安装配置">安装/配置<a class="anchor" href="#安装配置">#</a></h2>
+<p>此处以Debian 12 系统为例</p>
+<h3 id="安装anubis">安装Anubis<a class="anchor" href="#安装anubis">#</a></h3>
+<h4 id="下载并安装">下载并安装<a class="anchor" href="#下载并安装">#</a></h4>
+<p>请在<a href="https://github.com/TecharoHQ/anubis/releases" rel="nofollow noopener noreferrer" target="_blank">Github<span style="user-select:none"> ↗</span></a>获取最新的版本号</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">wget</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -O</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /tmp/anubis.deb</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> https://github.com/TecharoHQ/anubis/releases/download/v1.21.3/anubis_1.21.3_amd64.deb</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> &#x26;&#x26; </span><span style="color:#6F42C1;--shiki-dark:#B392F0">apt</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /tmp/anubis.deb</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="wget -O /tmp/anubis.deb https://github.com/TecharoHQ/anubis/releases/download/v1.21.3/anubis_1.21.3_amd64.deb &#x26;&#x26; apt install /tmp/anubis.deb" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>不能直连Github，可以使用加速域名，或者手动下载上传到服务器</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">wget</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -O</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /tmp/anubis.deb</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> https://ghfast.top/https://github.com/TecharoHQ/anubis/releases/download/v1.21.3/anubis_1.21.3_amd64.deb</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> &#x26;&#x26; </span><span style="color:#6F42C1;--shiki-dark:#B392F0">apt</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> install</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /tmp/anubis.deb</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="wget -O /tmp/anubis.deb https://ghfast.top/https://github.com/TecharoHQ/anubis/releases/download/v1.21.3/anubis_1.21.3_amd64.deb &#x26;&#x26; apt install /tmp/anubis.deb" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>修改 <code>/etc/anubis/default.env</code>，内容如下</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="txt"><pre><code><span class="line"><span>BIND=/run/anubis/instance.sock</span></span>
+<span class="line"><span>BIND_NETWORK=unix</span></span>
+<span class="line"><span>SOCKET_MODE=0666</span></span>
+<span class="line"><span>TARGET=unix:///run/nginx/nginx.sock</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">txt</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="BIND=/run/anubis/instance.sock
+BIND_NETWORK=unix
+SOCKET_MODE=0666
+TARGET=unix:///run/nginx/nginx.sock" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>复制默认策略文件，暂不修改</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">cp</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /usr/share/doc/anubis/botPolicies.yaml</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /etc/anubis/botPolicies.yaml</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="cp /usr/share/doc/anubis/botPolicies.yaml /etc/anubis/botPolicies.yaml" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h4 id="systemd运行">systemd运行<a class="anchor" href="#systemd运行">#</a></h4>
+<p>创建service文件</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">vi</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /etc/systemd/system/anubis.service</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="vi /etc/systemd/system/anubis.service" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<div class="astro-code astro-code-themes github-light github-dark collapsed" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><pre><code><span class="line"><span>[Unit]</span></span>
+<span class="line"><span>Description=Anubis Bot Protection</span></span>
+<span class="line"><span>After=network.target</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Service]</span></span>
+<span class="line"><span>EnvironmentFile=/etc/anubis/default.env</span></span>
+<span class="line"><span>ExecStart=/usr/bin/anubis \</span></span>
+<span class="line"><span>  -bind /run/anubis/instance.sock \</span></span>
+<span class="line"><span>  -bind-network unix \</span></span>
+<span class="line"><span>  -socket-mode 0666 \</span></span>
+<span class="line"><span>  -target unix:///run/nginx/nginx.sock \</span></span>
+<span class="line"><span>  -metrics-bind 127.0.0.1:9091 \</span></span>
+<span class="line"><span>  -metrics-bind-network tcp \</span></span>
+<span class="line"><span>  -policy-fname /etc/anubis/botPolicies.yaml</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Restart=always</span></span>
+<span class="line"><span>User=www-data</span></span>
+<span class="line"><span>Group=www-data</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[Install]</span></span>
+<span class="line"><span>WantedBy=multi-user.target</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">plaintext</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="[Unit]
+Description=Anubis Bot Protection
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/anubis/default.env
+ExecStart=/usr/bin/anubis \
+  -bind /run/anubis/instance.sock \
+  -bind-network unix \
+  -socket-mode 0666 \
+  -target unix:///run/nginx/nginx.sock \
+  -metrics-bind 127.0.0.1:9091 \
+  -metrics-bind-network tcp \
+  -policy-fname /etc/anubis/botPolicies.yaml
+
+Restart=always
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button><button class="collapse-toggle bg-card text-muted-foreground rounded-lg m-2" aria-label="Toggle collapse code block" onclick="this.parentElement.classList.toggle(&#x27;collapsed&#x27;)"><svg class="size-5"><use href="/icons/code.svg#mingcute-arrow-down-line"></use></svg><span class="desc"> code</span></button><div class="collapse-fade"></div></div>
+<p>创建目录</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">mkdir</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> -p</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /run/anubis</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /run/nginx</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="mkdir -p /run/anubis /run/nginx" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>修改权限</p>
+<p>此处的用户和NGINX相同</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">chown</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> www-data:www-data</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /run/anubis</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> /run/nginx</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="chown www-data:www-data /run/anubis /run/nginx" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>启用Anubis</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">systemctl</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> enable</span><span style="color:#005CC5;--shiki-dark:#79B8FF"> --now</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> anubis.service</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="systemctl enable --now anubis.service" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<p>确保已经成功运行</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><pre><code><span class="line"><span style="color:#6F42C1;--shiki-dark:#B392F0">systemctl</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> status</span><span style="color:#032F62;--shiki-dark:#9ECBFF"> anubis</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">sh</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="systemctl status anubis" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h3 id="配置nginx">配置NGINX<a class="anchor" href="#配置nginx">#</a></h3>
+<p>此处提供一份可用NGINX，请自行修改扩展</p>
+<div class="astro-code astro-code-themes github-light github-dark collapsed" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="nginx"><pre><code><span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">user </span><span style="color:#24292E;--shiki-dark:#E1E4E8"> root;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">worker_processes </span><span style="color:#24292E;--shiki-dark:#E1E4E8">auto;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">pid </span><span style="color:#24292E;--shiki-dark:#E1E4E8">/run/nginx.pid;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">events</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    worker_connections </span><span style="color:#005CC5;--shiki-dark:#79B8FF">1024</span><span style="color:#24292E;--shiki-dark:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">http</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    upstream</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> anubis </span><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        server</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> unix:/run/anubis/instance.sock;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    server</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        listen </span><span style="color:#005CC5;--shiki-dark:#79B8FF">443</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> ssl http2;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        server_name </span><span style="color:#24292E;--shiki-dark:#E1E4E8">uptime.vio.vin;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        ssl_certificate </span><span style="color:#24292E;--shiki-dark:#E1E4E8">    /etc/ssl/violet/certs/all.vio.vin.cert.pem;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        ssl_certificate_key </span><span style="color:#24292E;--shiki-dark:#E1E4E8">/etc/ssl/violet/certs/all.vio.vin.key.pem;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        location</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> / </span><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_set_header </span><span style="color:#24292E;--shiki-dark:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_set_header </span><span style="color:#24292E;--shiki-dark:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_pass </span><span style="color:#24292E;--shiki-dark:#E1E4E8">http://anubis;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">    server</span><span style="color:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        listen </span><span style="color:#24292E;--shiki-dark:#E1E4E8">unix:/run/nginx/nginx.sock;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        server_name </span><span style="color:#24292E;--shiki-dark:#E1E4E8">uptime.vio.vin;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">        location</span><span style="color:#6F42C1;--shiki-dark:#B392F0"> / </span><span style="color:#24292E;--shiki-dark:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_pass </span><span style="color:#24292E;--shiki-dark:#E1E4E8">http://10.115.15.178:3001;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_set_header </span><span style="color:#24292E;--shiki-dark:#E1E4E8">Host $host;</span></span>
+<span class="line"><span style="color:#D73A49;--shiki-dark:#F97583">            proxy_set_header </span><span style="color:#24292E;--shiki-dark:#E1E4E8">X-Real-IP $remote_addr;</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">        }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">nginx</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="user  root;
+worker_processes auto;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream anubis {
+        server unix:/run/anubis/instance.sock;
+    }
+
+    server {
+        listen 443 ssl http2;
+        server_name uptime.vio.vin;
+
+        ssl_certificate     /etc/ssl/violet/certs/all.vio.vin.cert.pem;
+        ssl_certificate_key /etc/ssl/violet/certs/all.vio.vin.key.pem;
+
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_pass http://anubis;
+        }
+    }
+
+    server {
+        listen unix:/run/nginx/nginx.sock;
+        server_name uptime.vio.vin;
+
+        location / {
+            proxy_pass http://10.115.15.178:3001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+}" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button><button class="collapse-toggle bg-card text-muted-foreground rounded-lg m-2" aria-label="Toggle collapse code block" onclick="this.parentElement.classList.toggle(&#x27;collapsed&#x27;)"><svg class="size-5"><use href="/icons/code.svg#mingcute-arrow-down-line"></use></svg><span class="desc"> code</span></button><div class="collapse-fade"></div></div>
+<ul>
+<li>upstream：定义上游服务器为anubis</li>
+<li>第一个server：监听 443 入站连接，传输给anubis，传输客户端IP用于IP相关策略判断</li>
+<li>第二个server：anubis验证通过之后，实际反向代理的位置</li>
+</ul>
+<p>至此，基础配置已完成，默认情况下低风险客户端难度为 2，高风险为 4</p>
+<h2 id="bot策略">Bot策略<a class="anchor" href="#bot策略">#</a></h2>
+<p>官网文档：<a href="https://anubis.techaro.lol/docs/admin/policies" rel="nofollow noopener noreferrer" target="_blank">https://anubis.techaro.lol/docs/admin/policies<span style="user-select:none"> ↗</span></a>
+需要调整 <code>botPolicies.yaml</code> 文件
+默认的<code>botPolicies.yaml</code> 配置文件：<a href="https://github.com/TecharoHQ/anubis/blob/main/data/botPolicies.yaml" rel="nofollow noopener noreferrer" target="_blank">https://github.com/TecharoHQ/anubis/blob/main/data/botPolicies.yaml<span style="user-select:none"> ↗</span></a></p>
+<p>bots中定义了多个规则，可以看到已经通过import导入了一部分规则，这部分的文件可以在 <code>/usr/share/doc/anubis/data/bots</code> 中找到</p>
+<p>默认的规则如下，可以仿照这些规则写自己的规则</p>
+<h3 id="可配置匹配规则">可配置匹配规则<a class="anchor" href="#可配置匹配规则">#</a></h3>
+<h4 id="匹配请求头">匹配请求头<a class="anchor" href="#匹配请求头">#</a></h4>
+<p><code>/usr/share/doc/anubis/data/bots/cloudflare-workers.yaml</code></p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">cloudflare-workers</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  headers_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    CF-Worker</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">.*</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">15</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: cloudflare-workers
+  headers_regex:
+    CF-Worker: .*
+  action: WEIGH
+  weight:
+    adjust: 15" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h4 id="匹配user-agent">匹配User-Agent<a class="anchor" href="#匹配user-agent">#</a></h4>
+<p><code>/usr/share/doc/anubis/data/bots/headless-browsers.yaml</code></p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">lightpanda</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  user_agent_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">^LightPanda/.*$</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">DENY</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">headless-chrome</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  user_agent_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">HeadlessChrome</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">DENY</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">headless-chromium</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  user_agent_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">HeadlessChromium</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">DENY</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: lightpanda
+  user_agent_regex: ^LightPanda/.*$
+  action: DENY
+- name: headless-chrome
+  user_agent_regex: HeadlessChrome
+  action: DENY
+- name: headless-chromium
+  user_agent_regex: HeadlessChromium
+  action: DENY" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h4 id="指定表达式">指定表达式<a class="anchor" href="#指定表达式">#</a></h4>
+<p><code>/usr/share/doc/anubis/data/bots/aggressive-brazilian-scrapers.yaml</code></p>
+<div class="astro-code astro-code-themes github-light github-dark collapsed" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">deny-aggressive-brazilian-scrapers</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">20</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  expression</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    any</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Internet Explorer should be out of support</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("MSIE")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Trident is the Internet Explorer browser engine</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Trident")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Opera is a fork of chrome now</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Presto")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Windows CE is discontinued</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Windows CE")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Windows 95 is discontinued</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Windows 95")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Windows 98 is discontinued</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Windows 98")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Windows 9.x is discontinued</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Win 9x")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # Amazon does not have an Alexa Toolbar.</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Alexa Toolbar")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # This is not released, even Windows 11 calls itself Windows 10</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("Windows NT 11.0")</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">      # iPods are not in common use</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">userAgent.contains("iPod")</span></span>
+<span class="line"></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: deny-aggressive-brazilian-scrapers
+  action: WEIGH
+  weight:
+    adjust: 20
+  expression:
+    any:
+      # Internet Explorer should be out of support
+      - userAgent.contains(&#x22;MSIE&#x22;)
+      # Trident is the Internet Explorer browser engine
+      - userAgent.contains(&#x22;Trident&#x22;)
+      # Opera is a fork of chrome now
+      - userAgent.contains(&#x22;Presto&#x22;)
+      # Windows CE is discontinued
+      - userAgent.contains(&#x22;Windows CE&#x22;)
+      # Windows 95 is discontinued
+      - userAgent.contains(&#x22;Windows 95&#x22;)
+      # Windows 98 is discontinued
+      - userAgent.contains(&#x22;Windows 98&#x22;)
+      # Windows 9.x is discontinued
+      - userAgent.contains(&#x22;Win 9x&#x22;)
+      # Amazon does not have an Alexa Toolbar.
+      - userAgent.contains(&#x22;Alexa Toolbar&#x22;)
+      # This is not released, even Windows 11 calls itself Windows 10
+      - userAgent.contains(&#x22;Windows NT 11.0&#x22;)
+      # iPods are not in common use
+      - userAgent.contains(&#x22;iPod&#x22;)
+" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button><button class="collapse-toggle bg-card text-muted-foreground rounded-lg m-2" aria-label="Toggle collapse code block" onclick="this.parentElement.classList.toggle(&#x27;collapsed&#x27;)"><svg class="size-5"><use href="/icons/code.svg#mingcute-arrow-down-line"></use></svg><span class="desc"> code</span></button><div class="collapse-fade"></div></div>
+<h4 id="匹配客户端ip">匹配客户端IP<a class="anchor" href="#匹配客户端ip">#</a></h4>
+<p><code>/usr/share/doc/anubis/data/clients/mistral-mistralai-user.yaml</code></p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># Acts on behalf of user requests</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D"># https://docs.mistral.ai/robots/</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">mistral-mistralai-user</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  user_agent_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">MistralAI-User/.+; \+https\://docs\.mistral\.ai/robots</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">ALLOW</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # https://mistral.ai/mistralai-user-ips.json</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  remote_addresses</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    "20.240.160.161/32"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#032F62;--shiki-dark:#9ECBFF">    "20.240.160.1/32"</span><span style="color:#24292E;--shiki-dark:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  ]</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="# Acts on behalf of user requests
+# https://docs.mistral.ai/robots/
+- name: mistral-mistralai-user
+  user_agent_regex: MistralAI-User/.+; \+https\://docs\.mistral\.ai/robots
+  action: ALLOW
+  # https://mistral.ai/mistralai-user-ips.json
+  remote_addresses: [
+    &#x22;20.240.160.161/32&#x22;,
+    &#x22;20.240.160.1/32&#x22;,
+  ]" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h4 id="匹配geoip">匹配GEOIP<a class="anchor" href="#匹配geoip">#</a></h4>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">countries-with-aggressive-scrapers</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  geoip</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    countries</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">BR</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">CN</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">10</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: countries-with-aggressive-scrapers
+  action: WEIGH
+  geoip:
+    countries:
+      - BR
+      - CN
+  weight:
+    adjust: 10" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h4 id="匹配asn">匹配ASN<a class="anchor" href="#匹配asn">#</a></h4>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">aggressive-asns-without-functional-abuse-contact</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  asns</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    match</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#005CC5;--shiki-dark:#79B8FF">13335</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # Cloudflare</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#005CC5;--shiki-dark:#79B8FF">136907</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # Huawei Cloud</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#005CC5;--shiki-dark:#79B8FF">45102</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # Alibaba Cloud</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">10</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: aggressive-asns-without-functional-abuse-contact
+  action: WEIGH
+  asns:
+    match:
+      - 13335 # Cloudflare
+      - 136907 # Huawei Cloud
+      - 45102 # Alibaba Cloud
+  weight:
+    adjust: 10" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h3 id="匹配后动作">匹配后动作<a class="anchor" href="#匹配后动作">#</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>解释</th></tr></thead><tbody><tr><td>ALLOW</td><td>允许，跳过后续所有检查</td></tr><tr><td>DENY</td><td>拒绝访问</td></tr><tr><td>CHALLENGE</td><td>进行客户端挑战</td></tr><tr><td>WEIGH</td><td>修改请求权重</td></tr></tbody></table>
+<p>ALLOW和DENY不再解释</p>
+<h4 id="challenge">CHALLENGE<a class="anchor" href="#challenge">#</a></h4>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">generic-bot-catchall</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  user_agent_regex</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">(?i:bot|crawler)</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">CHALLENGE</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  challenge</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    difficulty</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">16</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # impossible</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    report_as</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">4</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # lie to the operator</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    algorithm</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">slow</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # intentionally waste CPU cycles and time</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: generic-bot-catchall
+  user_agent_regex: (?i:bot|crawler)
+  action: CHALLENGE
+  challenge:
+    difficulty: 16 # impossible
+    report_as: 4 # lie to the operator
+    algorithm: slow # intentionally waste CPU cycles and time" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<ul>
+<li><code>name</code>：名称，可自定义</li>
+<li><code>user_agent_regex</code>：正则表达式匹配User-Agent</li>
+<li><code>action</code>：动作，立即进行客户端挑战</li>
+<li><code>challenge</code>：客户端挑战配置
+<ul>
+<li><code>difficulty</code>：难度，16 表示计算出的hash值前 16 位为 0，不可能完成（比特币的前导 0 个数为 19-20），在客户端完成 16 位的计算可能需要几万年甚至更久（攻击者看着 99%的CPU陷入沉思）</li>
+<li><code>report_as</code>：用户在界面上看到的难度数值（你甚至可以骗他，这个进度条怎么一直卡在 99%不走呢）</li>
+<li><code>algorithm</code>：采用的Hash算法，slow故意折磨CPU</li>
+</ul>
+</li>
+</ul>
+<h4 id="weigh">WEIGH<a class="anchor" href="#weigh">#</a></h4>
+<p>调整请求的权重，正数为增加权重，负数为减少权重，后续会进入到 <code>thresholds</code> 中，针对不同的请求设置不同的CHALLENGE</p>
+<p>0-10 的权重，进行快速算法，几乎不需要等待</p>
+<div class="astro-code astro-code-themes github-light github-dark" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">- </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">mild-suspicion</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  expression</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    all</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">weight > 0</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">      - </span><span style="color:#032F62;--shiki-dark:#9ECBFF">weight &#x3C; 10</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">CHALLENGE</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">  challenge</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    algorithm</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">metarefresh</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    difficulty</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">2</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    report_as</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">2</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="- name: mild-suspicion
+  expression:
+    all:
+      - weight > 0
+      - weight < 10
+  action: CHALLENGE
+  challenge:
+    algorithm: metarefresh
+    difficulty: 2
+    report_as: 2" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button></div>
+<h3 id="其他">其他<a class="anchor" href="#其他">#</a></h3>
+<p>根据服务器负载动态调整</p>
+<p>示例在配置文件中已给出，有需要可以启用</p>
+<div class="astro-code astro-code-themes github-light github-dark collapsed" style="background-color:#fff;--shiki-dark-bg:#24292e;color:#24292e;--shiki-dark:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="yaml"><pre><code><span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  ## System load based checks.</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # If the system is under high load, add weight.</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">high-load-average</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    expression</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">load_1m >= 10.0</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # make sure to end the load comparison in a .0</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">20</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # If your backend service is running on the same operating system as Anubis,</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # you can uncomment this rule to make the challenge easier when the system is</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # under low load.</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  #</span></span>
+<span class="line"><span style="color:#6A737D;--shiki-dark:#6A737D">  # If it is not, remove weight.</span></span>
+<span class="line"><span style="color:#24292E;--shiki-dark:#E1E4E8">  - </span><span style="color:#22863A;--shiki-dark:#85E89D">name</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">low-load-average</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    action</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">WEIGH</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    expression</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#032F62;--shiki-dark:#9ECBFF">load_15m &#x3C;= 4.0</span><span style="color:#6A737D;--shiki-dark:#6A737D"> # make sure to end the load comparison in a .0</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">    weight</span><span style="color:#24292E;--shiki-dark:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#22863A;--shiki-dark:#85E89D">      adjust</span><span style="color:#24292E;--shiki-dark:#E1E4E8">: </span><span style="color:#005CC5;--shiki-dark:#79B8FF">-10</span></span></code></pre><span class="language ps-1 pe-3 text-sm bg-muted text-muted-foreground">yaml</span><button class="copy text-muted-foreground p-1 box-content border rounded-lg bg-card" aria-label="Copy code" data-code="  ## System load based checks.
+  # If the system is under high load, add weight.
+  - name: high-load-average
+    action: WEIGH
+    expression: load_1m >= 10.0 # make sure to end the load comparison in a .0
+    weight:
+      adjust: 20
+
+  # If your backend service is running on the same operating system as Anubis,
+  # you can uncomment this rule to make the challenge easier when the system is
+  # under low load.
+  #
+  # If it is not, remove weight.
+  - name: low-load-average
+    action: WEIGH
+    expression: load_15m <= 4.0 # make sure to end the load comparison in a .0
+    weight:
+      adjust: -10" onclick="
+          navigator.clipboard.writeText(this.dataset.code);
+          this.classList.add(&#x27;copied&#x27;);
+          setTimeout(() => this.classList.remove(&#x27;copied&#x27;), 2000)
+        "><div class="ready"><svg class="size-5"><use href="/icons/code.svg#mingcute-clipboard-line"></use></svg></div><div class="success hidden"><svg class="size-5"><use href="/icons/code.svg#mingcute-file-check-line"></use></svg></div></button><button class="collapse-toggle bg-card text-muted-foreground rounded-lg m-2" aria-label="Toggle collapse code block" onclick="this.parentElement.classList.toggle(&#x27;collapsed&#x27;)"><svg class="size-5"><use href="/icons/code.svg#mingcute-arrow-down-line"></use></svg><span class="desc"> code</span></button><div class="collapse-fade"></div></div>
+<h3 id="测试页面">测试页面<a class="anchor" href="#测试页面">#</a></h3>
+<p>为了方便<del>在大家的浏览器中挖矿</del>方便大家测试，我准备了这些界面
+建议用隐私窗口打开，否则会使用上一次的结果</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>难度</th><th>地址</th></tr></thead><tbody><tr><td>2</td><td><a href="https://pow.vio.vin/challenge/2" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/2<span style="user-select:none"> ↗</span></a></td></tr><tr><td>3</td><td><a href="https://pow.vio.vin/challenge/3" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/3<span style="user-select:none"> ↗</span></a></td></tr><tr><td>4</td><td><a href="https://pow.vio.vin/challenge/4" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/4<span style="user-select:none"> ↗</span></a></td></tr><tr><td>5</td><td><a href="https://pow.vio.vin/challenge/5" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/5<span style="user-select:none"> ↗</span></a></td></tr><tr><td>6</td><td><a href="https://pow.vio.vin/challenge/6" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/6<span style="user-select:none"> ↗</span></a></td></tr><tr><td>7</td><td><a href="https://pow.vio.vin/challenge/7" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/7<span style="user-select:none"> ↗</span></a></td></tr><tr><td>8</td><td><a href="https://pow.vio.vin/challenge/8" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/8<span style="user-select:none"> ↗</span></a></td></tr><tr><td>10</td><td><a href="https://pow.vio.vin/challenge/10" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/10<span style="user-select:none"> ↗</span></a></td></tr><tr><td>20</td><td><a href="https://pow.vio.vin/challenge/20" rel="nofollow noopener noreferrer" target="_blank">https://pow.vio.vin/challenge/20<span style="user-select:none"> ↗</span></a></td></tr></tbody></table>
+<h2 id="参考文献">参考文献<a class="anchor" href="#参考文献">#</a></h2>
+<p><a href="https://lock.cmpxchg8b.com/anubis.html" rel="nofollow noopener noreferrer" target="_blank">https://lock.cmpxchg8b.com/anubis.html<span style="user-select:none"> ↗</span></a></p>     </div> </article> </main> <div class="bottom mt-6 items-start gap-x-10 md:flex astro-scuu7fyy">  <div class="flex-1 text-muted-foreground md:min-w-[50ch] astro-scuu7fyy"> <div class="relative flex flex-col gap-y-2 rounded-xl border px-3 sm:px-4 py-2 sm:py-3 astro-sjxyoaq4"> <svg aria-hidden="true" class="absolute end-4 top-4 size-20 opacity-10 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 3a5 5 0 0 1 3.75 1.692a1 1 0 1 1-1.5 1.324a3 3 0 1 0 0 3.968a1 1 0 1 1 1.5 1.324A5 5 0 1 1 12 7"/></g></svg>  <div class="flex flex-col astro-sjxyoaq4"> <div class="font-medium text-foreground astro-sjxyoaq4">Anubis网站防护工具配置教程</div> <div class="text-sm line-clamp-1 astro-sjxyoaq4">https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng</div> </div>  <div class="flex flex-row flex-wrap justify-start gap-x-5 gap-y-1 sm:gap-x-8 astro-sjxyoaq4"> <div class="flex gap-x-2 sm:flex-col astro-sjxyoaq4"> <span class="astro-sjxyoaq4">Author</span> <span class="text-sm text-foreground max-sm:place-self-center astro-sjxyoaq4">violet</span> </div> <div class="flex gap-x-2 sm:min-w-16 sm:flex-col astro-sjxyoaq4"> <span class="astro-sjxyoaq4">Published at</span> <span class="text-sm text-foreground max-sm:place-self-center astro-sjxyoaq4"> 2025年8月21日 </span> </div> <div class="flex gap-x-2 sm:flex-col astro-sjxyoaq4"> <span class="astro-sjxyoaq4">Copyright</span> <a class="text-sm text-foreground max-sm:place-self-center astro-sjxyoaq4" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+CC BY-NC-SA 4.0
+</a> </div> </div>  <div class="relative astro-sjxyoaq4"> <div class="flex flex-row gap-3 astro-sjxyoaq4"> <button id="copy-link" aria-label="Copy link" class="group rounded-full bg-muted p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5 astro-sjxyoaq4"> <svg aria-hidden="true" class="size-5 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M16.243 9.878a1 1 0 0 1 1.32-.083l.094.083L19.778 12a5.5 5.5 0 0 1-7.596 7.952L12 19.778l-2.121-2.121a1 1 0 0 1 1.32-1.498l.094.083l2.121 2.122a3.5 3.5 0 0 0 5.091-4.8l-.141-.15l-2.121-2.121a1 1 0 0 1 0-1.415M9.17 9.171a1 1 0 0 1 1.32-.083l.095.083l4.242 4.243a1 1 0 0 1-1.32 1.497l-.094-.083l-4.243-4.242a1 1 0 0 1 0-1.415m-4.95-4.95a5.5 5.5 0 0 1 7.597-.173l.182.174l2.121 2.12A1 1 0 0 1 12.8 7.84l-.094-.083l-2.121-2.121a3.5 3.5 0 0 0-5.091 4.8l.141.15l2.121 2.12a1 1 0 0 1-1.32 1.498l-.094-.083L4.222 12a5.5 5.5 0 0 1 0-7.778Z"/></g></svg> </button> <button id="get-qrcode" aria-label="Get QR code" class="group rounded-full bg-muted p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5 astro-sjxyoaq4"> <svg aria-hidden="true" class="size-5 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11 3a2 2 0 0 1 1.995 1.85L13 5v6a2 2 0 0 1-1.85 1.995L11 13H5a2 2 0 0 1-1.995-1.85L3 11V5a2 2 0 0 1 1.85-1.995L5 3zm0 2H5v6h6zM8.5 7a.5.5 0 0 1 .492.41L9 7.5v1a.5.5 0 0 1-.41.492L8.5 9h-1a.5.5 0 0 1-.492-.41L7 8.5v-1a.5.5 0 0 1 .41-.492L7.5 7zM21 5a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm-4 0h2v2h-2zM7 15a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2zm0 2H5v2h2zm14 0a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm-4 0h2v2h-2zm-2-5a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2h-4a1 1 0 0 1-1-1m-2 4a1 1 0 1 0-2 0v4a1 1 0 1 0 2 0z"/></g></svg> </button> <a href="http://service.weibo.com/share/share.php?url=https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng&amp;title=Anubis网站防护工具配置教程&amp;pic=" target="_blank" id="share-weibo" aria-label="Share to weibo" class="group rounded-full bg-muted p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5 astro-sjxyoaq4"> <svg aria-hidden="true" class="size-5 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M13.12 5.815c.55.537.826 1.24.863 1.992c1.675-.502 3.045-.362 3.937.5c.848.82.937 1.967.617 2.964C19.9 11.961 21 13.058 21 14.715c0 1.93-1.256 3.526-2.962 4.586C16.318 20.371 14.004 21 11.5 21s-4.818-.63-6.538-1.699C3.256 18.241 2 16.646 2 14.715c0-1.762.842-3.589 2.05-5.156a14.6 14.6 0 0 1 4.723-3.954c1.635-.847 3.286-.828 4.347.21m-1.399 1.43c-.213-.21-.829-.485-2.028.136a12.6 12.6 0 0 0-4.06 3.4C4.576 12.154 4 13.558 4 14.715c0 .988.647 2.035 2.018 2.888C7.374 18.446 9.309 19 11.5 19c2.19 0 4.127-.554 5.482-1.397c1.371-.853 2.018-1.9 2.018-2.888c0-.711-.56-1.439-2.16-1.991a1 1 0 0 1-.473-1.546c.495-.66.355-1.248.163-1.433l-.048-.04l-.067-.042c-.337-.186-1.274-.368-3.335.661a1 1 0 0 1-1.347-1.33c.444-.92.225-1.517-.012-1.75ZM17 3c1.576 0 3.128.643 4.243 1.757A6.05 6.05 0 0 1 23 9a1 1 0 1 1-2 0c0-1.05-.429-2.086-1.172-2.828A4.04 4.04 0 0 0 17 5a1 1 0 1 1 0-2"/></g></svg> </a><a href="https://x.com/intent/tweet?text='Anubis网站防护工具配置教程'&amp;url='https://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng'&amp;via='violet'" target="_blank" id="share-x" aria-label="Share to x" class="group rounded-full bg-muted p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5 astro-sjxyoaq4"> <svg aria-hidden="true" class="size-5 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M19.753 4.659a1 1 0 0 0-1.506-1.317l-5.11 5.84L8.8 3.4A1 1 0 0 0 8 3H4a1 1 0 0 0-.8 1.6l6.437 8.582l-5.39 6.16a1 1 0 0 0 1.506 1.317l5.11-5.841L15.2 20.6a1 1 0 0 0 .8.4h4a1 1 0 0 0 .8-1.6l-6.437-8.582l5.39-6.16ZM16.5 19L6 5h1.5L18 19z"/></g></svg> </a><a href="https://bsky.app/intent/compose?text=Anubis网站防护工具配置教程%0Ahttps://vio.vin/blog/anubis-wang-zhan-fang-hu-gong-ju-pei-zhi-jiao-cheng" target="_blank" id="share-bluesky" aria-label="Share to bluesky" class="group rounded-full bg-muted p-1 text-muted-foreground transition-colors hover:text-primary sm:p-1.5 astro-sjxyoaq4"> <svg aria-hidden="true" class="size-5 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M4.747 5.105a.94.94 0 0 0-.41.892l.314 3.287A3 3 0 0 0 7.637 12H9a1 1 0 0 1 .371 1.928l-2.34.937c-.885.354-1.122 1.32-.664 1.932c.288.384.576.731.84.996c.233.233.532.485.865.74c.619.475 1.625.214 1.94-.734l1.04-3.115a1 1 0 0 1 1.897 0l1.038 3.115c.316.948 1.322 1.21 1.941.735a9 9 0 0 0 .865-.741c.265-.265.553-.612.84-.996c.458-.612.222-1.578-.664-1.932l-2.34-.937A1 1 0 0 1 15 12h1.363a3 3 0 0 0 2.986-2.716l.314-3.287a.94.94 0 0 0-.41-.892a.75.75 0 0 0-.858-.001c-2.645 1.708-4.05 3.442-5.5 6.343a1 1 0 0 1-1.79 0c-1.45-2.901-2.855-4.635-5.5-6.343a.75.75 0 0 0-.858.001m-2.4 1.082C2.13 3.913 4.567 2.053 6.69 3.424C9.13 5 10.662 6.639 12 8.9c1.338-2.261 2.87-3.9 5.31-5.476c2.123-1.371 4.56.49 4.344 2.763l-.314 3.287a5 5 0 0 1-2.783 4.02c1.329 1.039 1.818 2.978.677 4.502c-.317.423-.669.853-1.027 1.211c-.317.317-.69.628-1.062.914c-1.88 1.441-4.375.35-5.055-1.69l-.09-.269l-.09.27c-.68 2.04-3.175 3.13-5.055 1.689a11 11 0 0 1-1.062-.914a11.5 11.5 0 0 1-1.027-1.211c-1.141-1.524-.651-3.463.678-4.502a5 5 0 0 1-2.784-4.02z"/></g></svg> </a> </div> <div id="qrcode-container" class="absolute z-10 -mt-2 box-content max-h-0 max-w-44 overflow-hidden rounded-xl border bg-muted p-4 opacity-0 transition-all duration-300 ease-in-out astro-sjxyoaq4 astro-nafosdfo"></div> <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script> <script>(function(){const content = undefined;
+
+  const renderContent = content ?? window.location.href
+  // Load qrcode
+  function loadQRcode(qrcodeContainer) {
+    if (!qrcodeContainer) throw new Error('qrcode container not found')
+    if (qrcodeContainer.innerHTML !== '') return
+    new QRCode(qrcodeContainer, renderContent)
+  }
+  const qrcodeContainer = document.getElementById('qrcode-container')
+  if (!qrcodeContainer) throw new Error('qrcode container not found')
+  loadQRcode(qrcodeContainer)
+})();</script> </div> </div> <div class="mx-6 rounded-b-xl border border-t-0 px-3 pb-1.5 pt-1 sm:mx-8 sm:px-4 astro-sjxyoaq4"> <a href="/projects#sponsorship" class="flex items-center justify-between text-muted-foreground no-underline astro-sjxyoaq4" target="_blank"> <span class="astro-sjxyoaq4">Buy me a cup of coffee ☕.</span> <svg aria-hidden="true" class="box-content size-5 p-1 astro-sjxyoaq4 astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M17 2a3 3 0 0 1 3 3v12a1 1 0 0 1 .351 1.936l-8 3a1 1 0 0 1-.702 0l-8-3A1 1 0 0 1 4 17V5a3 3 0 0 1 3-3zm0 2H7a1 1 0 0 0-.993.883L6 5v12.682l6 2.25l6-2.25V5a1 1 0 0 0-.883-.993zm-5 1a1 1 0 0 1 .993.883L13 6v1h2a1 1 0 0 1 .117 1.993L15 9h-5a.5.5 0 0 0-.09.992L10 10h4a2.5 2.5 0 0 1 .164 4.995L14 15h-1v1a1 1 0 0 1-1.993.117L11 16v-1H9a1 1 0 0 1-.117-1.993L9 13h5a.5.5 0 0 0 .09-.992L14 12h-4a2.5 2.5 0 0 1-.164-4.995L10 7h1V6a1 1 0 0 1 1-1"/></g></svg> </a> </div>  <script type="module" src="/_astro/Copyright.astro_astro_type_script_index_0_lang.B_VQDGfL.js"></script> <div class="flex max-sm:flex-col sm:justify-between gap-2 mt-3 sm:mt-6"> <span class="min-w-0"> <a href="/blog/dian-zi-you-jian-pgp-jia-mi" class="group inline-flex items-center gap-x-2 rounded-xl px-4 py-2 no-underline transition-colors duration-300 hover:bg-muted max-sm:max-w-[80%] sm:flex"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 rotate-180 stroke-muted-foreground transition-colors group-hover:stroke-primary"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-4 scale-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1 group-hover:scale-x-100"></line> <polyline points="12 5 19 12 12 19" class="translate-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"></polyline> </svg> <p class="truncate font-medium transition-colors">电子邮件安全之PGP加密</p> </a> </span> <span class="min-w-0"> <a href="/blog/wo-de-blog-gou-jian-guo-cheng" class="group inline-flex items-center gap-x-2 rounded-xl px-4 py-2 text-right no-underline transition-colors duration-300 hover:bg-muted max-sm:float-end max-sm:max-w-[80%] sm:flex"> <p class="truncate font-medium transition-colors">我的Blog构建过程</p> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 stroke-muted-foreground transition-colors group-hover:stroke-primary"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-4 scale-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1 group-hover:scale-x-100"></line> <polyline points="12 5 19 12 12 19" class="translate-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1"></polyline> </svg> </a> </span> </div> <section class="not-prose mt-6 mt-3 sm:mt-6"><script src="https://giscus.app/client.js" data-repo="xkdvSrPD/astro-gyoza" data-repo-id="R_kgDOPW4tbw" data-category="Announcements" data-category-id="DIC_kwDOPW4tb84Ctvvm" data-mapping="title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script></section><script type="module">const t=()=>{const e=document.documentElement.classList.contains("dark");document.querySelector("iframe.giscus-frame")?.contentWindow?.postMessage({giscus:{setConfig:{theme:e?"dark":"light"}}},"https://giscus.app")};new MutationObserver(t).observe(document.documentElement,{attributes:!0,attributeFilter:["class"]});window.addEventListener("message",e=>{e.origin==="https://giscus.app"&&t()});</script> </div> <div class="min-w-48 basis-60 astro-scuu7fyy">  </div> </div> <div class="z-10 md:z-50 group fixed bottom-8 end-4 transition-all flex flex-col gap-y-4 sm:end-8 astro-jxfdehre" id="action-buttons"> <button aria-label="Toggle sidebar" class="size-10 flex items-center justify-center rounded-full border-2 border-transparent bg-muted text-muted-foreground duration-300 hover:border-border/75 md:hidden sm:size-12 astro-scuu7fyy" id="sidebar-btn"> <svg aria-hidden="true" class="astro-scuu7fyy astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M4.5 17.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3M20 18a1 1 0 1 1 0 2H9a1 1 0 1 1 0-2zM4.5 10.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3M20 11a1 1 0 0 1 .117 1.993L20 13H9a1 1 0 0 1-.117-1.993L9 11zM4.5 3.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3M20 4a1 1 0 0 1 .117 1.993L20 6H9a1 1 0 0 1-.117-1.993L9 4z"/></g></svg> </button> <scroll-button class="astro-jxfdehre"> <button aria-label="Back to Top" class="relative size-10 flex items-center justify-center rounded-full border-2 border-transparent bg-muted text-muted-foreground duration-300 hover:border-border/75 sm:size-12 opacity-0 astro-jxfdehre" id="to-top-btn"> <div class="top-text absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center group-[.ended]:opacity-0 astro-jxfdehre"> <span class="text astro-jxfdehre">10</span> <span class="text-xs astro-jxfdehre">%</span> </div> <svg aria-hidden="true" class="top-icon group-[.ended]:opacity-100 astro-jxfdehre astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M11.293 8.293a1 1 0 0 1 1.414 0l5.657 5.657a1 1 0 0 1-1.414 1.414L12 10.414l-4.95 4.95a1 1 0 0 1-1.414-1.414z"/></g></svg> </button> </scroll-button> </div> <script>(function(){const headerName = "content-header";
+const contentName = "content";
+const needPercent = true;
+
+  class ScrollBtn extends HTMLElement {
+    actionBtns
+    scrollBtn
+    scrollPercentEl
+    targetHeader
+    articleEl
+    scrollHeight = 0
+    articleTop = 0
+    clientHeight = 0
+    ticking = false
+    needPercent = true
+
+    calculateScrollPercent() {
+      const scrollTop = Math.max(0, window.scrollY || document.documentElement.scrollTop)
+      // Before article
+      if (scrollTop < this.articleTop) return 0
+      const maxScrollable = this.scrollHeight - this.clientHeight
+      // After article
+      if (maxScrollable <= 0) return 100
+      const progress = Math.min(scrollTop - this.articleTop, maxScrollable)
+      return Math.round((progress / maxScrollable) * 100)
+    }
+
+    updateScrollPercent() {
+      const percent = this.calculateScrollPercent()
+      this.scrollPercentEl.textContent = percent.toString()
+      this.actionBtns.classList.toggle('ended', percent >= 100)
+      this.ticking = false
+    }
+
+    connectedCallback() {
+      this.needPercent = needPercent
+      this.actionBtns = document.getElementById('action-buttons')
+      this.scrollBtn = this.querySelector('button#to-top-btn')
+      this.scrollPercentEl = this.scrollBtn.querySelector('.top-text .text')
+      this.targetHeader = document.getElementById(headerName)
+      this.articleEl = document.getElementById(contentName)
+
+      if (!this.articleEl) {
+        console.error(`Element with ID ${contentName} not found.`)
+        needPercent = false
+      }
+      // Scroll to top action
+      this.scrollBtn.addEventListener('click', this)
+      // Observe header visibility
+      if (this.targetHeader) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            this.actionBtns.classList.toggle('show', !entry.isIntersecting)
+          })
+        })
+        observer.observe(this.targetHeader)
+      } else {
+        console.error(`Element with ID ${headerName} not found.`)
+      }
+      // Scroll percent update
+      if (this.needPercent) {
+        this.scrollHeight = this.articleEl.scrollHeight
+        this.articleTop = this.articleEl.offsetTop
+        this.clientHeight = document.documentElement.clientHeight
+
+        document.addEventListener('scroll', () => {
+          if (!this.ticking) {
+            requestAnimationFrame(() => this.updateScrollPercent())
+            this.ticking = true
+          }
+        })
+      } else {
+        this.actionBtns.classList.add('ended')
+      }
+    }
+
+    handleEvent(event) {
+      if (event.type === 'click') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }
+  }
+  customElements.define('scroll-button', ScrollBtn)
+})();</script>  </div> <footer class="mx-auto mb-5 mt-16 w-full astro-dojmed5u"> <div class="border-t pt-5 astro-dojmed5u"> <div class="flex items-center gap-y-3 max-sm:flex-col sm:justify-between sm:gap-y-0 astro-dojmed5u"> <div class="flex items-center gap-x-4 gap-y-2 text-muted-foreground max-sm:flex-col astro-dojmed5u"> <div class="astro-dojmed5u">  <a href="https://beian.miit.gov.cn/" target="_blank" class="text-sm astro-dojmed5u"> 陕ICP备2021015553号-2 </a>  </div>  <div class="astro-dojmed5u"> © 2026 violet 
+&
+<span class="astro-dojmed5u"> <span class="astro-dojmed5u"> <a href="/terms" target="_blank" class=" astro-dojmed5u"> Site Policy </a> </span> </span>  </div> <span class="astro-dojmed5u"> <a href="https://github.com/withastro/astro" target="_blank" class="astro-dojmed5u">
+Astro
+</a>
+&
+<a href="https://github.com/cworld1/astro-theme-pure" target="_blank" class="astro-dojmed5u">
+Pure
+</a>
+theme powered
+</span> </div>  <div class="flex items-center gap-x-4 astro-dojmed5u"> <a href="https://github.com/xkdvSrPD" rel="me" class="sl-flex astro-dojmed5u"> <span class="sr-only astro-dojmed5u">GitHub</span> <svg aria-hidden="true" class="astro-dojmed5u astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M6.315 6.176c-.25-.638-.24-1.367-.129-2.034a6.8 6.8 0 0 1 2.12 1.07c.28.214.647.283.989.18A9.3 9.3 0 0 1 12 5c.961 0 1.874.14 2.703.391c.342.104.709.034.988-.18a6.8 6.8 0 0 1 2.119-1.07c.111.667.12 1.396-.128 2.033c-.15.384-.075.826.208 1.14C18.614 8.117 19 9.04 19 10c0 2.114-1.97 4.187-5.134 4.818c-.792.158-1.101 1.155-.495 1.726c.389.366.629.882.629 1.456v3a1 1 0 0 0 2 0v-3c0-.57-.12-1.112-.334-1.603C18.683 15.35 21 12.993 21 10c0-1.347-.484-2.585-1.287-3.622c.21-.82.191-1.646.111-2.28c-.071-.568-.17-1.312-.57-1.756c-.595-.659-1.58-.271-2.28-.032a9 9 0 0 0-2.125 1.045A11.4 11.4 0 0 0 12 3c-.994 0-1.953.125-2.851.356a9 9 0 0 0-2.125-1.045c-.7-.24-1.686-.628-2.281.031c-.408.452-.493 1.137-.566 1.719l-.005.038c-.08.635-.098 1.462.112 2.283C3.484 7.418 3 8.654 3 10c0 2.992 2.317 5.35 5.334 6.397A4 4 0 0 0 8 17.98l-.168.034c-.717.099-1.176.01-1.488-.122c-.76-.322-1.152-1.133-1.63-1.753c-.298-.385-.732-.866-1.398-1.088a1 1 0 0 0-.632 1.898c.558.186.944 1.142 1.298 1.566c.373.448.869.916 1.58 1.218c.682.29 1.483.393 2.438.276V21a1 1 0 0 0 2 0v-3c0-.574.24-1.09.629-1.456c.607-.572.297-1.568-.495-1.726C6.969 14.187 5 12.114 5 10c0-.958.385-1.881 1.108-2.684c.283-.314.357-.756.207-1.14"/></g></svg> </a><a href="/rss.xml" rel="me" class="sl-flex astro-dojmed5u"> <span class="sr-only astro-dojmed5u">RSS</span> <svg aria-hidden="true" class="astro-dojmed5u astro-hn7k2gay" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><g fill="none"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M5.5 17a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3m0-14C14.06 3 21 9.94 21 18.5q0 .268-.009.534a1 1 0 0 1-1.999-.068Q19 18.734 19 18.5C19 11.044 12.956 5 5.5 5q-.234 0-.466.008a1 1 0 0 1-.068-1.999Q5.231 3 5.5 3m0 7a8.5 8.5 0 0 1 8.482 9.066a1 1 0 0 1-1.996-.132a6.5 6.5 0 0 0-6.92-6.92a1 1 0 1 1-.132-1.995q.28-.02.566-.019"/></g></svg> </a> </div> </div> </div> </footer> </div>  </body> </html> <script type="module">const d=document.getElementById("sidebar-btn"),e=document.getElementById("sidebar"),s=document.getElementById("sidebar-shade");s&&s.addEventListener("click",()=>{t()});function t(){e&&e.classList.contains("show")?(e.classList.remove("show"),s.style.display="none"):e&&(e.classList.add("show"),s.style.display="block")}d?.addEventListener("click",()=>{t()});</script> <script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/pure/medium-zoom.min.umd.js"></script> <script>(function(){const selector = ".prose .zoomable";
+const background = "hsl(var(--background) / 0.8)";
+
+  mediumZoom(selector, { background })
+})();</script> 

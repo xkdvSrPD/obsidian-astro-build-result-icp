@@ -1,0 +1,99 @@
+{
+  "friends": [
+    {
+      "id_name": "cf-links",
+      "desc": "朋友们",
+      "link_list": [
+        {
+          "name": "焕昭君",
+          "intro": "知行合一，日拱一卒",
+          "link": "https://blog.huan666.de/",
+          "avatar": "/avatars/blog.huan666.de.webp"
+        },
+        {
+          "name": "Incohua's Blog",
+          "intro": "incohua的博客",
+          "link": "https://blog.inmoe.org/",
+          "avatar": "/avatars/blog.ic1t.online.webp"
+        },
+        {
+          "name": "小植同学",
+          "intro": "锦鲤相随，好运常伴",
+          "link": "https://blog.xiaoztx.top/",
+          "avatar": "/avatars/blog.xiaoztx.top.ico"
+        },
+        {
+          "name": "Travis's Blog",
+          "intro": "随手小记",
+          "link": "https://chrivs.com/",
+          "avatar": "/avatars/chrivs.com.ico"
+        },
+        {
+          "name": "Cleves",
+          "intro": "A web developer who loves creating.",
+          "link": "https://cleves.me/",
+          "avatar": "/avatars/cleves.me.jpeg"
+        },
+        {
+          "name": "雪貂神社",
+          "intro": "🤔迟早有一天我要把bug修复",
+          "link": "https://ferret.icu",
+          "avatar": "/avatars/home.ferret.icu.ico"
+        },
+        {
+          "name": "for_the_zero的小站",
+          "intro": "Everywhere of Inexistence",
+          "link": "https://ftz.is-a.dev/",
+          "avatar": "/favicon/favicon.ico"
+        },
+        {
+          "name": "贰拾肆行诗",
+          "intro": "不惊、不惑、不扰。",
+          "link": "https://hsuqnian.top/",
+          "avatar": "/avatars/hsuqnian.top.ico"
+        },
+        {
+          "name": "静かな森",
+          "intro": "致虚极，守静笃。",
+          "link": "https://innei.in/",
+          "avatar": "/avatars/innei.in.webp"
+        },
+        {
+          "name": "CC的博客",
+          "intro": "我们永不消逝！",
+          "link": "https://main.791197.xyz/",
+          "avatar": "/favicon/favicon.ico"
+        },
+        {
+          "name": "YYsuni",
+          "intro": "是前端",
+          "link": "https://www.yysuni.com",
+          "avatar": "/avatars/yysuni.com.png"
+        },
+        {
+          "name": "Jayden’s site",
+          "intro": "为天地立心,为生民立命, 为往圣继绝学,为万世开太平。",
+          "link": "https://xxu.do/",
+          "avatar": "/avatars/xxu.do.webp"
+        },
+        {
+          "name": "solaireh3",
+          "intro": "愛しの君とこの世のはたて",
+          "link": "https://xxxh.de/",
+          "avatar": "/avatars/www.xxxh.de.gif"
+        },
+        {
+          "name": "离心",
+          "intro": "Learn、Share、Create、Build",
+          "link": "https://yanglixin.com/",
+          "avatar": "/avatars/yanglixin.com.ico"
+        }
+      ]
+    },
+    {
+      "id_name": "inactive-links",
+      "desc": "失联或违反规则的友链",
+      "link_list": []
+    }
+  ]
+}
