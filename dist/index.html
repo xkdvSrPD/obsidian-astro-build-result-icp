@@ -3,265 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Five personal-site directions built from the visual grammar of an all-seeing machine." />
-    <meta name="theme-color" content="#050807" />
-    <title>MACHINE // PERSONAL INDEX</title>
+    <meta name="description" content="VIO 的中文个人博客：设计、技术、AI 与长期工作方法。" />
+    <meta name="theme-color" content="#080c0a" />
+    <title>VIO / 观察记录</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body data-view="home">
-    <div class="phosphor" aria-hidden="true"></div>
-    <div class="scan" aria-hidden="true"></div>
+  <body>
+    <div class="crt-noise" aria-hidden="true"></div>
+    <div class="crt-scan" aria-hidden="true"></div>
 
-    <header class="machine-bar">
-      <button class="machine-id" type="button" data-home aria-label="返回方向总览">
-        <span class="machine-mark"><i></i></span>
-        <span>THE MACHINE</span>
-      </button>
-      <div class="machine-readout">
-        <span>SYS / 0000.0001</span>
-        <span data-clock>00:00:00</span>
-        <span class="status-ok">● OBSERVING</span>
-      </div>
+    <header class="system-bar" id="top">
+      <a class="system-name" href="#top"><span class="machine-glyph"><i></i></span><b>VIO / 观察记录</b></a>
+      <nav aria-label="主导航"><a href="#latest">文章</a><a href="#topics">主题</a><a href="#archive">归档</a><a href="#about">关于</a></nav>
+      <div class="system-status"><span data-clock>00:00:00</span><b>● REC</b></div>
     </header>
 
     <main>
-      <section class="index-view" aria-labelledby="index-title">
-        <div class="surveillance-bg" aria-hidden="true"></div>
-        <div class="feed-label top-left">CAMERA: MTA_14AV_CROSSING_03<br />FRAME: 005719 / LIVE</div>
-        <div class="feed-label top-right">OBJECTS: 0047<br />ANOMALIES: 0005</div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="camera-feed" aria-hidden="true"></div>
+        <div class="camera-burn" aria-hidden="true"></div>
+        <div class="camera-meta meta-left">CAM 04 / MTA_14AV<br />FRAME 0005719<br />MODE: PASSIVE</div>
+        <div class="camera-meta meta-right">2026-11-01 <span data-clock>00:00:00</span><br />31.2304 N / 121.4737 E<br />SIGNAL 87%</div>
 
-        <div class="tracking-box track-white t1"><span>UNKNOWN</span></div>
-        <div class="tracking-box track-red t2"><span>POTENTIAL THREAT</span></div>
-        <div class="tracking-box track-yellow t3"><span>ADMIN</span></div>
-        <div class="tracking-box track-blue t4"><span>OPERATIVE</span></div>
+        <div class="subject-box box-white subject-1"><span>UNKNOWN</span><small>86.210%</small></div>
+        <div class="subject-box box-red subject-2"><span>POTENTIAL THREAT</span><small>62.071%</small></div>
+        <div class="subject-box box-yellow subject-3"><span>ADMIN</span><small>98.723%</small></div>
+        <div class="subject-box box-blue subject-4"><span>GOV. ASSET</span><small>74.912%</small></div>
+        <div class="subject-box box-white subject-5"><span>IRRELEVANT</span><small>91.084%</small></div>
 
-        <div class="index-copy">
-          <p class="machine-kicker">QUERY: PERSONAL_BLOG / FIVE COMPLETE CONTENT SYSTEMS</p>
-          <h1 id="index-title">WE ARE<br />BEING<br /><span>WATCHED.</span></h1>
-          <p class="quote">“We're not exactly in a position to be trusted with secrets, are we?”</p>
-          <div class="visual-key">
-            <span><i class="key-red"></i>THREAT</span><span><i class="key-yellow"></i>ADMIN</span><span><i class="key-blue"></i>RELEVANT</span><span><i class="key-white"></i>CIVILIAN</span>
-          </div>
+        <div class="hero-copy">
+          <p class="terminal-line">QUERY // PERSONAL ARCHIVE / STATUS: OBSERVING</p>
+          <h1 id="hero-title">你正在<br />被<span>注视。</span></h1>
+          <p class="hero-intro">这里记录设计、技术、AI，以及一个人如何长期工作。</p>
+          <blockquote>“We're not exactly in a position to be trusted with secrets, are we?”</blockquote>
         </div>
 
-        <nav class="direction-list" aria-label="五个设计方向">
-          <p>SELECT PROCESS // 5 RESULTS</p>
-          <button type="button" data-open="01"><b>01</b><span><strong>IDENTIFYING</strong><small>案件清单型中文博客</small></span><i>BLOG ↗</i></button>
-          <button type="button" data-open="02"><b>02</b><span><strong>CONTEXTUALIZING</strong><small>主题关系型中文博客</small></span><i>BLOG ↗</i></button>
-          <button type="button" data-open="03"><b>03</b><span><strong>EVALUATING</strong><small>编辑推荐型中文博客</small></span><i>BLOG ↗</i></button>
-          <button type="button" data-open="04"><b>04</b><span><strong>RECONSTRUCTING</strong><small>时间归档型中文博客</small></span><i>BLOG ↗</i></button>
-          <button type="button" data-open="05"><b>05</b><span><strong>ANALOG INTERFACE</strong><small>问答专栏型中文博客</small></span><i>BLOG ↗</i></button>
-          <div class="direction-help"><span>KEYS 1—5 TO SELECT</span><span>ESC TO RETURN</span></div>
-        </nav>
+        <aside class="feed-index" aria-label="内容索引">
+          <div class="feed-head"><span>BLOG INDEX</span><b>05 CHANNELS</b></div>
+          <a href="#featured"><b>01</b><span><strong>本期观察</strong><small>FEATURED RECORD</small></span><i>OPEN &gt;</i></a>
+          <a href="#latest"><b>02</b><span><strong>最近记录</strong><small>38 ITEMS FOUND</small></span><i>OPEN &gt;</i></a>
+          <a href="#topics"><b>03</b><span><strong>主题频道</strong><small>04 SIGNAL GROUPS</small></span><i>OPEN &gt;</i></a>
+          <a href="#archive"><b>04</b><span><strong>时间归档</strong><small>2019—2026</small></span><i>OPEN &gt;</i></a>
+          <a href="#about"><b>05</b><span><strong>关于作者</strong><small>SUBJECT PROFILE</small></span><i>OPEN &gt;</i></a>
+          <div class="feed-foot"><span>SCROLL / ↓</span><span>ALL RECORDS LOCAL</span></div>
+        </aside>
 
-        <div class="index-timeline"><span>2011</span><i></i><i></i><i></i><b>2026.11.01 / PRESENT</b><i></i><i></i><span>2030</span></div>
+        <div class="hero-timeline"><span>2001</span><i></i><i></i><i class="active"></i><b>2026.11.01 / PRESENT</b><i></i><span>UNKNOWN</span></div>
       </section>
 
-      <section class="concepts" aria-live="polite">
-        <article class="concept identify" data-concept="01" aria-label="方向一：Identifying">
-          <div class="surveillance-bg live-feed" aria-hidden="true"></div>
-          <div class="feed-label top-left">MPOV // SUBJECT ACQUISITION<br />SOURCE: MUNICIPAL CAMERA 04</div>
-          <div class="feed-label top-right">31.2304° N / 121.4737° E<br />2026-11-01 <span data-clock>00:00:00</span></div>
+      <section class="content-shell" id="featured">
+        <header class="content-header"><div><span>PERSONAL INTELLIGENCE ARCHIVE</span><b>VIO / BLOG</b></div><p>系统已从监控模式切换到阅读模式。以下内容为示例结构，可在方向确定后替换为真实文章。</p></header>
 
-          <div class="id-target" aria-hidden="true">
-            <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
-            <div class="target-scan"></div>
-            <p>FACIAL MATCH<br /><b>98.723%</b></p>
+        <section class="featured-record">
+          <div class="featured-camera">
+            <div class="camera-still"></div>
+            <div class="subject-box box-yellow still-box"><span>RELEVANT</span><small>94.710%</small></div>
+            <div class="still-meta">REC_20261101_130422<br />SOURCE / PERSONAL ARCHIVE</div>
           </div>
-          <div class="tracking-box track-white sub-a"><span>IRRELEVANT</span></div>
-          <div class="tracking-box track-blue sub-b"><span>GOV. ASSET</span></div>
-          <div class="tracking-box track-red sub-c"><span>THREAT / 62%</span></div>
+          <article>
+            <p class="record-code">置顶记录 / RECORD № 2026—017</p>
+            <h2>当软件开始观察我们，<br />我们还剩下什么？</h2>
+            <p>工具正在从等待命令，变成主动理解上下文。真正值得讨论的，不只是它能做什么，而是谁定义了“重要”，又是谁可以修改这个定义。</p>
+            <div class="record-meta"><span>2026.11.01</span><span>AI 与工具</span><span>预计阅读 8 分钟</span></div>
+            <button type="button" data-article="observe">读取完整记录 &gt;&gt;</button>
+          </article>
+        </section>
 
-          <section class="subject-card">
-            <p class="machine-kicker">RELEVANT PERSON // NUMBER DELIVERED</p>
-            <h2>VIO</h2>
-            <div class="subject-fields">
-              <span>CLASSIFICATION<b>CREATOR / BUILDER</b></span>
-              <span>PRIMARY SKILLS<b>DESIGN · CODE · SYSTEMS</b></span>
-              <span>LAST KNOWN ACTIVITY<b>MAKING COMPLEX THINGS LEGIBLE</b></span>
+        <section class="latest" id="latest">
+          <div class="section-title"><div><span>02 / RECENT RECORDS</span><h2>最近记录</h2></div><p>按时间倒序 / 共 38 条记录</p></div>
+          <div class="record-table" role="list">
+            <button type="button" data-article="judgement" role="listitem"><b>2026.10.24</b><span><small>产品思考</small><strong>复杂系统里，真正稀缺的是判断</strong><em>当所有信息都可以被检索，选择什么不做反而成为设计者最重要的能力。</em></span><i>07 MIN</i><u class="tag-yellow">RELEVANT</u></button>
+            <button type="button" data-article="workflow" role="listitem"><b>2026.10.12</b><span><small>AI 与工具</small><strong>我为什么不再把 AI 当成搜索框</strong><em>从答案机器到协作对象，交互方式改变之后，工作方法也会改变。</em></span><i>11 MIN</i><u class="tag-blue">ANALYSIS</u></button>
+            <button type="button" data-article="website" role="listitem"><b>2026.09.28</b><span><small>独立开发</small><strong>做一个安静但可靠的个人网站</strong><em>不追逐流量，把网站重新理解为长期保存思想的私人基础设施。</em></span><i>06 MIN</i><u>ARCHIVED</u></button>
+            <button type="button" data-article="relations" role="listitem"><b>2026.09.05</b><span><small>设计</small><strong>从接口到关系：重新理解产品设计</strong><em>界面不是一组组件，而是人、信息和行动之间关系的可见部分。</em></span><i>09 MIN</i><u class="tag-red">FLAGGED</u></button>
+            <button type="button" data-article="context" role="listitem"><b>2026.08.17</b><span><small>工作方法</small><strong>如何为长期项目保留上下文</strong><em>真正让项目持续的不是任务列表，而是每次重新进入时都能找到来路。</em></span><i>08 MIN</i><u>ARCHIVED</u></button>
+          </div>
+          <a class="more-link" href="#archive">[ 查看全部 38 条记录 ]</a>
+        </section>
+
+        <section class="topics" id="topics">
+          <div class="section-title"><div><span>03 / SIGNAL GROUPS</span><h2>主题频道</h2></div><p>系统根据长期内容自动聚类</p></div>
+          <div class="topic-grid">
+            <a href="#latest" class="topic topic-yellow"><div class="topic-screen"><i></i><i></i><i></i><b>12</b></div><span>CHANNEL 01</span><h3>设计与系统</h3><p>组件之外，如何让产品形成一致的判断。</p><small>12 RECORDS &gt;</small></a>
+            <a href="#latest" class="topic topic-blue"><div class="topic-screen network-screen"><i></i><i></i><i></i><b>09</b></div><span>CHANNEL 02</span><h3>AI 与工具</h3><p>人与智能系统之间正在形成的新关系。</p><small>09 RECORDS &gt;</small></a>
+            <a href="#latest" class="topic topic-red"><div class="topic-screen bars-screen"><i></i><i></i><i></i><b>07</b></div><span>CHANNEL 03</span><h3>独立开发</h3><p>一个人如何维护自己的数字基础设施。</p><small>07 RECORDS &gt;</small></a>
+            <a href="#latest" class="topic"><div class="topic-screen pulse-screen"><i></i><i></i><i></i><b>10</b></div><span>CHANNEL 04</span><h3>生活观察</h3><p>城市、注意力，以及技术之外的东西。</p><small>10 RECORDS &gt;</small></a>
+          </div>
+        </section>
+
+        <section class="reader" id="reader">
+          <aside class="reader-side"><div><span>CURRENT RECORD</span><b id="reader-code">2026—017</b></div><nav><a href="#reader-p1">01 / 开始</a><a href="#reader-p2">02 / 判断</a><a href="#reader-p3">03 / 边界</a></nav><div class="reader-state"><i></i><span>READING MODE<br />SIGNAL STABLE</span></div></aside>
+          <article>
+            <p class="record-code" id="reader-category">AI 与工具 / 2026.11.01</p>
+            <h2 id="reader-title">当软件开始观察我们，我们还剩下什么？</h2>
+            <p class="reader-lead" id="reader-lead">我们习惯把软件理解成被动工具：点击按钮，它才开始工作。但新的系统正在观察上下文、推测意图，并在我们开口之前给出行动。</p>
+            <div class="article-body" id="reader-body">
+              <p id="reader-p1">这种变化最容易被描述为“智能”。然而从使用者的角度看，更重要的变化是权力从哪里发生：当系统开始替我们筛选、排序和预测，它也开始参与定义什么值得看见。</p>
+              <h3 id="reader-p2">真正的问题不是机器知道多少</h3>
+              <p>而是谁可以修正它的判断。一个值得信任的工具，不应该只给出漂亮的答案，还应该让人知道答案来自哪里，允许人保留异议，也允许过去的决定被重新解释。</p>
+              <blockquote>秘密未必可靠。能够被检查、被质疑、被重新理解的过程，才更接近信任。</blockquote>
+              <h3 id="reader-p3">给不确定性留下位置</h3>
+              <p>这也是个人博客仍然重要的原因。它不需要假装每一次记录都是最终结论。今天的判断可以在未来被修正，而旧文章会保留变化发生的证据。</p>
             </div>
-            <p class="subject-summary">观察信号、理解系统、把模糊问题变成可以使用的产品。</p>
-            <nav><a href="#work">[ SELECTED WORK ]</a><a href="#notes">[ FIELD NOTES ]</a><a href="#contact">[ OPEN CHANNEL ]</a></nav>
-          </section>
-          <div class="classification-callout">DIRECTION 01<br /><b>“把你本人作为 Machine 正在识别的 Number。”</b></div>
-          <div class="blog-body blog-case">
-            <header class="blog-nav"><a href="#top" class="blog-logo">VIO / 观察记录</a><nav><a href="#c1-latest">最新文章</a><a href="#c1-topics">主题</a><a href="#c1-archive">归档</a><a href="#c1-about">关于</a></nav><span>CASE FEED / 38</span></header>
-            <section class="blog-feature" id="c1-latest">
-              <div class="feature-code"><span class="track-red">RELEVANT</span><b>№ 2026—017</b><small>READING TIME / 08 MIN</small></div>
-              <div class="feature-copy"><p>置顶观察 · 人与机器</p><h3>当软件开始观察我们，<br />我们还剩下什么？</h3><p>工具正在从等待命令，变成主动理解上下文。真正值得讨论的，不只是它能做什么，而是谁定义了“重要”。</p><a href="#article">读取完整记录 →</a></div>
-              <div class="feature-visual"><div class="mini-camera"></div><span>SUBJECT / UNKNOWN<br />CONFIDENCE 94.71%</span></div>
-            </section>
-            <section class="blog-columns">
-              <div class="article-feed">
-                <div class="section-label"><span>RECENT CASES / 最近文章</span><b>04 RESULTS</b></div>
-                <a class="case-row" href="#a1"><b>01</b><span><small>2026.10.24 · 产品思考</small><strong>复杂系统里，真正稀缺的是判断</strong><em>当所有信息都可以被检索，选择什么不做反而成为设计者最重要的能力。</em></span><i>07 MIN ↗</i></a>
-                <a class="case-row" href="#a2"><b>02</b><span><small>2026.10.12 · AI</small><strong>我为什么不再把 AI 当成搜索框</strong><em>从答案机器到协作对象，交互方式改变之后，我们的工作方法也会改变。</em></span><i>11 MIN ↗</i></a>
-                <a class="case-row" href="#a3"><b>03</b><span><small>2026.09.28 · 独立开发</small><strong>做一个安静但可靠的个人网站</strong><em>不追逐流量，把网站重新理解为长期保存思想的私人基础设施。</em></span><i>06 MIN ↗</i></a>
-                <a class="case-row" href="#a4"><b>04</b><span><small>2026.09.05 · 设计</small><strong>从接口到关系：重新理解产品设计</strong><em>界面不是一组组件，而是人、信息和行动之间关系的可见部分。</em></span><i>09 MIN ↗</i></a>
-              </div>
-              <aside class="blog-sidebar" id="c1-topics"><div><p>CLASSIFICATIONS</p><a href="#design">设计 <b>12</b></a><a href="#ai">AI 与工具 <b>09</b></a><a href="#build">独立开发 <b>07</b></a><a href="#life">生活观察 <b>10</b></a></div><div><p>CURRENT SIGNAL</p><blockquote>“秘密未必可靠，持续记录可以。”</blockquote></div></aside>
-            </section>
-            <section class="author-band" id="c1-about"><span class="author-mark">V</span><div><p>SUBJECT PROFILE / 关于作者</p><h3>记录那些容易被忽略的信号。</h3><p>这里写设计、技术、AI 与个人工作方式。不是新闻，不是教程合集，而是一份持续更新的观察记录。</p></div><a href="#about-page">查看完整档案 →</a></section>
-            <section class="archive-block" id="c1-archive"><div class="section-label"><span>ARCHIVE / 时间归档</span><b>2019—2026</b></div><div class="archive-years"><a href="#2026"><b>2026</b><span>17 篇记录</span></a><a href="#2025"><b>2025</b><span>12 篇记录</span></a><a href="#2024"><b>2024</b><span>09 篇记录</span></a><a href="#older"><b>更早</b><span>查看完整归档</span></a></div></section>
-            <footer class="blog-footer"><span>VIO / PERSONAL INTELLIGENCE ARCHIVE</span><span>RSS · EMAIL · GITHUB</span><span>© 2026</span></footer>
+            <footer><span>最后更新 / 2026.11.01 13:04</span><span>← 上一条记录</span><span>下一条记录 →</span></footer>
+          </article>
+        </section>
+
+        <section class="archive" id="archive">
+          <div class="section-title"><div><span>04 / TEMPORAL INDEX</span><h2>时间归档</h2></div><p>Machine 不会遗忘，只会重新解释</p></div>
+          <div class="archive-grid">
+            <a href="#latest"><b>2026</b><span>17 条记录</span><i style="--amount:88%"></i></a>
+            <a href="#latest"><b>2025</b><span>12 条记录</span><i style="--amount:68%"></i></a>
+            <a href="#latest"><b>2024</b><span>09 条记录</span><i style="--amount:52%"></i></a>
+            <a href="#latest"><b>2023</b><span>07 条记录</span><i style="--amount:41%"></i></a>
+            <a href="#latest"><b>2019—22</b><span>查看早期记录</span><i style="--amount:29%"></i></a>
           </div>
-          <p class="concept-caption">01 / SUBJECT-FIRST — 适合信息简洁、希望第一屏建立强烈人物印象</p>
-        </article>
+        </section>
 
-        <article class="concept contextualize" data-concept="02" aria-label="方向二：Contextualizing">
-          <canvas id="graph-canvas" aria-hidden="true"></canvas>
-          <div class="graph-grid" aria-hidden="true"></div>
-          <div class="feed-label top-left">PROCESS: CONTEXTUALIZING SUBJECT<br />RELATIONSHIPS FOUND: 0012</div>
-          <div class="feed-label top-right">DATABASE: OPEN / PERSONAL<br />CONFIDENCE: 94.301%</div>
-
-          <div class="graph-title">
-            <p class="machine-kicker">SOCIAL / PROJECT GRAPH</p>
-            <h2>EVERYTHING<br />IS CONNECTED.</h2>
-            <p>点击不同关系节点，作品、技能和经历不再是独立栏目，而是同一个人的证据网络。</p>
-          </div>
-
-          <button class="person-node node-center" type="button" data-node="VIO"><i></i><b>VIO</b><span>PRIMARY SUBJECT</span></button>
-          <button class="person-node node-work" type="button" data-node="WORK"><i></i><b>SELECTED WORK</b><span>12 ENTITIES</span></button>
-          <button class="person-node node-code" type="button" data-node="CODE"><i></i><b>CODE</b><span>ACTIVE ASSET</span></button>
-          <button class="person-node node-notes" type="button" data-node="NOTES"><i></i><b>FIELD NOTES</b><span>38 RECORDS</span></button>
-          <button class="person-node node-design" type="button" data-node="DESIGN"><i></i><b>DESIGN</b><span>KNOWN ASSOCIATE</span></button>
-          <button class="person-node node-contact" type="button" data-node="CONTACT"><i></i><b>CONTACT</b><span>OPEN CHANNEL</span></button>
-
-          <aside class="graph-inspector">
-            <p>ENTITY INSPECTOR</p>
-            <h3 id="inspector-name">VIO</h3>
-            <div><span>TYPE</span><b>PERSON / ADMIN</b></div>
-            <div><span>STATUS</span><b class="yellow">CONTEXTUALIZED</b></div>
-            <div><span>CONNECTIONS</span><b>05 DIRECT / 12 INDIRECT</b></div>
-            <p id="inspector-copy">独立创作者与产品设计者。所有路径都指向正在发生的工作。</p>
-          </aside>
-          <div class="blog-body blog-graph">
-            <header class="blog-nav"><a href="#top" class="blog-logo">VIO / 信号网络</a><nav><a href="#featured">精选</a><a href="#all">全部文章</a><a href="#map">主题地图</a><a href="#about">关于</a></nav><span>12 NODES ONLINE</span></header>
-            <section class="graph-feature" id="featured"><div><p>FEATURED CONNECTION / 置顶</p><h3>我们如何在信息过载中，<br />保留自己的判断？</h3><p>一篇关于过滤、注意力和独立思考的长文。它连接了产品设计、AI 工具与日常生活三个主题节点。</p><a href="#read">沿关系路径阅读 →</a></div><div class="topic-map"><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i><span class="link l1"></span><span class="link l2"></span><span class="link l3"></span><b>判断</b><small>AI / 设计 / 生活</small></div></section>
-            <section class="topic-clusters" id="map">
-              <div class="section-label"><span>TOPIC CLUSTERS / 主题网络</span><b>05 CLUSTERS</b></div>
-              <div class="cluster-grid"><a href="#c1" class="cluster yellow"><span>01 / 12 POSTS</span><h4>设计系统</h4><p>组件之外，如何让产品形成一致的判断。</p><i>↗</i></a><a href="#c2" class="cluster blue"><span>02 / 09 POSTS</span><h4>AI 与工具</h4><p>人与智能系统之间正在形成的新关系。</p><i>↗</i></a><a href="#c3" class="cluster red"><span>03 / 07 POSTS</span><h4>独立开发</h4><p>一个人如何长期维护自己的数字基础设施。</p><i>↗</i></a><a href="#c4" class="cluster"><span>04 / 10 POSTS</span><h4>生活观察</h4><p>城市、注意力，以及技术之外的东西。</p><i>↗</i></a></div>
-            </section>
-            <section class="graph-articles" id="all"><div class="section-label"><span>NEW CONNECTIONS / 最新文章</span><b>UPDATED 11.01</b></div><div class="graph-article-grid"><a href="#g1"><small>AI ↔ 工作方式</small><h4>把 AI 放进工作流，而不是放在工作流旁边</h4><p>工具只有进入真实过程，才会暴露它真正改变了什么。</p><span>2026.10.24 / 8 MIN</span></a><a href="#g2"><small>设计 ↔ 判断</small><h4>好的默认值，是一种不被看见的价值观</h4><p>每一个默认选项，都替用户预先做了一次决定。</p><span>2026.10.08 / 6 MIN</span></a><a href="#g3"><small>网站 ↔ 长期主义</small><h4>为什么我仍然需要一个属于自己的博客</h4><p>平台负责分发，个人网站负责记忆。</p><span>2026.09.19 / 9 MIN</span></a></div></section>
-            <section class="newsletter-node"><i></i><div><p>OPEN CHANNEL / 订阅信号</p><h3>低频更新，不制造噪声。</h3></div><form><label><span class="sr-only">邮箱</span><input type="email" placeholder="your@email.com" /></label><button type="submit">建立连接 →</button></form></section>
-            <footer class="blog-footer"><span>VIO / RELATIONSHIP INDEX</span><span>文章 38 · 主题 5 · 项目 12</span><span>© 2026</span></footer>
-          </div>
-          <p class="concept-caption">02 / RELATIONSHIP-FIRST — 适合作品类型多、经历彼此交叉的个人品牌</p>
-        </article>
-
-        <article class="concept evaluating" data-concept="03" aria-label="方向三：Evaluating">
-          <div class="simulation-noise" aria-hidden="true"></div>
-          <div class="feed-label top-left">PROCESS: EVALUATING STRATEGIES<br />SIMULATIONS: 833,333</div>
-          <div class="feed-label top-right">OBJECTIVE: DETERMINE NEXT ACTION<br />STATUS: RUNNING</div>
-
-          <div class="simulation-heading">
-            <p class="machine-kicker">IF / THEN / ELSE</p>
-            <h2>CHOOSE A<br />POSSIBLE FUTURE.</h2>
-            <p>每个项目是一个经过计算的行动分支。悬停查看 Machine 对结果的预测。</p>
-          </div>
-
-          <div class="simulation-map">
-            <svg viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M90 310 C210 310 215 110 360 110 S505 85 610 85" class="path-yellow" />
-              <path d="M90 310 C220 310 230 300 380 300 S520 300 640 300" class="path-blue" />
-              <path d="M90 310 C210 310 220 505 380 505 S520 535 630 535" class="path-red" />
-              <path d="M710 85 C820 85 820 220 910 220" class="path-yellow" />
-              <path d="M740 300 C840 300 835 220 910 220" class="path-blue" />
-              <path d="M720 535 C830 535 835 220 910 220" class="path-red" />
-            </svg>
-            <div class="sim-origin"><b>VIO</b><span>CURRENT STATE</span></div>
-            <a class="sim-option option-a" href="#systems"><span>OPTION 141,721</span><b>BUILD SYSTEMS</b><i>87.42%</i><small>COHERENCE LIKELY</small></a>
-            <a class="sim-option option-b" href="#interfaces"><span>OPTION 287,004</span><b>DESIGN INTERFACES</b><i>72.18%</i><small>HUMAN SIGNAL FOUND</small></a>
-            <a class="sim-option option-c" href="#writing"><span>OPTION 404,608</span><b>WRITE THE FIELD</b><i>64.09%</i><small>LONG-TERM EFFECT</small></a>
-            <div class="sim-result"><b>INTERVENTION</b><span>RECOMMENDED</span></div>
-          </div>
-          <div class="probability-strip"><span>ASSET ACTIVATION 28.44%</span><span>OPERATIONAL RELEVANCE 72.18%</span><span>VIOLENCE 00.00%</span><span>IDEA SURVIVAL 91.73%</span></div>
-          <div class="blog-body blog-evaluate">
-            <header class="blog-nav"><a href="#top" class="blog-logo">VIO / 推演日志</a><nav><a href="#c3-recommended">推荐阅读</a><a href="#c3-latest">最新</a><a href="#c3-series">系列</a><a href="#c3-about">关于</a></nav><span>MODEL CONFIDENCE / 87%</span></header>
-            <section class="editorial-pick" id="c3-recommended"><div class="pick-index">OPTION<br /><b>833,333</b></div><div><p>本期编辑推荐 · 预测阅读完成率 91.73%</p><h3>不要预测未来，<br />建立可以应对未来的系统。</h3><p>计划最容易失效的地方，是它假设世界不会改变。比准确预测更重要的，是让自己在变化中仍然拥有行动空间。</p><a href="#read">执行阅读方案 →</a></div><div class="pick-score"><span>相关性<b>96%</b></span><span>新鲜度<b>84%</b></span><span>阅读成本<b>12 MIN</b></span></div></section>
-            <section class="ranked-feed" id="c3-latest"><div class="section-label"><span>EVALUATED ARTICLES / 机器排序</span><b>依据：相关性 × 时间 × 上下文</b></div><a href="#r1"><i class="yellow">87.42%</i><span><small>策略 / 2026.10.27</small><strong>复杂项目失控之前，会出现哪些微小信号？</strong><em>从延迟、模糊责任和异常沉默中识别系统风险。</em></span><b>09 MIN</b></a><a href="#r2"><i class="blue">79.08%</i><span><small>AI / 2026.10.11</small><strong>答案越来越便宜，问题为什么反而更重要</strong><em>生成能力普及之后，定义问题成为真正的生产力。</em></span><b>07 MIN</b></a><a href="#r3"><i>72.61%</i><span><small>设计 / 2026.09.22</small><strong>界面中的每一次省略，都是一次判断</strong><em>克制不是风格，而是理解信息优先级的结果。</em></span><b>06 MIN</b></a><a href="#r4"><i class="red">64.09%</i><span><small>随笔 / 2026.09.03</small><strong>那些没有被量化，但仍然重要的东西</strong><em>效率之外，谈谈信任、耐心与不确定性。</em></span><b>10 MIN</b></a></section>
-            <section class="series-grid" id="c3-series"><div><p>SERIES 01 / 06</p><h3>个人工作系统</h3><span>从信息捕获到长期输出</span><a href="#s1">开始阅读 →</a></div><div><p>SERIES 02 / 04</p><h3>与机器协作</h3><span>AI 时代的判断与边界</span><a href="#s2">开始阅读 →</a></div><div><p>SERIES 03 / 08</p><h3>界面之后</h3><span>产品设计里的关系问题</span><a href="#s3">开始阅读 →</a></div></section>
-            <section class="evaluation-about" id="c3-about"><div><p>ABOUT THIS MODEL</p><h3>这不是算法推荐，<br />是作者公开的编辑判断。</h3></div><p>博客不会根据点击量改变你看到的内容。百分比只是 POI 世界观下的叙事界面，真正的排序标准是：是否值得长期保留。</p></section>
-            <footer class="blog-footer"><span>VIO / STRATEGY LOG</span><span>ARCHIVE · RSS · ABOUT</span><span>© 2026</span></footer>
-          </div>
-          <p class="concept-caption">03 / DECISION-FIRST — 适合把重点项目做成探索式选择，而非普通作品列表</p>
-        </article>
-
-        <article class="concept reconstructing" data-concept="04" aria-label="方向四：Reconstructing">
-          <div class="archive-grid" aria-hidden="true"></div>
-          <div class="feed-label top-left">ARCHIVE ACCESS // MEMORY RECONSTRUCTION<br />SUBJECT: VIO / RECORDS: 038</div>
-          <div class="feed-label top-right">CURRENT POSITION: 2026.11.01<br />TEMPORAL INDEX: OPEN</div>
-
-          <div class="archive-heading">
-            <p class="machine-kicker">RECONSTRUCTING PERSONAL HISTORY</p>
-            <h2>THE MACHINE<br />REMEMBERS.</h2>
-            <p>把 About、履历和项目串成可以回看的时间证据。</p>
-          </div>
-
-          <div class="memory-window">
-            <div class="memory-feed"></div>
-            <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
-            <div class="memory-overlay"><span>RECORD 2026.11.01 / 13:04:22</span><b>SUBJECT CONTINUES TO BUILD</b><small>ANALYSIS: PATTERN PERSISTS</small></div>
-          </div>
-
-          <div class="memory-timeline">
-            <div class="timeline-rail"></div>
-            <button type="button" style="--x:6%"><i></i><b>2019</b><span>FIRST SIGNAL</span></button>
-            <button type="button" style="--x:27%"><i></i><b>2021</b><span>SYSTEMS</span></button>
-            <button type="button" style="--x:49%"><i></i><b>2023</b><span>INDEPENDENT</span></button>
-            <button type="button" style="--x:72%"><i></i><b>2025</b><span>NEW INTERFACE</span></button>
-            <button type="button" class="active" style="--x:92%"><i></i><b>2026</b><span>PRESENT</span></button>
-          </div>
-          <div class="archive-date">2026<span>11 / 01</span></div>
-          <div class="blog-body blog-memory">
-            <header class="blog-nav"><a href="#top" class="blog-logo">VIO / 记忆档案</a><nav><a href="#c4-now">现在</a><a href="#c4-years">年份</a><a href="#c4-series">系列</a><a href="#c4-about">关于</a></nav><span>ARCHIVE / 2019—2026</span></header>
-            <section class="memory-lead" id="c4-now"><p>CURRENT RECORD / 2026</p><h3>有些想法只有放进时间里，<br />才能看见它真正的形状。</h3><p>这是一份按时间组织的个人博客。新文章在最前面，但旧文章不会消失；它们保留当时的判断，也记录判断如何改变。</p></section>
-            <section class="year-stream" id="c4-years"><div class="year-marker"><b>2026</b><span>17 RECORDS</span></div><div class="year-posts"><a href="#m1"><time>11.01</time><span><small>NOW / 观察</small><strong>当工具越来越聪明，个人方法还重要吗？</strong><em>关于方法、品味和不可外包的判断。</em></span></a><a href="#m2"><time>10.14</time><span><small>设计</small><strong>设计系统不是组件仓库</strong><em>它首先是一组被共同接受的决定。</em></span></a><a href="#m3"><time>09.07</time><span><small>独立开发</small><strong>重做个人网站之前，我删掉了什么</strong><em>减少页面，保留更清楚的内容关系。</em></span></a></div><div class="year-marker"><b>2025</b><span>12 RECORDS</span></div><div class="year-posts compact"><a href="#m4"><time>12.28</time><span><small>年度记录</small><strong>在变化太快的一年里，坚持慢慢做事</strong></span></a><a href="#m5"><time>08.16</time><span><small>AI</small><strong>第一次把模型当成真正的协作者</strong></span></a><a href="#m6"><time>03.02</time><span><small>工作方式</small><strong>停止收集，开始形成自己的索引</strong></span></a></div><div class="year-marker muted"><b>2019—24</b><span>VIEW 21 RECORDS</span></div></section>
-            <section class="memory-series" id="c4-series"><div class="section-label"><span>LONG-RUNNING THREADS / 长期主题</span><b>04 THREADS</b></div><a href="#t1"><b>01</b><span>人与工具</span><i>14 篇 / 2021—2026</i></a><a href="#t2"><b>02</b><span>个人网站</span><i>08 篇 / 2019—2026</i></a><a href="#t3"><b>03</b><span>设计判断</span><i>12 篇 / 2020—2026</i></a><a href="#t4"><b>04</b><span>城市观察</span><i>06 篇 / 2022—2026</i></a></section>
-            <section class="memory-note" id="c4-about"><span>NOTE FROM 2026</span><blockquote>“我不删除过去版本的自己。它们也许不再正确，但仍然是理解现在的证据。”</blockquote></section>
-            <footer class="blog-footer"><span>VIO / TEMPORAL ARCHIVE</span><span>2019 ← 2026 → UNKNOWN</span><span>© 2026</span></footer>
-          </div>
-          <p class="concept-caption">04 / TIME-FIRST — 适合经历丰富、希望讲清成长轨迹和长期主题</p>
-        </article>
-
-        <article class="concept analog" data-concept="05" aria-label="方向五：Analog Interface">
-          <canvas id="analog-canvas" aria-hidden="true"></canvas>
-          <div class="feed-label top-left">ANALOG INTERFACE DETECTED<br />ADMIN PRIVILEGES: ACKNOWLEDGED</div>
-          <div class="feed-label top-right">AUDIO CHANNEL: OPEN<br />ENCRYPTION: NONE</div>
-
-          <div class="analog-subject" aria-hidden="true"><span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span><b>V</b><small>YELLOW / BLACK<br />ANALOG INTERFACE</small></div>
-
-          <section class="dialogue">
-            <p><span>MACHINE</span>CAN YOU HEAR ME?</p>
-            <p><span>VIO</span>I'M LISTENING.</p>
-            <p class="active-line"><span>MACHINE</span>WHAT WOULD YOU LIKE THEM TO KNOW?</p>
-            <h2>I MAKE<br />COMPLEX THINGS<br /><em>LEGIBLE.</em></h2>
-            <p class="analog-intro">设计、代码与系统思考。秘密不值得信任，但清晰的工作可以。</p>
-            <nav><a href="#work">01 / SHOW THE WORK</a><a href="#notes">02 / READ THE SIGNALS</a><a href="#contact">03 / ESTABLISH CONTACT</a></nav>
-          </section>
-
-          <div class="analog-classification"><span>SUBJECT</span><b>VIO</b><span>DESIGNATION</span><b>ADMIN</b><span>STATUS</span><b>LISTENING</b></div>
-          <p class="analog-quote">WE'RE NOT EXACTLY IN A POSITION TO BE TRUSTED WITH SECRETS, ARE WE?</p>
-          <div class="blog-body blog-dialogue">
-            <header class="blog-nav"><a href="#top" class="blog-logo">VIO / 开放频道</a><nav><a href="#c5-answer">本期回答</a><a href="#c5-questions">所有问题</a><a href="#c5-signals">短讯</a><a href="#c5-about">关于</a></nav><span>CHANNEL / LISTENING</span></header>
-            <section class="answer-feature" id="c5-answer"><p><span>MACHINE</span>你最近在思考什么？</p><div><small>ANSWER 017 / 2026.11.01</small><h3>真正属于自己的东西，<br />通常都无法被快速完成。</h3><p>工具让制作变快，但理解仍然需要时间。个人网站、写作和长期项目的意义，或许正在于它们拒绝被一次生成。</p><a href="#read">继续这段对话 →</a></div></section>
-            <section class="question-feed" id="c5-questions"><div class="section-label"><span>RECENT QUESTIONS / 最近回答</span><b>38 CONVERSATIONS</b></div><a href="#q1"><span>MACHINE / 016</span><h4>当每个人都能生成内容，什么还值得被阅读？</h4><i>2026.10.19 ↗</i></a><a href="#q2"><span>MACHINE / 015</span><h4>为什么我们总是在工具里寻找确定性？</h4><i>2026.10.02 ↗</i></a><a href="#q3"><span>MACHINE / 014</span><h4>一个产品应该在什么时候保持沉默？</h4><i>2026.09.13 ↗</i></a><a href="#q4"><span>MACHINE / 013</span><h4>你愿意让机器替你记住多少事情？</h4><i>2026.08.27 ↗</i></a></section>
-            <section class="short-signals" id="c5-signals"><div><p>SHORT SIGNAL / 2026.10.31</p><blockquote>真正好的工具不会要求你一直注意它。</blockquote></div><div><p>SHORT SIGNAL / 2026.10.26</p><blockquote>清晰不是删除复杂，而是让复杂有可以进入的路径。</blockquote></div><div><p>SHORT SIGNAL / 2026.10.18</p><blockquote>如果一套系统不能允许人改变主意，它就不是真的为人设计。</blockquote></div></section>
-            <section class="ask-machine"><div><p>ANALOG INTERFACE</p><h3>下一篇，回答你的问题。</h3><span>匿名提交一个关于设计、技术或工作方式的问题。</span></div><form><label><span class="sr-only">你的问题</span><textarea placeholder="你想问什么？"></textarea></label><button type="submit">传送信号 →</button></form></section>
-            <section class="dialogue-about" id="c5-about"><span class="author-mark">V</span><div><p>WHO IS ANSWERING?</p><h3>VIO，设计者、开发者和长期观察者。</h3><p>这个博客用对话保存思考。Machine 负责提出问题，作者负责给出暂时的答案。</p></div></section>
-            <footer class="blog-footer"><span>VIO / ANALOG CHANNEL</span><span>RSS · EMAIL · ARCHIVE</span><span>© 2026</span></footer>
-          </div>
-          <p class="concept-caption">05 / VOICE-FIRST — 最接近 Machine 作为角色与你对话，适合极简叙事主页</p>
-        </article>
+        <section class="about" id="about">
+          <div class="profile-frame"><span class="frame-corner tl"></span><span class="frame-corner tr"></span><span class="frame-corner bl"></span><span class="frame-corner br"></span><b>V</b><small>SUBJECT: VIO<br />CLASS: ADMIN<br />STATUS: WRITING</small></div>
+          <div class="about-copy"><p class="record-code">05 / SUBJECT PROFILE</p><h2>记录那些容易<br />被忽略的信号。</h2><p>这里写设计、技术、AI 与个人工作方式。不是新闻，不是教程合集，而是一份持续更新的观察记录。</p><p>我相信清晰不是删除复杂，而是为复杂建立可以进入的路径。</p><div><a href="mailto:hello@example.com">EMAIL</a><a href="#archive">RSS</a><a href="#latest">GITHUB</a></div></div>
+          <form class="open-channel"><span>OPEN CHANNEL / 订阅更新</span><p>低频发送，不制造额外噪声。</p><label><span class="sr-only">邮箱地址</span><input type="email" placeholder="YOUR@EMAIL.COM" /></label><button type="submit">ESTABLISH CONNECTION &gt;</button><small>NO TRACKING / UNSUBSCRIBE ANYTIME</small></form>
+        </section>
       </section>
     </main>
 
-    <div class="concept-switcher" aria-label="方向切换">
-      <button type="button" data-step="prev" aria-label="上一个方向">←</button>
-      <span><b id="current-concept">01</b> / 05</span>
-      <button type="button" data-step="next" aria-label="下一个方向">→</button>
-      <button type="button" data-home>INDEX</button>
-    </div>
+    <footer class="site-footer"><div><b>VIO / PERSONAL INTELLIGENCE ARCHIVE</b><span>BUILD 2011.04 / REV 2026.11</span></div><blockquote>“We're not exactly in a position to be trusted with secrets, are we?”</blockquote><div><span>38 RECORDS / 04 CHANNELS</span><b>© 2026</b></div></footer>
+    <button class="back-top" type="button" aria-label="返回顶部">TOP ↑</button>
 
     <script src="./app.js"></script>
   </body>
