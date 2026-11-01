@@ -38,6 +38,10 @@ document.querySelectorAll('[data-step]').forEach((button) => button.addEventList
   openConcept(concepts[(index + direction + concepts.length) % concepts.length]);
 }));
 
+document.querySelectorAll('form').forEach((form) => form.addEventListener('submit', (event) => {
+  event.preventDefault();
+}));
+
 window.addEventListener('keydown', (event) => {
   if (/^[1-5]$/.test(event.key)) openConcept(`0${event.key}`);
   if (event.key === 'Escape') goHome();
