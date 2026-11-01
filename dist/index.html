@@ -18,6 +18,22 @@
       <img class="marker marker-4" src="./assets/markers/S02-BlueSquare.webp" alt="" aria-hidden="true" hidden />
       <img class="marker marker-5" src="./assets/markers/S02-RedSquare.webp" alt="" aria-hidden="true" hidden />
     </main>
+    <aside class="calibration-panel" aria-label="标记框校准工具">
+      <div class="calibration-scenes">
+        <button id="previous-scene" type="button" aria-label="上一张背景">‹</button>
+        <select id="scene-select" aria-label="选择背景"></select>
+        <button id="next-scene" type="button" aria-label="下一张背景">›</button>
+      </div>
+      <p class="calibration-help">拖动框到人头上。方向键微调，Shift + 方向键加速。</p>
+      <output id="coordinate-output" class="coordinate-output"></output>
+      <div class="calibration-actions">
+        <button id="copy-coordinates" type="button">复制全部坐标</button>
+        <button id="reset-scene" type="button">重置本图</button>
+        <button id="preview-mode" type="button">预览效果</button>
+      </div>
+      <p id="calibration-status" class="calibration-status" aria-live="polite">拖动结果会自动保存</p>
+    </aside>
+    <button id="calibration-toggle" class="calibration-toggle" type="button" hidden>校准 · C</button>
     <div class="crt-noise" aria-hidden="true"></div>
     <div class="crt-lines" aria-hidden="true"></div>
     <div class="crt-vignette" aria-hidden="true"></div>
