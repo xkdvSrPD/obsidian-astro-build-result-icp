@@ -1,13 +1,13 @@
 *{box-sizing:border-box}
 html,body,main{width:100%;height:100%;margin:0;overflow:hidden;background:#050806}
 
-.camera-feed{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:grayscale(.82) sepia(.11) hue-rotate(75deg) saturate(.5) contrast(1.42) brightness(.72);opacity:0;transition:opacity 1.1s steps(8);animation:feed-signal 13s steps(1) infinite}
+.camera-feed{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:grayscale(.82) sepia(.11) hue-rotate(75deg) saturate(.5) contrast(1.42) brightness(.72);opacity:0;transition:none;animation:feed-signal 13s steps(1) infinite}
 .camera-feed:after{content:"";position:absolute;inset:0;background:rgba(8,19,12,.12);mix-blend-mode:multiply}
-.feed-a{z-index:0;opacity:1;background-image:url("./assets/cctv-intersection.png")}
+.feed-a{z-index:0;background-image:url("./assets/cctv-intersection.png")}
 .feed-b{z-index:1;background-image:url("./assets/cctv-intersection.png")}
 .camera-feed.visible{opacity:1}
 
-.analysis-grid{position:absolute;z-index:2;inset:0;opacity:.09;background-image:linear-gradient(rgba(195,211,201,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(195,211,201,.2) 1px,transparent 1px);background-size:12.5% 16.666%}
+.analysis-grid{position:absolute;z-index:2;inset:0;opacity:.055;background-image:linear-gradient(rgba(195,211,201,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(195,211,201,.2) 1px,transparent 1px);background-size:12.5% 16.666%}
 
 /* Original 75×75 Season 2 marker art: no rotation, no redrawing, no aspect-ratio distortion. */
 .marker{position:absolute;z-index:6;height:auto;object-fit:contain;image-rendering:pixelated;filter:none;opacity:0;translate:-50% -50%;pointer-events:none;will-change:left,top,opacity}
@@ -15,15 +15,41 @@ html,body,main{width:100%;height:100%;margin:0;overflow:hidden;background:#05080
 .marker.reacquire{animation:reacquire .26s steps(3)}
 .marker[hidden]{display:none}
 
+.signal-switch,.video-dropout,.overscan-frame,.cctv-osd{position:fixed;inset:0;pointer-events:none}
+.signal-switch{z-index:12;visibility:hidden;opacity:0;background:#010201}
+.signal-switch:before{content:"";position:absolute;inset:-15%;opacity:.48;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");animation:switch-noise .07s steps(2) infinite}
+.signal-switch:after{content:"";position:absolute;left:-4%;right:-4%;top:42%;height:12%;background:rgba(229,242,232,.24);box-shadow:0 -4px 0 rgba(0,0,0,.92),0 7px 0 rgba(0,0,0,.8);filter:blur(1px);animation:sync-tear .18s steps(3) infinite}
+.signal-switch.active{visibility:visible;animation:channel-switch .62s steps(1) both}
+.video-dropout{z-index:11;opacity:0;background:linear-gradient(180deg,transparent 0 46%,rgba(226,238,229,.3) 47%,rgba(0,0,0,.8) 48% 51%,transparent 52%);animation:dropout-band 12.7s steps(1) infinite}
+
+.cctv-osd{z-index:18;color:#dfe8e0;font-family:"Courier New","Lucida Console",monospace;font-size:clamp(13px,1.2vw,19px);font-weight:700;letter-spacing:.055em;text-shadow:-1px 0 #000,0 1px #000,1px 0 #000,0 -1px #000,2px 2px 0 rgba(0,0,0,.8);-webkit-font-smoothing:none}
+.camera-label,.record-state,.dvr-clock,.channel-mode,.motion-state{position:absolute;white-space:pre}
+.camera-label{top:4.2%;left:3.2%}
+.record-state{top:4.2%;right:3.3%;color:#e5e9e5}
+.record-dot{display:inline-block;width:.72em;height:.72em;margin-right:.48em;background:#ce3129;box-shadow:0 0 3px rgba(255,33,20,.5);animation:record-blink 1.06s steps(1) infinite}
+.dvr-clock{right:3.2%;bottom:4.4%;font:inherit}
+.channel-mode{left:3.2%;bottom:4.4%}
+.motion-state{left:50%;bottom:4.4%;translate:-50% 0;color:#b9d4c0;opacity:0}
+.motion-state.visible{opacity:1;animation:motion-blink .42s steps(1) 4}
+.is-switching .cctv-osd{animation:osd-drop .62s steps(1)}
+
+.overscan-frame{z-index:19;border:3px solid rgba(0,0,0,.52);box-shadow:inset 0 0 0 1px rgba(210,227,216,.08),inset 0 0 42px 14px rgba(0,0,0,.54)}
 .crt-noise,.crt-lines,.crt-vignette{position:fixed;z-index:20;inset:0;pointer-events:none}
-.crt-noise{opacity:.13;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:noise-shift .28s steps(2) infinite}
-.crt-lines{opacity:.21;background:repeating-linear-gradient(0deg,rgba(0,0,0,.42) 0 1px,transparent 1px 4px),linear-gradient(90deg,rgba(255,0,0,.02),transparent 36%,rgba(0,80,255,.02));animation:line-roll 8s linear infinite}
+.crt-noise{opacity:.11;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:noise-shift .28s steps(2) infinite}
+.crt-lines{opacity:.25;background:repeating-linear-gradient(0deg,rgba(0,0,0,.42) 0 1px,transparent 1px 4px),linear-gradient(90deg,rgba(255,0,0,.025),transparent 36%,rgba(0,80,255,.025));animation:line-roll 8s linear infinite}
 .crt-vignette{box-shadow:inset 0 0 170px 45px rgba(0,0,0,.84)}
 
 @keyframes feed-signal{0%,94%,100%{filter:grayscale(.82) sepia(.11) hue-rotate(75deg) saturate(.5) contrast(1.42) brightness(.72)}95%{filter:grayscale(.76) sepia(.1) hue-rotate(75deg) saturate(.55) contrast(1.58) brightness(.78)}96%{filter:grayscale(.84) sepia(.12) hue-rotate(75deg) saturate(.48) contrast(1.38) brightness(.69)}}
+@keyframes channel-switch{0%{opacity:.98}12%{opacity:.38}20%{opacity:1}35%{opacity:.18}46%{opacity:.86}61%{opacity:.24}74%{opacity:.68}88%{opacity:.12}100%{opacity:0}}
+@keyframes switch-noise{0%{transform:translate(0) scale(1)}50%{transform:translate(-3%,2%) scale(1.04)}100%{transform:translate(2%,-2%) scale(1.02)}}
+@keyframes sync-tear{0%{top:12%;translate:0 0}33%{top:63%;translate:3% 0}66%{top:38%;translate:-2% 0}100%{top:81%;translate:1% 0}}
+@keyframes dropout-band{0%,91%,93%,100%{opacity:0;transform:translateY(-45%)}91.5%{opacity:.48;transform:translateY(-16%)}92%{opacity:.22;transform:translateY(27%)}92.5%{opacity:.38;transform:translateY(49%)}}
+@keyframes osd-drop{0%,18%,49%,100%{opacity:1}19%,31%,50%,58%{opacity:.08}32%,48%,59%,72%{opacity:.68}}
+@keyframes record-blink{0%,69%{opacity:1}70%,100%{opacity:.32}}
+@keyframes motion-blink{0%,49%{opacity:1}50%,100%{opacity:.28}}
 @keyframes noise-shift{0%{transform:translate(0)}50%{transform:translate(-1px,1px)}100%{transform:translate(1px,-1px)}}
 @keyframes line-roll{from{transform:translateY(-4px)}to{transform:translateY(4px)}}
 @keyframes reacquire{0%{opacity:0;scale:1.08}42%{opacity:1;scale:.97}72%{opacity:.52;scale:1.01}100%{opacity:.96;scale:1}}
 
-@media(max-width:700px){.analysis-grid{background-size:25% 16.666%}.crt-vignette{box-shadow:inset 0 0 90px 25px rgba(0,0,0,.82)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@media(max-width:700px){.analysis-grid{background-size:25% 16.666%}.cctv-osd{font-size:11px}.camera-label,.channel-mode{left:4.5%}.record-state,.dvr-clock{right:4.5%}.crt-vignette{box-shadow:inset 0 0 90px 25px rgba(0,0,0,.82)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.signal-switch.active{opacity:.82}}

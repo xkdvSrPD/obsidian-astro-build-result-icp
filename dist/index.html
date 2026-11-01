@@ -9,7 +9,7 @@
   </head>
   <body>
     <main aria-label="监控画面">
-      <div class="camera-feed feed-a" aria-hidden="true"></div>
+      <div class="camera-feed feed-a visible" aria-hidden="true"></div>
       <div class="camera-feed feed-b" aria-hidden="true"></div>
       <div class="analysis-grid" aria-hidden="true"></div>
       <img class="marker marker-1" src="./assets/markers/S02-WhiteSquare.webp" alt="" aria-hidden="true" hidden />
@@ -18,6 +18,16 @@
       <img class="marker marker-4" src="./assets/markers/S02-BlueSquare.webp" alt="" aria-hidden="true" hidden />
       <img class="marker marker-5" src="./assets/markers/S02-RedSquare.webp" alt="" aria-hidden="true" hidden />
     </main>
+    <div class="signal-switch" aria-hidden="true"></div>
+    <div class="video-dropout" aria-hidden="true"></div>
+    <div class="cctv-osd" aria-hidden="true">
+      <div id="camera-label" class="camera-label">CAM 01</div>
+      <div class="record-state"><span class="record-dot"></span>REC</div>
+      <time id="dvr-clock" class="dvr-clock">2005/11/01 22:14:17</time>
+      <div id="channel-mode" class="channel-mode">CH01&nbsp;&nbsp;D1&nbsp;&nbsp;12FPS</div>
+      <div id="motion-state" class="motion-state">MOTION</div>
+    </div>
+    <div class="overscan-frame" aria-hidden="true"></div>
     <div class="crt-noise" aria-hidden="true"></div>
     <div class="crt-lines" aria-hidden="true"></div>
     <div class="crt-vignette" aria-hidden="true"></div>

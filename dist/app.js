@@ -2,11 +2,13 @@ const SOURCE_WIDTH = 1672;
 const SOURCE_HEIGHT = 941;
 const RECOGNITION_DELAY = 1900;
 const REVEAL_INTERVAL = 135;
-const SCENE_DURATION = 9800;
+const SCENE_DURATION = 10000;
+const SWITCH_DURATION = 620;
 
 // User-provided positions. x/y point to each person's head in source-image space.
 const scenes = [
   {
+    channel: '01',
     url: './assets/cctv-intersection.png',
     targets: [
       { x: 22.671, y: 51.818, size: 48 },
@@ -17,6 +19,7 @@ const scenes = [
     ]
   },
   {
+    channel: '04',
     url: './assets/backgrounds/night-sidewalk.png',
     targets: [
       { x: 81.217, y: 24.261, size: 74 },
@@ -27,6 +30,7 @@ const scenes = [
     ]
   },
   {
+    channel: '07',
     url: './assets/backgrounds/dusk-crosswalk.png',
     targets: [
       { x: 9.671, y: 37.991, size: 62 },
@@ -37,6 +41,7 @@ const scenes = [
     ]
   },
   {
+    channel: '12',
     url: './assets/backgrounds/subway-platform.png',
     targets: [
       { x: 69.904, y: 25.887, size: 78 },
@@ -50,9 +55,18 @@ const scenes = [
 
 const feeds = [document.querySelector('.feed-a'), document.querySelector('.feed-b')];
 const markers = [...document.querySelectorAll('.marker')];
+const signalSwitch = document.querySelector('.signal-switch');
+const cameraLabel = document.querySelector('#camera-label');
+const channelMode = document.querySelector('#channel-mode');
+const dvrClock = document.querySelector('#dvr-clock');
+const motionState = document.querySelector('#motion-state');
 const revealTimers = new Set();
 let sceneIndex = 0;
 let activeFeedIndex = 0;
+let motionTimer = null;
+
+const simulatedClockStart = Date.UTC(2005, 10, 1, 22, 14, 17);
+const realClockStart = performance.now();
 
 scenes.forEach(({ url }) => {
   const image = new Image();
@@ -66,6 +80,8 @@ function clearRevealTimers() {
 
 function hideMarkers() {
   clearRevealTimers();
+  clearTimeout(motionTimer);
+  motionState.classList.remove('visible');
   markers.forEach((marker) => {
     marker.classList.remove('is-visible', 'reacquire');
     marker.hidden = true;
@@ -108,6 +124,8 @@ function positionMarkers() {
 
 function revealMarkers() {
   positionMarkers();
+  motionState.classList.add('visible');
+  motionTimer = setTimeout(() => motionState.classList.remove('visible'), 2400);
   markers.forEach((marker, index) => {
     if (marker.dataset.inFrame !== 'true') return;
 
@@ -130,23 +148,57 @@ function scheduleRecognition() {
   revealTimers.add(timer);
 }
 
+function updateChannelOsd(index) {
+  const channel = scenes[index].channel;
+  cameraLabel.textContent = `CAM ${channel}`;
+  channelMode.textContent = `CH${channel}  D1  12FPS`;
+}
+
+function updateClock() {
+  const elapsed = performance.now() - realClockStart;
+  const date = new Date(simulatedClockStart + elapsed);
+  const pad = (value) => String(value).padStart(2, '0');
+  dvrClock.textContent = [
+    date.getUTCFullYear(),
+    pad(date.getUTCMonth() + 1),
+    pad(date.getUTCDate())
+  ].join('/') + ` ${pad(date.getUTCHours())}:${pad(date.getUTCMinutes())}:${pad(date.getUTCSeconds())}`;
+}
+
 function switchScene() {
   hideMarkers();
-  sceneIndex = (sceneIndex + 1) % scenes.length;
-
+  const nextSceneIndex = (sceneIndex + 1) % scenes.length;
   const nextFeedIndex = activeFeedIndex === 0 ? 1 : 0;
-  feeds[nextFeedIndex].style.backgroundImage = `url("${scenes[sceneIndex].url}")`;
-  feeds[nextFeedIndex].classList.add('visible');
-  feeds[activeFeedIndex].classList.remove('visible');
-  activeFeedIndex = nextFeedIndex;
 
-  positionMarkers();
-  scheduleRecognition();
+  document.body.classList.add('is-switching');
+  channelMode.textContent = `SEQ  >  CH${scenes[nextSceneIndex].channel}`;
+  signalSwitch.classList.remove('active');
+  void signalSwitch.offsetWidth;
+  signalSwitch.classList.add('active');
+
+  setTimeout(() => {
+    sceneIndex = nextSceneIndex;
+    feeds[nextFeedIndex].style.backgroundImage = `url("${scenes[sceneIndex].url}")`;
+    feeds[nextFeedIndex].classList.add('visible');
+    feeds[activeFeedIndex].classList.remove('visible');
+    activeFeedIndex = nextFeedIndex;
+    updateChannelOsd(sceneIndex);
+    positionMarkers();
+  }, 150);
+
+  setTimeout(() => {
+    signalSwitch.classList.remove('active');
+    document.body.classList.remove('is-switching');
+    scheduleRecognition();
+  }, SWITCH_DURATION);
 }
 
 hideMarkers();
 positionMarkers();
+updateChannelOsd(sceneIndex);
+updateClock();
 scheduleRecognition();
 
 window.addEventListener('resize', positionMarkers, { passive: true });
 setInterval(switchScene, SCENE_DURATION);
+setInterval(updateClock, 250);
