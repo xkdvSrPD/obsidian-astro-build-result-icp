@@ -1,68 +1,163 @@
-const backgroundCandidates = [
-  'https://images.pexels.com/photos/17569862/pexels-photo-17569862.jpeg?auto=compress&cs=tinysrgb&w=2400',
-  'https://images.unsplash.com/photo-1689101576466-9fb608c529df?auto=format&fit=crop&fm=jpg&q=76&w=2400',
-  'https://upload.wikimedia.org/wikipedia/commons/9/9c/Highway_intersection_at_night-time_%28Unsplash%29.jpg',
-  'https://c.pxhere.com/photos/fb/6a/aerial_angle_buildings_busy_city_cityscape_crossing_crosswalk-1073836.jpg!d'
-];
-const backgrounds = ['./assets/cctv-intersection.png'];
+const SOURCE_WIDTH = 1672;
+const SOURCE_HEIGHT = 941;
+const RECOGNITION_DELAY = 1900;
+const REVEAL_INTERVAL = 135;
+const SCENE_DURATION = 9800;
 
-const markerLayouts = [
-  [[12,72,1],[28,54,.95],[43,65,1],[57,38,.92],[72,46,1],[82,32,.88],[91,66,.82]],
-  [[9,62,.9],[24,43,1],[39,71,.88],[55,29,.95],[68,55,1],[82,41,.84],[92,23,.8]],
-  [[14,35,.88],[31,61,1],[46,47,.9],[59,70,.96],[72,33,.91],[86,57,.86],[92,17,.82]],
-  [[10,58,.92],[26,31,.88],[42,52,1],[57,39,.94],[69,68,.9],[84,29,.86],[91,51,.8]],
-  [[12,29,.84],[27,57,.95],[43,39,.9],[55,66,1],[71,49,.92],[83,24,.84],[93,70,.78]]
+// Positions were measured against each source image. x/y point to a person's head,
+// while size is the marker's source-pixel width before object-cover projection.
+const scenes = [
+  {
+    url: './assets/cctv-intersection.png',
+    targets: [
+      { x: 28.6, y: 60.5, size: 48 },
+      { x: 39.7, y: 64.5, size: 46 },
+      { x: 44.0, y: 61.7, size: 43 },
+      { x: 67.5, y: 47.4, size: 42 },
+      { x: 70.3, y: 47.7, size: 42 }
+    ]
+  },
+  {
+    url: './assets/backgrounds/night-sidewalk.png',
+    targets: [
+      { x: 22.1, y: 37.6, size: 74 },
+      { x: 38.3, y: 33.2, size: 70 },
+      { x: 48.2, y: 68.2, size: 76 },
+      { x: 71.3, y: 61.7, size: 76 },
+      { x: 73.1, y: 24.6, size: 62 }
+    ]
+  },
+  {
+    url: './assets/backgrounds/dusk-crosswalk.png',
+    targets: [
+      { x: 9.7, y: 37.4, size: 62 },
+      { x: 42.8, y: 64.7, size: 72 },
+      { x: 58.3, y: 46.7, size: 66 },
+      { x: 72.8, y: 57.9, size: 72 },
+      { x: 85.8, y: 61.0, size: 74 }
+    ]
+  },
+  {
+    url: './assets/backgrounds/subway-platform.png',
+    targets: [
+      { x: 20.3, y: 41.8, size: 78 },
+      { x: 33.3, y: 24.8, size: 70 },
+      { x: 48.4, y: 13.6, size: 58 },
+      { x: 57.8, y: 12.7, size: 54 },
+      { x: 69.8, y: 24.8, size: 72 }
+    ]
+  }
 ];
 
-const feedA = document.querySelector('.feed-a');
-const feedB = document.querySelector('.feed-b');
+const feeds = [
+  document.querySelector('.feed-a'),
+  document.querySelector('.feed-b')
+];
 const markers = [...document.querySelectorAll('.marker')];
-let backgroundIndex = 0;
-let feedBIsVisible = false;
-let markerFrame = 0;
+const revealTimers = new Set();
+let sceneIndex = 0;
+let activeFeedIndex = 0;
 
-backgroundCandidates.forEach((url) => {
+scenes.forEach(({ url }) => {
   const image = new Image();
-  image.addEventListener('load', () => backgrounds.push(url), { once: true });
   image.src = url;
 });
 
-function placeMarkers(index) {
-  markerLayouts[index % markerLayouts.length].forEach(([left, top], markerIndex) => {
-    const marker = markers[markerIndex];
-    marker.style.left = `${left}%`;
-    marker.style.top = `${top}%`;
-    marker.classList.remove('reacquire');
-    void marker.offsetWidth;
-    marker.classList.add('reacquire');
+function clearRevealTimers() {
+  revealTimers.forEach(clearTimeout);
+  revealTimers.clear();
+}
+
+function hideMarkers() {
+  clearRevealTimers();
+  markers.forEach((marker) => {
+    marker.classList.remove('is-visible', 'reacquire');
+    marker.hidden = true;
   });
 }
 
-function switchBackground() {
-  backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
-  const nextUrl = backgrounds[backgroundIndex];
-  if (feedBIsVisible) {
-    feedA.style.backgroundImage = `url("${nextUrl}")`;
-    feedB.classList.remove('visible');
-  } else {
-    feedB.style.backgroundImage = `url("${nextUrl}")`;
-    feedB.classList.add('visible');
-  }
-  feedBIsVisible = !feedBIsVisible;
-  placeMarkers(backgroundIndex);
+function projectTarget(target) {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  const scale = Math.max(viewportWidth / SOURCE_WIDTH, viewportHeight / SOURCE_HEIGHT);
+  const renderedWidth = SOURCE_WIDTH * scale;
+  const renderedHeight = SOURCE_HEIGHT * scale;
+  const offsetX = (viewportWidth - renderedWidth) / 2;
+  const offsetY = (viewportHeight - renderedHeight) / 2;
+
+  return {
+    left: offsetX + (target.x / 100) * renderedWidth,
+    top: offsetY + (target.y / 100) * renderedHeight,
+    size: Math.max(30, Math.min(96, target.size * scale))
+  };
 }
 
-setInterval(switchBackground, 7200);
+function positionMarkers() {
+  const targets = scenes[sceneIndex].targets;
 
-setInterval(() => {
-  const marker = markers[markerFrame % markers.length];
-  marker.style.marginLeft = markerFrame % 2 ? '1px' : '-1px';
-  marker.style.marginTop = markerFrame % 3 === 0 ? '1px' : '0';
-  marker.style.opacity = markerFrame % 4 === 0 ? '.66' : '.96';
-  setTimeout(() => {
-    marker.style.marginLeft = '';
-    marker.style.marginTop = '';
-    marker.style.opacity = '';
-  }, 100);
-  markerFrame += 1;
-}, 840);
+  markers.forEach((marker, index) => {
+    const target = targets[index];
+    if (!target) {
+      marker.hidden = true;
+      return;
+    }
+
+    const projected = projectTarget(target);
+    marker.style.left = `${projected.left}px`;
+    marker.style.top = `${projected.top}px`;
+    marker.style.width = `${projected.size}px`;
+    const isInFrame =
+      projected.left > -projected.size &&
+      projected.left < window.innerWidth + projected.size &&
+      projected.top > -projected.size &&
+      projected.top < window.innerHeight + projected.size;
+    marker.dataset.inFrame = String(isInFrame);
+    marker.hidden = !isInFrame || !marker.classList.contains('is-visible');
+  });
+}
+
+function revealMarkers() {
+  positionMarkers();
+
+  markers.forEach((marker, index) => {
+    if (marker.dataset.inFrame !== 'true') return;
+
+    const timer = setTimeout(() => {
+      revealTimers.delete(timer);
+      marker.hidden = false;
+      marker.classList.remove('reacquire');
+      void marker.offsetWidth;
+      marker.classList.add('is-visible', 'reacquire');
+    }, index * REVEAL_INTERVAL);
+    revealTimers.add(timer);
+  });
+}
+
+function scheduleRecognition() {
+  const timer = setTimeout(() => {
+    revealTimers.delete(timer);
+    revealMarkers();
+  }, RECOGNITION_DELAY);
+  revealTimers.add(timer);
+}
+
+function switchScene() {
+  hideMarkers();
+  sceneIndex = (sceneIndex + 1) % scenes.length;
+
+  const nextFeedIndex = activeFeedIndex === 0 ? 1 : 0;
+  feeds[nextFeedIndex].style.backgroundImage = `url("${scenes[sceneIndex].url}")`;
+  feeds[nextFeedIndex].classList.add('visible');
+  feeds[activeFeedIndex].classList.remove('visible');
+  activeFeedIndex = nextFeedIndex;
+
+  positionMarkers();
+  scheduleRecognition();
+}
+
+hideMarkers();
+positionMarkers();
+scheduleRecognition();
+
+window.addEventListener('resize', positionMarkers, { passive: true });
+setInterval(switchScene, SCENE_DURATION);
