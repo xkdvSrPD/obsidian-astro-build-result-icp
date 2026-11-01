@@ -10,13 +10,29 @@
   <body>
     <main aria-label="监控画面">
       <div class="camera-feed" aria-hidden="true"></div>
-      <div class="subject-box white box-1" aria-hidden="true"></div>
-      <div class="subject-box red box-2" aria-hidden="true"></div>
-      <div class="subject-box yellow box-3" aria-hidden="true"></div>
-      <div class="subject-box blue box-4" aria-hidden="true"></div>
-      <div class="subject-box white box-5" aria-hidden="true"></div>
-      <div class="subject-box red box-6" aria-hidden="true"></div>
-      <div class="subject-box yellow box-7" aria-hidden="true"></div>
+      <div class="analysis-grid" aria-hidden="true"></div>
+      <svg class="tracking-links" viewBox="0 0 1000 563" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M129 410 L278 337 L437 388" />
+        <path d="M437 388 L579 214 L727 292" />
+        <path d="M727 292 L880 396" />
+      </svg>
+
+      <div class="marker person white p-1" aria-hidden="true"><span class="echo"></span></div>
+      <div class="marker person threat p-2" aria-hidden="true"><span class="echo"></span><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><b class="cross"></b></div>
+      <div class="marker person yellow p-3" aria-hidden="true"><span class="echo"></span></div>
+      <div class="marker person blue-white p-4" aria-hidden="true"><span class="echo"></span><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><b class="cross"></b></div>
+      <div class="marker person white p-5" aria-hidden="true"><span class="echo"></span></div>
+      <div class="marker person red p-6" aria-hidden="true"><span class="echo"></span></div>
+      <div class="marker person analog p-7" aria-hidden="true"><span class="echo"></span><i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i><b class="cross"></b></div>
+      <div class="marker person white p-8" aria-hidden="true"><span class="echo"></span></div>
+
+      <div class="marker vehicle white v-1" aria-hidden="true"><span class="echo"></span><i class="rail left"></i><i class="rail right"></i><b class="target"></b></div>
+      <div class="marker vehicle yellow v-2" aria-hidden="true"><span class="echo"></span><i class="rail left"></i><i class="rail right"></i><b class="target"></b></div>
+      <div class="marker vehicle red v-3" aria-hidden="true"><span class="echo"></span><i class="rail left"></i><i class="rail right"></i><b class="target"></b></div>
+
+      <div class="edge-reticle edge-a" aria-hidden="true"></div>
+      <div class="edge-reticle edge-b" aria-hidden="true"></div>
+      <div class="edge-reticle edge-c" aria-hidden="true"></div>
     </main>
     <div class="crt-noise" aria-hidden="true"></div>
     <div class="crt-lines" aria-hidden="true"></div>

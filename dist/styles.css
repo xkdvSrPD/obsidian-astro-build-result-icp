@@ -4,12 +4,41 @@ html,body,main{width:100%;height:100%;margin:0;overflow:hidden;background:#05080
 .camera-feed{position:absolute;inset:-1.5%;background:url("./assets/cctv-intersection.png") center/cover no-repeat;filter:grayscale(.78) sepia(.12) hue-rotate(75deg) saturate(.58) contrast(1.38) brightness(.76);animation:feed-jump 12s steps(1) infinite}
 .camera-feed:after{content:"";position:absolute;inset:0;background:rgba(8,19,12,.12);mix-blend-mode:multiply}
 
-.subject-box{position:absolute;z-index:5;border:5px solid currentColor;filter:blur(.55px);box-shadow:0 0 5px currentColor,inset 0 0 4px currentColor;opacity:.9;will-change:transform}
-.subject-box:before,.subject-box:after{content:"";position:absolute;background:currentColor;box-shadow:0 0 4px currentColor}
-.subject-box:before{width:21px;height:5px;left:-13px;top:50%;transform:translateY(-50%)}
-.subject-box:after{width:5px;height:21px;top:-13px;left:50%;transform:translateX(-50%)}
-.white{color:var(--white)}.red{color:var(--red)}.yellow{color:var(--yellow)}.blue{color:var(--blue)}
-.box-1{left:12%;top:42%;width:4.1vw;height:10.2vh}.box-2{left:29%;top:31%;width:4.8vw;height:12.6vh}.box-3{left:42%;top:53%;width:5.1vw;height:13.8vh}.box-4{left:56%;top:27%;width:4.2vw;height:11.3vh}.box-5{right:27%;top:46%;width:4.6vw;height:12.2vh}.box-6{right:13%;top:34%;width:4vw;height:10.8vh}.box-7{right:7%;bottom:14%;width:4.7vw;height:13vh}
+.analysis-grid{position:absolute;z-index:2;inset:0;opacity:.13;background-image:linear-gradient(rgba(195,211,201,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(195,211,201,.22) 1px,transparent 1px);background-size:12.5% 16.666%}
+.tracking-links{position:absolute;z-index:3;inset:0;width:100%;height:100%;opacity:.24;filter:blur(.3px)}
+.tracking-links path{fill:none;stroke:#aab8af;stroke-width:1.2;stroke-dasharray:3 8;vector-effect:non-scaling-stroke;animation:dash-shift 10s steps(20) infinite}
+
+/* The Machine uses square classifications for people, composite corner states for reassessment,
+   and a separate rail/reticle construction for vehicles. */
+.marker{position:absolute;z-index:6;color:var(--white);will-change:transform,opacity;filter:blur(.48px) drop-shadow(0 0 2px currentColor)}
+.marker.reacquire{animation:reacquire .19s steps(2)}
+.marker.white{color:var(--white)}.marker.red{color:var(--red)}.marker.yellow{color:var(--yellow)}
+.person{width:clamp(24px,2.7vw,48px);aspect-ratio:1;border:3px solid currentColor;box-shadow:0 0 3px currentColor,inset 0 0 2px currentColor}
+.marker .echo{position:absolute;inset:-5px;border:1px solid currentColor;opacity:.2;transform:translate(2px,-1px);animation:echo-drift 3.4s steps(2) infinite}
+
+/* white field with red corners/crosshair: an irrelevant subject being reclassified as threat */
+.person.threat{color:var(--white);border-color:var(--white)}
+.person.threat .c,.person.threat .cross{color:var(--red)}
+.person.blue-white{color:var(--blue);border-color:var(--blue)}
+.person.blue-white .c,.person.blue-white .cross{color:var(--white)}
+.person.analog{color:#060807;border-color:#050706;background:rgba(0,0,0,.58);box-shadow:0 0 5px rgba(0,0,0,.9),inset 0 0 4px #000}
+.person.analog .c,.person.analog .cross{color:var(--yellow)}
+.c{position:absolute;width:11px;height:11px;border:4px solid currentColor;filter:blur(.25px);box-shadow:0 0 2px currentColor}
+.c.tl{left:-5px;top:-5px;border-right:0;border-bottom:0}.c.tr{right:-5px;top:-5px;border-left:0;border-bottom:0}.c.bl{left:-5px;bottom:-5px;border-right:0;border-top:0}.c.br{right:-5px;bottom:-5px;border-left:0;border-top:0}
+.cross{position:absolute;left:50%;top:50%;width:7px;height:7px;border:2px solid currentColor;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 3px currentColor}
+.cross:before,.cross:after{content:"";position:absolute;background:currentColor}.cross:before{width:18px;height:2px;left:-7px;top:1px}.cross:after{width:2px;height:18px;left:1px;top:-7px}
+
+/* positions track visible pedestrians in the generated CCTV plate */
+.p-1{left:11.6%;top:72.5%}.p-2{left:25.9%;top:53.5%}.p-3{left:42.3%;top:64.2%}.p-4{left:55.4%;top:37.4%}.p-5{left:69.7%;top:43.4%}.p-6{left:73.1%;top:47.5%}.p-7{left:59.7%;top:78.2%}.p-8{left:20.2%;top:39.2%}
+
+.vehicle{height:clamp(24px,4vw,54px);width:clamp(52px,7vw,116px);border:3px solid currentColor;box-shadow:0 0 3px currentColor,inset 0 0 2px currentColor}
+.vehicle .rail{position:absolute;top:-15px;bottom:-15px;width:3px;background:currentColor;box-shadow:0 0 2px currentColor}.vehicle .rail.left{left:14%}.vehicle .rail.right{right:14%}
+.vehicle .target{position:absolute;left:50%;top:50%;width:10px;height:10px;border:2px solid currentColor;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 3px currentColor}
+.vehicle .target:before,.vehicle .target:after{content:"";position:absolute;background:currentColor}.vehicle .target:before{left:-8px;top:2px;width:22px;height:2px}.vehicle .target:after{left:2px;top:-8px;width:2px;height:22px}
+.v-1{left:34.8%;top:41.1%;transform:rotate(14deg)}.v-2{left:48.8%;top:31.6%;transform:rotate(19deg)}.v-3{left:78.4%;top:31.4%;transform:rotate(8deg)}
+
+.edge-reticle{position:absolute;z-index:4;width:7px;height:7px;border:2px solid rgba(202,214,207,.66);border-radius:50%;filter:blur(.3px);box-shadow:0 0 2px rgba(202,214,207,.7)}
+.edge-reticle:before,.edge-reticle:after{content:"";position:absolute;background:rgba(202,214,207,.55)}.edge-reticle:before{width:24px;height:1px;left:-10px;top:2px}.edge-reticle:after{width:1px;height:24px;top:-10px;left:2px}.edge-a{left:8%;top:24%}.edge-b{right:18%;top:63%}.edge-c{left:63%;top:18%}
 
 .crt-noise,.crt-lines,.crt-vignette{position:fixed;z-index:20;inset:0;pointer-events:none}
 .crt-noise{opacity:.14;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:noise-shift .28s steps(2) infinite}
@@ -19,6 +48,9 @@ html,body,main{width:100%;height:100%;margin:0;overflow:hidden;background:#05080
 @keyframes feed-jump{0%,94%,100%{transform:translate(0) scale(1)}95%{transform:translate(3px,-2px) scale(1.004);filter:grayscale(.72) contrast(1.65) brightness(.84)}96%{transform:translate(-2px,1px) scale(1.002)}}
 @keyframes noise-shift{0%{transform:translate(0)}50%{transform:translate(-1px,1px)}100%{transform:translate(1px,-1px)}}
 @keyframes line-roll{from{transform:translateY(-4px)}to{transform:translateY(4px)}}
+@keyframes dash-shift{to{stroke-dashoffset:-120}}
+@keyframes echo-drift{0%,100%{transform:translate(2px,-1px);opacity:.14}50%{transform:translate(-2px,1px);opacity:.27}}
+@keyframes reacquire{0%{scale:1.12;opacity:.18}48%{scale:.96;opacity:1}100%{scale:1;opacity:.9}}
 
-@media(max-width:700px){.camera-feed{background-position:58% center}.subject-box{border-width:4px}.box-1{left:8%;top:45%;width:10vw;height:10vh}.box-2{left:27%;top:34%;width:11vw;height:12vh}.box-3{left:45%;top:55%;width:12vw;height:13vh}.box-4{left:60%;top:28%;width:10vw;height:11vh}.box-5{right:15%;top:47%;width:11vw;height:12vh}.box-6,.box-7{display:none}.crt-vignette{box-shadow:inset 0 0 90px 25px rgba(0,0,0,.82)}}
+@media(max-width:700px){.camera-feed{background-position:58% center}.analysis-grid{background-size:25% 16.666%}.person{width:clamp(22px,7vw,34px)}.vehicle{height:clamp(20px,6vw,30px);width:clamp(42px,14vw,70px)}.p-1{left:4%;top:72%}.p-2{left:23%;top:54%}.p-3{left:42%;top:64%}.p-4{left:57%;top:37%}.p-5{left:74%;top:43%}.p-6,.p-8,.v-3{display:none}.p-7{left:61%;top:78%}.v-1{left:30%;top:41%}.v-2{left:49%;top:32%}.crt-vignette{box-shadow:inset 0 0 90px 25px rgba(0,0,0,.82)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
