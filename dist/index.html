@@ -3,171 +3,207 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Five original personal-site directions inspired by machine intelligence and surveillance interfaces." />
-    <meta name="theme-color" content="#0b0c0c" />
-    <title>MACHINE / Personal Site Directions</title>
+    <meta name="description" content="Five personal-site directions built from the visual grammar of an all-seeing machine." />
+    <meta name="theme-color" content="#050807" />
+    <title>MACHINE // PERSONAL INDEX</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body data-view="home">
-    <div class="noise" aria-hidden="true"></div>
-    <div class="scanline" aria-hidden="true"></div>
+    <div class="phosphor" aria-hidden="true"></div>
+    <div class="scan" aria-hidden="true"></div>
 
-    <header class="global-bar">
-      <button class="brand" type="button" data-home aria-label="返回方向总览">
-        <span class="brand-eye"></span>
-        <span>MACHINE / PERSONAL</span>
+    <header class="machine-bar">
+      <button class="machine-id" type="button" data-home aria-label="返回方向总览">
+        <span class="machine-mark"><i></i></span>
+        <span>THE MACHINE</span>
       </button>
-      <div class="global-meta"><span id="clock">00:00:00</span><span>SHANGHAI</span><span class="live-dot">LIVE</span></div>
+      <div class="machine-readout">
+        <span>SYS / 0000.0001</span>
+        <span data-clock>00:00:00</span>
+        <span class="status-ok">● OBSERVING</span>
+      </div>
     </header>
 
     <main>
-      <section class="home" id="home" aria-labelledby="home-title">
-        <div class="home-intro">
-          <p class="eyebrow">DESIGN DIRECTION INDEX · 05 SIGNALS FOUND</p>
-          <h1 id="home-title">What does<br />the machine<br /><em>see in you?</em></h1>
-          <p class="manifesto">“We're not exactly in a position to be trusted with secrets, are we?”</p>
-          <div class="home-instruction"><span>选择一个信号进入</span><span>键盘 1—5 / ESC 返回</span></div>
+      <section class="index-view" aria-labelledby="index-title">
+        <div class="surveillance-bg" aria-hidden="true"></div>
+        <div class="feed-label top-left">CAMERA: MTA_14AV_CROSSING_03<br />FRAME: 005719 / LIVE</div>
+        <div class="feed-label top-right">OBJECTS: 0047<br />ANOMALIES: 0005</div>
+
+        <div class="tracking-box track-white t1"><span>UNKNOWN</span></div>
+        <div class="tracking-box track-red t2"><span>POTENTIAL THREAT</span></div>
+        <div class="tracking-box track-yellow t3"><span>ADMIN</span></div>
+        <div class="tracking-box track-blue t4"><span>OPERATIVE</span></div>
+
+        <div class="index-copy">
+          <p class="machine-kicker">QUERY: PERSONAL_IDENTITY / FIVE POSSIBLE INTERFACES</p>
+          <h1 id="index-title">WE ARE<br />BEING<br /><span>WATCHED.</span></h1>
+          <p class="quote">“We're not exactly in a position to be trusted with secrets, are we?”</p>
+          <div class="visual-key">
+            <span><i class="key-red"></i>THREAT</span><span><i class="key-yellow"></i>ADMIN</span><span><i class="key-blue"></i>RELEVANT</span><span><i class="key-white"></i>CIVILIAN</span>
+          </div>
         </div>
 
-        <div class="direction-grid" aria-label="五个设计方向">
-          <button class="direction-card card-01" type="button" data-open="01">
-            <span class="card-number">01</span>
-            <span class="mini-frame"><i></i><i></i><i></i><b>SUBJECT<br />IDENTIFIED</b></span>
-            <span class="card-title">THE WATCHER</span>
-            <span class="card-cn">监控者 · 经典视觉</span>
-            <span class="card-desc">冷静、克制、摄像头标记与威胁识别。</span>
-            <span class="card-enter">ENTER SIGNAL ↗</span>
-          </button>
+        <nav class="direction-list" aria-label="五个设计方向">
+          <p>SELECT PROCESS // 5 RESULTS</p>
+          <button type="button" data-open="01"><b>01</b><span><strong>IDENTIFYING</strong><small>目标识别型个人首页</small></span><i>SUBJECT ↗</i></button>
+          <button type="button" data-open="02"><b>02</b><span><strong>CONTEXTUALIZING</strong><small>关系图型作品导航</small></span><i>GRAPH ↗</i></button>
+          <button type="button" data-open="03"><b>03</b><span><strong>EVALUATING</strong><small>情景推演型项目选择</small></span><i>SIMULATION ↗</i></button>
+          <button type="button" data-open="04"><b>04</b><span><strong>RECONSTRUCTING</strong><small>记忆时间线型履历</small></span><i>ARCHIVE ↗</i></button>
+          <button type="button" data-open="05"><b>05</b><span><strong>ANALOG INTERFACE</strong><small>机器对话型叙事主页</small></span><i>CHANNEL ↗</i></button>
+          <div class="direction-help"><span>KEYS 1—5 TO SELECT</span><span>ESC TO RETURN</span></div>
+        </nav>
 
-          <button class="direction-card card-02" type="button" data-open="02">
-            <span class="card-number">02</span>
-            <span class="mini-dossier"><i>CASE 1412</i><b>PERSON OF<br />INTEREST</b><i>ACCESS: RESTRICTED</i></span>
-            <span class="card-title">THE DOSSIER</span>
-            <span class="card-cn">人物档案 · 编辑设计</span>
-            <span class="card-desc">纸张、档案章、人工批注与真实作品叙事。</span>
-            <span class="card-enter">OPEN FILE ↗</span>
-          </button>
-
-          <button class="direction-card card-03" type="button" data-open="03">
-            <span class="card-number">03</span>
-            <span class="mini-terminal"><i>&gt; NODE_07 ONLINE</i><i>&gt; SEARCHING...</i><b>84%</b></span>
-            <span class="card-title">THE OPERATOR</span>
-            <span class="card-cn">行动终端 · 数据密集</span>
-            <span class="card-desc">绿色终端、实时日志、项目像一组运行节点。</span>
-            <span class="card-enter">RUN PROGRAM ↗</span>
-          </button>
-
-          <button class="direction-card card-04" type="button" data-open="04">
-            <span class="card-number">04</span>
-            <span class="mini-redaction"><i>IDENTITY</i><b></b><i>IS A</i><b></b><i>LIABILITY</i></span>
-            <span class="card-title">GHOST PROTOCOL</span>
-            <span class="card-cn">幽灵协议 · 极简艺术</span>
-            <span class="card-desc">巨大文字、黑白红，高概念的创意个人主页。</span>
-            <span class="card-enter">DECRYPT ↗</span>
-          </button>
-
-          <button class="direction-card card-05" type="button" data-open="05">
-            <span class="card-number">05</span>
-            <span class="mini-constellation"><i></i><i></i><i></i><i></i><b>YOU</b></span>
-            <span class="card-title">THE ORACLE</span>
-            <span class="card-cn">预言网络 · 未来人文</span>
-            <span class="card-desc">温和的机器智能，以关系网络组织经历与思想。</span>
-            <span class="card-enter">TRACE PATH ↗</span>
-          </button>
-        </div>
+        <div class="index-timeline"><span>2011</span><i></i><i></i><i></i><b>2026.11.01 / PRESENT</b><i></i><i></i><span>2030</span></div>
       </section>
 
-      <div class="concepts" aria-live="polite">
-        <article class="concept concept-01" data-concept="01" aria-label="方向一：The Watcher">
-          <div class="watch-grid" aria-hidden="true"></div>
-          <div class="coordinate c-a">CAM 14 / 31.2304° N</div>
-          <div class="coordinate c-b">SUBJECT STATUS / IRRELEVANT</div>
-          <div class="watch-subject" aria-hidden="true">
-            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-            <div class="face-code">ID: 01001101<br />CONF: 96.4%</div>
-          </div>
-          <div class="watch-copy">
-            <p class="signal-tag">01 / CLASSIC SURVEILLANCE</p>
-            <h2>I build systems<br />that notice<br /><span>what matters.</span></h2>
-            <p class="watch-deck">VIO — 独立创作者与产品设计者。观察复杂系统，找到被忽略的信号，并把它们变成可用的产品。</p>
-            <nav class="watch-nav"><a href="#work">01 WORK</a><a href="#notes">02 NOTES</a><a href="#contact">03 CONTACT</a></nav>
-          </div>
-          <div class="threat-meter"><span>THREAT ASSESSMENT</span><i style="--p: 64%"></i><b>64 / WATCH</b></div>
-          <p class="concept-note">最贴近剧集气质 · 黑白监控画面 / 红色识别 / 冷硬网格</p>
-        </article>
+      <section class="concepts" aria-live="polite">
+        <article class="concept identify" data-concept="01" aria-label="方向一：Identifying">
+          <div class="surveillance-bg live-feed" aria-hidden="true"></div>
+          <div class="feed-label top-left">MPOV // SUBJECT ACQUISITION<br />SOURCE: MUNICIPAL CAMERA 04</div>
+          <div class="feed-label top-right">31.2304° N / 121.4737° E<br />2026-11-01 <span data-clock>00:00:00</span></div>
 
-        <article class="concept concept-02" data-concept="02" aria-label="方向二：The Dossier">
-          <div class="paper-edge" aria-hidden="true"></div>
-          <div class="dossier-head"><span>THE ARCHIVE / PRIVATE COLLECTION</span><span>FILE № 1984—V</span></div>
-          <div class="dossier-body">
-            <div class="portrait-box">
-              <span class="portrait-silhouette">V</span>
-              <i class="stamp">RELEVANT</i>
-              <small>FIG. 01 / SUBJECT UNKNOWN</small>
+          <div class="id-target" aria-hidden="true">
+            <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+            <div class="target-scan"></div>
+            <p>FACIAL MATCH<br /><b>98.723%</b></p>
+          </div>
+          <div class="tracking-box track-white sub-a"><span>IRRELEVANT</span></div>
+          <div class="tracking-box track-blue sub-b"><span>GOV. ASSET</span></div>
+          <div class="tracking-box track-red sub-c"><span>THREAT / 62%</span></div>
+
+          <section class="subject-card">
+            <p class="machine-kicker">RELEVANT PERSON // NUMBER DELIVERED</p>
+            <h2>VIO</h2>
+            <div class="subject-fields">
+              <span>CLASSIFICATION<b>CREATOR / BUILDER</b></span>
+              <span>PRIMARY SKILLS<b>DESIGN · CODE · SYSTEMS</b></span>
+              <span>LAST KNOWN ACTIVITY<b>MAKING COMPLEX THINGS LEGIBLE</b></span>
             </div>
-            <div class="dossier-copy">
-              <p class="typewriter">PERSONAL DOSSIER · LAST UPDATED 11.2026</p>
-              <h2>Some people<br />leave a trail.<br /><em>I leave work.</em></h2>
-              <p>设计、代码与写作，是同一种调查的三种证据。我对复杂工具、模糊问题，以及人和机器之间的边界感兴趣。</p>
-              <div class="file-links"><a href="#casework">SELECTED CASEWORK <b>12</b></a><a href="#fieldnotes">FIELD NOTES <b>38</b></a><a href="#identity">KNOWN IDENTITY <b>01</b></a></div>
-            </div>
-            <aside class="margin-notes"><span>← 不可靠叙述者</span><span>记得隐藏<br />真正重要的东西</span><span>TRUST NO<br />SINGLE SOURCE</span></aside>
-          </div>
-          <p class="dossier-quote">WE'RE NOT EXACTLY IN A POSITION TO BE TRUSTED WITH SECRETS, ARE WE?</p>
-          <p class="concept-note">更像一本人物杂志 · 适合作品案例、长文和个人故事</p>
+            <p class="subject-summary">观察信号、理解系统、把模糊问题变成可以使用的产品。</p>
+            <nav><a href="#work">[ SELECTED WORK ]</a><a href="#notes">[ FIELD NOTES ]</a><a href="#contact">[ OPEN CHANNEL ]</a></nav>
+          </section>
+          <div class="classification-callout">DIRECTION 01<br /><b>“把你本人作为 Machine 正在识别的 Number。”</b></div>
+          <p class="concept-caption">01 / SUBJECT-FIRST — 适合信息简洁、希望第一屏建立强烈人物印象</p>
         </article>
 
-        <article class="concept concept-03" data-concept="03" aria-label="方向三：The Operator">
-          <div class="terminal-top"><span>VIO_OS / OPERATOR CONSOLE</span><span>SECURE SHELL · 256 BIT</span><span class="terminal-status">● ONLINE</span></div>
-          <div class="terminal-layout">
-            <aside class="terminal-tree"><b>/ROOT</b><a href="#profile">├── PROFILE.DAT</a><a href="#projects">├── PROJECTS/</a><a href="#writing">├── WRITING.LOG</a><a href="#contact">└── CONTACT.KEY</a><div class="system-bars"><span style="--w:87%">CPU</span><span style="--w:42%">MEM</span><span style="--w:68%">IDEA</span></div></aside>
-            <section class="terminal-main">
-              <p class="terminal-command">vio@machine:~$ identify --subject self<span class="blink">_</span></p>
-              <h2>OPERATOR<br /><span>VIO</span></h2>
-              <p class="terminal-lede">A MULTIDISCIPLINARY MAKER OPERATING AT THE INTERSECTION OF DESIGN, CODE, AND SYSTEMS THINKING.</p>
-              <div class="node-list"><a href="#n1"><b>NODE_01</b><span>PRODUCT SYSTEMS</span><i>ACTIVE</i></a><a href="#n2"><b>NODE_02</b><span>EXPERIMENTAL INTERFACES</span><i>ACTIVE</i></a><a href="#n3"><b>NODE_03</b><span>NOTES FROM THE FIELD</span><i>38 LOGS</i></a></div>
-            </section>
-            <aside class="terminal-feed"><b>EVENT STREAM</b><div id="event-feed"><span>10:31:04 / packet received</span><span>10:31:07 / identity resolved</span><span>10:31:11 / project indexed</span><span>10:31:18 / awaiting input</span></div><div class="radar"><i></i><b>07</b></div></aside>
+        <article class="concept contextualize" data-concept="02" aria-label="方向二：Contextualizing">
+          <canvas id="graph-canvas" aria-hidden="true"></canvas>
+          <div class="graph-grid" aria-hidden="true"></div>
+          <div class="feed-label top-left">PROCESS: CONTEXTUALIZING SUBJECT<br />RELATIONSHIPS FOUND: 0012</div>
+          <div class="feed-label top-right">DATABASE: OPEN / PERSONAL<br />CONFIDENCE: 94.301%</div>
+
+          <div class="graph-title">
+            <p class="machine-kicker">SOCIAL / PROJECT GRAPH</p>
+            <h2>EVERYTHING<br />IS CONNECTED.</h2>
+            <p>点击不同关系节点，作品、技能和经历不再是独立栏目，而是同一个人的证据网络。</p>
           </div>
-          <div class="terminal-foot"><span>ESC: INDEX</span><span>ALL SYSTEMS NOMINAL</span><span>© 2026 / SIGNAL 03</span></div>
-          <p class="concept-note">最强交互感 · 适合技术型创作者、实时数据与实验项目</p>
+
+          <button class="person-node node-center" type="button" data-node="VIO"><i></i><b>VIO</b><span>PRIMARY SUBJECT</span></button>
+          <button class="person-node node-work" type="button" data-node="WORK"><i></i><b>SELECTED WORK</b><span>12 ENTITIES</span></button>
+          <button class="person-node node-code" type="button" data-node="CODE"><i></i><b>CODE</b><span>ACTIVE ASSET</span></button>
+          <button class="person-node node-notes" type="button" data-node="NOTES"><i></i><b>FIELD NOTES</b><span>38 RECORDS</span></button>
+          <button class="person-node node-design" type="button" data-node="DESIGN"><i></i><b>DESIGN</b><span>KNOWN ASSOCIATE</span></button>
+          <button class="person-node node-contact" type="button" data-node="CONTACT"><i></i><b>CONTACT</b><span>OPEN CHANNEL</span></button>
+
+          <aside class="graph-inspector">
+            <p>ENTITY INSPECTOR</p>
+            <h3 id="inspector-name">VIO</h3>
+            <div><span>TYPE</span><b>PERSON / ADMIN</b></div>
+            <div><span>STATUS</span><b class="yellow">CONTEXTUALIZED</b></div>
+            <div><span>CONNECTIONS</span><b>05 DIRECT / 12 INDIRECT</b></div>
+            <p id="inspector-copy">独立创作者与产品设计者。所有路径都指向正在发生的工作。</p>
+          </aside>
+          <p class="concept-caption">02 / RELATIONSHIP-FIRST — 适合作品类型多、经历彼此交叉的个人品牌</p>
         </article>
 
-        <article class="concept concept-04" data-concept="04" aria-label="方向四：Ghost Protocol">
-          <div class="ghost-index">04 / GHOST PROTOCOL</div>
-          <div class="ghost-copy">
-            <p>IDENTITY IS A CONSTRUCT.</p>
-            <h2>I AM<br />WHAT I<br /><span>MAKE.</span></h2>
+        <article class="concept evaluating" data-concept="03" aria-label="方向三：Evaluating">
+          <div class="simulation-noise" aria-hidden="true"></div>
+          <div class="feed-label top-left">PROCESS: EVALUATING STRATEGIES<br />SIMULATIONS: 833,333</div>
+          <div class="feed-label top-right">OBJECTIVE: DETERMINE NEXT ACTION<br />STATUS: RUNNING</div>
+
+          <div class="simulation-heading">
+            <p class="machine-kicker">IF / THEN / ELSE</p>
+            <h2>CHOOSE A<br />POSSIBLE FUTURE.</h2>
+            <p>每个项目是一个经过计算的行动分支。悬停查看 Machine 对结果的预测。</p>
           </div>
-          <div class="ghost-redaction"><span>NAME</span><b>VIO ███████</b><span>ROLE</span><b>DESIGNER / MAKER / █████</b><span>STATUS</span><b>UNTRUSTED, PRODUCTIVE</b></div>
-          <a class="ghost-cta" href="#selected-work"><span>VIEW<br />SELECTED<br />EVIDENCE</span><b>↘</b></a>
-          <p class="ghost-quote">“We're not exactly in a position<br />to be trusted with secrets, are we?”</p>
-          <p class="concept-note">最鲜明、最像艺术家主页 · 强记忆点 / 内容需要极度精选</p>
+
+          <div class="simulation-map">
+            <svg viewBox="0 0 1000 620" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M90 310 C210 310 215 110 360 110 S505 85 610 85" class="path-yellow" />
+              <path d="M90 310 C220 310 230 300 380 300 S520 300 640 300" class="path-blue" />
+              <path d="M90 310 C210 310 220 505 380 505 S520 535 630 535" class="path-red" />
+              <path d="M710 85 C820 85 820 220 910 220" class="path-yellow" />
+              <path d="M740 300 C840 300 835 220 910 220" class="path-blue" />
+              <path d="M720 535 C830 535 835 220 910 220" class="path-red" />
+            </svg>
+            <div class="sim-origin"><b>VIO</b><span>CURRENT STATE</span></div>
+            <a class="sim-option option-a" href="#systems"><span>OPTION 141,721</span><b>BUILD SYSTEMS</b><i>87.42%</i><small>COHERENCE LIKELY</small></a>
+            <a class="sim-option option-b" href="#interfaces"><span>OPTION 287,004</span><b>DESIGN INTERFACES</b><i>72.18%</i><small>HUMAN SIGNAL FOUND</small></a>
+            <a class="sim-option option-c" href="#writing"><span>OPTION 404,608</span><b>WRITE THE FIELD</b><i>64.09%</i><small>LONG-TERM EFFECT</small></a>
+            <div class="sim-result"><b>INTERVENTION</b><span>RECOMMENDED</span></div>
+          </div>
+          <div class="probability-strip"><span>ASSET ACTIVATION 28.44%</span><span>OPERATIONAL RELEVANCE 72.18%</span><span>VIOLENCE 00.00%</span><span>IDEA SURVIVAL 91.73%</span></div>
+          <p class="concept-caption">03 / DECISION-FIRST — 适合把重点项目做成探索式选择，而非普通作品列表</p>
         </article>
 
-        <article class="concept concept-05" data-concept="05" aria-label="方向五：The Oracle">
-          <canvas id="network" aria-hidden="true"></canvas>
-          <div class="oracle-head"><span>THE ORACLE / HUMAN SIGNAL MAP</span><span>05 — RELATIONSHIP VIEW</span></div>
-          <div class="oracle-center">
-            <p>EVERYTHING IS CONNECTED</p>
-            <h2>Make sense<br />of the signal.</h2>
-            <p class="oracle-intro">你好，我是 VIO。我把散落的想法、技术与人的需要连成清晰的路径。</p>
+        <article class="concept reconstructing" data-concept="04" aria-label="方向四：Reconstructing">
+          <div class="archive-grid" aria-hidden="true"></div>
+          <div class="feed-label top-left">ARCHIVE ACCESS // MEMORY RECONSTRUCTION<br />SUBJECT: VIO / RECORDS: 038</div>
+          <div class="feed-label top-right">CURRENT POSITION: 2026.11.01<br />TEMPORAL INDEX: OPEN</div>
+
+          <div class="archive-heading">
+            <p class="machine-kicker">RECONSTRUCTING PERSONAL HISTORY</p>
+            <h2>THE MACHINE<br />REMEMBERS.</h2>
+            <p>把 About、履历和项目串成可以回看的时间证据。</p>
           </div>
-          <a class="oracle-node n1" href="#work"><i></i><b>WORK</b><span>12 PROJECTS</span></a>
-          <a class="oracle-node n2" href="#notes"><i></i><b>NOTES</b><span>38 SIGNALS</span></a>
-          <a class="oracle-node n3" href="#about"><i></i><b>ABOUT</b><span>1 SUBJECT</span></a>
-          <a class="oracle-node n4" href="#contact"><i></i><b>CONTACT</b><span>OPEN CHANNEL</span></a>
-          <p class="oracle-quote">TRUST ISN'T A SECRET. IT'S A PATTERN.</p>
-          <p class="concept-note">更温和、当代、可持续扩展 · 机器视角与人文气质平衡</p>
+
+          <div class="memory-window">
+            <div class="memory-feed"></div>
+            <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+            <div class="memory-overlay"><span>RECORD 2026.11.01 / 13:04:22</span><b>SUBJECT CONTINUES TO BUILD</b><small>ANALYSIS: PATTERN PERSISTS</small></div>
+          </div>
+
+          <div class="memory-timeline">
+            <div class="timeline-rail"></div>
+            <button type="button" style="--x:6%"><i></i><b>2019</b><span>FIRST SIGNAL</span></button>
+            <button type="button" style="--x:27%"><i></i><b>2021</b><span>SYSTEMS</span></button>
+            <button type="button" style="--x:49%"><i></i><b>2023</b><span>INDEPENDENT</span></button>
+            <button type="button" style="--x:72%"><i></i><b>2025</b><span>NEW INTERFACE</span></button>
+            <button type="button" class="active" style="--x:92%"><i></i><b>2026</b><span>PRESENT</span></button>
+          </div>
+          <div class="archive-date">2026<span>11 / 01</span></div>
+          <p class="concept-caption">04 / TIME-FIRST — 适合经历丰富、希望讲清成长轨迹和长期主题</p>
         </article>
-      </div>
+
+        <article class="concept analog" data-concept="05" aria-label="方向五：Analog Interface">
+          <canvas id="analog-canvas" aria-hidden="true"></canvas>
+          <div class="feed-label top-left">ANALOG INTERFACE DETECTED<br />ADMIN PRIVILEGES: ACKNOWLEDGED</div>
+          <div class="feed-label top-right">AUDIO CHANNEL: OPEN<br />ENCRYPTION: NONE</div>
+
+          <div class="analog-subject" aria-hidden="true"><span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span><b>V</b><small>YELLOW / BLACK<br />ANALOG INTERFACE</small></div>
+
+          <section class="dialogue">
+            <p><span>MACHINE</span>CAN YOU HEAR ME?</p>
+            <p><span>VIO</span>I'M LISTENING.</p>
+            <p class="active-line"><span>MACHINE</span>WHAT WOULD YOU LIKE THEM TO KNOW?</p>
+            <h2>I MAKE<br />COMPLEX THINGS<br /><em>LEGIBLE.</em></h2>
+            <p class="analog-intro">设计、代码与系统思考。秘密不值得信任，但清晰的工作可以。</p>
+            <nav><a href="#work">01 / SHOW THE WORK</a><a href="#notes">02 / READ THE SIGNALS</a><a href="#contact">03 / ESTABLISH CONTACT</a></nav>
+          </section>
+
+          <div class="analog-classification"><span>SUBJECT</span><b>VIO</b><span>DESIGNATION</span><b>ADMIN</b><span>STATUS</span><b>LISTENING</b></div>
+          <p class="analog-quote">WE'RE NOT EXACTLY IN A POSITION TO BE TRUSTED WITH SECRETS, ARE WE?</p>
+          <p class="concept-caption">05 / VOICE-FIRST — 最接近 Machine 作为角色与你对话，适合极简叙事主页</p>
+        </article>
+      </section>
     </main>
 
     <div class="concept-switcher" aria-label="方向切换">
       <button type="button" data-step="prev" aria-label="上一个方向">←</button>
-      <div><span id="current-concept">01</span><i>/</i><span>05</span></div>
+      <span><b id="current-concept">01</b> / 05</span>
       <button type="button" data-step="next" aria-label="下一个方向">→</button>
-      <button type="button" data-home class="index-button">INDEX</button>
+      <button type="button" data-home>INDEX</button>
     </div>
 
     <script src="./app.js"></script>
