@@ -33,6 +33,12 @@ html,body,main{width:100%;height:100%;margin:0;overflow:hidden;background:#05080
 .motion-state.visible{opacity:1;animation:motion-blink .42s steps(1) 4}
 .is-switching .cctv-osd{animation:osd-drop .62s steps(1)}
 
+/* vio.vin only: ICP filing notice, voiced as one more dim DVR OSD line at the bottom centre. */
+.icp-record{position:fixed;z-index:18;left:50%;bottom:1.35%;translate:-50% 0;font-family:"Courier New","Lucida Console",monospace;font-size:clamp(9px,1.05vw,12px);font-weight:700;letter-spacing:.1em;color:rgba(223,232,224,.66);text-decoration:none;white-space:nowrap;text-shadow:-1px 0 #000,0 1px #000,1px 0 #000,0 -1px #000,2px 2px 0 rgba(0,0,0,.8)}
+.icp-record:hover{color:#eef3ee}
+.icp-record:focus-visible{outline:1px dashed rgba(223,232,224,.6);outline-offset:4px;color:#eef3ee}
+@media(max-width:700px){.icp-record{bottom:1.8%;letter-spacing:.06em}}
+
 .overscan-frame{z-index:19;border:3px solid rgba(0,0,0,.52);box-shadow:inset 0 0 0 1px rgba(210,227,216,.08),inset 0 0 42px 14px rgba(0,0,0,.54)}
 .crt-noise,.crt-lines,.crt-vignette{position:fixed;z-index:20;inset:0;pointer-events:none}
 .crt-noise{opacity:.11;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.76' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:noise-shift .28s steps(2) infinite}
